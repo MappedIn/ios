@@ -16,9 +16,9 @@ export FRAMEWORK_COPY_SCRIPT_RUNNING=1
 echo "Swapping frameworks"
 
 # Constants
-FRAMEWORK="../MappedIn.framework"
-FRAMEWORK_SIM="../Common/MappedIn-iphonesimulator.framework"
-FRAMEWORK_DEVICE="../Common/MappedIn-iphoneos.framework"
+FRAMEWORK="../../Common/MappedIn.framework"
+FRAMEWORK_SIM="../../Common/MappedIn-iphonesimulator.framework"
+FRAMEWORK_DEVICE="../../Common/MappedIn-iphoneos.framework"
 
 # Take build target
 if [[ "$SDK_NAME" =~ ([A-Za-z]+) ]]

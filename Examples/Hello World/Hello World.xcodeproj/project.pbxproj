@@ -124,6 +124,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA6B43BE1C5C27BA00AA582E /* Build configuration list for PBXNativeTarget "Hello World" */;
 			buildPhases = (
+				DA6B43CD1C5C31B900AA582E /* ShellScript */,
 				DA6B439D1C5C27BA00AA582E /* Sources */,
 				DA6B439E1C5C27BA00AA582E /* Frameworks */,
 				DA6B439F1C5C27BA00AA582E /* Resources */,
@@ -213,6 +214,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA6B43CD1C5C31B900AA582E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "../../Common/framework-swap.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA6B439D1C5C27BA00AA582E /* Sources */ = {
