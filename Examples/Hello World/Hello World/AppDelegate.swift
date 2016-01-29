@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import MappedIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: MappedIn.AppDelegate {
 
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    override func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
         // Override point for customization after application launch.
-        return true
     }
 
     func applicationWillResignActive(application: UIApplication) {

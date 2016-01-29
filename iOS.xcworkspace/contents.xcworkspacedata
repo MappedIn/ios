@@ -4,6 +4,12 @@
    <Group
       location = "group:Common"
       name = "Common">
+      <FileRef
+         location = "group:MappedIn.framework">
+      </FileRef>
+      <FileRef
+         location = "group:framework-swap.sh">
+      </FileRef>
    </Group>
    <Group
       location = "group:Examples"
