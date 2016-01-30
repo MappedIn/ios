@@ -1,0 +1,33 @@
+AppDelegate.swift
+	public func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+Directions.swift
+	case Left
+	case SlightLeft
+	case Straight
+	case SlightRight
+	case Right
+	case At
+	case Past
+	case Before
+MapView.swift
+	@objc public enum MotionType:Int
+	case Zooming, Panning, Rotating, Multi
+	case Zooming, Panning, Rotating, Multi
+	case Zooming, Panning, Rotating, Multi
+	case Zooming, Panning, Rotating, Multi
+	required public init(coder aDecoder: NSCoder)
+	public func loadScene ()
+	public func renderer(renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: NSTimeInterval)
+Vortex.swift
+	public var accessible: Bool!
+Node.swift
+	public func == (nodeA: Node, nodeB: Node) -> Bool
+Venue.swift
+	public var polygons: [Polygon]? = nil
+Location.swift
+	public var polygons = [Polygon]()
+MapViewDirections.swift
+	struct MapViewDirectionsConstants
+	struct MapViewDirectionsPathNodes
+Map.swift
+	public var hashValue: Int = 0
