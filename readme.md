@@ -12,7 +12,7 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 5.  Run!
 
 ## API Quick Start
-You can view all the documentation in this project's GitHub Page, but here's a quick start guide to just displaying a Map.
+You can view all the documentation in this project's [GitHub Page](http://mappedin.github.io/ios/), but here's a quick start guide to just displaying a Map.
 
 Let's go through the key classes provided by the SDK and when you would use them.
 
