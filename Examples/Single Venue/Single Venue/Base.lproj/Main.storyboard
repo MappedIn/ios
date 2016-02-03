@@ -106,19 +106,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="OEz-WR-pB0">
-                                        <rect key="frame" x="506" y="66" width="94" height="29"/>
-                                    </stepper>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lMG-af-rIt">
-                                        <rect key="frame" x="506" y="66" width="94" height="29"/>
-                                        <connections>
-                                            <action selector="directionsStepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PiZ-a5-DAG"/>
-                                        </connections>
+                                        <rect key="frame" x="498" y="66" width="94" height="29"/>
                                     </stepper>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="OEz-WR-pB0" secondAttribute="bottom" id="4S6-BN-z6l"/>
-                                    <constraint firstAttribute="trailing" secondItem="OEz-WR-pB0" secondAttribute="trailing" id="QjN-Dx-H5y"/>
+                                    <constraint firstAttribute="trailing" secondItem="OEz-WR-pB0" secondAttribute="trailing" constant="8" id="QjN-Dx-H5y"/>
                                     <constraint firstAttribute="height" constant="95" id="TC8-yp-Cjd"/>
                                     <constraint firstItem="pGu-uA-iHL" firstAttribute="top" secondItem="rac-qV-jmO" secondAttribute="top" id="hoU-GJ-NAb"/>
                                     <constraint firstAttribute="trailing" secondItem="pGu-uA-iHL" secondAttribute="trailing" id="lPd-P5-aTi"/>
