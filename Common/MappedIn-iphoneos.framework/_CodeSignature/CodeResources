@@ -4,69 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>564caa3447a66aaa0b479d7a.png</key>
-		<data>
-		aCihU0Im43zdmugYIvc5JDIYN4M=
-		</data>
-		<key>564caa769fdcfc1e2fbba130.png</key>
-		<data>
-		7QR2HZrRwJENpRlOnT5hrXhGeHA=
-		</data>
-		<key>564cac10ecaa53162f53412c.png</key>
-		<data>
-		l+o96wtiHkoqaXyN2mJHmT/vXz8=
-		</data>
-		<key>564cac6b9fdcfc1e2fbba131.png</key>
-		<data>
-		TiGvnvWUNQ3eZfnzWFiORSww9gY=
-		</data>
-		<key>564caca1a3a89565775934f0.png</key>
-		<data>
-		7S5+kcZVyTzj0MdMHWitb9pns98=
-		</data>
-		<key>564cacd5a3a89565775934f1.png</key>
-		<data>
-		DhElIfQpEIzkgyFfRzpuCt4k37Y=
-		</data>
-		<key>564cad169fdcfc1e2fbba132.png</key>
-		<data>
-		o9QgmfUjj6tImfr9jFxftRR1swI=
-		</data>
-		<key>564cad419fdcfc1e2fbba133.png</key>
-		<data>
-		EpdimmsehSRLtXT0z4K0Fkq0Vuk=
-		</data>
-		<key>564cad5b9fdcfc1e2fbba134.png</key>
-		<data>
-		V4G4ioC/AkztQlC2EgLg+RqlKoU=
-		</data>
-		<key>564cadb347a66aaa0b479d7e.png</key>
-		<data>
-		qdm2bhWZKP35w6B/olXSDYKoYrE=
-		</data>
-		<key>564cae2ea3a89565775934f2.png</key>
-		<data>
-		V79lIe1yIa3Qr7KqPG/XM1jvAMg=
-		</data>
-		<key>564cae52a3a89565775934f3.png</key>
-		<data>
-		auiOI2wY9qnLkP8m9pxkye4C8kE=
-		</data>
-		<key>564ccab347a66aaa0b479dbb.png</key>
-		<data>
-		JaobDNgkefkf/hpMsrb1WAtr1Fc=
-		</data>
-		<key>565caefd8bb12d7b09992614.png</key>
-		<data>
-		ClYTnTy9hI591GdI9St6tDiak5s=
-		</data>
 		<key>Assets.car</key>
 		<data>
-		lOt15WiYWSPjN2mPvWkGAnca1qQ=
+		duAVdyIqxu8fx5wKu4+ZnfO3zcg=
 		</data>
 		<key>Headers/MappedIn-Swift.h</key>
 		<data>
-		dZNsRVxd2eA8hvZ0+XpWkv++nus=
+		+LqGDbinV8XNdSF1NSPGIsF8M4U=
 		</data>
 		<key>Headers/MappedIn.h</key>
 		<data>
@@ -78,126 +22,34 @@
 		</data>
 		<key>Modules/MappedIn.swiftmodule/arm.swiftdoc</key>
 		<data>
-		xY3VDjyebsZG/vV7PAZ3DiVuMUs=
+		1GOlvHmeZeWpWDaW2nfVjg31iRI=
 		</data>
 		<key>Modules/MappedIn.swiftmodule/arm.swiftmodule</key>
 		<data>
-		Jme1NRCV25YN1HZ5dMr0t9EkQEc=
+		Nss26PIzDPUlkGftLJ64zfhRqwc=
 		</data>
 		<key>Modules/MappedIn.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		AfR0XzUKL/6XfJBCF1dF9PBwYOY=
+		z3YBDvydYJqwvUngo/8WDJOPFtU=
 		</data>
 		<key>Modules/MappedIn.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		8Jslu5oFGLPyVAH4MMbHupU8Tw4=
+		xJbeqKawYQLHun1XjZWdeId6wpE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		J68JEjCz2p2wBG+iBEIdnjFD9zs=
 		</data>
-		<key>Pin.scn</key>
-		<data>
-		iHGvTYzNN1+nMeulzjcVZmZoCsU=
-		</data>
-		<key>arrow.mtl</key>
-		<data>
-		YkfHvmjgFydAdXLAb9HOsuahnC8=
-		</data>
-		<key>arrow.obj</key>
-		<data>
-		Y+6TNUUb4QtAzBqMPokGvwkM4MU=
-		</data>
-		<key>mappedin-office.mtl</key>
-		<data>
-		+/kU8EXykSsPNFCTUyImiACYVsw=
-		</data>
-		<key>mappedin-office.obj</key>
-		<data>
-		FheMoFQ+t9sjQ6NIHkNivYK3p48=
-		</data>
-		<key>scene.mtl</key>
-		<data>
-		HKhHWxbLc/T/X88e7Cqt0vttn+w=
-		</data>
-		<key>scene.obj</key>
-		<data>
-		t1yBRxLMwgKqnk2Gncl3lMKv4TI=
-		</data>
-		<key>sherway-gardens.mtl</key>
-		<data>
-		0ZNY3wU3n1IyR2HZcqRh/W0XiRE=
-		</data>
-		<key>sherway-gardens.obj</key>
-		<data>
-		1NODFcU1YFAn9kO7Im7NmKHp/00=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>564caa3447a66aaa0b479d7a.png</key>
-		<data>
-		aCihU0Im43zdmugYIvc5JDIYN4M=
-		</data>
-		<key>564caa769fdcfc1e2fbba130.png</key>
-		<data>
-		7QR2HZrRwJENpRlOnT5hrXhGeHA=
-		</data>
-		<key>564cac10ecaa53162f53412c.png</key>
-		<data>
-		l+o96wtiHkoqaXyN2mJHmT/vXz8=
-		</data>
-		<key>564cac6b9fdcfc1e2fbba131.png</key>
-		<data>
-		TiGvnvWUNQ3eZfnzWFiORSww9gY=
-		</data>
-		<key>564caca1a3a89565775934f0.png</key>
-		<data>
-		7S5+kcZVyTzj0MdMHWitb9pns98=
-		</data>
-		<key>564cacd5a3a89565775934f1.png</key>
-		<data>
-		DhElIfQpEIzkgyFfRzpuCt4k37Y=
-		</data>
-		<key>564cad169fdcfc1e2fbba132.png</key>
-		<data>
-		o9QgmfUjj6tImfr9jFxftRR1swI=
-		</data>
-		<key>564cad419fdcfc1e2fbba133.png</key>
-		<data>
-		EpdimmsehSRLtXT0z4K0Fkq0Vuk=
-		</data>
-		<key>564cad5b9fdcfc1e2fbba134.png</key>
-		<data>
-		V4G4ioC/AkztQlC2EgLg+RqlKoU=
-		</data>
-		<key>564cadb347a66aaa0b479d7e.png</key>
-		<data>
-		qdm2bhWZKP35w6B/olXSDYKoYrE=
-		</data>
-		<key>564cae2ea3a89565775934f2.png</key>
-		<data>
-		V79lIe1yIa3Qr7KqPG/XM1jvAMg=
-		</data>
-		<key>564cae52a3a89565775934f3.png</key>
-		<data>
-		auiOI2wY9qnLkP8m9pxkye4C8kE=
-		</data>
-		<key>564ccab347a66aaa0b479dbb.png</key>
-		<data>
-		JaobDNgkefkf/hpMsrb1WAtr1Fc=
-		</data>
-		<key>565caefd8bb12d7b09992614.png</key>
-		<data>
-		ClYTnTy9hI591GdI9St6tDiak5s=
-		</data>
 		<key>Assets.car</key>
 		<data>
-		lOt15WiYWSPjN2mPvWkGAnca1qQ=
+		duAVdyIqxu8fx5wKu4+ZnfO3zcg=
 		</data>
 		<key>Headers/MappedIn-Swift.h</key>
 		<data>
-		dZNsRVxd2eA8hvZ0+XpWkv++nus=
+		+LqGDbinV8XNdSF1NSPGIsF8M4U=
 		</data>
 		<key>Headers/MappedIn.h</key>
 		<data>
@@ -205,59 +57,23 @@
 		</data>
 		<key>Modules/MappedIn.swiftmodule/arm.swiftdoc</key>
 		<data>
-		xY3VDjyebsZG/vV7PAZ3DiVuMUs=
+		1GOlvHmeZeWpWDaW2nfVjg31iRI=
 		</data>
 		<key>Modules/MappedIn.swiftmodule/arm.swiftmodule</key>
 		<data>
-		Jme1NRCV25YN1HZ5dMr0t9EkQEc=
+		Nss26PIzDPUlkGftLJ64zfhRqwc=
 		</data>
 		<key>Modules/MappedIn.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		AfR0XzUKL/6XfJBCF1dF9PBwYOY=
+		z3YBDvydYJqwvUngo/8WDJOPFtU=
 		</data>
 		<key>Modules/MappedIn.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		8Jslu5oFGLPyVAH4MMbHupU8Tw4=
+		xJbeqKawYQLHun1XjZWdeId6wpE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		J68JEjCz2p2wBG+iBEIdnjFD9zs=
-		</data>
-		<key>Pin.scn</key>
-		<data>
-		iHGvTYzNN1+nMeulzjcVZmZoCsU=
-		</data>
-		<key>arrow.mtl</key>
-		<data>
-		YkfHvmjgFydAdXLAb9HOsuahnC8=
-		</data>
-		<key>arrow.obj</key>
-		<data>
-		Y+6TNUUb4QtAzBqMPokGvwkM4MU=
-		</data>
-		<key>mappedin-office.mtl</key>
-		<data>
-		+/kU8EXykSsPNFCTUyImiACYVsw=
-		</data>
-		<key>mappedin-office.obj</key>
-		<data>
-		FheMoFQ+t9sjQ6NIHkNivYK3p48=
-		</data>
-		<key>scene.mtl</key>
-		<data>
-		HKhHWxbLc/T/X88e7Cqt0vttn+w=
-		</data>
-		<key>scene.obj</key>
-		<data>
-		t1yBRxLMwgKqnk2Gncl3lMKv4TI=
-		</data>
-		<key>sherway-gardens.mtl</key>
-		<data>
-		0ZNY3wU3n1IyR2HZcqRh/W0XiRE=
-		</data>
-		<key>sherway-gardens.obj</key>
-		<data>
-		1NODFcU1YFAn9kO7Im7NmKHp/00=
 		</data>
 	</dict>
 	<key>rules</key>

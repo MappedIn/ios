@@ -54,7 +54,7 @@ class ViewController: UIViewController, MapViewDelegate {
     
     @IBAction func directionsStepperChanged(sender: AnyObject) {
         let index = Int(directionsStepper.value)
-        mapView.highlightNode(directions!.path, index: index)
+        mapView.highlightNode(directions!.directions[index].node)
         instructionsLabel.text = directions!.directions[index].instruction
     }
     
@@ -164,12 +164,14 @@ class ViewController: UIViewController, MapViewDelegate {
             if directionsDestinationPolygon != nil {
                 if polygon.entrances.count > 0 {
                 
-                    directions = polygon.entrances.directionsTo(directionsDestinationPolygon!.entrances)
+                    directions = polygon.entrances.directionsTo(directionsDestinationPolygon!.entrances, departFrom: polygon.locations.first, arriveAt: directionsDestinationPolygon!.locations.first)
                     if let path = directions?.path {
                         mapView.drawPath(path)
                         mapView.highlightNode(path, index: 0)
-                        instructionsLabel.text = directions!.directions[0].instruction
-                        directionsStepper.maximumValue = Double(path.count)
+                        print(directions!.directions)
+                        let instruction = directions?.directions?.first?.instruction
+                        instructionsLabel.text = instruction
+                        directionsStepper.maximumValue = Double(directions!.directions.count)
                         directionsStepper.value = 0
                     } else {
                         locationTitleLabel.text = "No path found."

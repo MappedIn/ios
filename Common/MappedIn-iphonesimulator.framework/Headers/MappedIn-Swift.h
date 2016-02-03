@@ -114,8 +114,11 @@ SWIFT_CLASS("_TtC8MappedIn11AppDelegate")
 SWIFT_CLASS("_TtC8MappedIn7MapView")
 @interface MapView : UIView <SCNSceneRendererDelegate>
 
-/// The base path will be drawn with this colour. Cannot change the arrow or it's colour at the moment
+/// The base path will be drawn with this colour.
 @property (nonatomic, strong) UIColor * __nonnull pathColor;
+
+/// The arrow on the path will be drawn with this colour.
+@property (nonatomic, strong) UIColor * __nonnull pathArrowColor;
 - (nonnull instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)loadScene;
 
@@ -125,6 +128,7 @@ SWIFT_CLASS("_TtC8MappedIn7MapView")
 ///
 /// \param index The index of the map to display. Map order is currently undefined, but will be sorted (likely by elevation) in the future.
 - (void)changeMap:(NSInteger)index;
+- (void)clearHighlightedPolygons;
 - (void)renderer:(id <SCNSceneRenderer> __nonnull)renderer willRenderScene:(SCNScene * __nonnull)scene atTime:(NSTimeInterval)time;
 @end
 

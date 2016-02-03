@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MappedInEndpoint</key>
+	<string>https://api-staging.mappedin.com/1/</string>
 	<key>MappedInPassword</key>
-	<string></string>
+	<string>40befa450ee743e213b839dcdca8e936</string>
 	<key>MappedInUsername</key>
-	<string></string>
+	<string>56b28e9b3e8fbb4def000000</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
