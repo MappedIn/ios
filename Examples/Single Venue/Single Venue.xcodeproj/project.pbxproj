@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		DA0AE9521C613047008EA987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AE9511C613047008EA987 /* AppDelegate.swift */; };
 		DA0AE9541C613047008EA987 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AE9531C613047008EA987 /* ViewController.swift */; };
-		DA0AE9571C613047008EA987 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0AE9551C613047008EA987 /* Main.storyboard */; };
 		DA0AE9591C613047008EA987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0AE9581C613047008EA987 /* Assets.xcassets */; };
 		DA0AE95C1C613047008EA987 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0AE95A1C613047008EA987 /* LaunchScreen.storyboard */; };
 		DA0AE9671C613047008EA987 /* Single_VenueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AE9661C613047008EA987 /* Single_VenueTests.swift */; };
 		DA0AE9721C613074008EA987 /* MappedIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0AE9711C613074008EA987 /* MappedIn.framework */; };
 		DA0AE9731C613078008EA987 /* MappedIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0AE9711C613074008EA987 /* MappedIn.framework */; };
 		DA0AE9741C613078008EA987 /* MappedIn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA0AE9711C613074008EA987 /* MappedIn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DA40941E1C62650D003CF5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0AE9551C613047008EA987 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,7 +202,7 @@
 			files = (
 				DA0AE95C1C613047008EA987 /* LaunchScreen.storyboard in Resources */,
 				DA0AE9591C613047008EA987 /* Assets.xcassets in Resources */,
-				DA0AE9571C613047008EA987 /* Main.storyboard in Resources */,
+				DA40941E1C62650D003CF5D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +429,7 @@
 				DA0AE96D1C613047008EA987 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA0AE96E1C613047008EA987 /* Build configuration list for PBXNativeTarget "Single VenueTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +438,7 @@
 				DA0AE9701C613047008EA987 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
