@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     
     var venue = [Venue]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Get a list of all venues your credentials can access, and then pass it to a function that loads the full details of the first one.
