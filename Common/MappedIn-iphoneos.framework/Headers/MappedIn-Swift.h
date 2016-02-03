@@ -89,7 +89,6 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @import UIKit;
 @import SceneKit;
 @import Foundation;
-@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -110,6 +109,8 @@ SWIFT_CLASS("_TtC8MappedIn11AppDelegate")
 @protocol SCNSceneRenderer;
 @class SCNScene;
 
+
+/// MapView is a custom view designed to handle displaying Maps for a Venue. Set the venue property and then call loadScene() to display the first map. From there, you can change maps (usually different floors) with the .setFloor() function, and can draw a path from one node to another with drawPath()
 SWIFT_CLASS("_TtC8MappedIn7MapView")
 @interface MapView : UIView <SCNSceneRendererDelegate>
 
@@ -141,45 +142,8 @@ SWIFT_CLASS("_TtC8MappedIn7MapView")
 /// Redraws the current path. Useful if you've cleared the map for some reason. This is automatically called on a floor change.
 - (void)drawCurrentPath;
 
-/// <code>Draws a segment of a path
-/// 	
-/// - Parameter positionA: start position of the segment
-/// - Parameter positionB: end position of the segment
-/// 
-/// </code>
-- (void)drawPathSegment:(SCNVector3)positionA positionB:(SCNVector3)positionB;
-
-/// <code>Draws a strip with solid color
-/// 
-/// - Parameter positionA: starting position of the strip
-/// - Parameter positionB: end position of the strip
-/// - Parameter pathWidth: width of the path strip
-/// - Parameter pathColor: color of the path strip
-/// - Parameter elevation: elevation of the path strip. i.e. z-coordinate
-/// 
-/// </code>
-- (void)drawPathSegmentStrip:(SCNVector3)positionA positionB:(SCNVector3)positionB pathWidth:(float)pathWidth pathColor:(UIColor * __nonnull)pathColor elevation:(float)elevation;
-
-/// Draws animated arrows along a path segment
-///
-/// \param positionA starting position of the strip
-///
-/// \param positionB end position of the strip
-///
-/// \param pathWidth width of the path strip
-///
-/// \param elevation elevation of the path strip. i.e. z-coordinate
-- (void)drawPathSegmentArrow:(SCNVector3)positionA positionB:(SCNVector3)positionB pathWidth:(float)pathWidth elevation:(float)elevation;
-
 /// Removes the highlight effect from all nodes
 - (void)removeHighlightNode;
-@end
-
-
-SWIFT_CLASS("_TtC8MappedIn13MapViewMarker")
-@interface MapViewMarker : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (BOOL)collidesWithMarker:(MapViewMarker * __nonnull)marker;
 @end
 
 typedef SWIFT_ENUM(NSInteger, MotionType) {

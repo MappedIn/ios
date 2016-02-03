@@ -15,6 +15,9 @@
       location = "group:Examples"
       name = "Examples">
       <FileRef
+         location = "group:Single Venue/Single Venue.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Hello World/Hello World.xcodeproj">
       </FileRef>
    </Group>
