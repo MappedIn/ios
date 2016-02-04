@@ -31,32 +31,9 @@ class ViewController: UIViewController, MapViewDelegate {
     @IBOutlet var locationTitleLabel: UILabel!
     @IBOutlet var locationDescriptionLabel: UILabel!
     @IBOutlet var navigateToLocationButton: UIButton!
-    
-    @IBOutlet var instructionsLabel: UILabel!
-    
-    @IBAction func navigateToLocationButtonTapped(sender: UIButton) {
-        directionsView.hidden = false
-        if currentlySelectedPolygon?.entrances.count > 0 {
-            instructionsLabel.text = "Select origin"
-            directionsDestinationPolygon = currentlySelectedPolygon
-        } else {
-            instructionsLabel.text = "This location has no entrances, select another"
-        }
-        
-        
-    }
-    
     @IBOutlet weak var detailsView: UIView!
     
-    @IBAction func mapStepperChanged(sender: UIStepper) {
-        mapView.changeMap(Int(sender.value))
-    }
-    
-    @IBAction func directionsStepperChanged(sender: AnyObject) {
-        let index = Int(directionsStepper.value)
-        mapView.highlightNode(directions!.directions[index].node)
-        instructionsLabel.text = directions!.directions[index].instruction
-    }
+    @IBOutlet var instructionsLabel: UILabel!
     
     private var directionsDestinationPolygon: Polygon?
     private var currentlySelectedPolygon: Polygon?
@@ -87,6 +64,7 @@ class ViewController: UIViewController, MapViewDelegate {
         clearLocationInformation()
     }
     
+    /// Display a big error message if you forget to set up your credentials
     func logError(errorMessage: String) {
         // Send this back to the main thread to do UI work
         dispatch_async(dispatch_get_main_queue()) {
@@ -99,27 +77,34 @@ class ViewController: UIViewController, MapViewDelegate {
         }
     }
     
+    /// Fill in the details view with location information
     func displayLocationInformation(location: Location) {
 
+        // This image should probably be cached and/or preloaded
         if let image = loadImageFromURL(location.picture?[150]) {
             locationImageView.image = image
         }
         locationTitleLabel.text = location.name
         locationDescriptionLabel.text = location.description
         navigateToLocationButton.hidden = false
-        if directions == nil {
-            instructionsLabel.text = ""
-        }
+        detailsView.hidden = false
     }
     
+    /// Clear the highlighted polygons, and either hide the details view, or show the venue information instead of the details of a specific location
     func clearLocationInformation() {
-        if let image = loadImageFromURL(mapView.venue?.logo?[150]) {
-           locationImageView.image = image
-        }
+        mapView.clearHighlightedPolygons()
         
-        locationTitleLabel.text = mapView.venue?.name
-        locationDescriptionLabel.text = "Select a location"
-        navigateToLocationButton.hidden = true
+        // Use this to display the Venue details instead of hiding the details view
+        //if let image = loadImageFromURL(mapView.venue?.logo?[150]) {
+        //   locationImageView.image = image
+        //}
+        
+        //locationTitleLabel.text = mapView.venue?.name
+        //locationDescriptionLabel.text = "Select a location"
+        //navigateToLocationButton.hidden = true
+        
+        detailsView.hidden = true
+
     }
     
     func clearDirections() {
@@ -156,42 +141,63 @@ class ViewController: UIViewController, MapViewDelegate {
     /// Parameter polygon: the Polygon the user tapped on
     func polygonTapped(polygon: Polygon) {
         
+        // Don't do anything if we'e already in navigation mode
         if directions != nil {
             return
         }
         
+        // Clear the old highlight
         mapView.clearHighlightedPolygons()
-        if polygon.locations.count > 0 {
-            currentlySelectedPolygon = polygon
-            mapView.highlightPolygon(polygon)
-            
-            if directionsDestinationPolygon != nil {
-                if polygon.entrances.count > 0 {
-                
-                    directions = polygon.entrances.directionsTo(directionsDestinationPolygon!.entrances, departFrom: polygon.locations.first, arriveAt: directionsDestinationPolygon!.locations.first)
-                    if let path = directions?.path {
-                        mapView.drawPath(path)
-                        print(path)
-                        mapView.highlightNode(path, index: 0)
-                        print(directions!.directions)
-                        let instruction = directions?.directions?.first?.instruction
-                        instructionsLabel.text = instruction
-                        directionsStepper.maximumValue = Double(directions!.directions.count)
-                        directionsStepper.value = 0
-                    } else {
-                        locationTitleLabel.text = "No path found."
-                    }
-                    
-                } else {
-                    locationTitleLabel.text = "Location has no entrances. Select another."
-                }
-            
-            } else {
-            
-                displayLocationInformation(polygon.locations[0])
-            
-            }
+        
+        // If the polygon doesn't belong to any locations, bail out
+        if polygon.locations.count == 0 {
+            return
         }
+        
+        // Keep track of this polygon for when we do directions, incase a location has multiple polygons
+        currentlySelectedPolygon = polygon
+        mapView.highlightPolygon(polygon, color: UIColor.blueColor())
+        
+        // If the user hit the "Go" button, the next polygon tapped will be the origin for the directions
+        if directionsDestinationPolygon != nil {
+            // Make sure the polygon actually has entrances
+            if polygon.entrances.count > 0 {
+                
+                // Get directions between the array of entrances for each polygon
+                directions = polygon.entrances.directionsTo(directionsDestinationPolygon!.entrances, departFrom: polygon.locations.first, arriveAt: directionsDestinationPolygon!.locations.first)
+                
+                // Make sure we have a valid path. Everything SHOULD be connected, but you never know.
+                if let path = directions?.path {
+                    
+                    //Draw the path and highlight the starting node
+                    mapView.drawPath(path)
+                    if let startingNode = directions?.directions?.first?.node {
+                        mapView.highlightNode(startingNode)
+                    } else {
+                        // Incase there are no dirction instructions for some reason
+                        mapView.highlightNode(path, index: 0)
+                    }
+                    // Display the first instruction to the user. You'd also show an icon for the action
+                    let instruction = directions?.directions?.first?.instruction
+                    instructionsLabel.text = instruction
+                    
+                    // Set up the directions stepper to let the user jump from one intruction to the other
+                    directionsStepper.maximumValue = Double(directions!.directions.count)
+                    directionsStepper.value = 0
+                } else {
+                    locationTitleLabel.text = "No path found."
+                }
+                
+            } else {
+                locationTitleLabel.text = "Location has no entrances. Select another."
+            }
+        // If we aren't starting directions, show the information for the location that belongs to the polygon.
+        // There is probably just the one, if there are mutiples it should be something venue specific you know how to handle.
+        } else {
+            displayLocationInformation(polygon.locations[0])
+            
+        }
+        
     }
     
     /// Called when the user cleared their location selction. Useful to let you clear any aditional information you were displaying for the location
@@ -212,6 +218,31 @@ class ViewController: UIViewController, MapViewDelegate {
         
     }
 
+    // MARK: Actions
+    /// Prompt the user to select where they are starting their navigation from
+    @IBAction func navigateToLocationButtonTapped(sender: UIButton) {
+        directionsView.hidden = false
+        if currentlySelectedPolygon?.entrances.count > 0 {
+            instructionsLabel.text = "Select origin"
+            directionsDestinationPolygon = currentlySelectedPolygon
+        } else {
+            instructionsLabel.text = "This location has no entrances, select another"
+        }
+        
+        
+    }
+    
+    /// Multiple maps is usually mutiple floors, so this lets us step up and down then
+    @IBAction func mapStepperChanged(sender: UIStepper) {
+        mapView.changeMap(Int(sender.value))
+    }
+    
+    /// Walk through the directions, highlighting the right node and displaying the right instruction
+    @IBAction func directionsStepperChanged(sender: AnyObject) {
+        let index = Int(directionsStepper.value)
+        mapView.highlightNode(directions!.directions[index].node)
+        instructionsLabel.text = directions!.directions[index].instruction
+    }
     
 }
 
