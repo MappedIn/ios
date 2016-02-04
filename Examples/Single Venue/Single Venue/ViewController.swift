@@ -126,6 +126,7 @@ class ViewController: UIViewController, MapViewDelegate {
         directionsView.hidden = true
         directions = nil
         directionsDestinationPolygon = nil
+        mapView.clearPaths(true)
     }
     
     func loadImageFromURL(url: NSURL?) -> UIImage? {
@@ -155,18 +156,22 @@ class ViewController: UIViewController, MapViewDelegate {
     /// Parameter polygon: the Polygon the user tapped on
     func polygonTapped(polygon: Polygon) {
         
+        if directions != nil {
+            return
+        }
         
         mapView.clearHighlightedPolygons()
         if polygon.locations.count > 0 {
             currentlySelectedPolygon = polygon
             mapView.highlightPolygon(polygon)
-        
+            
             if directionsDestinationPolygon != nil {
                 if polygon.entrances.count > 0 {
                 
                     directions = polygon.entrances.directionsTo(directionsDestinationPolygon!.entrances, departFrom: polygon.locations.first, arriveAt: directionsDestinationPolygon!.locations.first)
                     if let path = directions?.path {
                         mapView.drawPath(path)
+                        print(path)
                         mapView.highlightNode(path, index: 0)
                         print(directions!.directions)
                         let instruction = directions?.directions?.first?.instruction
