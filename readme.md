@@ -4,12 +4,12 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Setup
 1. Start by cloning this repo (or downloading the zip if you don't like git). 
-2. Open the included Workspace in XCode. 
-3. Build the Example project
-  * You may notice that before the build, `MappedIn.framework` isn't present, even though it's referenced in the Example project. This is due to a bug in XCode 7 which breaks "fat frameworks" (ie, those that contain files for multiple architectures). We have solved this by providing separate `MappedIn-iphonesimulator.framework` and `MappedIn-iphoneos.framework` files, and the included `framework-swap.sh` script, which runs at the start of the build process and copies the right framework into `MappedIn.framework`. 
-  * *Make sure that you include this step in any new MappedIn-enabled projects you create!*
-4.  Open info.plist and input your MappedInUsername and MappedInPassword. If you don't know what those are, talk to your MappedIn representative.
-5.  Run!
+2. Use [Cocoa Pods](https://cocoapods.org/) to install the latest version of the `MappedIn.framework`
+   * The sample repo contains an example `.podfile` configured to install the framework.
+3. Open the included Workspace in XCode. 
+4. Build the Example project
+5. Open info.plist and input your MappedInUsername and MappedInPassword. If you don't know what those are, talk to your MappedIn representative.
+6. Run!
 
 ## API Quick Start
 You can view all the documentation in this project's [GitHub Page](http://mappedin.github.io/ios/), but here's a quick start guide to just displaying a Map.
@@ -35,4 +35,4 @@ The `Venue` object will contain all information associated with a given venue (o
 ### MapView
 The `MapView` class will display your your map for you/ Once you have a populated venue, set the `.venue` property on your `MapView` and call `yourMapView.loadScene()`
 
-That's the basics. Directions and Markers and other features will be covered in a future tutorial.
+That's the basics. Directions, Markers and other features will be covered in a future tutorial, but you can see them in action right now in the Single Venue project.
