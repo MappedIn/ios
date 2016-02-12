@@ -1,0 +1,10 @@
+PODS:
+  - MappedIn (0.1-alpha)
+
+DEPENDENCIES:
+  - MappedIn (~> 0.1-alpha)
+
+SPEC CHECKSUMS:
+  MappedIn: 691d72069730ce987e5c3abf30e5697bc52c1d1c
+
+COCOAPODS: 0.39.0
