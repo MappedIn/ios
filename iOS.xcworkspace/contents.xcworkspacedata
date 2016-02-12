@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:Common"
-      name = "Common">
-      <FileRef
-         location = "group:MappedIn.framework">
-      </FileRef>
-      <FileRef
-         location = "group:framework-swap.sh">
-      </FileRef>
-   </Group>
-   <Group
-      location = "group:Examples"
-      name = "Examples">
-      <FileRef
-         location = "group:Single Venue/Single Venue.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Hello World/Hello World.xcodeproj">
-      </FileRef>
-   </Group>
+   <FileRef
+      location = "group:Examples/Hello World/Hello World.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/Single Venue/Single Venue.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

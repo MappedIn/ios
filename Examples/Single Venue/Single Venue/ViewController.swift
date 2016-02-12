@@ -128,7 +128,7 @@ class ViewController: UIViewController, MapViewDelegate {
     /// Since data is being pulled down from the Internet, this is called when the scene is finished loading and ready for use.
     func sceneLoaded() {
         print("Scene loaded!")
-        let mapCount = mapView.venue?.maps?.count
+        let mapCount = mapView.venue?.maps.count
         if mapCount > 0 {
             mapStepper.maximumValue = Double(mapCount!)
         } else {
@@ -204,6 +204,7 @@ class ViewController: UIViewController, MapViewDelegate {
     func nothingTapped() {
         clearLocationInformation()
         clearDirections()
+        mapView.removeAllMakers()
     }
     
     /// Called when the user has started moving the map around
@@ -242,6 +243,18 @@ class ViewController: UIViewController, MapViewDelegate {
         let index = Int(directionsStepper.value)
         mapView.highlightNode(directions!.directions[index].node)
         instructionsLabel.text = directions!.directions[index].instruction
+    }
+    
+    @IBAction func showLocationsButtonPressed(sender: UIButton) {
+        mapView.removeAllMakers()
+        
+        for polygon in mapView.venue!.polygons {
+            if let location = polygon.locations.first {
+                let marker = MapViewMarker2DLabel(text: location.name)
+                marker.anchor = mapView.getAnchor(polygon)
+                mapView.addMarker(marker)
+            }
+        }
     }
     
 }
