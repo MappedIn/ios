@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MotionType Enum Reference</title>
+    <title>MapViewCamera Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/MotionType" class="dashAnchor"></a>
-    <a title="MotionType Enum Reference"></a>
+    <a name="//apple_ref/swift/Class/MapViewCamera" class="dashAnchor"></a>
+    <a title="MapViewCamera Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">MappedIn Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">MappedIn Reference</a>
         <img id="carat" src="../img/carat.png" />
-        MotionType Enum Reference
+        MapViewCamera Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -32,7 +32,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+                <a href="../Classes.html#/s:C8MappedIn11AppDelegate">AppDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Category.html">Category</a>
@@ -56,6 +56,21 @@
                 <a href="../Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes.html#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewCamera.html">MapViewCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker.html">MapViewMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker2D.html">MapViewMarker2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/Node.html">Node</a>
               </li>
               <li class="nav-group-task">
@@ -70,33 +85,16 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Enums/MotionType.html">MotionType</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_4NodeS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_7PolygonS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_3MapS0__Sb">==(_:_:)</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb8callbackFS0_T__T_">getVenue(_:accessible:callback:)</a>
               </li>
@@ -118,8 +116,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>MotionType</h1>
-            <p>Undocumented</p>
+            <h1>MapViewCamera</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewCamera</span></code></pre>
+
+                </div>
+              </div>
+            <p>The MapViewCamera allows you to control the camera on the MapView. Adjust the position, rotation, and zoom level</p>
 
           </section>
           <section class="section task-group-section">
@@ -128,9 +132,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8MappedIn10MotionType7ZoomingFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Zooming" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8MappedIn10MotionType7ZoomingFMS0_S0_">Zooming</a>
+                    <a name="/s:vC8MappedIn13MapViewCamera14maxCameraPitchSf"></a>
+                    <a name="//apple_ref/swift/Property/maxCameraPitch" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera14maxCameraPitchSf">maxCameraPitch</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -138,8 +142,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This property controls the maximum camera pitch, in radians. If you set this too high, you would be able to rotate under the venue.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxCameraPitch</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">1.2</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -147,9 +159,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8MappedIn10MotionType7PanningFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Panning" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8MappedIn10MotionType7PanningFMS0_S0_">Panning</a>
+                    <a name="/s:vC8MappedIn13MapViewCamera8positionT1xSf1ySf_"></a>
+                    <a name="//apple_ref/swift/Property/position" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera8positionT1xSf1ySf_">position</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -157,8 +169,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Controls the camera&rsquo;s x and y position. NOTE: The coordinates used don&rsquo;t really mean anything at this stage, so don&rsquo;t hardcode them as they will change.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">position</span><span class="p">:</span> <span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -166,9 +186,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8MappedIn10MotionType8RotatingFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Rotating" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8MappedIn10MotionType8RotatingFMS0_S0_">Rotating</a>
+                    <a name="/s:vC8MappedIn13MapViewCamera8rotationT5pitchSf3yawSf_"></a>
+                    <a name="//apple_ref/swift/Property/rotation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera8rotationT5pitchSf3yawSf_">rotation</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -176,8 +196,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Controls the pitch (up and down) and yaw (clockwise around the map) of the camera. 0 pitch and 0 yaw would be looking straight down on the map in it&rsquo;s default orientation</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">rotation</span><span class="p">:</span> <span class="p">(</span><span class="nv">pitch</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">yaw</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -185,9 +213,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8MappedIn10MotionType5MultiFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Multi" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8MappedIn10MotionType5MultiFMS0_S0_">Multi</a>
+                    <a name="/s:vC8MappedIn13MapViewCamera4zoomSf"></a>
+                    <a name="//apple_ref/swift/Property/zoom" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera4zoomSf">zoom</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -195,8 +223,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Controls how close the camera is to the map. The units used here don&rsquo;t mean anything right now</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">zoom</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -206,7 +242,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-03)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

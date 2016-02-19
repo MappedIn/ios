@@ -32,7 +32,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+                <a href="../Classes.html#/s:C8MappedIn11AppDelegate">AppDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Category.html">Category</a>
@@ -56,6 +56,21 @@
                 <a href="../Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes.html#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewCamera.html">MapViewCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker.html">MapViewMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker2D.html">MapViewMarker2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/Node.html">Node</a>
               </li>
               <li class="nav-group-task">
@@ -70,33 +85,16 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Enums/MotionType.html">MotionType</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_4NodeS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_7PolygonS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_3MapS0__Sb">==(_:_:)</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb8callbackFS0_T__T_">getVenue(_:accessible:callback:)</a>
               </li>
@@ -121,15 +119,15 @@
             <h1>Location</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Location</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Navigatable</span></code></pre>
 
                 </div>
               </div>
             <p>A location is something like a store or washroom on a map. It has a name and type, description, logo, and picture (of the storefront, for example).</p>
 
-<p>A location can also belong to one or more categories (Store, Jewelery Store, etc), and will be linked to one or more nodes and polygons.</p>
+<p>A location can also belong to zero or more Categories (Store, Jewelery Store, etc), and will be linked to zero or more Nodes and Polygons.</p>
 
-<p>A location&rsquo;s nodes can be on multiple maps, or in multiple non-adjacent places on the same map. For example, all washroom at a given venue could belong to one location, or a department store could live on multiple floors.</p>
+<p>A location&rsquo;s nodes can be on multiple maps, or in multiple non-adjacent places on the same map. For example, all washroom at a given venue could belong to one Location, or a department store could live on multiple floors.</p>
 
           </section>
           <section class="section task-group-section">
@@ -138,9 +136,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn8Location4nameGSQSS_"></a>
+                    <a name="/s:vC8MappedIn8Location4nameSS"></a>
                     <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn8Location4nameGSQSS_">name</a>
+                    <a class="token" href="#/s:vC8MappedIn8Location4nameSS">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -155,7 +153,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span><span class="k">return</span> <span class="n">_name</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -165,9 +163,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn8Location4typeGSQSS_"></a>
+                    <a name="/s:vC8MappedIn8Location4typeSS"></a>
                     <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn8Location4typeGSQSS_">type</a>
+                    <a class="token" href="#/s:vC8MappedIn8Location4typeSS">type</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -182,7 +180,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span><span class="k">return</span> <span class="n">_type</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -209,7 +207,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span><span class="k">return</span> <span class="n">_description</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -236,7 +234,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">logo</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">logo</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span> <span class="p">{</span><span class="k">return</span> <span class="n">_logo</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -263,7 +261,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">picture</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">picture</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span> <span class="p">{</span><span class="k">return</span> <span class="n">_picture</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -290,7 +288,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">categories</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Category</span><span class="p">]()</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">categories</span><span class="p">:</span> <span class="p">[</span><span class="kt">Category</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_categories</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -310,14 +308,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A list of nodes belonging to this Location. Most locations might have one node, but depending on the venue there could be several, and they could be non-adjacent or on different maps.</p>
+                        <p>A collection of nodes attached to this Location. Most locations might have one node, but depending on the venue there could be several, and they could be non-adjacent or on different maps.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Node</span><span class="p">]()</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">nodes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Node</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_nodes</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -337,487 +335,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A collection of polygons attached to this Location. A many-to-many relationship.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Location</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">polygons</span><span class="p">:</span> <span class="p">[</span><span class="kt">Polygon</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_polygons</span><span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Pathing%20functions"></a>
-                <a name="//apple_ref/swift/Section/Pathing functions" class="dashAnchor"></a>
-                <a href="#/Pathing%20functions">
-                  <h3 class="section-name">Pathing functions</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC8MappedIn8Location12directionsToFS0_FS0_GSqCS_10Directions_"></a>
-                    <a name="//apple_ref/swift/Method/directionsTo(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8MappedIn8Location12directionsToFS0_FS0_GSqCS_10Directions_">directionsTo(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compute directions from this location to another location.</p>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter destination: Location to navigate to
-
-</div>
-
-<div class="aside aside-returns">
-    <p class="aside-title">Returns</p>
-    A list of Directions
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">directionsTo</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">Location</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Directions</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>destination</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Location to navigate to</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A list of Directions</p>
-
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC8MappedIn8Location12directionsToFS0_FTCS_4Node8arriveAtGSqS0___GSqCS_10Directions_"></a>
-                    <a name="//apple_ref/swift/Method/directionsTo(_:arriveAt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8MappedIn8Location12directionsToFS0_FTCS_4Node8arriveAtGSqS0___GSqCS_10Directions_">directionsTo(_:arriveAt:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compute directions from this location to a specific node.</p>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter destination: Node to navigate to
-
-</div>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter arriveAt: An optional Location to arrive at (for the final text step in the directions)
-
-</div>
-
-<div class="aside aside-returns">
-    <p class="aside-title">Returns</p>
-    A list of Directions
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">directionsTo</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">Node</span><span class="p">,</span> <span class="nv">arriveAt</span><span class="p">:</span> <span class="kt">Location</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Directions</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>destination</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Node to navigate to</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>arriveAt</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional Location to arrive at (for the final text step in the directions)</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A list of Directions</p>
-
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC8MappedIn8Location12directionsToFS0_FTGSaCS_4Node_8arriveAtGSqS0___GSqCS_10Directions_"></a>
-                    <a name="//apple_ref/swift/Method/directionsTo(_:arriveAt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8MappedIn8Location12directionsToFS0_FTGSaCS_4Node_8arriveAtGSqS0___GSqCS_10Directions_">directionsTo(_:arriveAt:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compute directions from this location to the nearest of the provided nodes</p>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter destinations: A list of Nodes representing potential destinations
-
-</div>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter arriveAt: An optional Location to arrive at (for the final text step in the directions)
-
-</div>
-
-<div class="aside aside-returns">
-    <p class="aside-title">Returns</p>
-    A list of Directions to the closest of the nodes
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">directionsTo</span><span class="p">(</span><span class="nv">destinations</span><span class="p">:</span> <span class="p">[</span><span class="kt">Node</span><span class="p">],</span> <span class="nv">arriveAt</span><span class="p">:</span> <span class="kt">Location</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Directions</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>destinations</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A list of Nodes representing potential destinations</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>arriveAt</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional Location to arrive at (for the final text step in the directions)</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A list of Directions to the closest of the nodes</p>
-
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC8MappedIn8Location14directionsFromFS0_FS0_GSqCS_10Directions_"></a>
-                    <a name="//apple_ref/swift/Method/directionsFrom(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8MappedIn8Location14directionsFromFS0_FS0_GSqCS_10Directions_">directionsFrom(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compute directions to this location from another location.</p>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter origin: Location to navigate from
-
-</div>
-
-<div class="aside aside-returns">
-    <p class="aside-title">Returns</p>
-    A list of Directions
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">directionsFrom</span><span class="p">(</span><span class="nv">origin</span><span class="p">:</span> <span class="kt">Location</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Directions</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>origin</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Location to navigate from</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A list of Directions</p>
-
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC8MappedIn8Location14directionsFromFS0_FTCS_4Node10departFromGSqS0___GSqCS_10Directions_"></a>
-                    <a name="//apple_ref/swift/Method/directionsFrom(_:departFrom:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8MappedIn8Location14directionsFromFS0_FTCS_4Node10departFromGSqS0___GSqCS_10Directions_">directionsFrom(_:departFrom:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compute directions to this location from a specific node.</p>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter origin: Node to navigate from
-
-</div>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter arriveAt: An optional Location to depart from (for the first text step in the directions)
-
-</div>
-
-<div class="aside aside-returns">
-    <p class="aside-title">Returns</p>
-    A list of Directions
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">directionsFrom</span><span class="p">(</span><span class="nv">origin</span><span class="p">:</span> <span class="kt">Node</span><span class="p">,</span> <span class="nv">departFrom</span><span class="p">:</span> <span class="kt">Location</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Directions</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>origin</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Node to navigate from</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>arriveAt</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional Location to depart from (for the first text step in the directions)</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A list of Directions</p>
-
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC8MappedIn8Location14directionsFromFS0_FTGSaCS_4Node_10departFromGSqS0___GSqCS_10Directions_"></a>
-                    <a name="//apple_ref/swift/Method/directionsFrom(_:departFrom:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8MappedIn8Location14directionsFromFS0_FTGSaCS_4Node_10departFromGSqS0___GSqCS_10Directions_">directionsFrom(_:departFrom:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compute directions to this location from the nearest of the provided nodes</p>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter origins: A list of Nodes representing potential origins
-
-</div>
-
-<div class="aside aside-parameter">
-    <p class="aside-title">Parameter</p>
-    Parameter arriveAt: An optional Location to depart from (for the first text step in the directions)
-
-</div>
-
-<div class="aside aside-returns">
-    <p class="aside-title">Returns</p>
-    A list of Directions from the closest of the nodes
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">directionsFrom</span><span class="p">(</span><span class="nv">origins</span><span class="p">:</span> <span class="p">[</span><span class="kt">Node</span><span class="p">],</span> <span class="nv">departFrom</span><span class="p">:</span> <span class="kt">Location</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Directions</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>origins</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A list of Nodes representing potential origins</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>arriveAt</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional Location to depart from (for the first text step in the directions)</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A list of Directions from the closest of the nodes</p>
-
                       </div>
                     </section>
                   </div>
@@ -827,7 +354,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-03)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

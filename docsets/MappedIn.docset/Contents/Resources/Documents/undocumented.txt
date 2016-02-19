@@ -9,30 +9,28 @@ Directions.swift
 	case At
 	case Past
 	case Before
+	public protocol Navigatable
+	public protocol Navigatable
+	public var navigatableNodes: [Node]
+MapViewMarker2D.swift
+	override public var hidden:Bool
 MapView.swift
 	@objc public enum MotionType:Int
-	case Zooming, Panning, Rotating, Multi
-	case Zooming, Panning, Rotating, Multi
-	case Zooming, Panning, Rotating, Multi
-	case Zooming, Panning, Rotating, Multi
 	required public init(coder aDecoder: NSCoder)
-	public func loadScene ()
-	public func highlightPolygon(polygon: Polygon, color: UIColor = UIColor.redColor())
-	public func clearHighlightedPolygons()
 	public func renderer(renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: NSTimeInterval)
 Vortex.swift
-	public var accessible: Bool!
+	public var accessible: Bool {return _accessible}
 Node.swift
+	public var navigatableNodes: [Node] {return [self]}
 	public func == (nodeA: Node, nodeB: Node) -> Bool
 Polygon.swift
+	public var navigatableNodes: [Node] {return entrances}
 	public var hashValue: Int = 0
 	public func == (polygonA: Polygon, polygonB: Polygon) -> Bool
-Venue.swift
-	public var polygons: [Polygon]? = nil
 Location.swift
-	public var polygons = [Polygon]()
-MapViewDirections.swift
-	struct MapViewDirectionsConstants
-	struct MapViewDirectionsPathNodes
+	public var navigatableNodes: [Node]
+MapViewMarker.swift
+	public func == (markerA: MapViewMarker, markerB: MapViewMarker) -> Bool
 Map.swift
 	public var hashValue: Int = 0
+	public func == (mapA: Map, mapB: Map) -> Bool

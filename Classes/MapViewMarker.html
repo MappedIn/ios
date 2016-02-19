@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ImageCollection Class Reference</title>
+    <title>MapViewMarker Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/ImageCollection" class="dashAnchor"></a>
-    <a title="ImageCollection Class Reference"></a>
+    <a name="//apple_ref/swift/Class/MapViewMarker" class="dashAnchor"></a>
+    <a title="MapViewMarker Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">MappedIn Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">MappedIn Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ImageCollection Class Reference
+        MapViewMarker Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -116,26 +116,32 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ImageCollection</h1>
+            <h1>MapViewMarker</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ImageCollection</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
-            <p>A collection of references to images of various sizes. Use myImageCollection[size] to get an image of that size or greater (in display units multiplied by display scale).
-Gives you the URL of the image you need to download.</p>
+            <p>A visual element that can be placed overtop of a Mapview. Currently, only the child MapViewMarker2D can actually be used, with either an image or text.</p>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:sC8MappedIn15ImageCollection9subscriptFSiCSo5NSURL"></a>
-                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:sC8MappedIn15ImageCollection9subscriptFSiCSo5NSURL">subscript(_:)</a>
+                    <a name="/s:vC8MappedIn13MapViewMarker9hashValueSi"></a>
+                    <a name="//apple_ref/swift/Property/hashValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewMarker9hashValueSi">hashValue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -143,14 +149,80 @@ Gives you the URL of the image you need to download.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tries to return an image url whose maximum dimension meets or exceeds the specified value in display units multiplied by display scale. If resolution is not available will return largest available.</p>
+                        <p>A unique value representing this class, for use in Collections</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hashValue</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8MappedIn13MapViewMarker6anchorGSqCS_13MapViewAnchor_"></a>
+                    <a name="//apple_ref/swift/Property/anchor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewMarker6anchorGSqCS_13MapViewAnchor_">anchor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A marker must be anchored to a certain point on the map to allow camera rotation and map switching</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">anchor</span><span class="p">:</span><span class="kt">MapViewAnchor</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Functions"></a>
+                <a name="//apple_ref/swift/Section/Functions" class="dashAnchor"></a>
+                <a href="#/Functions">
+                  <h3 class="section-name">Functions</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8MappedIn13MapViewMarker12markerTappedGSqFT6markerS0__T__"></a>
+                    <a name="//apple_ref/swift/Property/markerTapped" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewMarker12markerTappedGSqFT6markerS0__T__">markerTapped</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If you would like to do something when this marker is tapped (keeping in mind it will stop any taps on Polygons and such below it), set this property.
+The function will be executed with the Marker that was tapped, for your reference.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">markerTapped</span><span class="p">:</span> <span class="p">((</span><span class="nv">marker</span><span class="p">:</span> <span class="kt">MapViewMarker</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span></code></pre>
 
                         </div>
                       </div>

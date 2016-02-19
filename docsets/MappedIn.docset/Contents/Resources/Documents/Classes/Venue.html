@@ -32,7 +32,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+                <a href="../Classes.html#/s:C8MappedIn11AppDelegate">AppDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Category.html">Category</a>
@@ -56,6 +56,21 @@
                 <a href="../Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes.html#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewCamera.html">MapViewCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker.html">MapViewMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker2D.html">MapViewMarker2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/Node.html">Node</a>
               </li>
               <li class="nav-group-task">
@@ -70,33 +85,16 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Enums/MotionType.html">MotionType</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_4NodeS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_7PolygonS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_3MapS0__Sb">==(_:_:)</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb8callbackFS0_T__T_">getVenue(_:accessible:callback:)</a>
               </li>
@@ -125,11 +123,22 @@
 
                 </div>
               </div>
-            <p>A Venue is a specific place (like a mall) with one or more maps (typically representing different floors) and locations (stores, washrooms, elevators, etc) that belong to the venue and have specific locations on certain maps.</p>
+            <p>A Venue is a specific place (like a mall) with one or more maps (typically representing different floors) and locations (stores, washrooms, elevators, etc).</p>
 
-<p>A Venue can be in two states: 
-    0. <code>getVenues</code> - When it&rsquo;s initially pulled from the MappedIn API as part of a list of all venues your credentials have access to, it only contains basic information like name, logo and cover image.
-    0. <code>getVenue</code> - When you retrieve the full details of a given venue, the locations, categories, maps, nodes and vorticies will be populated.</p>
+<p>Each Location is linked to:</p>
+
+<ul>
+<li>zero or more Polygons which represents it&rsquo;s phyiscal presence on the map</li>
+<li>zero or more nodes that represent entrances</li>
+<li>zero or more Categories that group several Locations together</li>
+</ul>
+
+<p>A Venue can be in one of two states:</p>
+
+<ol>
+<li>As returned by <strong>getVenues()</strong> - When it&rsquo;s initially pulled from the MappedIn API as part of a list of all venues your credentials have access to, it only contains basic information like name, logo and cover image.</li>
+<li>As returned by <strong>getVenue()</strong> - When you retrieve the full details of a given venue, the locations, categories, maps, nodes and vorticies will be populated.</li>
+</ol>
 
           </section>
           <section class="section task-group-section">
@@ -145,9 +154,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn5Venue4nameGSQSS_"></a>
+                    <a name="/s:vC8MappedIn5Venue4nameSS"></a>
                     <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn5Venue4nameGSQSS_">name</a>
+                    <a class="token" href="#/s:vC8MappedIn5Venue4nameSS">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -162,7 +171,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span><span class="k">return</span> <span class="n">_name</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -189,7 +198,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">logo</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">logo</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span> <span class="p">{</span><span class="k">return</span> <span class="n">_logo</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -199,9 +208,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn5Venue10coverImageGSqCS_15ImageCollection_"></a>
-                    <a name="//apple_ref/swift/Property/coverImage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn5Venue10coverImageGSqCS_15ImageCollection_">coverImage</a>
+                    <a name="/s:vC8MappedIn5Venue7pictureGSqCS_15ImageCollection_"></a>
+                    <a name="//apple_ref/swift/Property/picture" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn5Venue7pictureGSqCS_15ImageCollection_">picture</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -216,7 +225,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">coverImage</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">picture</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span> <span class="p">{</span><span class="k">return</span> <span class="n">_picture</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -227,19 +236,19 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Full%20details%20pulled%20in%20after%20getVenue%20is%20called%20on%20this%20venue%20specifically"></a>
-                <a name="//apple_ref/swift/Section/Full details pulled in after getVenue is called on this venue specifically" class="dashAnchor"></a>
-                <a href="#/Full%20details%20pulled%20in%20after%20getVenue%20is%20called%20on%20this%20venue%20specifically">
-                  <h3 class="section-name">Full details pulled in after getVenue is called on this venue specifically</h3>
+                <a name="/Full%20details%20pulled%20in%20after%20getVenue%20is%20called%20on%20this%20Venue%20specifically"></a>
+                <a name="//apple_ref/swift/Section/Full details pulled in after getVenue is called on this Venue specifically" class="dashAnchor"></a>
+                <a href="#/Full%20details%20pulled%20in%20after%20getVenue%20is%20called%20on%20this%20Venue%20specifically">
+                  <h3 class="section-name">Full details pulled in after getVenue is called on this Venue specifically</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn5Venue9locationsGSqGSaCS_8Location__"></a>
+                    <a name="/s:vC8MappedIn5Venue9locationsGSaCS_8Location_"></a>
                     <a name="//apple_ref/swift/Property/locations" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn5Venue9locationsGSqGSaCS_8Location__">locations</a>
+                    <a class="token" href="#/s:vC8MappedIn5Venue9locationsGSaCS_8Location_">locations</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -247,14 +256,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A list of all locations (stores, washrooms, landmarks, etc) for a given venue. Will be <code>nil</code> until populated by <code>getVenue</code></p>
+                        <p>A collection of all Location&rsquo;s (stores, washrooms, landmarks, etc) in the Venue.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">Location</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">Location</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_locations</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -264,9 +273,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn5Venue10categoriesGSqGSaCS_8Category__"></a>
+                    <a name="/s:vC8MappedIn5Venue10categoriesGSaCS_8Category_"></a>
                     <a name="//apple_ref/swift/Property/categories" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn5Venue10categoriesGSqGSaCS_8Category__">categories</a>
+                    <a class="token" href="#/s:vC8MappedIn5Venue10categoriesGSaCS_8Category_">categories</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -274,14 +283,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A list of all categories a Location might be a part of for given venue (Washroom, Restraunt, Jewelry Store, etc). Wil be <code>nil</code> until populated by <code>getVenue</code></p>
+                        <p>A collection of all Category&rsquo;s a Location might be a part of in the Venue (Washroom, Restraunt, Jewelry Store, etc).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">categories</span><span class="p">:</span> <span class="p">[</span><span class="kt">Category</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">categories</span><span class="p">:</span> <span class="p">[</span><span class="kt">Category</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_categories</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -291,9 +300,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn5Venue4mapsGSqGSaCS_3Map__"></a>
+                    <a name="/s:vC8MappedIn5Venue4mapsGSaCS_3Map_"></a>
                     <a name="//apple_ref/swift/Property/maps" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn5Venue4mapsGSqGSaCS_3Map__">maps</a>
+                    <a class="token" href="#/s:vC8MappedIn5Venue4mapsGSaCS_3Map_">maps</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -301,14 +310,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A list of all Maps belonging to a given venue. Typically represents different floors</p>
+                        <p>A collection of all Maps belonging to the Venue. Typically represents different floors</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maps</span><span class="p">:</span> <span class="p">[</span><span class="kt">Map</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maps</span><span class="p">:</span> <span class="p">[</span><span class="kt">Map</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_maps</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -318,9 +327,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn5Venue5nodesGSqGSaCS_4Node__"></a>
+                    <a name="/s:vC8MappedIn5Venue5nodesGSaCS_4Node_"></a>
                     <a name="//apple_ref/swift/Property/nodes" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn5Venue5nodesGSqGSaCS_4Node__">nodes</a>
+                    <a class="token" href="#/s:vC8MappedIn5Venue5nodesGSaCS_4Node_">nodes</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -328,14 +337,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A list of all Nodes for a given venue. These are discrete locations used for pathing.</p>
+                        <p>A collection of all Node&rsquo;s in the Venue. These are discrete locations used for pathing.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">nodes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Node</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">nodes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Node</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_nodes</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -345,9 +354,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn5Venue8vorticesGSqGSaCS_6Vortex__"></a>
+                    <a name="/s:vC8MappedIn5Venue8vorticesGSaCS_6Vortex_"></a>
                     <a name="//apple_ref/swift/Property/vortices" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn5Venue8vorticesGSqGSaCS_6Vortex__">vortices</a>
+                    <a class="token" href="#/s:vC8MappedIn5Venue8vorticesGSaCS_6Vortex_">vortices</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -355,14 +364,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A list of all vorticies for a given venue. These are special contructs that link one or more maps together, like elevators or stairs.</p>
+                        <p>A collection of all Vortex in the Venue. These are special contructs that link one or more maps together, like elevators or stairs.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">vortices</span><span class="p">:</span> <span class="p">[</span><span class="kt">Vortex</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">vortices</span><span class="p">:</span> <span class="p">[</span><span class="kt">Vortex</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_vortices</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -372,9 +381,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn5Venue8polygonsGSqGSaCS_7Polygon__"></a>
+                    <a name="/s:vC8MappedIn5Venue8polygonsGSaCS_7Polygon_"></a>
                     <a name="//apple_ref/swift/Property/polygons" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn5Venue8polygonsGSqGSaCS_7Polygon__">polygons</a>
+                    <a class="token" href="#/s:vC8MappedIn5Venue8polygonsGSaCS_7Polygon_">polygons</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -382,14 +391,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A collection of all Polygon&rsquo;s in the Venue.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Venue</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">polygons</span><span class="p">:</span> <span class="p">[</span><span class="kt">Polygon</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_polygons</span><span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -401,7 +410,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-03)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

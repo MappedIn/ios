@@ -31,7 +31,7 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/AppDelegate.html">AppDelegate</a>
+                <a href="Classes.html#/s:C8MappedIn11AppDelegate">AppDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Category.html">Category</a>
@@ -55,6 +55,21 @@
                 <a href="Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes.html#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MapViewCamera.html">MapViewCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MapViewMarker.html">MapViewMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MapViewMarker2D.html">MapViewMarker2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/Node.html">Node</a>
               </li>
               <li class="nav-group-task">
@@ -69,33 +84,16 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Enums.html">Enums</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Enums/MotionType.html">MotionType</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Extensions/Array.html">Array</a>
+                <a href="Extensions.html#/s:Sa">Array</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:ZF8MappedInoi2eeFTCS_4NodeS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:ZF8MappedInoi2eeFTCS_7PolygonS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:ZF8MappedInoi2eeFTCS_3MapS0__Sb">==(_:_:)</a>
-              </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb8callbackFS0_T__T_">getVenue(_:accessible:callback:)</a>
               </li>
@@ -139,7 +137,6 @@
                       <div class="abstract">
                         <p>MappedIn App Delegate. Your app delegate must inherit from this base class.</p>
 
-                        <a href="Classes/AppDelegate.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -239,6 +236,39 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:C8MappedIn15MapViewMarker2D"></a>
+                    <a name="//apple_ref/swift/Class/MapViewMarker2D" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn15MapViewMarker2D">MapViewMarker2D</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A 2D implementation of a MapViewMarker. They will always face the MapView&rsquo;s camera, maintaining the same size and orientation.
+The base class is for images. For text labels, use MapViewMarker2DLabel</p>
+
+                        <a href="Classes/MapViewMarker2D.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker2D</span><span class="p">:</span><span class="kt">MapViewMarker</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:C8MappedIn7MapView"></a>
                     <a name="//apple_ref/swift/Class/MapView" class="dashAnchor"></a>
                     <a class="token" href="#/s:C8MappedIn7MapView">MapView</a>
@@ -284,8 +314,6 @@
 
 <p>They can be marked (wheelchair) Accessible or not for pathfinding purposes. If the user has selected Accessible directions, paths that include non-accessible Vortexes like Stairs will not be used.</p>
 
-<p>A Vortex contains a list of Maps it connects. It is NOT a Location.</p>
-
                         <a href="Classes/Vortex.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
@@ -316,11 +344,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Node represents specific coordinates on a map, used for pathing. A path is just a sequential list of Nodes from one place to another. </p>
-
-<p>Typically the start and end points of a path will belong to a specific location, but this is not actually required, and the Node itself has no knowledge of who may or may not own it.</p>
-
-<p>A Node knows what map it belongs to, and it&rsquo;s coordinates in 3D space (though the <code>Z</code> coordinate will be a constant across all nodes)</p>
+                        <p>A Node represents unique 3D coordinates on specific Map, used for pathing.</p>
 
                         <a href="Classes/Node.html" class="slightly-smaller">See more</a>
                       </div>
@@ -328,7 +352,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Node</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Node</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -362,7 +386,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Polygon</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Polygon</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -386,11 +410,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Venue is a specific place (like a mall) with one or more maps (typically representing different floors) and locations (stores, washrooms, elevators, etc) that belong to the venue and have specific locations on certain maps.</p>
+                        <p>A Venue is a specific place (like a mall) with one or more maps (typically representing different floors) and locations (stores, washrooms, elevators, etc).</p>
 
-<p>A Venue can be in two states: 
-    0. <code>getVenues</code> - When it&rsquo;s initially pulled from the MappedIn API as part of a list of all venues your credentials have access to, it only contains basic information like name, logo and cover image.
-    0. <code>getVenue</code> - When you retrieve the full details of a given venue, the locations, categories, maps, nodes and vorticies will be populated.</p>
+<p>Each Location is linked to:</p>
+
+<ul>
+<li>zero or more Polygons which represents it&rsquo;s phyiscal presence on the map</li>
+<li>zero or more nodes that represent entrances</li>
+<li>zero or more Categories that group several Locations together</li>
+</ul>
+
+<p>A Venue can be in one of two states:</p>
+
+<ol>
+<li>As returned by <strong>getVenues()</strong> - When it&rsquo;s initially pulled from the MappedIn API as part of a list of all venues your credentials have access to, it only contains basic information like name, logo and cover image.</li>
+<li>As returned by <strong>getVenue()</strong> - When you retrieve the full details of a given venue, the locations, categories, maps, nodes and vorticies will be populated.</li>
+</ol>
 
                         <a href="Classes/Venue.html" class="slightly-smaller">See more</a>
                       </div>
@@ -399,6 +434,38 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Venue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8MappedIn13MapViewCamera"></a>
+                    <a name="//apple_ref/swift/Class/MapViewCamera" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn13MapViewCamera">MapViewCamera</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The MapViewCamera allows you to control the camera on the MapView. Adjust the position, rotation, and zoom level</p>
+
+                        <a href="Classes/MapViewCamera.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewCamera</span></code></pre>
 
                         </div>
                       </div>
@@ -424,9 +491,9 @@
                       <div class="abstract">
                         <p>A location is something like a store or washroom on a map. It has a name and type, description, logo, and picture (of the storefront, for example).</p>
 
-<p>A location can also belong to one or more categories (Store, Jewelery Store, etc), and will be linked to one or more nodes and polygons.</p>
+<p>A location can also belong to zero or more Categories (Store, Jewelery Store, etc), and will be linked to zero or more Nodes and Polygons.</p>
 
-<p>A location&rsquo;s nodes can be on multiple maps, or in multiple non-adjacent places on the same map. For example, all washroom at a given venue could belong to one location, or a department store could live on multiple floors.</p>
+<p>A location&rsquo;s nodes can be on multiple maps, or in multiple non-adjacent places on the same map. For example, all washroom at a given venue could belong to one Location, or a department store could live on multiple floors.</p>
 
                         <a href="Classes/Location.html" class="slightly-smaller">See more</a>
                       </div>
@@ -434,7 +501,72 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Location</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Navigatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8MappedIn20MapViewMarker2DLabel"></a>
+                    <a name="//apple_ref/swift/Class/MapViewMarker2DLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn20MapViewMarker2DLabel">MapViewMarker2DLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A MapViewMarker that displays a 2D label. It will always face the camera, maintaining the same size and orientation.
+The text, font, font size, font color, and background color are all customizable.</p>
+
+                        <a href="Classes/MapViewMarker2DLabel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker2DLabel</span><span class="p">:</span> <span class="kt">MapViewMarker2D</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8MappedIn13MapViewMarker"></a>
+                    <a name="//apple_ref/swift/Class/MapViewMarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn13MapViewMarker">MapViewMarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A visual element that can be placed overtop of a Mapview. Currently, only the child MapViewMarker2D can actually be used, with either an image or text.</p>
+
+                        <a href="Classes/MapViewMarker.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -467,6 +599,37 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Category</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8MappedIn13MapViewAnchor"></a>
+                    <a name="//apple_ref/swift/Class/MapViewAnchor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Anchors a MapViewMarker to a specific location. You can get one from <code>mapView.getAnchor(polygon: Polygon)</code> to anchor your marker to a given polygon.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewAnchor</span></code></pre>
 
                         </div>
                       </div>
@@ -524,7 +687,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A collection of images of various sizes</p>
+                        <p>A collection of references to images of various sizes. Use myImageCollection[size] to get an image of that size or greater (in display units multiplied by display scale).
+Gives you the URL of the image you need to download.</p>
 
                         <a href="Classes/ImageCollection.html" class="slightly-smaller">See more</a>
                       </div>
@@ -544,7 +708,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-03)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

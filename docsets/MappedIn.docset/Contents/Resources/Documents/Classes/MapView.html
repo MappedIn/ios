@@ -32,7 +32,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+                <a href="../Classes.html#/s:C8MappedIn11AppDelegate">AppDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Category.html">Category</a>
@@ -56,6 +56,21 @@
                 <a href="../Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes.html#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewCamera.html">MapViewCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker.html">MapViewMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker2D.html">MapViewMarker2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/Node.html">Node</a>
               </li>
               <li class="nav-group-task">
@@ -70,33 +85,16 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Enums/MotionType.html">MotionType</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_4NodeS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_7PolygonS0__Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:ZF8MappedInoi2eeFTCS_3MapS0__Sb">==(_:_:)</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb8callbackFS0_T__T_">getVenue(_:accessible:callback:)</a>
               </li>
@@ -268,9 +266,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8MappedIn7MapViewcFMS0_FT5coderCSo7NSCoder_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8MappedIn7MapViewcFMS0_FT5coderCSo7NSCoder_S0_">init(coder:)</a>
+                    <a name="/s:vC8MappedIn7MapView6cameraGSQCS_13MapViewCamera_"></a>
+                    <a name="//apple_ref/swift/Property/camera" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn7MapView6cameraGSQCS_13MapViewCamera_">camera</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -278,14 +276,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This is the camera the MapView is currently using. Change the orientation, zoom, and position by manipulating it&rsquo;s properties</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">camera</span><span class="p">:</span> <span class="kt">MapViewCamera</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -305,14 +303,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Fetches the 3D data for the Maps from the MappedIn servers and prepare it for rendering. It also loads up the first Map for display in the MapView.
+This function MUST be called before nearly anything related to the MapView works.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">loadScene</span> <span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -442,16 +441,61 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Highlights a given polygon with a given color. Changes the entire polygon to be that color.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter polygon: The polygon you want to highlight
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter color: The color to highlight the polygon with. Defaults to red.
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">highlightPolygon</span><span class="p">(</span><span class="nv">polygon</span><span class="p">:</span> <span class="kt">Polygon</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">redColor</span><span class="p">())</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>polygon</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The polygon you want to highlight</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color to highlight the polygon with. Defaults to red.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -469,16 +513,80 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Clears the highlighting from all previously highlighted polygons. This sets them back to their original color.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">clearHighlightedPolygons</span><span class="p">()</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8MappedIn7MapView9getAnchorFS0_FCS_7PolygonCS_13MapViewAnchor"></a>
+                    <a name="//apple_ref/swift/Method/getAnchor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8MappedIn7MapView9getAnchorFS0_FCS_7PolygonCS_13MapViewAnchor">getAnchor(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets an anchor to attach a MapViewMarker to a Polygon</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter polygon: The polygon you want attach your marker to
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    A MapViewAnchor to apply to your MapViewMarker
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAnchor</span><span class="p">(</span><span class="nv">polygon</span><span class="p">:</span> <span class="kt">Polygon</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MapViewAnchor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>polygon</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The polygon you want attach your marker to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A MapViewAnchor to apply to your MapViewMarker</p>
+
                       </div>
                     </section>
                   </div>
@@ -487,19 +595,19 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/SCNSceneRendererDelegate"></a>
-                <a name="//apple_ref/swift/Section/SCNSceneRendererDelegate" class="dashAnchor"></a>
-                <a href="#/SCNSceneRendererDelegate">
-                  <h3 class="section-name">SCNSceneRendererDelegate</h3>
+                <a name="/Markers"></a>
+                <a name="//apple_ref/swift/Section/Markers" class="dashAnchor"></a>
+                <a href="#/Markers">
+                  <h3 class="section-name">Markers</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8MappedIn7MapView8rendererFS0_FTPSo16SCNSceneRenderer_15willRenderSceneCSo8SCNScene6atTimeSd_T_"></a>
-                    <a name="//apple_ref/swift/Method/renderer(_:willRenderScene:atTime:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8MappedIn7MapView8rendererFS0_FTPSo16SCNSceneRenderer_15willRenderSceneCSo8SCNScene6atTimeSd_T_">renderer(_:willRenderScene:atTime:)</a>
+                    <a name="/s:FC8MappedIn7MapView9addMarkerFS0_FTCS_13MapViewMarker15hideWhenCollideSb_T_"></a>
+                    <a name="//apple_ref/swift/Method/addMarker(_:hideWhenCollide:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8MappedIn7MapView9addMarkerFS0_FTCS_13MapViewMarker15hideWhenCollideSb_T_">addMarker(_:hideWhenCollide:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -507,14 +615,139 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Add a marker to the MapView, optionally telling it to not hide if it collides with another marker.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter marker: An anchored MapViewMarker to place on the scene
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter hideWhenCollide (optional): A Bool that indicates whether this marker should dissapear if it collides with a marker you added earlier. Defaults to true.
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addMarker</span><span class="p">(</span><span class="nv">marker</span><span class="p">:</span><span class="kt">MapViewMarker</span><span class="p">,</span> <span class="nv">hideWhenCollide</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>marker</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An anchored MapViewMarker to place on the scene</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>hideWhenCollide (optional)</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Bool that indicates whether this marker should dissapear if it collides with a marker you added earlier. Defaults to true.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8MappedIn7MapView12removeMarkerFS0_FCS_13MapViewMarkerT_"></a>
+                    <a name="//apple_ref/swift/Method/removeMarker(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8MappedIn7MapView12removeMarkerFS0_FCS_13MapViewMarkerT_">removeMarker(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove a MapViewMarker from the MapView</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter marker: The MapViewMarker to remove
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeMarker</span><span class="p">(</span><span class="nv">marker</span><span class="p">:</span><span class="kt">MapViewMarker</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>marker</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The MapViewMarker to remove</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8MappedIn7MapView15removeAllMakersFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/removeAllMakers()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8MappedIn7MapView15removeAllMakersFS0_FT_T_">removeAllMakers()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes all MapViewMarkers from the MapView</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeAllMakers</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -525,60 +758,6 @@
             </div>
             <div class="task-group">
               <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:VC8MappedIn7MapView26MapViewDirectionsConstants"></a>
-                    <a name="//apple_ref/swift/Struct/MapViewDirectionsConstants" class="dashAnchor"></a>
-                    <a class="token" href="#/s:VC8MappedIn7MapView26MapViewDirectionsConstants">MapViewDirectionsConstants</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:VC8MappedIn7MapView26MapViewDirectionsPathNodes"></a>
-                    <a name="//apple_ref/swift/Struct/MapViewDirectionsPathNodes" class="dashAnchor"></a>
-                    <a class="token" href="#/s:VC8MappedIn7MapView26MapViewDirectionsPathNodes">MapViewDirectionsPathNodes</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -592,9 +771,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Draws a path on the MapView
-- Parameter path: An array of nodes in sequence to be drawn
-- Parameter from: Index of the path to start from. Defaults to 0</p>
+                        <p>Draws a path on the MapView</p>
 
                       </div>
                       <div class="declaration">
@@ -604,6 +781,39 @@
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">drawPath</span><span class="p">(</span><span class="nv">path</span><span class="p">:[</span><span class="kt">Node</span><span class="p">],</span> <span class="nv">from</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>path</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of nodes in sequence to be drawn</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>from</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index of the path to start from. Defaults to 0</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -850,7 +1060,7 @@ You may also want to use it to temporarly clear the current path, or if the user
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-03)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
