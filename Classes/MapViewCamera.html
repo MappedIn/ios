@@ -159,6 +159,33 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:vC8MappedIn13MapViewCamera17animationDurationSd"></a>
+                    <a name="//apple_ref/swift/Property/animationDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera17animationDurationSd">animationDuration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Length of time to animate from one camera position/orientation/zoom to another</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">animationDuration</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">0.3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:vC8MappedIn13MapViewCamera8positionT1xSf1ySf_"></a>
                     <a name="//apple_ref/swift/Property/position" class="dashAnchor"></a>
                     <a class="token" href="#/s:vC8MappedIn13MapViewCamera8positionT1xSf1ySf_">position</a>
@@ -237,12 +264,70 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8MappedIn13MapViewCamera7focusOnFS0_FCS_4NodeT_"></a>
+                    <a name="//apple_ref/swift/Method/focusOn(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8MappedIn13MapViewCamera7focusOnFS0_FCS_4NodeT_">focusOn(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Focuses the camera on a specific node. Will change maps if required. Doesn&rsquo;t affect zoom level.
+Parameter node: The node to focus on</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">focusOn</span><span class="p">(</span><span class="nv">node</span><span class="p">:</span> <span class="kt">Node</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8MappedIn13MapViewCamera7focusOnFS0_FTCS_7Polygon8autoZoomOS0_17AutomaticZoomType_T_"></a>
+                    <a name="//apple_ref/swift/Method/focusOn(_:autoZoom:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8MappedIn13MapViewCamera7focusOnFS0_FTCS_7Polygon8autoZoomOS0_17AutomaticZoomType_T_">focusOn(_:autoZoom:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Focuses the camera on a specific Polygon</p>
+
+<p>Parameter polygon: The Polygon to focus in on
+Parameter autoZoom: Whether the camera should automatically zoom in, out or both to fit the polygon into view. Can also specify none for no zoom behaviour.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">focusOn</span><span class="p">(</span><span class="nv">polygon</span><span class="p">:</span> <span class="kt">Polygon</span><span class="p">,</span> <span class="nv">autoZoom</span><span class="p">:</span> <span class="kt">AutomaticZoomType</span> <span class="o">=</span> <span class="o">.</span><span class="kt">Both</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-19)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-02-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -16,6 +16,7 @@ MapViewMarker2D.swift
 	override public var hidden:Bool
 MapView.swift
 	@objc public enum MotionType:Int
+	public var camera: MapViewCamera!
 	required public init(coder aDecoder: NSCoder)
 	public func renderer(renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: NSTimeInterval)
 Vortex.swift
@@ -27,6 +28,8 @@ Polygon.swift
 	public var navigatableNodes: [Node] {return entrances}
 	public var hashValue: Int = 0
 	public func == (polygonA: Polygon, polygonB: Polygon) -> Bool
+MapViewCamera.swift
+	public enum AutomaticZoomType {case None, In, Out, Both}
 Location.swift
 	public var navigatableNodes: [Node]
 MapViewMarker.swift
