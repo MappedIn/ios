@@ -157,6 +157,7 @@ class ViewController: UIViewController, MapViewDelegate {
         // Keep track of this polygon for when we do directions, incase a location has multiple polygons
         currentlySelectedPolygon = polygon
         mapView.highlightPolygon(polygon, color: UIColor.blueColor())
+        mapView.camera.focusOn(polygon)
         
         // If the user hit the "Go" button, the next polygon tapped will be the origin for the directions
         if directionsDestinationPolygon != nil {
@@ -241,6 +242,7 @@ class ViewController: UIViewController, MapViewDelegate {
     /// Walk through the directions, highlighting the right node and displaying the right instruction
     @IBAction func directionsStepperChanged(sender: AnyObject) {
         let index = Int(directionsStepper.value)
+        mapView.camera.focusOn(directions!.directions[index].node)
         mapView.highlightNode(directions!.directions[index].node)
         instructionsLabel.text = directions!.directions[index].instruction
     }
