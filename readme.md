@@ -2,6 +2,25 @@
 
 This repo contains a simple example to get you started with the MappedIn iOS SDK. Before you can do anything, make sure you have an API key from MappedIn. Talk to your representative to get one.
 
+## SDK Features
+*Current as of v0.1-Alpha5:*
+
+* MapView component to display 3D maps
+* Access to localized Venue, Location, Category, Node, Vortex and Polygon data from the MappedIn API
+* Full camera control
+* User-tappable 2D text and image markers
+* Offline directions engine, localized in English and French, pathing to and from any nodes, polygons, or locations
+* Path drawing
+* Path styling
+* Polygon highlighting
+
+*Planned for 1.0 release:*
+
+* Multiple path support
+* Expose underlying SceneKit object for advanced use
+* User position support
+* Path animation
+
 ## Setup
 1. Start by cloning this repo (or downloading the zip if you don't like git). 
 2. Use [Cocoa Pods](https://cocoapods.org/) to install the latest version of the `MappedIn.framework`
