@@ -170,8 +170,10 @@ class ViewController: UIViewController, MapViewDelegate {
                 // Make sure we have a valid path. Everything SHOULD be connected, but you never know.
                 if let path = directions?.path {
                     
+                    let mapPath = MapView.Path(nodes: path)
                     //Draw the path and highlight the starting node
-                    mapView.drawPath(path)
+                    mapView.addPath(mapPath)
+                    
                     if let startingNode = directions?.directions?.first?.node {
                         mapView.highlightNode(startingNode)
                     } else {

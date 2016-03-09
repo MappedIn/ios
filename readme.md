@@ -13,10 +13,10 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 * Path drawing
 * Path styling
 * Polygon highlighting
+* Multiple path support
 
 *Planned for 1.0 release:*
 
-* Multiple path support
 * Expose underlying SceneKit object for advanced use
 * User position support
 * Path animation
