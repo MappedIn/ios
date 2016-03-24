@@ -2,24 +2,34 @@
 
 This repo contains a simple example to get you started with the MappedIn iOS SDK. Before you can do anything, make sure you have an API key from MappedIn. Talk to your representative to get one.
 
-## SDK Features
-*Current as of v0.1-Alpha5:*
+## Changes
+*v0.2.0:*
 
-* MapView component to display 3D maps
-* Access to localized Venue, Location, Category, Node, Vortex and Polygon data from the MappedIn API
-* Full camera control
-* User-tappable 2D text and image markers
-* Offline directions engine, localized in English and French, pathing to and from any nodes, polygons, or locations
-* Path drawing
-* Path styling
-* Polygon highlighting
-* Multiple path support
+* Update to Swift 2.2
+* Rename Node to Coordinate
+* Replace MapAnchor with Coordinates
+* Coordinates gain the ability to be created from a Polygon (for MapAnchor support) and CLLocationCoordinate2D (latitude/longitude)
+* Exposed the SCNView on the MapView
+* A lot of under the hood work on georeferencing Map's
 
-*Planned for 1.0 release:*
+## Roadmap
+*Short Term:*
 
-* Expose underlying SceneKit object for advanced use
-* User position support
+* Major coordinate system and MapView refactoring
+* Venue-wide coordinate system removing the need for Coordinate's to belong to specific Map's
+* Lock down the MapView API for 1.0 release
 * Path animation
+* MappedIn Events API
+* Basic Analytics (basically just logging information so we can get a sense of SDK version usage in the real world)
+* Directions improvements
+
+*Long Term:*
+
+* Offline data caching
+* Geolocation based Venue prefetching
+* Analytics
+* Custom Location and Event types
+* Indoor Positioning
 
 ## Setup
 1. Start by cloning this repo (or downloading the zip if you don't like git). 
