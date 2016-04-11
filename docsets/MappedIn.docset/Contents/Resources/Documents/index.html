@@ -37,6 +37,9 @@
                 <a href="Classes/Category.html">Category</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/Coordinate.html">Coordinate</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/Direction.html">Direction</a>
               </li>
               <li class="nav-group-task">
@@ -55,9 +58,6 @@
                 <a href="Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes.html#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/MapViewCamera.html">MapViewCamera</a>
               </li>
               <li class="nav-group-task">
@@ -70,10 +70,10 @@
                 <a href="Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Node.html">Node</a>
+                <a href="Classes/Polygon.html">Polygon</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Polygon.html">Polygon</a>
+                <a href="Classes/RawData.html">RawData</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Venue.html">Venue</a>
@@ -95,7 +95,7 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb8callbackFS0_T__T_">getVenue(_:accessible:callback:)</a>
+                <a href="Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb17locationGeneratorFCS_7RawDataGSqCS_8Location_8callbackFS0_T__T_">getVenue(_:accessible:locationGenerator:callback:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F8MappedIn9getVenuesFFT6venuesGSaCS_5Venue__T_T_">getVenues(_:)</a>
@@ -116,147 +116,73 @@
         <section>
           <section class="section">
             
-            <a href='#mappedin_ios_sdk' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='mappedin_ios_sdk'>MappedIn iOS SDK</h1>
+            <a href='#mappedin_ios_sdk_example' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='mappedin_ios_sdk_example'>MappedIn iOS SDK Example</h1>
 
-<p>This is the MappedIn iOS SDK. For external sample applications and documentation, please see <a href="https://github.com/MappedIn/ios/">this repo</a>.</p>
-<a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='features'>Features</h2>
+<p>This repo contains a simple example to get you started with the MappedIn iOS SDK. Before you can do anything, make sure you have an API key from MappedIn. Talk to your representative to get one.</p>
+<a href='#changes' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='changes'>Changes</h2>
 
-<p><em>Current as of v0.1-Alpha5:</em></p>
+<p><em>v0.3.0:</em></p>
 
 <ul>
-<li>MapView component to display 3D maps</li>
-<li>Access to localized Venue, Location, Category, Node, Vortex and Polygon data from the MappedIn API</li>
-<li>Full camera control</li>
-<li>User-tappable 2D text and image markers</li>
-<li>Offline directions engine, localized in English and French, pathing to and from any nodes, polygons, or locations</li>
-<li>Path drawing</li>
-<li>Path styling</li>
-<li>Polygon highlighting</li>
+<li>Added support for custom location types</li>
 </ul>
 
-<p><em>Planned for 1.0 release:</em></p>
+<p><em>v0.2.0:</em></p>
 
 <ul>
-<li>Multiple path support</li>
-<li>Expose underlying SceneKit object for advanced use</li>
-<li>User position support</li>
-<li>Path animation</li>
+<li>Update to Swift 2.2</li>
+<li>Rename Node to Coordinate</li>
+<li>Replace MapAnchor with Coordinates</li>
+<li>Coordinates gain the ability to be created from a Polygon (for MapAnchor support) and CLLocationCoordinate2D (latitude/longitude)</li>
+<li>Exposed the SCNView on the MapView</li>
+<li>A lot of under the hood work on georeferencing Map&rsquo;s</li>
 </ul>
+<a href='#setup' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='setup'>Setup</h2>
 
-<p><em>Internal Future Roadmap:</em></p>
+<ol>
+<li>Start by cloning this repo (or downloading the zip if you don&rsquo;t like git).</li>
+<li>Use <a href="https://cocoapods.org/">Cocoa Pods</a> to install the latest version of the <code>MappedIn.framework</code>
 
 <ul>
-<li>Beacon support</li>
-<li>Geolocation based venue prefetching</li>
-<li>Analytics</li>
-<li>Offline data caching</li>
-<li>JavaScript Directions engine</li>
-</ul>
-<a href='#releasing_the_ios_sdk' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='releasing_the_ios_sdk'>Releasing the iOS SDK</h2>
-
-<p>In order to deploy a new release of the iOS SDK there are a few broad steps that happen:</p>
-
-<ol>
-<li>Build the framework</li>
-<li>Update docs</li>
-<li>Publish new release</li>
-<li>Update the podspec</li>
-<li>Update samples</li>
-</ol>
-
-<p>Details for each step follow.</p>
-<a href='#building_the_framework' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='building_the_framework'>Building the Framework</h3>
-
-<p>The iOS SDK has a special build target called <code>SDK Release</code> that will build release versions of the device and simulator the framework and combine them into a special <q>fat framework</q> containing both.</p>
-
-<ol>
-<li>Switch to the <code>SDK Release</code> target and build it</li>
-<li>It will create a <code>Release</code> folder in your repo containing the <code>MappedIn.framework</code> file and the <code>Framework.zip</code></li>
-<li>Make sure the new framework doesn&rsquo;t break anything (test the old samples, for example)</li>
-</ol>
-<a href='#update_the_docs' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='update_the_docs'>Update the Docs</h3>
-
-<p>Our docs are powered by <a href="https://github.com/realm/jazzy">jazzy</a>, which parses the comments above functions, classes, and properties in the same way that XCode does. Basically, the documentation we use gives us a webpage to browse, and help built into XCode for free.</p>
-
-<p>Before a new release, make sure everything is commented correctly.</p>
-
-<ol>
-<li>Go through anything added or changed in the new release and ensure the comments in the code are accurate and formatted correctly</li>
-<li>Sanitize anything internal that we don&rsquo;t want exposed externally. Note, any of the special comment keywords (like <code>MARK:</code> or <code>TODO:</code>) will show up in the jazzy docs, so get rid of anything that shouldn&rsquo;t be public. In particular, there should be no <code>TODO:</code>.
-
-<ul>
-<li>Things marked <code>private</code> and <code>internal</code> will not show up in the public docs</li>
+<li>The sample repo contains an example <code>.podfile</code> configured to install the framework.</li>
 </ul></li>
-<li>Prepare to generate the docs
-
-<ul>
-<li>Install jazzy if you don&rsquo;t have it already:
-<code>[sudo] gem install jazzy</code></li>
-<li>If you have generated docs previously, delete the <code>docs</code> folder of the repo</li>
-</ul></li>
-<li>Open a terminal in the root folder of the iOS SDK repo and run <code>jazzy</code></li>
-<li>Clone the <code>gh-pages</code> branch of the <a href="https://github.com/MappedIn/ios/tree/gh-pages">iOS repo</a>.</li>
-<li>Copy the contents of the <code>docs</code> folder that you generated with jazzy into the <code>gh-pages</code> repo, replacing everything.</li>
-<li>Commit changes. Push to master.</li>
-<li>(Don&rsquo;t forget to update the sample&rsquo;s readme file with any new features when you get to that step)</li>
+<li>Open the included Workspace in XCode.</li>
+<li>Build the Example project</li>
+<li>Open info.plist and input your MappedInUsername and MappedInPassword. If you don&rsquo;t know what those are, talk to your MappedIn representative.</li>
+<li>Run!</li>
 </ol>
-<a href='#publish_new_release' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='publish_new_release'>Publish new release</h3>
+<a href='#api_quick_start' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='api_quick_start'>API Quick Start</h2>
 
-<p>The public version of the frameworks get distributed as binaries attached to GitHub releases. The process works like this:</p>
+<p>You can view all the documentation in this project&rsquo;s <a href="http://mappedin.github.io/ios/">GitHub Page</a>, but here&rsquo;s a quick start guide to just displaying a Map.</p>
 
-<ol>
-<li>Draft a new release in <a href="https://github.com/MappedIn/ios/releases">GitHub</a></li>
-<li>Set the tag verion and title to be the new version number. We are basically using <a href="https://guides.cocoapods.org/making/making-a-cocoapod.html">CocoaPod&rsquo;s interpretation of Semantic Versioning</a>. 
+<p>Let&rsquo;s go through the key classes provided by the SDK and when you would use them.</p>
+<a href='#mappedin' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='mappedin'>MappedIn</h3>
 
-<ul>
-<li>So take the old build (vX.Y.Z), if it&rsquo;s a bugfix with no new features, increment Z. If it&rsquo;s adding new backwards compatible features, increment Y and set Z to 0. If it has breaking changes, increment X and set Y and Z to 0. We really don&rsquo;t want to do the last thing if we can avoid it. While we are in alpha/beta, things are loosey-goosy. Just increment the number after alpha/beta unless you have a really good reason.</li>
-</ul></li>
-<li>Fill in a bulleted list of (public) changes from the last release. Check the commits if you aren&rsquo;t sure. Mention specific bugs fixed if possible.</li>
-<li>Copy the Framework.zip file you generated earlier into the Binaries area</li>
-<li>Mark as pre-release if this is still alpha/beta</li>
-<li>Publish!</li>
-</ol>
-<a href='#update_the_podspec' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='update_the_podspec'>Update the podspec</h3>
+<p>This is the class to start with. It controls all communication with the MappedIn API. Make sure you have your API key and Secret set in your .plist file, and then call </p>
 
-<p>We use CocoaPods with a private repo to distribute the SDK to partners. Every time you release a new SDK, the podspec will need to be updated with the new information.</p>
+<p><code>MappedIn.getVenues(callBack: (venue: [Venue]) -&gt; Void)</code></p>
 
-<p>First time setup:</p>
+<p>This will query the MappedIn servers and execute the <code>callBack</code> function you provided with a list of <code>Venue</code>s your key has access to. Each <code>Venue</code> will have basic details like the name and logo populated, but not the larger fields like <code>maps</code> and <code>locations</code>.</p>
 
-<ol>
-<li>Install cocoapods: <code>sudo gem install cocoapods</code></li>
-<li>Add our private repo: <code>pod repo add MappedIn https://github.com/MappedIn/podspec</code></li>
-</ol>
+<p>To get all of the data for a specific venue, call</p>
 
-<p>Update:</p>
+<p><code>MappedIn.getVenue(venue: Venue, callBack: (Venue) -&gt; Void)</code></p>
 
-<ol>
-<li>Open <code>MappedIn.podspec</code> from the <strong>iOS SDK REPO</strong></li>
-<li>Change <code>s.version</code> and <code>s.source</code> so they match the new version number and framework of the new GitHub release.</li>
-<li>From the command line, in the same directory as the newly updated podspec, do <code>pod repo push MappedIn MappedIn.podspec</code>. This will verify that the podspec is valid and push the new version to our repo. If it doesn&rsquo;t work, you&rsquo;ll have to figure out why and fix it.</li>
-<li>Commit and push your changes in the <code>MappedIn.podspec</code> file to the internal <code>iOS SDK</code> repo.</li>
-</ol>
-<a href='#update_the_samples' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='update_the_samples'>Update the Samples</h3>
+<p>Similar to <code>getVenues</code>, this function will interface with the MappedIn API for you, sending the fully populated <code>Venue</code> to your callback when it&rsquo;s done.</p>
+<a href='#venue' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='venue'>Venue</h3>
 
-<p>When we release a new build of the SDK, all the old code needs to work. Make sure the sample apps still do. If we added new features, it&rsquo;s probably a good idea to update existing samples, or create new ones that demonstrate how to use those features. Also make sure you update the features list of the samples readme.</p>
+<p>The <code>Venue</code> object will contain all information associated with a given venue (once it&rsquo;s been filled in with <code>getVenue</code>).</p>
+<a href='#mapview' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='mapview'>MapView</h3>
 
-<p>How to use the samples:</p>
+<p>The <code>MapView</code> class will display your your map for you/ Once you have a populated venue, set the <code>.venue</code> property on your <code>MapView</code> and call <code>yourMapView.loadScene()</code></p>
 
-<ol>
-<li>Clone the <code>master</code> branch of the <a href="https://github.com/MappedIn/ios">public iOS repo</a>.</li>
-<li>Update the <code>podfile</code> to use the new version of the SDK. Note each sample has it&rsquo;s own entry in the <code>podfile</code>, and each will need to be updated.</li>
-<li>Install the latest public version of the framework using Cocoa Pods by opening a terminal to the root directory of the sample repo and doing <code>pod install</code></li>
-<li>Verify the samples work, add any new features needed</li>
-<li>Update the Readme with any new SDK features</li>
-<li>Commit and push to master.</li>
-</ol>
-
-<p>That&rsquo;s it! If you have any questions, talk to Paul Bernhardt.</p>
+<p>That&rsquo;s the basics. Directions, Markers and other features will be covered in a future tutorial, but you can see them in action right now in the Single Venue project.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-03-09)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-04-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Node Class Reference</title>
+    <title>Coordinate Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Node" class="dashAnchor"></a>
-    <a title="Node Class Reference"></a>
+    <a name="//apple_ref/swift/Class/Coordinate" class="dashAnchor"></a>
+    <a title="Coordinate Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">MappedIn Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">MappedIn Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Node Class Reference
+        Coordinate Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -36,6 +36,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Category.html">Category</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Coordinate.html">Coordinate</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Direction.html">Direction</a>
@@ -56,9 +59,6 @@
                 <a href="../Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/MapViewCamera.html">MapViewCamera</a>
               </li>
               <li class="nav-group-task">
@@ -71,10 +71,10 @@
                 <a href="../Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Node.html">Node</a>
+                <a href="../Classes/Polygon.html">Polygon</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Polygon.html">Polygon</a>
+                <a href="../Classes/RawData.html">RawData</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Venue.html">Venue</a>
@@ -96,7 +96,7 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb8callbackFS0_T__T_">getVenue(_:accessible:callback:)</a>
+                <a href="../Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb17locationGeneratorFCS_7RawDataGSqCS_8Location_8callbackFS0_T__T_">getVenue(_:accessible:locationGenerator:callback:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F8MappedIn9getVenuesFFT6venuesGSaCS_5Venue__T_T_">getVenues(_:)</a>
@@ -116,14 +116,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Node</h1>
+            <h1>Coordinate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Node</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
-            <p>A Node represents unique 3D coordinates on specific Map, used for pathing.</p>
+            <p>A Coordinate represents a 3-dimensional position on the Earth&rsquo;s surface.</p>
 
           </section>
           <section class="section task-group-section">
@@ -132,9 +132,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn4Node3mapCS_3Map"></a>
+                    <a name="/s:vC8MappedIn10Coordinate3mapCS_3Map"></a>
                     <a name="//apple_ref/swift/Property/map" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn4Node3mapCS_3Map">map</a>
+                    <a class="token" href="#/s:vC8MappedIn10Coordinate3mapCS_3Map">map</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -159,9 +159,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn4Node9hashValueSi"></a>
+                    <a name="/s:vC8MappedIn10Coordinate9hashValueSi"></a>
                     <a name="//apple_ref/swift/Property/hashValue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn4Node9hashValueSi">hashValue</a>
+                    <a class="token" href="#/s:vC8MappedIn10Coordinate9hashValueSi">hashValue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -183,13 +183,73 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8MappedIn10CoordinatecFT8locationVSC22CLLocationCoordinate2D3mapCS_3Map_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(location:map:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8MappedIn10CoordinatecFT8locationVSC22CLLocationCoordinate2D3mapCS_3Map_S0_">init(location:map:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a Coordinate from a latitude and longitude</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">location</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">,</span> <span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>location</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The lat/long the Coordinate should represent</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>map</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Each map has it&rsquo;s own internal coordinate system, so the Coordinate object must be created in reference to one.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-03-09)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-04-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

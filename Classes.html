@@ -37,6 +37,9 @@
                 <a href="Classes/Category.html">Category</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/Coordinate.html">Coordinate</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/Direction.html">Direction</a>
               </li>
               <li class="nav-group-task">
@@ -55,9 +58,6 @@
                 <a href="Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes.html#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/MapViewCamera.html">MapViewCamera</a>
               </li>
               <li class="nav-group-task">
@@ -70,10 +70,10 @@
                 <a href="Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Node.html">Node</a>
+                <a href="Classes/Polygon.html">Polygon</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Polygon.html">Polygon</a>
+                <a href="Classes/RawData.html">RawData</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Venue.html">Venue</a>
@@ -95,7 +95,7 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb8callbackFS0_T__T_">getVenue(_:accessible:callback:)</a>
+                <a href="Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb17locationGeneratorFCS_7RawDataGSqCS_8Location_8callbackFS0_T__T_">getVenue(_:accessible:locationGenerator:callback:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F8MappedIn9getVenuesFFT6venuesGSaCS_5Venue__T_T_">getVenues(_:)</a>
@@ -166,7 +166,11 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>MapView is a custom view designed to handle displaying Maps for a Venue. Set the <code>venue</code> property and then call <code>loadScene()</code> to display the first map. From there, you can change maps (usually different floors) with the <code>.setFloor()</code> function, and can draw a path from one node to another with <code>drawPath()</code>
+You can also highlight polygons and attach floating Markers.
+Since: 0.1
+Author: MappedIn</p>
+
                         <a href="Classes/MapView.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
@@ -174,37 +178,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn13MapViewAnchor"></a>
-                    <a name="//apple_ref/swift/Class/MapViewAnchor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn13MapViewAnchor">MapViewAnchor</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Anchors a MapViewMarker to a specific location. You can get one from <code>mapView.getAnchor(polygon: Polygon)</code> to anchor your marker to a given polygon.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewAnchor</span></code></pre>
 
                         </div>
                       </div>
@@ -332,9 +305,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn4Node"></a>
-                    <a name="//apple_ref/swift/Class/Node" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn4Node">Node</a>
+                    <a name="/s:C8MappedIn10Coordinate"></a>
+                    <a name="//apple_ref/swift/Class/Coordinate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn10Coordinate">Coordinate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -342,15 +315,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Node represents unique 3D coordinates on specific Map, used for pathing.</p>
+                        <p>A Coordinate represents a 3-dimensional position on the Earth&rsquo;s surface.</p>
 
-                        <a href="Classes/Node.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/Coordinate.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Node</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -703,13 +676,41 @@ Gives you the URL of the image you need to download.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8MappedIn7RawData"></a>
+                    <a name="//apple_ref/swift/Class/RawData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn7RawData">RawData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A wrapper class representing MappedIn JSON data. Provides a convient, robust, and type safe way for casting JSON data to concrete types.</p>
+
+                        <a href="Classes/RawData.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RawData</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-03-09)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-04-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
