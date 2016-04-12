@@ -3,6 +3,9 @@
 This repo contains a simple example to get you started with the MappedIn iOS SDK. Before you can do anything, make sure you have an API key from MappedIn. Talk to your representative to get one.
 
 ## Changes
+*v0.3.0:*
+* Added support for custom location types
+
 *v0.2.0:*
 
 * Update to Swift 2.2
