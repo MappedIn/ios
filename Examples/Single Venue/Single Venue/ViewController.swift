@@ -50,7 +50,11 @@ class ViewController: UIViewController, MapViewDelegate {
     /// Load the full details (Maps, Locations, etc) for the first Venue we find)
     func loadFirstVenue(venues: [Venue]) {
         if let venue: Venue = venues.first {
-            MappedIn.getVenue(venue, callback: displayVenue)
+            MappedIn.getVenue(venue,
+                locationGenerator: { data in
+                    // You could have several different kinds of locations, and figure out what kind to create using the "type" parameter, or the kind of data it contains
+                    return CustomLocation(data)
+                }, callback: displayVenue)
         } else {
             logError("No venues found. Make sure you set your MappedInUsername and MappedInPassword in your info.plist. If you did, talk to your MappedIn representative to ensure your key has access to a venue")
         }
@@ -79,13 +83,13 @@ class ViewController: UIViewController, MapViewDelegate {
     
     /// Fill in the details view with location information
     func displayLocationInformation(location: Location) {
-
+        let customLocation = location as! CustomLocation
         // This image should probably be cached and/or preloaded
-        if let image = loadImageFromURL(location.picture?[150]) {
-            locationImageView.image = image
+        if let logo = loadImageFromURL(customLocation.logo?[150]) {
+            locationImageView.image = logo
         }
         locationTitleLabel.text = location.name
-        locationDescriptionLabel.text = location.description
+        locationDescriptionLabel.text = customLocation.description
         navigateToLocationButton.hidden = false
         detailsView.hidden = false
     }

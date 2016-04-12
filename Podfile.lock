@@ -1,10 +1,10 @@
 PODS:
-  - MappedIn (0.1-alpha6)
+  - MappedIn (0.3.0)
 
 DEPENDENCIES:
-  - MappedIn (~> 0.1-alpha6)
+  - MappedIn (~> 0.2)
 
 SPEC CHECKSUMS:
-  MappedIn: 69d9aaa7e44b472aeff6395d8f6e35a83bdc6d08
+  MappedIn: 136bc57f566f928a7500a8205c29897989ce7ab7
 
 COCOAPODS: 0.39.0
