@@ -3,8 +3,22 @@
 This repo contains a simple example to get you started with the MappedIn iOS SDK. Before you can do anything, make sure you have an API key from MappedIn. Talk to your representative to get one.
 
 ## Changes
-*v0.3.0:*
-* Added support for custom location types
+*v0.5.0*
+
+* Implemented animated paths
+* The `elevation` property on the MapView.Path class has been removed. The Path will now stick to `z=0`
+* The MapView.Path class has gained a `height` property specifying the height of the path when rendered
+* Changed `maxCameraPitch` property to `maxPitch`
+
+*v0.4.0:*
+
+* Added orthographic camera support
+* Fixed animation bug
+* Fixed polygon logos blocking taps
+
+*v0.3.0*
+
+* Implemented Custom Location Types
 
 *v0.2.0:*
 
@@ -18,12 +32,11 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 ## Roadmap
 *Short Term:*
 
+* Basic Analytics (basically just logging information so we can get a sense of SDK version usage in the real world)
 * Major coordinate system and MapView refactoring
 * Venue-wide coordinate system removing the need for Coordinate's to belong to specific Map's
 * Lock down the MapView API for 1.0 release
-* Path animation
 * MappedIn Events API
-* Basic Analytics (basically just logging information so we can get a sense of SDK version usage in the real world)
 * Directions improvements
 
 *Long Term:*
@@ -31,7 +44,6 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 * Offline data caching
 * Geolocation based Venue prefetching
 * Analytics
-* Custom Location and Event types
 * Indoor Positioning
 
 ## Setup
