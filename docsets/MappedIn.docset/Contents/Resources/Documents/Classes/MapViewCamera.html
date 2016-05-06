@@ -135,9 +135,36 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn13MapViewCamera14maxCameraPitchSf"></a>
-                    <a name="//apple_ref/swift/Property/maxCameraPitch" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera14maxCameraPitchSf">maxCameraPitch</a>
+                    <a name="/s:vC8MappedIn13MapViewCamera14focusZoomScaleSf"></a>
+                    <a name="//apple_ref/swift/Property/focusZoomScale" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera14focusZoomScaleSf">focusZoomScale</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The percentatge of the minimum zoom level to fit to a polygon we should zoom to</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">focusZoomScale</span><span class="p">:</span><span class="kt">Float</span> <span class="o">=</span> <span class="mf">1.0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8MappedIn13MapViewCamera8maxPitchSf"></a>
+                    <a name="//apple_ref/swift/Property/maxPitch" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera8maxPitchSf">maxPitch</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -152,7 +179,90 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxCameraPitch</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">1.2</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxPitch</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">1.2</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8MappedIn13MapViewCamera8minPitchSf"></a>
+                    <a name="//apple_ref/swift/Property/minPitch" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera8minPitchSf">minPitch</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This property controls the minimum camera pitch, in radians. If you set this below 0, the user will be able to pitch so everything is upside down</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">minPitch</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">0.0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8MappedIn13MapViewCamera7maxZoomSf"></a>
+                    <a name="//apple_ref/swift/Property/maxZoom" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera7maxZoomSf">maxZoom</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This property controls how far the camera can zoom out (actually how far the camera is from the scene). In orthographic mode, it controls the maximum orthographic scale.
+The property will not change if you switch back and forth between perspective and orthographic mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxZoom</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mi">10000</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8MappedIn13MapViewCamera7minZoomSf"></a>
+                    <a name="//apple_ref/swift/Property/minZoom" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn13MapViewCamera7minZoomSf">minZoom</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This property controls how far the camera can zoom in (actually how far the camera is from the scene). In orthographic mode, it controls the minimum orthographic scale.
+The property will not change if you switch back and forth between perspective and orthographic mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">minZoom</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mi">10</span></code></pre>
 
                         </div>
                       </div>
@@ -406,7 +516,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-04-19)</p>
+          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-05-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
