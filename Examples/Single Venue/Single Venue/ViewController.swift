@@ -39,6 +39,8 @@ class ViewController: UIViewController, MapViewDelegate {
     private var currentlySelectedPolygon: Polygon?
     private var directions: Directions?
     
+    private var directionsHighlightColor:UIColor = UIColor(red: 1.0, green: 0.514, blue: 0.016, alpha: 1.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -115,7 +117,7 @@ class ViewController: UIViewController, MapViewDelegate {
         directionsView.hidden = true
         directions = nil
         directionsDestinationPolygon = nil
-        mapView.clearPaths(true)
+        mapView.removeAllPaths()
     }
     
     func loadImageFromURL(url: NSURL?) -> UIImage? {
@@ -143,11 +145,11 @@ class ViewController: UIViewController, MapViewDelegate {
     
     /// Called when a user taps a specific polygon
     /// Parameter polygon: the Polygon the user tapped on
-    func polygonTapped(polygon: Polygon) {
+    func polygonTapped(polygon: Polygon) -> Bool {
         
         // Don't do anything if we'e already in navigation mode
         if directions != nil {
-            return
+            return false
         }
         
         // Clear the old highlight
@@ -155,35 +157,32 @@ class ViewController: UIViewController, MapViewDelegate {
         
         // If the polygon doesn't belong to any locations, bail out
         if polygon.locations.count == 0 {
-            return
+            return false
         }
         
         // Keep track of this polygon for when we do directions, incase a location has multiple polygons
         currentlySelectedPolygon = polygon
-        mapView.highlightPolygon(polygon, color: UIColor.blueColor())
+        mapView.highlightPolygon(polygon)
         mapView.camera.focusOn(polygon)
         
         // If the user hit the "Go" button, the next polygon tapped will be the origin for the directions
-        if directionsDestinationPolygon != nil {
+        if let destPoly = directionsDestinationPolygon {
             // Make sure the polygon actually has entrances
             if polygon.entrances.count > 0 {
                 
                 // Get directions between the array of entrances for each polygon
-                directions = polygon.entrances.directionsTo(directionsDestinationPolygon!.entrances, departFrom: polygon.locations.first, arriveAt: directionsDestinationPolygon!.locations.first)
+                directions = polygon.entrances.directionsTo(destPoly.entrances, departFrom: polygon.locations.first, arriveAt: directionsDestinationPolygon!.locations.first)
                 
                 // Make sure we have a valid path. Everything SHOULD be connected, but you never know.
                 if let path = directions?.path {
                     
-                    let mapPath = MapView.Path(nodes: path)
-                    //Draw the path and highlight the starting node
+                    let mapPath = MapView.Path(coordinates: path)
+                    //Draw the path and highlight the end point
                     mapView.addPath(mapPath)
                     
-                    if let startingNode = directions?.directions?.first?.node {
-                        mapView.highlightNode(startingNode)
-                    } else {
-                        // Incase there are no dirction instructions for some reason
-                        mapView.highlightNode(path, index: 0)
-                    }
+                    mapView.camera.focusOn(mapPath.coordinates, autoZoom: .Both)
+                    mapView.highlightPolygon(directionsDestinationPolygon!, color: directionsHighlightColor)
+                    
                     // Display the first instruction to the user. You'd also show an icon for the action
                     let instruction = directions?.directions?.first?.instruction
                     instructionsLabel.text = instruction
@@ -204,6 +203,7 @@ class ViewController: UIViewController, MapViewDelegate {
             displayLocationInformation(polygon.locations[0])
             
         }
+        return false
         
     }
     
@@ -245,11 +245,10 @@ class ViewController: UIViewController, MapViewDelegate {
         mapView.changeMap(Int(sender.value))
     }
     
-    /// Walk through the directions, highlighting the right node and displaying the right instruction
+    /// Walk through the directions, displaying the right instruction
     @IBAction func directionsStepperChanged(sender: AnyObject) {
         let index = Int(directionsStepper.value)
         mapView.camera.focusOn(directions!.directions[index].node)
-        mapView.highlightNode(directions!.directions[index].node)
         instructionsLabel.text = directions!.directions[index].instruction
     }
     
