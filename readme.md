@@ -3,6 +3,18 @@
 This repo contains a simple example to get you started with the MappedIn iOS SDK. Before you can do anything, make sure you have an API key from MappedIn. Talk to your representative to get one.
 
 ## Changes
+
+*v0.7.0*
+
+* You can check if a MapViewMarker is already part of a MapView with mapview.hasMarker(marker), and adding a marker that's true of will no longer cause a crash.
+
+
+*v0.6.0*
+
+* Added focusOn for arrays of Polygons
+* Camera panning tracks fingers in orthographic and perspective mode
+* focusScaleZoom = 1.0 should be the tightest zoom possible
+
 *v0.5.0*
 
 * Implemented animated paths
