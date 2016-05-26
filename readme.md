@@ -10,6 +10,7 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 * Improvements to MapView loading time
 * Added written directions for turns
 * Added analytics
+* Call `Analytics.selectedLocation(location)` and `Analytics.selectedCategory(category)` when the user selects locations and categories in your application (taps on a polygon, picks a category/location out of a list, selects a location/category during search, etc). It is up to your discretion what should count for your application. 
 * Implemented MappedIn.Delegate for SDK configuration and lifecycle handling
 * The Direction class has been changed to the Directions.Instruction class
 * The Directions.directions property has been renamed to Directions.instructions
@@ -23,7 +24,7 @@ class AppDelegate: UIApplicationDelegate {
 * In Objective-C:
 ```objective-c
 - (id)init {
-  Delegate *mappedInDelegate = [[Delegate alloc] init:AppDelegate.self]
+  MIDelegate *mappedInDelegate = [[MIDelegate alloc] init:AppDelegate.self]
 ```
 * The locationGenerator argument on getVenue() is being replaced by the Delegate.generateLocation method
 * To use a custom generateLocation method, create your own Delegate class inheriting from MappedIn.Delegate and override the Delegate.generateLocation method. Set your AppDelegate.mappedInDelegate property to an instance of your custom class instead of the default MappedIn.Delegate class
