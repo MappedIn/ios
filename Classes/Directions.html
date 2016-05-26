@@ -32,16 +32,10 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C8MappedIn11AppDelegate">AppDelegate</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/Category.html">Category</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Coordinate.html">Coordinate</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Direction.html">Direction</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Directions.html">Directions</a>
@@ -96,7 +90,7 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb17locationGeneratorFCS_7RawDataGSqCS_8Location_8callbackFS0_T__T_">getVenue(_:accessible:locationGenerator:callback:)</a>
+                <a href="../Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb17locationGeneratorGSqFCS_7RawDataGSqCS_8Location__8callbackFS0_T__T_">getVenue(_:accessible:locationGenerator:callback:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F8MappedIn9getVenuesFFT6venuesGSaCS_5Venue__T_T_">getVenues(_:)</a>
@@ -162,9 +156,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn10Directions10directionsGSQGSaCS_9Direction__"></a>
-                    <a name="//apple_ref/swift/Property/directions" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn10Directions10directionsGSQGSaCS_9Direction__">directions</a>
+                    <a name="/s:vC8MappedIn10Directions12instructionsGSQGSaCS0_11Instruction__"></a>
+                    <a name="//apple_ref/swift/Property/instructions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8MappedIn10Directions12instructionsGSQGSaCS0_11Instruction__">instructions</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -179,7 +173,48 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">directions</span><span class="p">:</span> <span class="p">[</span><span class="kt">Direction</span><span class="p">]</span><span class="o">!</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">instructions</span><span class="p">:</span> <span class="p">[</span><span class="kt">Instruction</span><span class="p">]</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Instruction"></a>
+                <a name="//apple_ref/swift/Section/Instruction" class="dashAnchor"></a>
+                <a href="#/Instruction">
+                  <h3 class="section-name">Instruction</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:CC8MappedIn10Directions11Instruction"></a>
+                    <a name="//apple_ref/swift/Class/Instruction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:CC8MappedIn10Directions11Instruction">Instruction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An instruction for a user to get from one Node to another. It will have a Node it happens at, an Action (depart, arrive, turn, take vortex), and optional Locations to perform this <em>at</em> or <em>towards</em>, as well as a String representing the text instructions to display to the user.</p>
+
+<p>The <em>at/towardsLocation</em> properties are to let you mark or highlight key reference locations on the MapView if they will help the user find or keep their bearings.</p>
+
+                        <a href="../Classes/Directions/Instruction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Instruction</span></code></pre>
 
                         </div>
                       </div>
@@ -191,7 +226,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-05-16)</p>
+          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-05-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
