@@ -4,6 +4,30 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v0.8.0*
+
+* Added iOS8 support to MapView (required custom OBJ file loader)
+* Improvements to MapView loading time
+* Added written directions for turns
+* Added analytics
+* Implemented MappedIn.Delegate for SDK configuration and lifecycle handling
+* The Direction class has been changed to the Directions.Instruction class
+* The Directions.directions property has been renamed to Directions.instructions
+* The Directions.Instruction.instruction property has been renamed to Directions.Instruction.description
+* You must add a property called "mappedInDelegate" to your AppDelegate with an instance of MappedIn.Delegate
+* In Swift:
+```swift
+class AppDelegate: UIApplicationDelegate {
+  let mappedInDelegate = MappedIn.Delegate(AppDelegate)
+```
+* In Objective-C:
+```objective-c
+- (id)init {
+  Delegate *mappedInDelegate = [[Delegate alloc] init:AppDelegate.self]
+```
+* The locationGenerator argument on getVenue() is being replaced by the Delegate.generateLocation method
+* To use a custom generateLocation method, create your own Delegate class inheriting from MappedIn.Delegate and override the Delegate.generateLocation method. Set your AppDelegate.mappedInDelegate property to an instance of your custom class instead of the default MappedIn.Delegate class
+
 *v0.7.0*
 
 * You can check if a MapViewMarker is already part of a MapView with mapview.hasMarker(marker), and adding a marker that's true of will no longer cause a crash.
