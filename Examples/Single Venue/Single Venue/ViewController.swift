@@ -163,7 +163,7 @@ class ViewController: UIViewController, MapViewDelegate {
         // Keep track of this polygon for when we do directions, incase a location has multiple polygons
         currentlySelectedPolygon = polygon
         mapView.highlightPolygon(polygon)
-        mapView.camera.focusOn(polygon)
+        //mapView.camera.focusOn(polygon)
         
         // If the user hit the "Go" button, the next polygon tapped will be the origin for the directions
         if let destPoly = directionsDestinationPolygon {
@@ -171,7 +171,7 @@ class ViewController: UIViewController, MapViewDelegate {
             if polygon.entrances.count > 0 {
                 
                 // Get directions between the array of entrances for each polygon
-                directions = polygon.entrances.directionsTo(destPoly.entrances, departFrom: polygon.locations.first, arriveAt: directionsDestinationPolygon!.locations.first)
+                directions = polygon.entrances.directionsTo(destPoly.entrances)
                 
                 // Make sure we have a valid path. Everything SHOULD be connected, but you never know.
                 if let path = directions?.path {
@@ -184,11 +184,11 @@ class ViewController: UIViewController, MapViewDelegate {
                     mapView.highlightPolygon(directionsDestinationPolygon!, color: directionsHighlightColor)
                     
                     // Display the first instruction to the user. You'd also show an icon for the action
-                    let instruction = directions?.directions?.first?.instruction
+                    let instruction = directions?.instructions?.first?.description
                     instructionsLabel.text = instruction
                     
                     // Set up the directions stepper to let the user jump from one intruction to the other
-                    directionsStepper.maximumValue = Double(directions!.directions.count)
+                    directionsStepper.maximumValue = Double(directions!.instructions.count)
                     directionsStepper.value = 0
                 } else {
                     locationTitleLabel.text = "No path found."
@@ -200,6 +200,7 @@ class ViewController: UIViewController, MapViewDelegate {
         // If we aren't starting directions, show the information for the location that belongs to the polygon.
         // There is probably just the one, if there are mutiples it should be something venue specific you know how to handle.
         } else {
+            Analytics.selectedLocation(polygon.locations[0])
             displayLocationInformation(polygon.locations[0])
             
         }
@@ -248,8 +249,8 @@ class ViewController: UIViewController, MapViewDelegate {
     /// Walk through the directions, displaying the right instruction
     @IBAction func directionsStepperChanged(sender: AnyObject) {
         let index = Int(directionsStepper.value)
-        mapView.camera.focusOn(directions!.directions[index].node)
-        instructionsLabel.text = directions!.directions[index].instruction
+        mapView.camera.focusOn(directions!.instructions[index].node)
+        instructionsLabel.text = directions!.instructions[index].description
     }
     
     @IBAction func showLocationsButtonPressed(sender: UIButton) {
