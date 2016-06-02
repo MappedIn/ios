@@ -4,6 +4,11 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v0.9.0*
+
+* Can now wayfind to/from Coordinates generated from arbitrary lat/longs. The path will connect directly to the closest real walkable node.
+* Markers can now be positioned and rotated dynamically. Just change their rotation property, or give them a new Coordinate
+
 *v0.8.0*
 
 * Added iOS8 support to MapView (required custom OBJ file loader)
