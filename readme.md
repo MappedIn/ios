@@ -4,6 +4,12 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v0.10.0*
+
+* Improved georeferencing accuracy.
+* New methods on Coordinate let you get the meters from another Coordinate, Path, or Polygon and check whether a Coordinate is inside a Polygon.
+* Renamed a number of method signatures to align with Swift 3.0's naming conventions. 
+
 *v0.9.0*
 
 * Can now wayfind to/from Coordinates generated from arbitrary lat/longs. The path will connect directly to the closest real walkable node.
@@ -74,18 +80,16 @@ class AppDelegate: UIApplicationDelegate {
 ## Roadmap
 *Short Term:*
 
-* Basic Analytics (basically just logging information so we can get a sense of SDK version usage in the real world)
-* Major coordinate system and MapView refactoring
-* Venue-wide coordinate system removing the need for Coordinate's to belong to specific Map's
-* Lock down the MapView API for 1.0 release
-* MappedIn Events API
+* Map loading time improvements
+* MapView refactor and API cleanup
+* Venue loading time improvements
+* Mappedin Events API
 * Directions improvements
 
 *Long Term:*
 
 * Offline data caching
 * Geolocation based Venue prefetching
-* Analytics
 * Indoor Positioning
 
 ## Setup
