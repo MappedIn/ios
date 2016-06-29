@@ -41,6 +41,9 @@
                 <a href="../Classes/Directions.html">Directions</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/Directions/Instruction.html">– Instruction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/ImageCollection.html">ImageCollection</a>
               </li>
               <li class="nav-group-task">
@@ -51,6 +54,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/MapView.html">MapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapView.html#/s:CC8MappedIn7MapView4Path">– Path</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/MapViewCamera.html">MapViewCamera</a>
@@ -156,7 +162,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span><span class="kt">MapViewDelegate</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span><span class="kt"><a href="../Protocols/MapViewDelegate.html">MapViewDelegate</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -166,9 +172,9 @@ Author: MappedIn</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn7MapView5venueGSqCS_5Venue_"></a>
+                    <a name="/s:vC8MappedIn7MapView5venueXwGSqCS_5Venue_"></a>
                     <a name="//apple_ref/swift/Property/venue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn7MapView5venueGSqCS_5Venue_">venue</a>
+                    <a class="token" href="#/s:vC8MappedIn7MapView5venueXwGSqCS_5Venue_">venue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -183,7 +189,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">venue</span><span class="p">:</span> <span class="kt">Venue</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="k">weak</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">venue</span><span class="p">:</span> <span class="kt"><a href="../Classes/Venue.html">Venue</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -210,7 +216,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">currentMap</span><span class="p">:</span> <span class="kt">Map</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">currentMap</span><span class="p">:</span> <span class="kt"><a href="../Classes/Map.html">Map</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -240,7 +246,7 @@ that use case should be supported without requiring manual manipulation of the S
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">_sceneView</span><span class="p">:</span> <span class="kt">SCNView</span> <span class="p">{</span><span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">sceneView</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">_sceneView</span><span class="p">:</span> <span class="kt">SCNView</span></code></pre>
 
                         </div>
                       </div>
@@ -308,7 +314,7 @@ This function MUST be called before nearly anything related to the MapView works
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">changeMap</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">changeMap</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt"><a href="../Classes/Map.html">Map</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -404,7 +410,7 @@ This function MUST be called before nearly anything related to the MapView works
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">highlightPolygon</span><span class="p">(</span><span class="nv">polygon</span><span class="p">:</span> <span class="kt">Polygon</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="n">defaultColor</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">highlightPolygon</span><span class="p">(</span><span class="nv">polygon</span><span class="p">:</span> <span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="n">defaultColor</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -491,7 +497,7 @@ This function MUST be called before nearly anything related to the MapView works
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAnchor</span><span class="p">(</span><span class="nv">polygon</span><span class="p">:</span> <span class="kt">Polygon</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Coordinate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAnchor</span><span class="p">(</span><span class="nv">polygon</span><span class="p">:</span> <span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span></code></pre>
 
                         </div>
                       </div>
@@ -555,7 +561,7 @@ If the marker is already owned by another MapView, this will fail.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addMarker</span><span class="p">(</span><span class="nv">marker</span><span class="p">:</span><span class="kt">MapViewMarker</span><span class="p">,</span> <span class="nv">hideWhenCollide</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addMarker</span><span class="p">(</span><span class="nv">marker</span><span class="p">:</span><span class="kt"><a href="../Classes/MapViewMarker.html">MapViewMarker</a></span><span class="p">,</span> <span class="nv">hideWhenCollide</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -615,7 +621,7 @@ If the marker is already owned by another MapView, this will fail.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeMarker</span><span class="p">(</span><span class="nv">marker</span><span class="p">:</span><span class="kt">MapViewMarker</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeMarker</span><span class="p">(</span><span class="nv">marker</span><span class="p">:</span><span class="kt"><a href="../Classes/MapViewMarker.html">MapViewMarker</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -662,7 +668,7 @@ If the marker is already owned by another MapView, this will fail.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hasMarker</span><span class="p">(</span><span class="nv">marker</span><span class="p">:</span> <span class="kt">MapViewMarker</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hasMarker</span><span class="p">(</span><span class="nv">marker</span><span class="p">:</span> <span class="kt"><a href="../Classes/MapViewMarker.html">MapViewMarker</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -720,7 +726,7 @@ If the marker is already owned by another MapView, this will fail.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addPath</span><span class="p">(</span><span class="nv">path</span><span class="p">:</span> <span class="kt">Path</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addPath</span><span class="p">(</span><span class="nv">path</span><span class="p">:</span> <span class="kt"><a href="../Classes/MapView.html#/s:CC8MappedIn7MapView4Path">Path</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -747,7 +753,7 @@ If the marker is already owned by another MapView, this will fail.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removePath</span><span class="p">(</span><span class="nv">path</span><span class="p">:</span> <span class="kt">Path</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removePath</span><span class="p">(</span><span class="nv">path</span><span class="p">:</span> <span class="kt"><a href="../Classes/MapView.html#/s:CC8MappedIn7MapView4Path">Path</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -813,8 +819,8 @@ If the marker is already owned by another MapView, this will fail.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-06-02)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-06-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

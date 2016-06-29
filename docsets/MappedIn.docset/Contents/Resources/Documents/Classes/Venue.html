@@ -41,6 +41,9 @@
                 <a href="../Classes/Directions.html">Directions</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/Directions/Instruction.html">– Instruction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/ImageCollection.html">ImageCollection</a>
               </li>
               <li class="nav-group-task">
@@ -51,6 +54,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/MapView.html">MapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapView.html#/s:CC8MappedIn7MapView4Path">– Path</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/MapViewCamera.html">MapViewCamera</a>
@@ -116,7 +122,7 @@
             <h1>Venue</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Venue</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Venue</span></code></pre>
 
                 </div>
               </div>
@@ -140,13 +146,6 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Initial%20data%20from%20getVenues%20array"></a>
-                <a name="//apple_ref/swift/Section/Initial data from getVenues array" class="dashAnchor"></a>
-                <a href="#/Initial%20data%20from%20getVenues%20array">
-                  <h3 class="section-name">Initial data from getVenues array</h3>
-                </a>
-              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -161,14 +160,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The name of the venue</p>
+                        <p>Partial Venue data
+The name of the venue</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span><span class="k">return</span> <span class="n">_name</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -195,7 +195,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">logo</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span> <span class="p">{</span><span class="k">return</span> <span class="n">_logo</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">logo</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImageCollection.html">ImageCollection</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -222,24 +222,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">picture</span><span class="p">:</span> <span class="kt">ImageCollection</span><span class="p">?</span> <span class="p">{</span><span class="k">return</span> <span class="n">_picture</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">picture</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImageCollection.html">ImageCollection</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Full%20details%20pulled%20in%20after%20getVenue%20is%20called%20on%20this%20Venue%20specifically"></a>
-                <a name="//apple_ref/swift/Section/Full details pulled in after getVenue is called on this Venue specifically" class="dashAnchor"></a>
-                <a href="#/Full%20details%20pulled%20in%20after%20getVenue%20is%20called%20on%20this%20Venue%20specifically">
-                  <h3 class="section-name">Full details pulled in after getVenue is called on this Venue specifically</h3>
-                </a>
-              </div>
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -260,7 +249,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">Location</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_locations</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">locations</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/Location.html">Location</a></span><span class="p">]()</span></code></pre>
 
                         </div>
                       </div>
@@ -287,7 +276,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">categories</span><span class="p">:</span> <span class="p">[</span><span class="kt">Category</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_categories</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">categories</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/Category.html">Category</a></span><span class="p">]()</span></code></pre>
 
                         </div>
                       </div>
@@ -314,7 +303,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maps</span><span class="p">:</span> <span class="p">[</span><span class="kt">Map</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_maps</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">maps</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/Map.html">Map</a></span><span class="p">]()</span></code></pre>
 
                         </div>
                       </div>
@@ -341,7 +330,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">vortices</span><span class="p">:</span> <span class="p">[</span><span class="kt">Vortex</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_vortices</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">vortices</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/Vortex.html">Vortex</a></span><span class="p">]()</span></code></pre>
 
                         </div>
                       </div>
@@ -368,7 +357,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">polygons</span><span class="p">:</span> <span class="p">[</span><span class="kt">Polygon</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">_polygons</span><span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">polygons</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="p">]()</span></code></pre>
 
                         </div>
                       </div>
@@ -380,8 +369,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-06-02)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-06-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

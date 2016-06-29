@@ -40,6 +40,9 @@
                 <a href="Classes/Directions.html">Directions</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/Directions/Instruction.html">– Instruction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/ImageCollection.html">ImageCollection</a>
               </li>
               <li class="nav-group-task">
@@ -50,6 +53,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/MapView.html">MapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MapView.html#/s:CC8MappedIn7MapView4Path">– Path</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/MapViewCamera.html">MapViewCamera</a>
@@ -122,9 +128,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn7MapView"></a>
-                    <a name="//apple_ref/swift/Class/MapView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn7MapView">MapView</a>
+                    <a name="/s:C8MappedIn15MapViewMarker2D"></a>
+                    <a name="//apple_ref/swift/Class/MapViewMarker2D" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn15MapViewMarker2D">MapViewMarker2D</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -132,18 +138,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>MapView is a custom view designed to handle displaying Maps for a Venue. Set the <code>venue</code> property and then call <code>loadScene()</code> to display the first map. From there, you can change maps (usually different floors) with the <code>.setFloor()</code> function`
-You can also highlight polygons and attach floating Markers.
-Since: 0.1
-Author: MappedIn</p>
+                        <p>A 2D implementation of a MapViewMarker. They will always face the MapView&rsquo;s camera, maintaining the same size and orientation.
+The base class is for images. For text labels, use MapViewMarker2DLabel</p>
 
-                        <a href="Classes/MapView.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/MapViewMarker2D.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker2D</span><span class="p">:</span><span class="kt"><a href="Classes/MapViewMarker.html">MapViewMarker</a></span></code></pre>
 
                         </div>
                       </div>
@@ -182,7 +186,39 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Directions</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Directions</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8MappedIn13MapViewMarker"></a>
+                    <a name="//apple_ref/swift/Class/MapViewMarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn13MapViewMarker">MapViewMarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A visual element that can be placed overtop of a Mapview. Currently, only the child MapViewMarker2D can actually be used, with either an image or text.</p>
+
+                        <a href="Classes/MapViewMarker.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -216,7 +252,42 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Vortex</span><span class="p">:</span> <span class="kt">Location</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Vortex</span><span class="p">:</span> <span class="kt"><a href="Classes/Location.html">Location</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8MappedIn7MapView"></a>
+                    <a name="//apple_ref/swift/Class/MapView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn7MapView">MapView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MapView is a custom view designed to handle displaying Maps for a Venue. Set the <code>venue</code> property and then call <code>loadScene()</code> to display the first map. From there, you can change maps (usually different floors) with the <code>.setFloor()</code> function`
+You can also highlight polygons and attach floating Markers.
+Since: 0.1
+Author: MappedIn</p>
+
+                        <a href="Classes/MapView.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
 
                         </div>
                       </div>
@@ -248,7 +319,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt"><a href="Protocols/Navigatable.html">Navigatable</a></span><span class="p">,</span> <span class="kt">InstanceHashable</span></code></pre>
 
                         </div>
                       </div>
@@ -282,7 +353,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Polygon</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Polygon</span><span class="p">:</span> <span class="kt"><a href="Protocols/Navigatable.html">Navigatable</a></span><span class="p">,</span> <span class="kt">InstanceHashable</span></code></pre>
 
                         </div>
                       </div>
@@ -329,39 +400,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Venue</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn13MapViewCamera"></a>
-                    <a name="//apple_ref/swift/Class/MapViewCamera" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn13MapViewCamera">MapViewCamera</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The MapViewCamera allows you to control the camera on the MapView. Adjust the position, rotation, and zoom level</p>
-
-                        <a href="Classes/MapViewCamera.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewCamera</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Venue</span></code></pre>
 
                         </div>
                       </div>
@@ -397,39 +436,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Navigatable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn13MapViewMarker"></a>
-                    <a name="//apple_ref/swift/Class/MapViewMarker" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn13MapViewMarker">MapViewMarker</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A visual element that can be placed overtop of a Mapview. Currently, only the child MapViewMarker2D can actually be used, with either an image or text.</p>
-
-                        <a href="Classes/MapViewMarker.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt"><a href="Protocols/Navigatable.html">Navigatable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -462,7 +469,39 @@ The text, font, font size, font color, and background color are all customizable
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker2DLabel</span><span class="p">:</span> <span class="kt">MapViewMarker2D</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker2DLabel</span><span class="p">:</span> <span class="kt"><a href="Classes/MapViewMarker2D.html">MapViewMarker2D</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8MappedIn13MapViewCamera"></a>
+                    <a name="//apple_ref/swift/Class/MapViewCamera" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8MappedIn13MapViewCamera">MapViewCamera</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The MapViewCamera allows you to control the camera on the mapView!. Adjust the position, rotation, and zoom level</p>
+
+                        <a href="Classes/MapViewCamera.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewCamera</span></code></pre>
 
                         </div>
                       </div>
@@ -494,40 +533,7 @@ The text, font, font size, font color, and background color are all customizable
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Category</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn15MapViewMarker2D"></a>
-                    <a name="//apple_ref/swift/Class/MapViewMarker2D" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn15MapViewMarker2D">MapViewMarker2D</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A 2D implementation of a MapViewMarker. They will always face the MapView&rsquo;s camera, maintaining the same size and orientation.
-The base class is for images. For text labels, use MapViewMarker2DLabel</p>
-
-                        <a href="Classes/MapViewMarker2D.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker2D</span><span class="p">:</span><span class="kt">MapViewMarker</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Category</span></code></pre>
 
                         </div>
                       </div>
@@ -561,7 +567,7 @@ The base class is for images. For text labels, use MapViewMarker2DLabel</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Map</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Map</span><span class="p">:</span> <span class="kt">InstanceHashable</span></code></pre>
 
                         </div>
                       </div>
@@ -594,7 +600,7 @@ Gives you the URL of the image you need to download.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ImageCollection</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">ImageCollection</span></code></pre>
 
                         </div>
                       </div>
@@ -622,7 +628,7 @@ Gives you the URL of the image you need to download.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RawData</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">RawData</span></code></pre>
 
                         </div>
                       </div>
@@ -634,8 +640,8 @@ Gives you the URL of the image you need to download.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-06-02)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-06-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
