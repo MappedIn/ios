@@ -4,6 +4,10 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v0.10.1*
+
+* Moved 3D model loading process into getVenue call
+
 *v0.10.0*
 
 * Improved georeferencing accuracy.
