@@ -4,7 +4,7 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
-*v0.10.1*
+*v0.10.2*
 
 * Moved 3D model loading process into getVenue call
 
