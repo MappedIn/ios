@@ -48,8 +48,10 @@ public class MapViewController: UIViewController, MapViewDelegate {
     }
     
     private func updateView() {
-        self.updateHighlightedPolygons()
-        self.updateDirections()
+        if let subMapView = self.mappedinMapView {
+            self.updateHighlightedPolygons()
+            self.updateDirections()
+        }
     }
     
     private func updateDirections() {
@@ -102,7 +104,9 @@ public class MapViewController: UIViewController, MapViewDelegate {
         
     }
     
-    public func sceneLoaded() {}
+    public func sceneLoaded() {
+        self.updateView()
+    }
     public func mapMotionStarted(type: MotionType) {}
     public func mapMotionEnded(type: MotionType) {}
 }

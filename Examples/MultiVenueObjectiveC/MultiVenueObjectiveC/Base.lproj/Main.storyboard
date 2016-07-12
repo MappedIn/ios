@@ -106,6 +106,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="gYz-qR-uhl" kind="show" identifier="SelectLocation" id="FKM-kz-iza"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -172,4 +175,7 @@
             <point key="canvasLocation" x="-2584" y="227"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FKM-kz-iza"/>
+    </inferredMetricsTieBreakers>
 </document>
