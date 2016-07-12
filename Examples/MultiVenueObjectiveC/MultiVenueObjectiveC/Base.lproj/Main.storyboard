@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vpk-Sz-gNV">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Venues-->
+        <scene sceneID="0f1-ym-3gj">
+            <objects>
+                <tableViewController id="V3R-nC-2Pq" customClass="VenueTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mv8-Pe-SiL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenueTableViewCell" id="0es-jv-pZb" customClass="VenueTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0es-jv-pZb" id="wtT-f1-64z">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9em-fK-9S7" kind="show" id="QVv-Et-iDJ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="V3R-nC-2Pq" id="TLx-ca-SaL"/>
+                            <outlet property="delegate" destination="V3R-nC-2Pq" id="hLj-FI-n11"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Venues" id="CjZ-sQ-FWb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7M-tX-Q74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1772" y="227"/>
+        </scene>
+        <!--Venue View Controller-->
+        <scene sceneID="i22-Aw-MBS">
+            <objects>
+                <viewController id="9em-fK-9S7" customClass="VenueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F5I-ID-hUz"/>
+                        <viewControllerLayoutGuide type="bottom" id="TPB-st-M74"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6E4-Ul-r1K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjJ-0a-h9u">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiA-GR-QJj">
+                                        <rect key="frame" x="8" y="8" width="584" height="30"/>
+                                        <state key="normal" title="Locations"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-fJ-JG8">
+                                        <rect key="frame" x="8" y="46" width="584" height="30"/>
+                                        <state key="normal" title="Map"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-nP-Fab">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UUa-nP-Fab" firstAttribute="centerY" secondItem="6E4-Ul-r1K" secondAttribute="centerY" id="Qw7-aj-60j"/>
+                            <constraint firstItem="UUa-nP-Fab" firstAttribute="centerX" secondItem="6E4-Ul-r1K" secondAttribute="centerX" id="bg2-BW-VPa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="UUa-nP-Fab" id="EJf-EB-3sp"/>
+                        <outlet property="venueSubview" destination="EjJ-0a-h9u" id="fKe-uh-hAX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5x-hP-hKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1060" y="227"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uoc-cJ-wGF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vpk-Sz-gNV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wqw-nH-eiT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="V3R-nC-2Pq" kind="relationship" relationship="rootViewController" id="fNE-Xh-Lip"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zM5-3n-Z8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2584" y="227"/>
+        </scene>
+    </scenes>
+</document>
