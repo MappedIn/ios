@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Venues-->
@@ -22,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9em-fK-9S7" kind="show" id="QVv-Et-iDJ"/>
+                                    <segue destination="9em-fK-9S7" kind="show" identifier="ShowVenue" id="QVv-Et-iDJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -37,7 +38,7 @@
             </objects>
             <point key="canvasLocation" x="-1772" y="227"/>
         </scene>
-        <!--Venue View Controller-->
+        <!--Venue-->
         <scene sceneID="i22-Aw-MBS">
             <objects>
                 <viewController id="9em-fK-9S7" customClass="VenueViewController" sceneMemberID="viewController">
@@ -49,23 +50,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-nP-Fab">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjJ-0a-h9u">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiA-GR-QJj">
                                         <rect key="frame" x="8" y="8" width="584" height="30"/>
                                         <state key="normal" title="Locations"/>
+                                        <connections>
+                                            <segue destination="IM7-qn-65W" kind="show" identifier="ShowLocations" id="eJo-ln-nZg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-fJ-JG8">
                                         <rect key="frame" x="8" y="46" width="584" height="30"/>
                                         <state key="normal" title="Map"/>
+                                        <connections>
+                                            <segue destination="gYz-qR-uhl" kind="show" identifier="ShowMap" id="7Pi-r3-t4t"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-nP-Fab">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -73,6 +80,7 @@
                             <constraint firstItem="UUa-nP-Fab" firstAttribute="centerX" secondItem="6E4-Ul-r1K" secondAttribute="centerX" id="bg2-BW-VPa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Venue" id="NDS-th-3a1"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="UUa-nP-Fab" id="EJf-EB-3sp"/>
                         <outlet property="venueSubview" destination="EjJ-0a-h9u" id="fKe-uh-hAX"/>
@@ -80,7 +88,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5x-hP-hKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1060" y="227"/>
+            <point key="canvasLocation" x="-1072" y="227"/>
+        </scene>
+        <!--Locations-->
+        <scene sceneID="ePq-49-Ohy">
+            <objects>
+                <tableViewController id="IM7-qn-65W" customClass="LocationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IQM-BT-A98">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableViewCell" id="eC8-ge-HEw" customClass="LocationTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eC8-ge-HEw" id="auQ-7g-mci">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IM7-qn-65W" id="lnO-RG-I2l"/>
+                            <outlet property="delegate" destination="IM7-qn-65W" id="gOh-pZ-n4x"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Locations" id="P54-gg-XTA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBk-e7-m92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-361" y="-109"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="w70-vi-h61">
+            <objects>
+                <viewController id="gYz-qR-uhl" customClass="MapViewController" customModule="MultiVenueObjectiveC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDJ-OJ-Crb"/>
+                        <viewControllerLayoutGuide type="bottom" id="YrN-As-jf1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pX9-ZS-kfS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asC-Ka-XIW" customClass="MapView" customModule="MappedIn">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="asC-Ka-XIW" firstAttribute="top" secondItem="UDJ-OJ-Crb" secondAttribute="bottom" id="3uk-9Y-l9a"/>
+                            <constraint firstItem="asC-Ka-XIW" firstAttribute="leading" secondItem="pX9-ZS-kfS" secondAttribute="leadingMargin" constant="-20" id="E2k-4s-tvc"/>
+                            <constraint firstItem="YrN-As-jf1" firstAttribute="top" secondItem="asC-Ka-XIW" secondAttribute="bottom" id="NXJ-dA-Y46"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="asC-Ka-XIW" secondAttribute="trailing" constant="-20" id="WHP-hc-MlU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="Z29-6V-Nda"/>
+                    <connections>
+                        <outlet property="mappedinMapView" destination="asC-Ka-XIW" id="eRf-3F-HXV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMS-h1-QkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-361" y="589"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uoc-cJ-wGF">

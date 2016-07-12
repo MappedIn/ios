@@ -10,6 +10,7 @@
 
 @interface VenueViewController : UIViewController
 
+@property NSString *venueName;
 @property (weak, nonatomic) IBOutlet UIView *venueSubview;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 

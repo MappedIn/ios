@@ -8,10 +8,10 @@
 
 #import "VenueViewController.h"
 #import "MultiVenueObjectiveC-Swift.h"
+#import "LocationTableViewController.h"
 
 @interface VenueViewController ()
 
-@property NSString *venueName;
 @property NSMutableArray *locations;
 
 @end
@@ -26,10 +26,20 @@
     self.locations = [[NSMutableArray alloc] init];
     
     [MappedInWrapper getVenue:self.venueName callback:^ (NSArray *locations) {
-        self.locations = locations;
+        self.locations = [NSMutableArray arrayWithArray:locations];
         self.venueSubview.alpha = 1;
         [self.loadingIndicator stopAnimating];
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier  isEqual: @"ShowLocations"]) {
+        LocationTableViewController *locationTableView = segue.destinationViewController;
+        locationTableView.locations = self.locations;
+    }
+    
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 
 @end

@@ -9,6 +9,8 @@
 #import "VenueTableViewController.h"
 @import MappedIn;
 #import "MultiVenueObjectiveC-Swift.h"
+#import "VenueViewController.h"
+#import "VenueTableViewCell.h"
 
 @interface VenueTableViewController ()
 
@@ -23,7 +25,7 @@
     self.venues = [[NSMutableArray alloc] init];
     
     [MappedInWrapper getVenues:^ (NSArray *venues) {
-        self.venues = venues;
+        self.venues = [NSMutableArray arrayWithArray:venues];
         
         NSMutableArray *indexPaths = [NSMutableArray array];
         
@@ -99,14 +101,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier  isEqual: @"ShowVenue"]) {
+        VenueViewController *venueViewController = segue.destinationViewController;
+        VenueTableViewCell *selectedVenueCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedVenueCell];
+        NSString *selectedVenue = [self.venues objectAtIndex:indexPath.row];
+        venueViewController.venueName = selectedVenue;
+    }
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

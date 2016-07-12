@@ -18,6 +18,9 @@
 		926FC68B1D34D15D00EC6B62 /* VenueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926FC68A1D34D15D00EC6B62 /* VenueTableViewCell.m */; };
 		926FC68E1D34D6E600EC6B62 /* MappedInWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FC68D1D34D6E600EC6B62 /* MappedInWrapper.swift */; };
 		926FC6911D351FA500EC6B62 /* VenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926FC6901D351FA500EC6B62 /* VenueViewController.m */; };
+		926FC6971D353D5000EC6B62 /* LocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926FC6961D353D5000EC6B62 /* LocationTableViewController.m */; };
+		926FC69A1D3541BF00EC6B62 /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926FC6991D3541BF00EC6B62 /* LocationTableViewCell.m */; };
+		926FC69C1D35471600EC6B62 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FC69B1D35471600EC6B62 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +55,11 @@
 		926FC68D1D34D6E600EC6B62 /* MappedInWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappedInWrapper.swift; sourceTree = "<group>"; };
 		926FC68F1D351FA500EC6B62 /* VenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueViewController.h; sourceTree = "<group>"; };
 		926FC6901D351FA500EC6B62 /* VenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueViewController.m; sourceTree = "<group>"; };
+		926FC6951D353D5000EC6B62 /* LocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewController.h; sourceTree = "<group>"; };
+		926FC6961D353D5000EC6B62 /* LocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewController.m; sourceTree = "<group>"; };
+		926FC6981D3541BF00EC6B62 /* LocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewCell.h; sourceTree = "<group>"; };
+		926FC6991D3541BF00EC6B62 /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
+		926FC69B1D35471600EC6B62 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,11 @@
 				926FC68A1D34D15D00EC6B62 /* VenueTableViewCell.m */,
 				926FC68F1D351FA500EC6B62 /* VenueViewController.h */,
 				926FC6901D351FA500EC6B62 /* VenueViewController.m */,
+				926FC6951D353D5000EC6B62 /* LocationTableViewController.h */,
+				926FC6961D353D5000EC6B62 /* LocationTableViewController.m */,
+				926FC6981D3541BF00EC6B62 /* LocationTableViewCell.h */,
+				926FC6991D3541BF00EC6B62 /* LocationTableViewCell.m */,
+				926FC69B1D35471600EC6B62 /* MapViewController.swift */,
 				926FC6741D34B44A00EC6B62 /* Main.storyboard */,
 				926FC6771D34B44A00EC6B62 /* Assets.xcassets */,
 				926FC6791D34B44A00EC6B62 /* LaunchScreen.storyboard */,
@@ -186,9 +199,12 @@
 			files = (
 				926FC68E1D34D6E600EC6B62 /* MappedInWrapper.swift in Sources */,
 				926FC6701D34B44A00EC6B62 /* AppDelegate.m in Sources */,
+				926FC6971D353D5000EC6B62 /* LocationTableViewController.m in Sources */,
 				926FC68B1D34D15D00EC6B62 /* VenueTableViewCell.m in Sources */,
+				926FC69C1D35471600EC6B62 /* MapViewController.swift in Sources */,
 				926FC66D1D34B44A00EC6B62 /* main.m in Sources */,
 				926FC6911D351FA500EC6B62 /* VenueViewController.m in Sources */,
+				926FC69A1D3541BF00EC6B62 /* LocationTableViewCell.m in Sources */,
 				926FC6881D34CF5A00EC6B62 /* VenueTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

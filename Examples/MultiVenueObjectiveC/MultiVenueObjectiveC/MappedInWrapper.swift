@@ -12,7 +12,7 @@ import MappedIn
 @objc
 public class MappedInWrapper: NSObject {
     private static var venues = [Venue]()
-    private static var venue: Venue?
+    static var venue: Venue?
     
     public static func getVenues(callback: ([String] -> Void)) {
         MappedIn.getVenues({venues in
