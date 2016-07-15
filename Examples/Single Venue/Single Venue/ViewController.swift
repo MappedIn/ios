@@ -180,11 +180,11 @@ class ViewController: UIViewController, MapViewDelegate {
                     //Draw the path and highlight the end point
                     mapView.addPath(mapPath)
                     
-                    mapView.camera.focusOn(mapPath.coordinates, autoZoom: .Both)
+                    mapView.camera.focusOn([polygon, destPoly], autoZoom: .None)
                     mapView.highlightPolygon(directionsDestinationPolygon!, color: directionsHighlightColor)
                     
                     // Display the first instruction to the user. You'd also show an icon for the action
-                    let instruction = directions?.instructions?.first?.description
+                    let instruction = directions?.instructions.first?.description
                     instructionsLabel.text = instruction
                     
                     // Set up the directions stepper to let the user jump from one intruction to the other
