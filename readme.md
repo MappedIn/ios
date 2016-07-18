@@ -4,6 +4,10 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v0.10.5*
+
+* Fix bug with 3D model parsing happening on main thread
+
 *v0.10.4*
 
 * Fix directions bug
