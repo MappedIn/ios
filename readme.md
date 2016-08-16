@@ -4,6 +4,11 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v0.10.9*
+
+* Enable orthographic mode to be enabled before map is rendered
+* Make clearHighlightedPolygons clear all polygons on all maps
+
 *v0.10.5*
 
 * Fix bug with 3D model parsing happening on main thread
