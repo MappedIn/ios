@@ -4,6 +4,10 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v0.10.10*
+
+* Remove jitter from SCNView which was crashing apps in certain situations on devices which support Metal
+
 *v0.10.9*
 
 * Enable orthographic mode to be enabled before map is rendered
