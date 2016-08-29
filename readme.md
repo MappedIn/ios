@@ -4,6 +4,10 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v.0.10.11*
+
+* Implement `miterlimit` with a value of 4 into MapView.Path which prevents extreme corners on sharp path angles
+
 *v0.10.10*
 
 * Remove jitter from SCNView which was crashing apps in certain situations on devices which support Metal
