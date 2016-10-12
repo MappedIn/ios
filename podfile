@@ -5,10 +5,10 @@ xcodeproj "Examples/Single Venue/Single Venue.xcodeproj"
 
 target "Hello World" do
 	xcodeproj "Examples/Hello World/Hello World.xcodeproj"
-	pod "MappedIn", "~>0.10"
+	pod "MappedIn", "~>0.11"
 end
 
 target "Single Venue" do
 	xcodeproj "Examples/Single Venue/Single Venue.xcodeproj"
-	pod "MappedIn", "~>0.10"
+	pod "MappedIn", "~>0.11"
 end
