@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Map Class Reference</title>
+    <title>Analytics Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Map" class="dashAnchor"></a>
-    <a title="Map Class Reference"></a>
+    <a name="//apple_ref/swift/Class/Analytics" class="dashAnchor"></a>
+    <a title="Analytics Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">MappedIn Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">MappedIn Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Map Class Reference
+        Analytics Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -122,16 +122,16 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Map</h1>
+            <h1>Analytics</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Map</span><span class="p">:</span> <span class="kt">InstanceHashable</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analytics</span></code></pre>
 
                 </div>
               </div>
-            <p>A Map belonging to a given venue. Typically represents a certain floor. Give this to a MapView to display to the user.</p>
-
-<p>The elevation property can be used to determine the order of the floors (first, second, etc).</p>
+            <p>Most of the analytics events are handled for you. However, what <q>Location Selected</q> and <q>Category Selected</q>
+mean are application-dependant. You should ensure you figre them as appropriate to ensure accuracy of the customer&rsquo;s data
+and to improve the intelligence of smart search.</p>
 
           </section>
           <section class="section task-group-section">
@@ -140,9 +140,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn3Map4nameSS"></a>
-                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn3Map4nameSS">name</a>
+                    <a name="/s:ZFC8MappedIn9Analytics16selectedLocationFCS_8LocationT_"></a>
+                    <a name="//apple_ref/swift/Method/selectedLocation(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC8MappedIn9Analytics16selectedLocationFCS_8LocationT_">selectedLocation(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -150,14 +150,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Name of a map (First floor, Second Floor, etc)</p>
+                        <p>Sends an analytics event indicating that a specific Location was selected. It is up to you to determine when that should be fired,
+but typically it would be whenever you show the rest of the location&rsquo;s details.</p>
+
+<p>Sending this event is important to improve the smart search service.</p>
+
+<p>parameter - The Location that was selected</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">selectedLocation</span><span class="p">(</span><span class="nv">location</span><span class="p">:</span> <span class="kt"><a href="../Classes/Location.html">Location</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -167,9 +172,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8MappedIn3Map9shortNameSS"></a>
-                    <a name="//apple_ref/swift/Property/shortName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn3Map9shortNameSS">shortName</a>
+                    <a name="/s:ZFC8MappedIn9Analytics16selectedCategoryFCS_8CategoryT_"></a>
+                    <a name="//apple_ref/swift/Method/selectedCategory(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC8MappedIn9Analytics16selectedCategoryFCS_8CategoryT_">selectedCategory(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -177,41 +182,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A shorter name to display in dropdowns etc if the actual name is too long</p>
+                        <p>Sends an analytics event indicating that a specific Category was selected. It is up to you to determine when that should be fired,
+but typically it would be whenever the user selects it out of a list of other categories</p>
+
+<p>parameter - The Category that was selected</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">shortName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC8MappedIn3Map9elevationSd"></a>
-                    <a name="//apple_ref/swift/Property/elevation" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8MappedIn3Map9elevationSd">elevation</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Elevation of the map, used to sort floors</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">elevation</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">selectedCategory</span><span class="p">(</span><span class="nv">category</span><span class="p">:</span> <span class="kt"><a href="../Classes/Category.html">Category</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>

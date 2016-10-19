@@ -1,1 +1,362 @@
-{"warnings":[{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapViewMarker2D.swift","line":45,"symbol":"hidden","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/AppDelegate.swift","line":14,"symbol":"Delegate","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/InstanceHashable.swift","line":11,"symbol":"InstanceHashable","symbol_kind":"source.lang.swift.decl.protocol","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/InstanceHashable.swift","line":null,"symbol":"InstanceHashable","symbol_kind":"source.lang.swift.decl.extension","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/InstanceHashable.swift","line":19,"symbol":"==(_:_:)","symbol_kind":"source.lang.swift.decl.function.free","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Material.swift","line":26,"symbol":"Color","symbol_kind":"source.lang.swift.decl.struct","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Material.swift","line":51,"symbol":"Material","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Material.swift","line":77,"symbol":"==(_:_:)","symbol_kind":"source.lang.swift.decl.function.free","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Material.swift","line":87,"symbol":"IlluminationModel","symbol_kind":"source.lang.swift.decl.enum","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":19,"symbol":"distance","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":212,"symbol":"Left","symbol_kind":"source.lang.swift.decl.enumelement","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":213,"symbol":"SlightLeft","symbol_kind":"source.lang.swift.decl.enumelement","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":214,"symbol":"Straight","symbol_kind":"source.lang.swift.decl.enumelement","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":215,"symbol":"SlightRight","symbol_kind":"source.lang.swift.decl.enumelement","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":216,"symbol":"Right","symbol_kind":"source.lang.swift.decl.enumelement","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":282,"symbol":"navigatableCoordinates","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":306,"symbol":"directions(to:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":318,"symbol":"directionsTo(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":324,"symbol":"directions(from:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":336,"symbol":"directionsFrom(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Directions.swift","line":345,"symbol":"navigatableCoordinates","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapViewMarker.swift","line":90,"symbol":"==(_:_:)","symbol_kind":"source.lang.swift.decl.function.free","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Vortex.swift","line":17,"symbol":"accessible","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapView.swift","line":13,"symbol":"MotionType","symbol_kind":"source.lang.swift.decl.enum","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapView.swift","line":37,"symbol":"defaultColor","symbol_kind":"source.lang.swift.decl.var.static","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapView.swift","line":68,"symbol":"camera","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapView.swift","line":141,"symbol":"init(coder:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapView.swift","line":1165,"symbol":"renderer(_:willRenderScene:atTime:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Coordinate.swift","line":24,"symbol":"map","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Coordinate.swift","line":27,"symbol":"navigatableCoordinates","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Coordinate.swift","line":28,"symbol":"navigatableNodes","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/Path.swift","line":82,"symbol":"changePathsMap(_:next:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/Path.swift","line":144,"symbol":"coordinates","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/Path.swift","line":145,"symbol":"width","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/Path.swift","line":146,"symbol":"height","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/Path.swift","line":147,"symbol":"color","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/Path.swift","line":149,"symbol":"hashValue","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/Path.swift","line":155,"symbol":"init(coordinates:width:height:color:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/Path.swift","line":349,"symbol":"==(_:_:)","symbol_kind":"source.lang.swift.decl.function.free","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Location.swift","line":32,"symbol":"navigatableCoordinates","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Location.swift","line":34,"symbol":"init(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapViewCamera.swift","line":14,"symbol":"AutomaticZoomType","symbol_kind":"source.lang.swift.decl.enum","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapViewCamera.swift","line":159,"symbol":"focusOn(_:autoZoom:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/MapView/MapViewCamera.swift","line":229,"symbol":"focusOn(_:autoZoom:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/MaterialLoader.swift","line":11,"symbol":"MaterialLoadingError","symbol_kind":"source.lang.swift.decl.enum","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/MaterialLoader.swift","line":15,"symbol":"MaterialLoader","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Geometry.swift","line":22,"symbol":"VertexIndex","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Geometry.swift","line":39,"symbol":"==(_:_:)","symbol_kind":"source.lang.swift.decl.function.free","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Geometry.swift","line":null,"symbol":"VertexIndex","symbol_kind":"source.lang.swift.decl.extension","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Geometry.swift","line":55,"symbol":"Shape","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/Geometry.swift","line":137,"symbol":"==(_:_:)","symbol_kind":"source.lang.swift.decl.function.free","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/Analytics.swift","line":27,"symbol":"Analytics","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"},{"file":"/Users/zach/Dev/ios-sdk/Source/ObjParser/ObjLoader.swift","line":16,"symbol":"ObjLoader","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"}],"source_directory":"/Users/zach/Dev/ios-sdk"}
+{
+  "warnings": [
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/AppDelegate.swift",
+      "line": 14,
+      "symbol": "Delegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Coordinate.swift",
+      "line": 24,
+      "symbol": "Coordinate.map",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Coordinate.swift",
+      "line": 27,
+      "symbol": "Coordinate.navigatableCoordinates",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Coordinate.swift",
+      "line": 28,
+      "symbol": "Coordinate.navigatableNodes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Coordinate.swift",
+      "line": 112,
+      "symbol": "Coordinate.init(x:y:map:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 19,
+      "symbol": "Directions.distance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 214,
+      "symbol": "Directions.Instruction.Turn.Bearing.Left",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 215,
+      "symbol": "Directions.Instruction.Turn.Bearing.SlightLeft",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 216,
+      "symbol": "Directions.Instruction.Turn.Bearing.Straight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 217,
+      "symbol": "Directions.Instruction.Turn.Bearing.SlightRight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 218,
+      "symbol": "Directions.Instruction.Turn.Bearing.Right",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 284,
+      "symbol": "Navigatable.navigatableCoordinates",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 308,
+      "symbol": "Navigatable.directions(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 320,
+      "symbol": "Navigatable.directionsTo(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 326,
+      "symbol": "Navigatable.directions(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 338,
+      "symbol": "Navigatable.directionsFrom(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Directions.swift",
+      "line": 347,
+      "symbol": "Array.navigatableCoordinates",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/InstanceHashable.swift",
+      "line": null,
+      "symbol": "InstanceHashable",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/InstanceHashable.swift",
+      "line": 11,
+      "symbol": "InstanceHashable",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/InstanceHashable.swift",
+      "line": 19,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Location.swift",
+      "line": 32,
+      "symbol": "Location.navigatableCoordinates",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Location.swift",
+      "line": 34,
+      "symbol": "Location.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapView.swift",
+      "line": 13,
+      "symbol": "MotionType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapView.swift",
+      "line": 37,
+      "symbol": "MapView.defaultColor",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapView.swift",
+      "line": 70,
+      "symbol": "MapView.camera",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapView.swift",
+      "line": 156,
+      "symbol": "MapView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapView.swift",
+      "line": 1160,
+      "symbol": "MapView.renderer(_:willRenderScene:atTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapViewCamera.swift",
+      "line": 14,
+      "symbol": "MapViewCamera.AutomaticZoomType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapViewCamera.swift",
+      "line": 159,
+      "symbol": "MapViewCamera.focusOn(_:autoZoom:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapViewCamera.swift",
+      "line": 229,
+      "symbol": "MapViewCamera.focusOn(_:autoZoom:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapViewMarker.swift",
+      "line": 90,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/MapViewMarker2DLabel.swift",
+      "line": 79,
+      "symbol": "MapViewMarker2DLabel.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/Path.swift",
+      "line": 85,
+      "symbol": "MapView.changePathsMap(_:next:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/Path.swift",
+      "line": 147,
+      "symbol": "MapView.Path.coordinates",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/Path.swift",
+      "line": 148,
+      "symbol": "MapView.Path.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/Path.swift",
+      "line": 149,
+      "symbol": "MapView.Path.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/Path.swift",
+      "line": 150,
+      "symbol": "MapView.Path.color",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/MapView/Path.swift",
+      "line": 156,
+      "symbol": "MapView.Path.init(coordinates:width:height:color:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Geometry.swift",
+      "line": null,
+      "symbol": "VertexIndex",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Geometry.swift",
+      "line": 22,
+      "symbol": "VertexIndex",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Geometry.swift",
+      "line": 39,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Geometry.swift",
+      "line": 55,
+      "symbol": "Shape",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Geometry.swift",
+      "line": 137,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Material.swift",
+      "line": 26,
+      "symbol": "Color",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Material.swift",
+      "line": 51,
+      "symbol": "Material",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Material.swift",
+      "line": 77,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/Material.swift",
+      "line": 87,
+      "symbol": "IlluminationModel",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/MaterialLoader.swift",
+      "line": 11,
+      "symbol": "MaterialLoadingError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/MaterialLoader.swift",
+      "line": 15,
+      "symbol": "MaterialLoader",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/ObjParser/ObjLoader.swift",
+      "line": 16,
+      "symbol": "ObjLoader",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/paul/git/ios-sdk/Source/Vortex.swift",
+      "line": 17,
+      "symbol": "Vortex.accessible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/paul/git/ios-sdk"
+}
