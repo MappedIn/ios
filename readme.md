@@ -4,6 +4,10 @@ This repo contains a simple example to get you started with the MappedIn iOS SDK
 
 ## Changes
 
+*v.0.11.2*
+
+* Build with Swift 3.0.1
+
 *v0.11.0*
 
 * Upgrade to Swift 3.
