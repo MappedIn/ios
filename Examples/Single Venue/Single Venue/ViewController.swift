@@ -35,11 +35,11 @@ class ViewController: UIViewController, MapViewDelegate {
     
     @IBOutlet var instructionsLabel: UILabel!
     
-    private var directionsDestinationPolygon: Polygon?
-    private var currentlySelectedPolygon: Polygon?
-    private var directions: Directions?
+    fileprivate var directionsDestinationPolygon: Polygon?
+    fileprivate var currentlySelectedPolygon: Polygon?
+    fileprivate var directions: Directions?
     
-    private var directionsHighlightColor:UIColor = UIColor(red: 1.0, green: 0.514, blue: 0.016, alpha: 1.0)
+    fileprivate var directionsHighlightColor:UIColor = UIColor(red: 1.0, green: 0.514, blue: 0.016, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class ViewController: UIViewController, MapViewDelegate {
     
     // MARK: Functions
     /// Load the full details (Maps, Locations, etc) for the first Venue we find)
-    func loadFirstVenue(venues: [Venue]) {
+    func loadFirstVenue(_ venues: [Venue]) {
         if let venue: Venue = venues.first {
             MappedIn.getVenue(venue,
                 locationGenerator: { data in
@@ -63,7 +63,7 @@ class ViewController: UIViewController, MapViewDelegate {
     }
     
     /// Tells the MapView to display a map for a certain venue
-    func displayVenue(venue: Venue) {
+    func displayVenue(_ venue: Venue) {
         print("Venue loaded, displaying")
         mapView.venue = venue
         mapView.loadScene()
@@ -71,20 +71,20 @@ class ViewController: UIViewController, MapViewDelegate {
     }
     
     /// Display a big error message if you forget to set up your credentials
-    func logError(errorMessage: String) {
+    func logError(_ errorMessage: String) {
         // Send this back to the main thread to do UI work
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             
             self.errorLabel.text = errorMessage
-            self.errorLabel.enabled = true
-            self.errorLabel.hidden = false
+            self.errorLabel.isEnabled = true
+            self.errorLabel.isHidden = false
             print(errorMessage);
-            self.mapView.hidden = true
+            self.mapView.isHidden = true
         }
     }
     
     /// Fill in the details view with location information
-    func displayLocationInformation(location: Location) {
+    func displayLocationInformation(_ location: Location) {
         let customLocation = location as! CustomLocation
         // This image should probably be cached and/or preloaded
         if let logo = loadImageFromURL(customLocation.logo?[150]) {
@@ -92,8 +92,8 @@ class ViewController: UIViewController, MapViewDelegate {
         }
         locationTitleLabel.text = location.name
         locationDescriptionLabel.text = customLocation.description
-        navigateToLocationButton.hidden = false
-        detailsView.hidden = false
+        navigateToLocationButton.isHidden = false
+        detailsView.isHidden = false
     }
     
     /// Clear the highlighted polygons, and either hide the details view, or show the venue information instead of the details of a specific location
@@ -109,22 +109,22 @@ class ViewController: UIViewController, MapViewDelegate {
         //locationDescriptionLabel.text = "Select a location"
         //navigateToLocationButton.hidden = true
         
-        detailsView.hidden = true
+        detailsView.isHidden = true
 
     }
     
     func clearDirections() {
-        directionsView.hidden = true
+        directionsView.isHidden = true
         directions = nil
         directionsDestinationPolygon = nil
         mapView.removeAllPaths()
     }
     
-    func loadImageFromURL(url: NSURL?) -> UIImage? {
+    func loadImageFromURL(_ url: URL?) -> UIImage? {
         if url == nil {
             return UIImage()
         }
-        if let imageData = NSData(contentsOfURL: url!) {
+        if let imageData = try? Data(contentsOf: url!) {
             return UIImage(data: imageData)
         }
         return UIImage()
@@ -135,7 +135,7 @@ class ViewController: UIViewController, MapViewDelegate {
     func sceneLoaded() {
         print("Scene loaded!")
         let mapCount = mapView.venue?.maps.count
-        if mapCount > 0 {
+        if mapCount! > 0 {
             mapStepper.maximumValue = Double(mapCount!)
         } else {
             logError("Something horrible has happened, because your venue has no maps. Check your internet connection, or contacted your MappedIn representative")
@@ -145,7 +145,7 @@ class ViewController: UIViewController, MapViewDelegate {
     
     /// Called when a user taps a specific polygon
     /// Parameter polygon: the Polygon the user tapped on
-    func polygonTapped(polygon: Polygon) -> Bool {
+    func polygonTapped(_ polygon: Polygon) -> Bool {
         
         // Don't do anything if we'e already in navigation mode
         if directions != nil {
@@ -180,7 +180,7 @@ class ViewController: UIViewController, MapViewDelegate {
                     //Draw the path and highlight the end point
                     mapView.addPath(mapPath)
                     
-                    mapView.camera.focusOn([polygon, destPoly], autoZoom: .None)
+                    mapView.camera.focusOn([polygon, destPoly])
                     mapView.highlightPolygon(directionsDestinationPolygon!, color: directionsHighlightColor)
                     
                     // Display the first instruction to the user. You'd also show an icon for the action
@@ -217,21 +217,21 @@ class ViewController: UIViewController, MapViewDelegate {
     
     /// Called when the user has started moving the map around
     /// Parameter type: The type of motion being performed (Zooming, Panning, Rotating, Multi)
-    func mapMotionStarted(type:MotionType) {
+    func mapMotionStarted(_ type:MotionType) {
         
     }
     
     /// Called when the user has stopped moving the map
     /// Parameter type: The type of motion that was being pergormed (Zooming, Panning, Rotating, Multi)
-    func mapMotionEnded(type:MotionType) {
+    func mapMotionEnded(_ type:MotionType) {
         
     }
 
     // MARK: Actions
     /// Prompt the user to select where they are starting their navigation from
-    @IBAction func navigateToLocationButtonTapped(sender: UIButton) {
-        directionsView.hidden = false
-        if currentlySelectedPolygon?.entrances.count > 0 {
+    @IBAction func navigateToLocationButtonTapped(_ sender: UIButton) {
+        directionsView.isHidden = false
+        if (currentlySelectedPolygon?.entrances.count)! > 0 {
             instructionsLabel.text = "Select origin"
             directionsDestinationPolygon = currentlySelectedPolygon
         } else {
@@ -242,18 +242,18 @@ class ViewController: UIViewController, MapViewDelegate {
     }
     
     /// Multiple maps is usually mutiple floors, so this lets us step up and down then
-    @IBAction func mapStepperChanged(sender: UIStepper) {
+    @IBAction func mapStepperChanged(_ sender: UIStepper) {
         mapView.changeMap(Int(sender.value))
     }
     
     /// Walk through the directions, displaying the right instruction
-    @IBAction func directionsStepperChanged(sender: AnyObject) {
+    @IBAction func directionsStepperChanged(_ sender: AnyObject) {
         let index = Int(directionsStepper.value)
         mapView.camera.focusOn(directions!.instructions[index].node)
         instructionsLabel.text = directions!.instructions[index].description
     }
     
-    @IBAction func showLocationsButtonPressed(sender: UIButton) {
+    @IBAction func showLocationsButtonPressed(_ sender: UIButton) {
         mapView.removeAllMakers()
         
         for polygon in mapView.venue!.polygons {

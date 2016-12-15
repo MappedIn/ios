@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>MappedInPassword</key>
-	<string>&lt;paste your MappedIn key&gt;</string>
+	<string></string>
 	<key>MappedInUsername</key>
-	<string>&lt;paste your MappedIn secret&gt;</string>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

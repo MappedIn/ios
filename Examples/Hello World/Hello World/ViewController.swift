@@ -30,24 +30,24 @@ class ViewController: UIViewController {
     
     // MARK: Functions
     /// Load the full details (Maps, Locations, etc) for the first Venue we find)
-    func loadFirstVenue(venues: [Venue]) {
+    func loadFirstVenue(_ venues: [Venue]) {
         if let venue: Venue = venues.first {
             MappedIn.getVenue(venue, callback: displayVenue)
         } else {
             // Send this back to the main thread to do UI work
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 let errorMessage = "No venues found. Make sure you set your MappedInUsername and MappedInPassword in your info.plist. If you did, talk to your MappedIn representative to ensure your key has access to a venue"
                 self.errorLabel.text = errorMessage
-                self.errorLabel.enabled = true
-                self.errorLabel.hidden = false
+                self.errorLabel.isEnabled = true
+                self.errorLabel.isHidden = false
                 print(errorMessage);
-                self.mapView.hidden = true
+                self.mapView.isHidden = true
             }
         }
     }
     
     /// Tells the MapView to display a map for a certain venue
-    func displayVenue(venue: Venue) {
+    func displayVenue(_ venue: Venue) {
         print("Venue got")
         mapView.venue = venue
         mapView.loadScene()

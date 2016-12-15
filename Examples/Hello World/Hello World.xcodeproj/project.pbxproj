@@ -140,14 +140,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA6B43BE1C5C27BA00AA582E /* Build configuration list for PBXNativeTarget "Hello World" */;
 			buildPhases = (
-				11C7F361E15E921420897035 /* Check Pods Manifest.lock */,
+				11C7F361E15E921420897035 /* [CP] Check Pods Manifest.lock */,
 				DA6B43CD1C5C31B900AA582E /* ShellScript */,
 				DA6B439D1C5C27BA00AA582E /* Sources */,
 				DA6B439E1C5C27BA00AA582E /* Frameworks */,
 				DA6B439F1C5C27BA00AA582E /* Resources */,
 				DA6B43CC1C5C2DD900AA582E /* Embed Frameworks */,
-				0268A5EBB5B455EBA6E7A345 /* Embed Pods Frameworks */,
-				019FFAFCE41624E47097B748 /* Copy Pods Resources */,
+				0268A5EBB5B455EBA6E7A345 /* [CP] Embed Pods Frameworks */,
+				019FFAFCE41624E47097B748 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,9 +188,11 @@
 				TargetAttributes = {
 					DA6B43A01C5C27BA00AA582E = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0810;
 					};
 					DA6B43B41C5C27BA00AA582E = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0810;
 						TestTargetID = DA6B43A01C5C27BA00AA582E;
 					};
 				};
@@ -235,14 +237,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		019FFAFCE41624E47097B748 /* Copy Pods Resources */ = {
+		019FFAFCE41624E47097B748 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,14 +252,14 @@
 			shellScript = "\"${SRCROOT}/../../Pods/Target Support Files/Pods-Hello World/Pods-Hello World-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0268A5EBB5B455EBA6E7A345 /* Embed Pods Frameworks */ = {
+		0268A5EBB5B455EBA6E7A345 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,14 +267,14 @@
 			shellScript = "\"${SRCROOT}/../../Pods/Target Support Files/Pods-Hello World/Pods-Hello World-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		11C7F361E15E921420897035 /* Check Pods Manifest.lock */ = {
+		11C7F361E15E921420897035 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -449,6 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -460,6 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Hello-WorldTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hello World.app/Hello World";
 			};
 			name = Debug;
@@ -472,6 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Hello-WorldTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hello World.app/Hello World";
 			};
 			name = Release;
