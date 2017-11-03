@@ -13,13 +13,12 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">MappedIn Docs</a></p>
-        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p><a href="index.html">Mappedin Docs</a> (45% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="index.html">MappedIn Reference</a>
+        <a href="index.html">Mappedin Reference</a>
         <img id="carat" src="img/carat.png" />
         Classes  Reference
       </p>
@@ -31,22 +30,22 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Analytics.html">Analytics</a>
+                <a href="Classes/APIRequest.html">APIRequest</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Category.html">Category</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/Connection.html">Connection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/Coordinate.html">Coordinate</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Directions.html">Directions</a>
+                <a href="Classes/Cylinder.html">Cylinder</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Directions/Instruction.html">– Instruction</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ImageCollection.html">ImageCollection</a>
+                <a href="Classes/ImageOverlay.html">ImageOverlay</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Location.html">Location</a>
@@ -58,31 +57,33 @@
                 <a href="Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MapView.html#/s:CC8MappedIn7MapView4Path">– Path</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MapViewCamera.html">MapViewCamera</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MapViewMarker.html">MapViewMarker</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MapViewMarker2D.html">MapViewMarker2D</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
+                <a href="Classes/Path.html">Path</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Polygon.html">Polygon</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/RawData.html">RawData</a>
+                <a href="Classes/Prism.html">Prism</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TextOverlay.html">TextOverlay</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Venue.html">Venue</a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Vortex.html">Vortex</a>
+                <a href="Enums/AnchorPoint.html">AnchorPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/DeserializableError.html">DeserializableError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/HttpError.html">HttpError</a>
               </li>
             </ul>
           </li>
@@ -90,7 +91,10 @@
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Extensions.html#/s:Sa">Array</a>
+                <a href="Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
               </li>
             </ul>
           </li>
@@ -98,10 +102,19 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb17locationGeneratorGSqFCS_7RawDataGSqCS_8Location__8callbackFS0_T__T_">getVenue(_:accessible:locationGenerator:callback:)</a>
+                <a href="Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F8MappedIn9getVenuesFFT6venuesGSaCS_5Venue__T_T_">getVenues(_:)</a>
+                <a href="Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -109,10 +122,63 @@
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Protocols/Deserializable.html">Deserializable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:8Mappedin27DirectionsInstructionActionP">DirectionsInstructionAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:8Mappedin7ElementP">Element</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Focusable.html">Focusable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/MapViewDelegate.html">MapViewDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Navigatable.html">Navigatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Position.html">Position</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Service.html">Service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Analytics.html">Analytics</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Analytics/Wayfind.html">– Wayfind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BinaryDecoder.html">BinaryDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Directions.html">Directions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Directions/Instruction.html">– Instruction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:8Mappedin11FocusPointsV">FocusPoints</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ImageSet.html">ImageSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Vector2.html">Vector2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Vector3.html">Vector3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/VenueListing.html">VenueListing</a>
               </li>
             </ul>
           </li>
@@ -131,9 +197,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn15MapViewMarker2D"></a>
-                    <a name="//apple_ref/swift/Class/MapViewMarker2D" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn15MapViewMarker2D">MapViewMarker2D</a>
+                    <a name="/s:8Mappedin7PolygonC"></a>
+                    <a name="//apple_ref/swift/Class/Polygon" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin7PolygonC">Polygon</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -141,55 +207,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A 2D implementation of a MapViewMarker. They will always face the MapView&rsquo;s camera, maintaining the same size and orientation.
-The base class is for images. For text labels, use MapViewMarker2DLabel</p>
+                        <p>The polygon class represents the 3D shape of a Location on a Map.</p>
 
-                        <a href="Classes/MapViewMarker2D.html" class="slightly-smaller">See more</a>
+<p>A Location would have zero or more Polygons associated with it. For example,
+a Washroom Location might have a few Polygons spread throughout the Venue
+for each one that exists, but a single store might just have one presence,
+and therefor one Polygon. Some locations just have a single point and only
+have Coordinates.</p>
+
+                        <a href="Classes/Polygon.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker2D</span><span class="p">:</span><span class="kt"><a href="Classes/MapViewMarker.html">MapViewMarker</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Directions"></a>
-                <a name="//apple_ref/swift/Section/Directions" class="dashAnchor"></a>
-                <a href="#/Directions">
-                  <h3 class="section-name">Directions</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn10Directions"></a>
-                    <a name="//apple_ref/swift/Class/Directions" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn10Directions">Directions</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A Directions object will contain a list of Nodes on a path, and a corresponding list of Direction objects representing the instructions to display to the user.</p>
-
-                        <a href="Classes/Directions.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Directions</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Polygon</span><span class="p">:</span> <span class="kt"><a href="Protocols/Navigatable.html">Navigatable</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/Focusable.html">Focusable</a></span><span class="p">,</span> <span class="kt">Indexed</span><span class="p">,</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -203,75 +235,9 @@ The base class is for images. For text labels, use MapViewMarker2DLabel</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn13MapViewMarker"></a>
-                    <a name="//apple_ref/swift/Class/MapViewMarker" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn13MapViewMarker">MapViewMarker</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A visual element that can be placed overtop of a Mapview. Currently, only the child MapViewMarker2D can actually be used, with either an image or text.</p>
-
-                        <a href="Classes/MapViewMarker.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn6Vortex"></a>
-                    <a name="//apple_ref/swift/Class/Vortex" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn6Vortex">Vortex</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A Vortex is a special entity that represents a link between two or more maps at a given venue. It is typically something like an elevator or stairs.</p>
-
-<p>They can be marked (wheelchair) Accessible or not for pathfinding purposes. If the user has selected Accessible directions, paths that include non-accessible Vortexes like Stairs will not be used.</p>
-
-                        <a href="Classes/Vortex.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Vortex</span><span class="p">:</span> <span class="kt"><a href="Classes/Location.html">Location</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn7MapView"></a>
+                    <a name="/c:@M@Mappedin@objc(cs)MapView"></a>
                     <a name="//apple_ref/swift/Class/MapView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn7MapView">MapView</a>
+                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView">MapView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -279,10 +245,8 @@ The base class is for images. For text labels, use MapViewMarker2DLabel</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>MapView is a custom view designed to handle displaying Maps for a Venue. Set the <code>venue</code> property and then call <code>loadScene()</code> to display the first map. From there, you can change maps (usually different floors) with the <code>.setFloor()</code> function`
-You can also highlight polygons and attach floating Markers.
-Since: 0.1
-Author: MappedIn</p>
+                        <p>MapView is a custom view designed to handle displaying Maps for a Venue.
+call <code>setMap(Map)</code> to display the first map.</p>
 
                         <a href="Classes/MapView.html" class="slightly-smaller">See more</a>
                       </div>
@@ -304,9 +268,9 @@ Author: MappedIn</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn10Coordinate"></a>
-                    <a name="//apple_ref/swift/Class/Coordinate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn10Coordinate">Coordinate</a>
+                    <a name="/s:8Mappedin11TextOverlayC"></a>
+                    <a name="//apple_ref/swift/Class/TextOverlay" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11TextOverlayC">TextOverlay</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -314,7 +278,93 @@ Author: MappedIn</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Coordinate represents a 3-dimensional position on the Earth&rsquo;s surface.</p>
+                        <p>A <code>TextOverlay</code> will overlay a UILabel on top of a Map. An <code>Overlay</code> is always
+on top of other elements, it will always be rotated in such a way that it is
+facing the MapView camera. The Overlay scales keeping the size consistent
+regardless of how far away the MapView Camera is.</p>
+
+<p>Since a <code>UILabel</code> is used, it can be themed anyway a normal UILabel can be.
+By default a <code>UILabel</code> does not get drawn with a background. This can make it
+difficult to read over a map in some typefaces. It is recommended that you
+manually set a background color. The background color will always be used
+to fill the backdrop of the <code>TextOverlay</code>.</p>
+
+                        <a href="Classes/TextOverlay.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">TextOverlay</span><span class="p">:</span> <span class="kt"><a href="Classes/ImageOverlay.html">ImageOverlay</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin12ImageOverlayC"></a>
+                    <a name="//apple_ref/swift/Class/ImageOverlay" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin12ImageOverlayC">ImageOverlay</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>ImageOverlay</code> will overlay a <code>UIImage</code> on top of a Map. An <code>Overlay</code>
+is always on top of other elements, it will always be rotated in such a way
+that it is facing the <code><a href="Classes/MapView.html">MapView</a></code> camera. The Overlay scales keeping the size
+consistent regardless of how far away the <code><a href="Classes/MapView.html">MapView</a></code> Camera is.</p>
+
+<p>Note: an <code>ImageOverlay</code> will respect the alpha channel of the UIImage,
+so it can be used to do more sophisticated graphics on some areas.</p>
+
+<p>The <code>ImageOverlay</code> always tries to be a 1:1 pixel scale with the device&rsquo;s
+screen. Meaning a high resolution image will end up much larger then an
+image that is a low resolution. Care should be taken in selecting the
+correctly scaled images.</p>
+
+                        <a href="Classes/ImageOverlay.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ImageOverlay</span><span class="p">:</span> <span class="kt"><a href="Protocols.html#/s:8Mappedin7ElementP">Element</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin10CoordinateC"></a>
+                    <a name="//apple_ref/swift/Class/Coordinate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10CoordinateC">Coordinate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A coordinate represents a 3-dimensional position that is in reference to a
+a specific Map&rsquo;s origin. A Coordinate is different from just a vector
+in the way that it is tagged to only pertain to a single map.</p>
 
                         <a href="Classes/Coordinate.html" class="slightly-smaller">See more</a>
                       </div>
@@ -322,7 +372,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt"><a href="Protocols/Navigatable.html">Navigatable</a></span><span class="p">,</span> <span class="kt">InstanceHashable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt"><a href="Protocols/Navigatable.html">Navigatable</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/Focusable.html">Focusable</a></span><span class="p">,</span> <span class="kt">Indexed</span><span class="p">,</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -336,9 +386,9 @@ Author: MappedIn</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn7Polygon"></a>
-                    <a name="//apple_ref/swift/Class/Polygon" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn7Polygon">Polygon</a>
+                    <a name="/s:8Mappedin8LocationC"></a>
+                    <a name="//apple_ref/swift/Class/Location" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8LocationC">Location</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -346,17 +396,23 @@ Author: MappedIn</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Polygon class represents the 3D shape of a Loction on a Map.</p>
+                        <p>A location is something like a store or washroom on a map.</p>
 
-<p>A Location would have one or more polygons associated with it. For example, a <q>Washroom</q> Location might a have a few Polygons spread throughout the Venue for each one that exists, but a single store might just have one presence, and therefor one Polygon.</p>
+<p>A location can also belong to zero or more Categories
+(Store, Jewelery Store, etc), and will be linked to zero or more Nodes and
+Polygons.</p>
 
-                        <a href="Classes/Polygon.html" class="slightly-smaller">See more</a>
+<p>A location’s nodes can be on multiple maps, or in multiple non-adjacent
+places on the same map. For example, all washrooms at a given venue could
+belong to one Location, or a department store could live on multiple floors.</p>
+
+                        <a href="Classes/Location.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Polygon</span><span class="p">:</span> <span class="kt"><a href="Protocols/Navigatable.html">Navigatable</a></span><span class="p">,</span> <span class="kt">InstanceHashable</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -370,9 +426,9 @@ Author: MappedIn</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn5Venue"></a>
-                    <a name="//apple_ref/swift/Class/Venue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn5Venue">Venue</a>
+                    <a name="/s:8Mappedin4PathC"></a>
+                    <a name="//apple_ref/swift/Class/Path" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin4PathC">Path</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -380,12 +436,128 @@ Author: MappedIn</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Venue is a specific place (like a mall) with one or more maps (typically representing different floors) and locations (stores, washrooms, elevators, etc).</p>
+                        <p>Undocumented</p>
+
+                        <a href="Classes/Path.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8CylinderC"></a>
+                    <a name="//apple_ref/swift/Class/Cylinder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8CylinderC">Cylinder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Classes/Cylinder.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin10ConnectionC"></a>
+                    <a name="//apple_ref/swift/Class/Connection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10ConnectionC">Connection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Connection links two or more <code><a href="Classes/Coordinate.html">Coordinate</a></code> together.</p>
+
+                        <a href="Classes/Connection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Connection</span><span class="p">:</span> <span class="kt"><a href="Classes/Location.html">Location</a></span><span class="p">,</span> <span class="kt">Indexed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin3MapC"></a>
+                    <a name="//apple_ref/swift/Class/Map" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin3MapC">Map</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Map belonging to a given venue. Typically represents a certain floor. Give
+this to MapView to display to the user. The floor property can be used to
+determine the order of the floors (first, second, third, etc)</p>
+
+                        <a href="Classes/Map.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Map</span><span class="p">:</span> <span class="kt"><a href="Protocols/Focusable.html">Focusable</a></span><span class="p">,</span> <span class="kt">Indexed</span><span class="p">,</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin5VenueC"></a>
+                    <a name="//apple_ref/swift/Class/Venue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin5VenueC">Venue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Venue is a specific place (like a mall) with one or more maps (typically
+representing different floors) and locations (stores, washrooms, elevators,
+etc).</p>
 
 <p>Each Location is linked to:</p>
 
 <ul>
-<li>zero or more Polygons which represents it&rsquo;s phyiscal presence on the map</li>
+<li>zero or more Polygons which represent its physical presence on the map</li>
 <li>zero or more nodes that represent entrances</li>
 <li>zero or more Categories that group several Locations together</li>
 </ul>
@@ -393,8 +565,11 @@ Author: MappedIn</p>
 <p>A Venue can be in one of two states:</p>
 
 <ol>
-<li>As returned by <strong>getVenues()</strong> - When it&rsquo;s initially pulled from the MappedIn API as part of a list of all venues your credentials have access to, it only contains basic information like name, logo and cover image.</li>
-<li>As returned by <strong>getVenue()</strong> - When you retrieve the full details of a given venue, the locations, categories, maps, nodes and vorticies will be populated.</li>
+<li>As returned by <strong>getVenues()</strong> - When it&rsquo;s initially pulled from the
+Mappedin API as part of a list of all venues your credentials have
+access to, it only contains basic information.</li>
+<li>As returned by <strong>getVenue()</strong> - When you retrieve the full detauls of a
+given venue, the locations, categories, maps, etc will be populated.</li>
 </ol>
 
                         <a href="Classes/Venue.html" class="slightly-smaller">See more</a>
@@ -403,7 +578,7 @@ Author: MappedIn</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Venue</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">Venue</span></code></pre>
 
                         </div>
                       </div>
@@ -417,110 +592,9 @@ Author: MappedIn</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn8Location"></a>
-                    <a name="//apple_ref/swift/Class/Location" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn8Location">Location</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A location is something like a store or washroom on a map. It has a name and type, description, logo, and picture (of the storefront, for example).</p>
-
-<p>A location can also belong to zero or more Categories (Store, Jewelery Store, etc), and will be linked to zero or more Nodes and Polygons.</p>
-
-<p>A location&rsquo;s nodes can be on multiple maps, or in multiple non-adjacent places on the same map. For example, all washroom at a given venue could belong to one Location, or a department store could live on multiple floors.</p>
-
-                        <a href="Classes/Location.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt"><a href="Protocols/Navigatable.html">Navigatable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn20MapViewMarker2DLabel"></a>
-                    <a name="//apple_ref/swift/Class/MapViewMarker2DLabel" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn20MapViewMarker2DLabel">MapViewMarker2DLabel</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A MapViewMarker that displays a 2D label. It will always face the camera, maintaining the same size and orientation.
-The text, font, font size, font color, and background color are all customizable.</p>
-
-                        <a href="Classes/MapViewMarker2DLabel.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewMarker2DLabel</span><span class="p">:</span> <span class="kt"><a href="Classes/MapViewMarker2D.html">MapViewMarker2D</a></span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn13MapViewCamera"></a>
-                    <a name="//apple_ref/swift/Class/MapViewCamera" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn13MapViewCamera">MapViewCamera</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The MapViewCamera allows you to control the camera on the mapView. Adjust the position, rotation, and zoom level</p>
-
-                        <a href="Classes/MapViewCamera.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapViewCamera</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn8Category"></a>
+                    <a name="/s:8Mappedin8CategoryC"></a>
                     <a name="//apple_ref/swift/Class/Category" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn8Category">Category</a>
+                    <a class="token" href="#/s:8Mappedin8CategoryC">Category</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -528,7 +602,7 @@ The text, font, font size, font color, and background color are all customizable
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Category is a collection of similar Locations, which may have parent or children categories. For example, you may have a Fashion category, which a Men&rsquo;s Fashion and Women&rsquo;s Fashion category. A Men&rsquo;s clothing store would belong to the Men&rsquo;s Fashion category, but not nessisarily be present in the Fashion category&rsquo;s list of Locations.</p>
+                        <p>A Category is a collection of similar Locations, which may have parent or child categories. For example, you may have a Fashion category, which has a Men&rsquo;s Fashion and Women&rsquo;s Fashion category. A Men&rsquo;s clothing store would belong to the Men’s Fashion category, but not necessarily be present in the Fashion category&rsquo;s list of Locations.</p>
 
                         <a href="Classes/Category.html" class="slightly-smaller">See more</a>
                       </div>
@@ -536,7 +610,7 @@ The text, font, font size, font color, and background color are all customizable
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Category</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Category</span><span class="p">:</span> <span class="kt">Indexed</span><span class="p">,</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -550,9 +624,9 @@ The text, font, font size, font color, and background color are all customizable
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn9Analytics"></a>
-                    <a name="//apple_ref/swift/Class/Analytics" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn9Analytics">Analytics</a>
+                    <a name="/s:8Mappedin5PrismC"></a>
+                    <a name="//apple_ref/swift/Class/Prism" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin5PrismC">Prism</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -560,17 +634,17 @@ The text, font, font size, font color, and background color are all customizable
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Most of the analytics events are handled for you. However, what <q>Location Selected</q> and <q>Category Selected</q>
-mean are application-dependant. You should ensure you figre them as appropriate to ensure accuracy of the customer&rsquo;s data
-and to improve the intelligence of smart search.</p>
+                        <p>A <code>Prism</code> is a class that allows the creation of any type of prism.
+It requires a path in order to know how the <code>Prism</code> is shaped, so it
+could be a triangular based prism, or any custom higher order <code>Prism</code>.</p>
 
-                        <a href="Classes/Analytics.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/Prism.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analytics</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/Focusable.html">Focusable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -584,9 +658,9 @@ and to improve the intelligence of smart search.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C8MappedIn3Map"></a>
-                    <a name="//apple_ref/swift/Class/Map" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn3Map">Map</a>
+                    <a name="/s:8Mappedin10APIRequestC"></a>
+                    <a name="//apple_ref/swift/Class/APIRequest" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10APIRequestC">APIRequest</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -594,78 +668,15 @@ and to improve the intelligence of smart search.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Map belonging to a given venue. Typically represents a certain floor. Give this to a MapView to display to the user.</p>
+                        <p>Callback interface for handling the results from downloading the Mappedin data</p>
 
-<p>The elevation property can be used to determine the order of the floors (first, second, etc).</p>
-
-                        <a href="Classes/Map.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/APIRequest.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Map</span><span class="p">:</span> <span class="kt">InstanceHashable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn15ImageCollection"></a>
-                    <a name="//apple_ref/swift/Class/ImageCollection" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn15ImageCollection">ImageCollection</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A collection of references to images of various sizes. Use myImageCollection[size] to get an image of that size or greater (in display units multiplied by display scale).
-Gives you the URL of the image you need to download.</p>
-
-                        <a href="Classes/ImageCollection.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">ImageCollection</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C8MappedIn7RawData"></a>
-                    <a name="//apple_ref/swift/Class/RawData" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C8MappedIn7RawData">RawData</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A wrapper class representing MappedIn JSON data. Provides a convient, robust, and type safe way for casting JSON data to concrete types.</p>
-
-                        <a href="Classes/RawData.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">RawData</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">APIRequest</span><span class="o">&lt;</span><span class="kt">DataType</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -677,8 +688,8 @@ Gives you the URL of the image you need to download.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-10-19)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

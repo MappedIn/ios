@@ -13,13 +13,12 @@
     <a title="Extensions  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">MappedIn Docs</a></p>
-        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p><a href="index.html">Mappedin Docs</a> (45% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="index.html">MappedIn Reference</a>
+        <a href="index.html">Mappedin Reference</a>
         <img id="carat" src="img/carat.png" />
         Extensions  Reference
       </p>
@@ -31,22 +30,22 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Analytics.html">Analytics</a>
+                <a href="Classes/APIRequest.html">APIRequest</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Category.html">Category</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/Connection.html">Connection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/Coordinate.html">Coordinate</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Directions.html">Directions</a>
+                <a href="Classes/Cylinder.html">Cylinder</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Directions/Instruction.html">– Instruction</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ImageCollection.html">ImageCollection</a>
+                <a href="Classes/ImageOverlay.html">ImageOverlay</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Location.html">Location</a>
@@ -58,31 +57,33 @@
                 <a href="Classes/MapView.html">MapView</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MapView.html#/s:CC8MappedIn7MapView4Path">– Path</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MapViewCamera.html">MapViewCamera</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MapViewMarker.html">MapViewMarker</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MapViewMarker2D.html">MapViewMarker2D</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MapViewMarker2DLabel.html">MapViewMarker2DLabel</a>
+                <a href="Classes/Path.html">Path</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Polygon.html">Polygon</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/RawData.html">RawData</a>
+                <a href="Classes/Prism.html">Prism</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TextOverlay.html">TextOverlay</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Venue.html">Venue</a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Vortex.html">Vortex</a>
+                <a href="Enums/AnchorPoint.html">AnchorPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/DeserializableError.html">DeserializableError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/HttpError.html">HttpError</a>
               </li>
             </ul>
           </li>
@@ -90,7 +91,10 @@
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Extensions.html#/s:Sa">Array</a>
+                <a href="Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
               </li>
             </ul>
           </li>
@@ -98,10 +102,19 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F8MappedIn8getVenueFTCS_5Venue10accessibleSb17locationGeneratorGSqFCS_7RawDataGSqCS_8Location__8callbackFS0_T__T_">getVenue(_:accessible:locationGenerator:callback:)</a>
+                <a href="Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F8MappedIn9getVenuesFFT6venuesGSaCS_5Venue__T_T_">getVenues(_:)</a>
+                <a href="Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -109,10 +122,63 @@
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Protocols/Deserializable.html">Deserializable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:8Mappedin27DirectionsInstructionActionP">DirectionsInstructionAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:8Mappedin7ElementP">Element</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Focusable.html">Focusable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/MapViewDelegate.html">MapViewDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Navigatable.html">Navigatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Position.html">Position</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Service.html">Service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Analytics.html">Analytics</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Analytics/Wayfind.html">– Wayfind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BinaryDecoder.html">BinaryDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Directions.html">Directions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Directions/Instruction.html">– Instruction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:8Mappedin11FocusPointsV">FocusPoints</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ImageSet.html">ImageSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Vector2.html">Vector2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Vector3.html">Vector3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/VenueListing.html">VenueListing</a>
               </li>
             </ul>
           </li>
@@ -127,20 +193,13 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Directions"></a>
-                <a name="//apple_ref/swift/Section/Directions" class="dashAnchor"></a>
-                <a href="#/Directions">
-                  <h3 class="section-name">Directions</h3>
-                </a>
-              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:Sa"></a>
-                    <a name="//apple_ref/swift/Extension/Array" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sa">Array</a>
+                    <a name="/s:Sb"></a>
+                    <a name="//apple_ref/swift/Extension/Bool" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sb">Bool</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -149,12 +208,40 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         
+                        <a href="Extensions/Bool.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">CollectionType</span><span class="p">,</span> <span class="kt">MutableCollectionType</span><span class="p">,</span> <span class="n">_DestructorSafeContainer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:SS"></a>
+                    <a name="//apple_ref/swift/Extension/String" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SS">String</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/String.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -166,8 +253,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">MappedIn</a>. All rights reserved. (Last updated: 2016-10-19)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
