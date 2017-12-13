@@ -14,7 +14,8 @@
     <a title="Navigatable Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,6 +153,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -224,14 +205,15 @@ park that takes you closest to any restaurant</q>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>an array of <code><a href="../Classes/Coordinate.html">Coordinate</a></code> that tells the navigation algorithm where to
+start or end at.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Navigatable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">navigatableCoordinates</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -258,14 +240,17 @@ park that takes you closest to any restaurant</q>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Find the best path between the current point and the supplied destination.</p>
+
+<p>If there is no path, nil will be returned
+otherwise a <code><a href="../Structs/Directions.html">Directions</a></code> object will be returned with the path</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Navigatable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="n">directions</span><span class="o">&lt;</span><span class="kt">VenueNavigatable</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">VenueNavigatable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Directions.html">Directions</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -288,14 +273,17 @@ park that takes you closest to any restaurant</q>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Find the best path from the supplied origin to this location.</p>
+
+<p>If there is no path, nil will be returned
+otherwise a <code><a href="../Structs/Directions.html">Directions</a></code> object will be returned with the path</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Navigatable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="n">directions</span><span class="o">&lt;</span><span class="kt">VenueNavigatable</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">from</span> <span class="nv">origin</span><span class="p">:</span> <span class="kt">VenueNavigatable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Directions.html">Directions</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -307,8 +295,8 @@ park that takes you closest to any restaurant</q>.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

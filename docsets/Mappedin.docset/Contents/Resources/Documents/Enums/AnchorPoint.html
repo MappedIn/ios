@@ -14,7 +14,8 @@
     <a title="AnchorPoint Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,6 +153,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -216,14 +197,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The center of the <code>Overlay</code></p>
+<pre class="highlight plaintext"><code>┌───────┐
+│       │
+│   ╳   │
+│       │
+└───────┘
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">center</span></code></pre>
 
                         </div>
                       </div>
@@ -247,14 +234,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The top of the <code>Overlay</code>, in the middle</p>
+<pre class="highlight plaintext"><code>┌───╳───┐
+│       │
+│       │
+│       │
+└───────┘
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">top</span></code></pre>
 
                         </div>
                       </div>
@@ -278,14 +271,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The top right of the <code>Overlay</code></p>
+<pre class="highlight plaintext"><code>┌───────╳
+│       │
+│       │
+│       │
+└───────┘
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">topRight</span></code></pre>
 
                         </div>
                       </div>
@@ -309,14 +308,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The top left of the <code>Overlay</code></p>
+<pre class="highlight plaintext"><code>╳───────┐
+│       │
+│       │
+│       │
+└───────┘
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">topLeft</span></code></pre>
 
                         </div>
                       </div>
@@ -340,14 +345,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The left side of the <code>Overlay</code>, in the middle</p>
+<pre class="highlight plaintext"><code>┌───────┐
+│       │
+╳       │
+│       │
+└───────┘
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">left</span></code></pre>
 
                         </div>
                       </div>
@@ -371,14 +382,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The right side of the <code>Overlay</code>, in the middle</p>
+<pre class="highlight plaintext"><code>┌───────┐
+│       │
+│       ╳
+│       │
+└───────┘
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">right</span></code></pre>
 
                         </div>
                       </div>
@@ -402,14 +419,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The bottom side of the <code>Overlay</code>, in the middle</p>
+<pre class="highlight plaintext"><code>┌───────┐
+│       │
+│       │
+│       │
+└───╳───┘
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">bottom</span></code></pre>
 
                         </div>
                       </div>
@@ -433,14 +456,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The bottom left of the <code>Overlay</code></p>
+<pre class="highlight plaintext"><code>┌───────┐
+│       │
+│       │
+│       │
+╳───────┘
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">bottomLeft</span></code></pre>
 
                         </div>
                       </div>
@@ -464,14 +493,20 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The bottom right of the <code>Overlay</code></p>
+<pre class="highlight plaintext"><code>┌───────┐
+│       │
+│       │
+│       │
+└───────╳
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnchorPoint</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">bottomRight</span></code></pre>
 
                         </div>
                       </div>
@@ -495,7 +530,7 @@ would be the position through the texture (in 2D)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>a custom anchor point, x &amp; y are always in the domain 0 -&gt; 1.
+                        <p>A custom anchor point, x &amp; y are always in the domain 0 -&gt; 1.
 If your image with a resolution (800, 600) an anchor point of (0.25, 0.25)
 would align the point 200, 150 in the image.</p>
 
@@ -547,8 +582,8 @@ would align the point 200, 150 in the image.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

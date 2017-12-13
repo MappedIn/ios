@@ -14,7 +14,8 @@
     <a title="HttpError Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,13 +153,30 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
         <section>
           <section class="section">
             <h1>HttpError</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">HttpError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                </div>
+              </div>
+            <p>An enum that contains all known codes that can occur from a Http request.</p>
 
           </section>
           <section class="section task-group-section">
@@ -208,7 +195,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>forwareded when there is a problem from the underlying URLSession</p>
+                        <p>Forwarded when there is a problem from the underlying URLSession</p>
 
                       </div>
                       <div class="declaration">
@@ -239,7 +226,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the request completed w/o error, but did not return any data as expected</p>
+                        <p>The request completed w/o error, but did not return any data as expected</p>
 
                       </div>
                       <div class="declaration">
@@ -270,7 +257,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the request took to long to complete and we errored it out</p>
+                        <p>The request took to long to complete and we errored it out</p>
 
                       </div>
                       <div class="declaration">
@@ -301,7 +288,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the downloaded json could not be deserialized</p>
+                        <p>The downloaded json could not be deserialized</p>
 
                       </div>
                       <div class="declaration">
@@ -332,7 +319,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>returned when the json data did not match the exepected form</p>
+                        <p>Returned when the json data did not match the exepected form</p>
 
                       </div>
                       <div class="declaration">
@@ -348,11 +335,104 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9HttpErrorO04httpC4CodeACSicACmF"></a>
+                    <a name="//apple_ref/swift/Element/httpErrorCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9HttpErrorO04httpC4CodeACSicACmF">httpErrorCode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returned a none 2xx error code</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">httpErrorCode</span><span class="p">(</span><span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9HttpErrorO014deserializableC0AcA014DeserializableC0OcACmF"></a>
+                    <a name="//apple_ref/swift/Element/deserializableError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9HttpErrorO014deserializableC0AcA014DeserializableC0OcACmF">deserializableError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The venue blob downloaded from the Mappedin servers could not be parsed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">deserializableError</span><span class="p">(</span><span class="kt"><a href="../Enums/DeserializableError.html">DeserializableError</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9HttpErrorO20localizedDescriptionSSv"></a>
+                    <a name="//apple_ref/swift/Property/localizedDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9HttpErrorO20localizedDescriptionSSv">localizedDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A human readable description of the error</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">localizedDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -14,7 +14,8 @@
     <a title="BinaryDecoder Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,13 +153,38 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
         <section>
           <section class="section">
             <h1>BinaryDecoder</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BinaryDecoder</span></code></pre>
+
+                </div>
+              </div>
+            <p>A <code>BinaryDecoder</code> holds a buffer and allows for extraction of values from
+said buffer. This keeps track of what has been read from the buffer, and
+what is still pending for reading to allow the buffer to be read like
+a tape.</p>
+
+<p>This is a required component to make the <code><a href="../Protocols/Deserializable.html">Deserializable</a></code> protocol work.
+Currently, defining a custom <code><a href="../Classes/Location.html">Location</a></code> types requires some exposure of this
+object. This should only be interacted with by the generated code delivered
+to you from your Mappedin rep.</p>
 
           </section>
           <section class="section task-group-section">
@@ -208,8 +203,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Read a value out of the buffer  under the current cursor. The cursor will be
+advanced and an initialized value will be returned. If there is not sufficient
+space in the buffer a nil value will be returned.</p>
+<pre class="highlight plaintext"><code>let foo = try buffer.pull(Int32.self)
+</code></pre>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">DeserializableType</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -227,8 +235,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This will pull an array of values from the Buffer, and advance the cursor until all values
+have been read. The length of the array is read from the buffer itself.</p>
+<pre class="highlight plaintext"><code>let foo = try buffer.pull([Int32].self)
+</code></pre>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -246,8 +266,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This will pull an optional value from the buffer, this is identical to
+<code>pull</code> but will only pull a value after reading a flag from the buffer
+indicating if the optional value is present or not.</p>
+<pre class="highlight plaintext"><code>let foo = try buffer.pull(Int32?.self)
+</code></pre>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">DeserializableType</span><span class="p">?</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span><span class="p">?</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -265,8 +297,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Pull a value the BinaryDecoder, this is a bit nicer to use since it
+will infer the type rather then you having to explicitly supply it.</p>
+<pre class="highlight plaintext"><code>let foo: UInt32 = try buffer.pullValue()
+</code></pre>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pullValue</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -284,27 +327,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Pull a array of values the BinaryDecoder, this is a bit nicer to use since it
+will infer the type rather then you having to explicitly supply it.</p>
+<pre class="highlight plaintext"><code>let foo: [UInt32] = try buffer.pullValue()
+</code></pre>
 
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin13BinaryDecoderV9pullValuexSgyKAA14DeserializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/pullValue()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin13BinaryDecoderV9pullValuexSgyKAA14DeserializableRzlF">pullValue()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pullValue</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -314,8 +349,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

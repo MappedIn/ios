@@ -14,7 +14,8 @@
     <a title="Prism Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,6 +153,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -196,8 +177,32 @@
                 </div>
               </div>
             <p>A <code>Prism</code> is a class that allows the creation of any type of prism.
-It requires a path in order to know how the <code>Prism</code> is shaped, so it
-could be a triangular based prism, or any custom higher order <code>Prism</code>.</p>
+It requires a 2D list of points that will be used to build that path. If
+there are <code>N</code> points, there will be <code>N+1</code> Line segments as the last and the
+first point will always be joined.</p>
+
+<ul>
+<li>Example:</li>
+</ul>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">),</span>
+    <span class="kt">Vector2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.2</span><span class="p">),</span>
+    <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8</span><span class="p">),</span>
+    <span class="kt">Vector2</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="k">let</span> <span class="nv">prism</span> <span class="o">=</span> <span class="kt">Prism</span><span class="p">(</span>
+    <span class="nv">position</span><span class="p">:</span> <span class="kt">Vector3</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="nv">heading</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nv">points</span><span class="p">:</span> <span class="n">points</span><span class="p">,</span>
+    <span class="nv">height</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.29</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">mapView</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">prism</span><span class="p">)</span>
+</code></pre>
+
+<p><em>The results in:</em></p>
+
+<p><img src="../img/prism.png" alt="Prism" title="Prism"></p>
 
           </section>
           <section class="section task-group-section">
@@ -216,14 +221,15 @@ could be a triangular based prism, or any custom higher order <code>Prism</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The direction the <code>Prism</code> is pointing toward. <code>0</code> being north and <code>Pi / 2</code>
+pointing east.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span></code></pre>
 
                         </div>
                       </div>
@@ -243,14 +249,14 @@ could be a triangular based prism, or any custom higher order <code>Prism</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The height of the <code>Prism</code> in meters.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
 
                         </div>
                       </div>
@@ -270,14 +276,14 @@ could be a triangular based prism, or any custom higher order <code>Prism</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The color that the Prism is drawn with.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
 
                         </div>
                       </div>
@@ -297,14 +303,14 @@ could be a triangular based prism, or any custom higher order <code>Prism</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Required by the <code><a href="../Protocols/Focusable.html">Focusable</a></code> Api.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">focusPoints</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:8Mappedin11FocusPointsV">FocusPoints</a></span></code></pre>
 
                         </div>
                       </div>
@@ -324,17 +330,18 @@ could be a triangular based prism, or any custom higher order <code>Prism</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Initialize a new <code>Prism</code> object. </p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">PositionType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Position.html">Position</a></span><span class="o">&gt;</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt">PositionType</span><span class="p">,</span>
-                                        <span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-                                        <span class="nv">points</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Vector2.html">Vector2</a></span><span class="p">],</span>
-                                        <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span>
-                                        <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+                                    <span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                                    <span class="nv">points</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Vector2.html">Vector2</a></span><span class="p">],</span>
+                                    <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span>
+                                    <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -423,16 +430,76 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the heading, height, or color of the <code>Prism</code> and animate over a period
+of time. This is the standard way to change one or more of the parameters.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>heading</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The direction in Radians that the <code>Prism</code> should point</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the <code>Prism</code> in meters.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color that the <code>Prism</code> should be drawn in</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The length of time that you wish to animate this
+              update over.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -450,16 +517,92 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the position of a of a <code>Prism</code> using and animate the change over a
+a period of time. This is the standard way to change one or more parameters</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector3.html">Vector3</a></span><span class="p">,</span>
+                <span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Prism</code> in map space.
+                  This will exist in every map use a <code><a href="../Classes/Coordinate.html">Coordinate</a></code>
+                  for the position to make this show up on only one
+                  specific map.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>heading</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The direction in Radians that the <code>Prism</code> should point</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the <code>Prism</code> in meters.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color that the <code>Prism</code> should be drawn in</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The length of time that you wish to animate this
+              update over.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -477,16 +620,91 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the position of a of a <code>Prism</code> using and animate the change over a
+a period of time. This is the standard way to change one or more parameters</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">,</span>
+                <span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Prism</code>. This makes
+                  it appear in this spot only on the map associated
+                  with the Coordinate.<br></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>heading</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The direction in Radians that the <code>Prism</code> should point</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the <code>Prism</code> in meters.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color that the <code>Prism</code> should be drawn in</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The length of time that you wish to animate this
+              update over.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -504,16 +722,53 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the position to a locations</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
+
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPosition</span><span class="p">(</span><span class="n">to</span> <span class="nv">position</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector3.html">Vector3</a></span><span class="p">,</span>
+                        <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Prism</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Prism</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -531,16 +786,53 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the position to a locations</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
+
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPosition</span><span class="p">(</span><span class="n">to</span> <span class="nv">position</span><span class="p">:</span> <span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">,</span>
+                        <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Prism</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Prism</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -558,16 +850,52 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the position to a locations</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
+
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setHeading</span><span class="p">(</span><span class="n">to</span> <span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span><span class="p">,</span> <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Prism</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Prism</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -585,16 +913,52 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the height of the <code>Prism</code>, animated over a time frame.</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
+
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setHeight</span><span class="p">(</span><span class="n">to</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the <code>Prism</code> in meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Prism</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -612,16 +976,52 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the color of the <code>Prism</code>, animated over a time frame.</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
+
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Prism</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setColor</span><span class="p">(</span><span class="n">to</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>What color the <code>Prism</code> will be draw with</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Prism</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -631,8 +1031,8 @@ outer walls of the <code>Prism</code>. These will be extruded upwards.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

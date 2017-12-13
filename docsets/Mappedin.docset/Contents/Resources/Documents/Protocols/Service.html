@@ -14,7 +14,8 @@
     <a title="Service Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,6 +153,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -195,12 +176,73 @@
 
                 </div>
               </div>
-            <p>Used to connect to the Mappedin servers and retrieve venue data</p>
+            <p>Used to connect to the Mappedin servers and retrieve venue data
+a <code>Service</code> once implemented is used to hold the apiKey&rsquo;s and Venue type
+required to use the Mappedin SDK</p>
+
+<ul>
+<li><p>Example:</p>
+<pre class="highlight swift"><code>  <span class="kd">class</span> <span class="kt">ExampleService</span><span class="p">:</span> <span class="kt">Mappedin</span><span class="o">.</span><span class="kt">Service</span> <span class="p">{</span>
+      <span class="kd">typealias</span> <span class="kt">VenueType</span> <span class="o">=</span> <span class="kt">Venue</span>
+
+      <span class="k">let</span> <span class="nv">apiKey</span> <span class="o">=</span> <span class="s">"&lt;key&gt;"</span>
+      <span class="k">let</span> <span class="nv">apiSecret</span> <span class="o">=</span> <span class="s">"&lt;secret&gt;"</span>
+      <span class="k">let</span> <span class="nv">dataKey</span> <span class="o">=</span> <span class="s">"&lt;data&gt;"</span>
+
+      <span class="kd">required</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// It's important to have this step, this will modify the AppDelegate</span>
+  <span class="c1">// to include Mappedin's analytics frameworks, your service will not</span>
+  <span class="c1">// function if you do not install this. </span>
+  <span class="kd">public</span> <span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">ExampleService</span><span class="p">(</span><span class="kt">AppDelegate</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+
+  <span class="c1">// With that created, we can now initialized, we can call the Mappedin</span>
+  <span class="c1">// API in order to get the required data from our servers.</span>
+  <span class="n">service</span><span class="o">.</span><span class="nf">getVenues</span><span class="p">()</span>
+     <span class="o">.</span><span class="n">onComplete</span><span class="p">{</span> <span class="n">venues</span> <span class="k">in</span>
+         <span class="c1">// find your venue from the list of venues that</span>
+         <span class="n">service</span><span class="o">.</span><span class="nf">getVenue</span><span class="p">(</span><span class="n">venues</span><span class="o">.</span><span class="n">first</span><span class="o">!</span><span class="p">)</span><span class="o">.</span><span class="n">onComplete</span> <span class="p">{</span> <span class="n">venue</span> <span class="k">in</span>
+             <span class="c1">// With a venue loaded we can setup the MapView</span>
+             <span class="c1">// but that will be shown in another example.</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+</code></pre></li>
+</ul>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin7ServiceP9VenueType"></a>
+                    <a name="//apple_ref/swift/Alias/VenueType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin7ServiceP9VenueType">VenueType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is which <code><a href="../Classes/Venue.html">Venue</a></code> object to deserilize when we download a venue
+from the Mappedin servers. This <code>VenueType</code> will be supplied by
+Mappedin when you are granted access to the SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">associatedtype</span> <span class="kt">VenueType</span><span class="p">:</span> <span class="kt"><a href="../Classes/Venue.html">Venue</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -214,14 +256,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A unique key used to identify your account with Mappedin.
+Supplied when you sign up for the Mappedin SDK</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Service</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">apiKey</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -241,14 +284,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Used to authenticate that your app. 
+Supplied when you sign up for the Mappedin SDK</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Service</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">apiSecret</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -268,14 +312,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Used to uniquely identify what type of Map data to download.
+Supplied when you sign up for the Mappedin SDK</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Service</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">dataKey</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -295,14 +340,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The default constructor for your service.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Service</span></code></pre>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -329,16 +374,46 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This <em>must</em> be called when initializing your Service.</p>
+
+<p>This will wrap your Application Delegate allow the Mappedin API
+to intercept some message that are sent form the system. This is required
+in order to implement some aspects of the API. </p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>This should only be done once, in the scope of your App. You should
+    save your unique service object as a global variable. This follows
+    the Singleton pattern.</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Service</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">appDelegateType</span><span class="p">:</span> <span class="kt">UIApplicationDelegate</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>appDelegateType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your Application&rsquo;s Delegate object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -391,18 +466,45 @@
                       <div class="abstract">
                         <p>Retrieves the full details (maps, locations, etc) of a given venue</p>
 
-<ul>
-<li>paramter venueListing: The specific venue that you are requesting the data for</li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getVenue</span><span class="p">(</span><span class="n">_</span> <span class="nv">venueListing</span><span class="p">:</span> <span class="kt"><a href="../Structs/VenueListing.html">VenueListing</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/APIRequest.html">APIRequest</a></span><span class="o">&lt;</span><span class="kt">VenueType</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getVenue</span><span class="p">(</span><span class="n">_</span> <span class="nv">venueListing</span><span class="p">:</span> <span class="kt"><a href="../Structs/VenueListing.html">VenueListing</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/APIRequest.html">APIRequest</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/Service.html#/s:8Mappedin7ServiceP9VenueType">VenueType</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>venueListing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific venue that you are requesting the
+                     data for</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An APIRequest that will contain the future results after they
+       have been downloaded and decoded from the Mappedin servers.</p>
+
+<ul>
+<li><strong>Note</strong>: It is important to populate the <code>onError</code> handler because
+        your logic will miss any error that might be caused by the
+        API key misconfiguration.</li>
+</ul>
                       </div>
                     </section>
                   </div>
@@ -412,8 +514,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -13,7 +13,8 @@
     <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -88,37 +89,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -182,6 +152,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -242,7 +223,39 @@ to help place <code>Elements</code> in the screen.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Used to connect to the Mappedin servers and retrieve venue data</p>
+                        <p>Used to connect to the Mappedin servers and retrieve venue data
+a <code>Service</code> once implemented is used to hold the apiKey&rsquo;s and Venue type
+required to use the Mappedin SDK</p>
+
+<ul>
+<li><p>Example:</p>
+<pre class="highlight swift"><code>  <span class="kd">class</span> <span class="kt">ExampleService</span><span class="p">:</span> <span class="kt">Mappedin</span><span class="o">.</span><span class="kt">Service</span> <span class="p">{</span>
+      <span class="kd">typealias</span> <span class="kt">VenueType</span> <span class="o">=</span> <span class="kt">Venue</span>
+
+      <span class="k">let</span> <span class="nv">apiKey</span> <span class="o">=</span> <span class="s">"&lt;key&gt;"</span>
+      <span class="k">let</span> <span class="nv">apiSecret</span> <span class="o">=</span> <span class="s">"&lt;secret&gt;"</span>
+      <span class="k">let</span> <span class="nv">dataKey</span> <span class="o">=</span> <span class="s">"&lt;data&gt;"</span>
+
+      <span class="kd">required</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// It's important to have this step, this will modify the AppDelegate</span>
+  <span class="c1">// to include Mappedin's analytics frameworks, your service will not</span>
+  <span class="c1">// function if you do not install this. </span>
+  <span class="kd">public</span> <span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">ExampleService</span><span class="p">(</span><span class="kt">AppDelegate</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+
+  <span class="c1">// With that created, we can now initialized, we can call the Mappedin</span>
+  <span class="c1">// API in order to get the required data from our servers.</span>
+  <span class="n">service</span><span class="o">.</span><span class="nf">getVenues</span><span class="p">()</span>
+     <span class="o">.</span><span class="n">onComplete</span><span class="p">{</span> <span class="n">venues</span> <span class="k">in</span>
+         <span class="c1">// find your venue from the list of venues that</span>
+         <span class="n">service</span><span class="o">.</span><span class="nf">getVenue</span><span class="p">(</span><span class="n">venues</span><span class="o">.</span><span class="n">first</span><span class="o">!</span><span class="p">)</span><span class="o">.</span><span class="n">onComplete</span> <span class="p">{</span> <span class="n">venue</span> <span class="k">in</span>
+             <span class="c1">// With a venue loaded we can setup the MapView</span>
+             <span class="c1">// but that will be shown in another example.</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+</code></pre></li>
+</ul>
 
                         <a href="Protocols/Service.html" class="slightly-smaller">See more</a>
                       </div>
@@ -274,9 +287,17 @@ to help place <code>Elements</code> in the screen.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The <code>MapViewDelegate</code> will receive events and messages from the <code><a href="Classes/MapView.html">MapView</a></code>.</p>
 
                         <a href="Protocols/MapViewDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MapViewDelegate</span><span class="p">:</span> <span class="kd">class</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -298,9 +319,23 @@ to help place <code>Elements</code> in the screen.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p><code>Deserializable</code> is a type that can be extracted from a <code><a href="Structs/BinaryDecoder.html">BinaryDecoder</a></code>.</p>
+
+<p>This is typically used to extract an object or a struct from the decoder
+when a <code><a href="Classes/Map.html">Map</a></code> is being loaded.</p>
+
+<p>Note: Mappedin will supply source that implements this for you
+      you should not have to do anything.</p>
 
                         <a href="Protocols/Deserializable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Deserializable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -322,8 +357,21 @@ to help place <code>Elements</code> in the screen.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A pseudo class marker to identify what is or isn&rsquo;t an <code>Element</code>.</p>
 
+<p>This protocol should not be used as a 3rd party, as the actual
+mechanics of how <code>Element</code> interact with the MapView is internal
+the SDK. This is added as a way to identify what is or isn&rsquo;t an
+<code>Element</code> in the type system.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Element</span><span class="p">:</span> <span class="kd">class</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -345,8 +393,16 @@ to help place <code>Elements</code> in the screen.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A protocol used to classify what is or what isn&rsquo;t an Direction Action</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">DirectionsInstructionAction</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -410,9 +466,20 @@ park that takes you closest to any restaurant</q>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Allows the Camera of the <code><a href="Classes/MapView.html">MapView</a></code> to focus on this position.</p>
+
+<p>This is currently not intended to be implemented directly by 3rd party, but
+as an aid to glue SDK components together and keep the API simple.</p>
 
                         <a href="Protocols/Focusable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Focusable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -422,8 +489,8 @@ park that takes you closest to any restaurant</q>.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

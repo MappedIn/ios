@@ -14,7 +14,8 @@
     <a title="Location Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,6 +153,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -208,13 +189,6 @@ belong to one Location, or a department store could live on multiple floors.</p>
           </section>
           <section class="section task-group-section">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/TODO:%20Should%20get%20rid%20of%20type"></a>
-                <a name="//apple_ref/swift/Section/TODO: Should get rid of type" class="dashAnchor"></a>
-                <a href="#/TODO:%20Should%20get%20rid%20of%20type">
-                  <h3 class="section-name">TODO: Should get rid of type</h3>
-                </a>
-              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -246,6 +220,87 @@ belong to one Location, or a department store could live on multiple floors.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:8Mappedin8LocationC8polygonss11AnySequenceVyAA7PolygonCGv"></a>
+                    <a name="//apple_ref/swift/Property/polygons" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8LocationC8polygonss11AnySequenceVyAA7PolygonCGv">polygons</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>returns an iterator of the polygons in this Location</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">polygons</span><span class="p">:</span> <span class="kt">AnySequence</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8LocationC11coordinatess11AnySequenceVyAA10CoordinateCGv"></a>
+                    <a name="//apple_ref/swift/Property/coordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8LocationC11coordinatess11AnySequenceVyAA10CoordinateCGv">coordinates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>returns an iterator of the Coordinate in this type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">coordinates</span><span class="p">:</span> <span class="kt">AnySequence</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8LocationC10categoriess11AnySequenceVyAA8CategoryCGv"></a>
+                    <a name="//apple_ref/swift/Property/categories" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8LocationC10categoriess11AnySequenceVyAA8CategoryCGv">categories</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>returns an iterator of the Category in this type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">categories</span><span class="p">:</span> <span class="kt">AnySequence</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/Category.html">Category</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:8Mappedin8LocationC5venueAA5VenueCSgXwv"></a>
                     <a name="//apple_ref/swift/Property/venue" class="dashAnchor"></a>
                     <a class="token" href="#/s:8Mappedin8LocationC5venueAA5VenueCSgXwv">venue</a>
@@ -256,14 +311,14 @@ belong to one Location, or a department store could live on multiple floors.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Venue that this Location belongs to</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">venue</span><span class="p">:</span> <span class="kt"><a href="../Classes/Venue.html">Venue</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
 
                         </div>
                       </div>
@@ -273,9 +328,9 @@ belong to one Location, or a department store could live on multiple floors.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin8LocationCAcA13BinaryDecoderVz4from_tKcfc"></a>
+                    <a name="/s:8Mappedin14DeserializablePxAA13BinaryDecoderVz4from_tKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin8LocationCAcA13BinaryDecoderVz4from_tKcfc">init(from:)</a>
+                    <a class="token" href="#/s:8Mappedin14DeserializablePxAA13BinaryDecoderVz4from_tKcfc">init(from:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -283,14 +338,72 @@ belong to one Location, or a department store could live on multiple floors.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>only call the link function if the venue has changed</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">buffer</span><span class="p">:</span> <span class="k">inout</span> <span class="kt"><a href="../Structs/BinaryDecoder.html">BinaryDecoder</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8LocationC4linkyAA5VenueC4with_tF"></a>
+                    <a name="//apple_ref/swift/Method/link(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8LocationC4linkyAA5VenueC4with_tF">link(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>After deserialization the structure has to be linked before it is useful</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">link</span><span class="p">(</span><span class="n">with</span> <span class="nv">venue</span><span class="p">:</span> <span class="kt"><a href="../Classes/Venue.html">Venue</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8LocationC22navigatableCoordinatesSayAA10CoordinateCGv"></a>
+                    <a name="//apple_ref/swift/Property/navigatableCoordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8LocationC22navigatableCoordinatesSayAA10CoordinateCGv">navigatableCoordinates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See the <code><a href="../Protocols/Navigatable.html">Navigatable</a></code> trait for details</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">navigatableCoordinates</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -302,8 +415,8 @@ belong to one Location, or a department store could live on multiple floors.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

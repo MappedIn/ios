@@ -13,7 +13,8 @@
     <a title="Mappedin  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -88,37 +89,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -182,28 +152,274 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
         <section>
           <section class="section">
             
-            <h1 id='mappedin' class='heading'>Mappedin</h1>
-<h3 id='creating-personalized-indoor-experiences-one-direction-at-a-time' class='heading'>Creating Personalized Indoor Experiences - One direction at a time.</h3>
+            <h1 id='mappedin-ios-sdk-example' class='heading'>MappedIn iOS SDK Example</h1>
 
-<p>It&rsquo;s easy to integrate the MappedIn solution into your branded mobile app. Our API can be used to create a customized white label experience by incorporating the exceptional MappedIn Wayfinding platform.</p>
-<h3 id='installation' class='heading'>Installation</h3>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Mappedin'</span>
+<p>This repo contains a simple example to get you started with the MappedIn iOS SDK.
+Before you can do anything, make sure you have an API key from MappedIn.
+Talk to your representative to get one.</p>
+<h2 id='getting-started' class='heading'>Getting Started:</h2>
+
+<p>Before you can get started you need to get API keys and a customized Venue listing
+From your Mappedin rep. They will need to be added to your project.</p>
+
+<p>From there you will start by accessing your map data via the 
+<a href="Protocols/Service.html"><code><a href="Protocols/Service.html">Service</a></code></a> API.</p>
+
+<p>To view the data you can download from the <code><a href="Protocols/Service.html">Service</a></code> API, see the <code><a href="Classes/MapView.html">MapView</a></code>.</p>
+<h2 id='changes' class='heading'>Changes:</h2>
+
+<p><em>v0.13.0 (December 14th, 2017)</em></p>
+
+<ul>
+<li>The <code><a href="Enums/HttpError.html">HttpError</a></code> code including, <code><a href="Enums/HttpError.html#/s:8Mappedin9HttpErrorO04httpC4CodeACSicACmF">HttpError.httpErrorCode</a></code> and
+<code><a href="Enums/HttpError.html#/s:8Mappedin9HttpErrorO014deserializableC0AcA014DeserializableC0OcACmF">HttpError.deserializableError</a></code>. These indicate to the developer if the data
+downloaded is corrupted or if the API keys they have used are invalid.</li>
+</ul>
+
+<p><em>Example of the new error codes</em></p>
+<pre class="highlight swift"><code>   <span class="n">myService</span><span class="o">.</span><span class="nf">geVenue</span><span class="p">(</span><span class="n">venueListing</span><span class="p">)</span>
+      <span class="o">.</span><span class="nf">onError</span><span class="p">({</span><span class="n">error</span> <span class="k">in</span>
+          <span class="k">switch</span> <span class="n">error</span> <span class="p">{</span>
+          <span class="k">case</span> <span class="o">.</span><span class="nf">httpErrorCode</span><span class="p">(</span><span class="k">let</span> <span class="nv">code</span><span class="p">):</span>
+              <span class="nf">print</span><span class="p">(</span><span class="s">"Error code: </span><span class="se">\(</span><span class="n">code</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+          <span class="k">case</span> <span class="o">.</span><span class="nf">deserializableError</span><span class="p">(</span><span class="k">let</span> <span class="nv">deserializableError</span><span class="p">)</span>
+              <span class="nf">print</span><span class="p">(</span><span class="s">"Deserilization error: </span><span class="se">\(</span><span class="n">deserializableError</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+          <span class="k">default</span><span class="p">:</span>
+              <span class="nf">print</span><span class="p">(</span><span class="s">"Unhandled error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">})</span>
 </code></pre>
-<h3 id='authors' class='heading'>Authors</h3>
 
-<p>Paul Bernhardt</p>
+<ul>
+<li>Added Store Label APIs to the <code><a href="Classes/MapView.html">MapView</a></code>.</li>
+</ul>
+
+<p>The <code><a href="Classes/MapView.html">MapView</a></code> now has two properties <code>storeLabelsEnable</code> and
+   <code>storeLabelsDefaultFont</code>. When <code>storeLabelsEnable</code> is set to true the 
+   <code><a href="Classes/MapView.html">MapView</a></code> will render text labels over each store in the <code><a href="Classes/MapView.html">MapView</a></code>.
+   If a store already has a image assigned to it, the text will not be rendered
+   and the image will be used instead.</p>
+
+<p><em>Example of the new store labels API</em></p>
+<pre class="highlight swift"><code>   <span class="k">let</span> <span class="nv">mapView</span> <span class="o">=</span> <span class="kt">MapView</span><span class="p">()</span>
+
+   <span class="c1">// Enable the store labels</span>
+   <span class="n">mapView</span><span class="o">.</span><span class="n">storeLabelsEnable</span> <span class="o">=</span> <span class="kc">true</span>
+
+   <span class="c1">// Set the font, this will default to iOS's body font if you do not</span>
+   <span class="c1">// manually set this parameter.</span>
+   <span class="c1">//</span>
+   <span class="c1">// Note: The size parameter is overrides by the sizing logic</span>
+   <span class="n">mapView</span><span class="o">.</span><span class="n">storeLabelsDefaultFont</span> <span class="o">=</span> <span class="kt">UIFontDescriptor</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Symbol"</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span>
+</code></pre>
+
+<ul>
+<li><p>Removed broken method from <code><a href="Structs/BinaryDecoder.html">BinaryDecoder</a></code>.</p>
+
+<p>There was an overload form of<code>pullValue</code> that would return an optional value.
+This was removed because Swift never would overload to this function,
+instead it would select the <code>pullValue</code> with a none-optional value which
+was not does not have the desired behavior.</p></li>
+<li><p>Removed the <code>MapView.orbing</code> method as it was not currently implemented</p></li>
+<li><p>Deprecated the following functions, as they did not conform the the naming
+conventions used by Apple and were redundant.</p>
+
+<ul>
+<li><code>Cylinder.setPosition</code></li>
+<li><code>Cylinder.setDiameter</code></li>
+<li><code>Cylinder.setHeight</code></li>
+<li><code>Cylinder.setColor</code></li>
+<li><code>Prism.setPosition</code></li>
+<li><code>Prism.setDiameter</code></li>
+<li><code>Prism.setHeight</code></li>
+<li><code>Prism.setColor</code></li>
+</ul></li>
+</ul>
+
+<p><em>v0.12.0 (November 3rd, 2017)</em></p>
+
+<ul>
+<li>Initial release of the 0.12 SDK</li>
+<li>Major API rework, this break backward comparability with 0.11</li>
+</ul>
+
+<p><em>v0.11.0</em></p>
+
+<ul>
+<li>Upgrade to Swift 3.</li>
+</ul>
+
+<p><em>v0.10.0</em></p>
+
+<ul>
+<li>Improved georeferencing accuracy.</li>
+<li>New methods on Coordinate let you get the meters from another Coordinate, Path, or Polygon and check whether a Coordinate is inside a Polygon.</li>
+<li>Renamed a number of method signatures to align with Swift 3.0&rsquo;s naming conventions.</li>
+</ul>
+
+<p><em>v0.9.0</em></p>
+
+<ul>
+<li>Can now wayfind to/from Coordinates generated from arbitrary lat/longs. The path will connect directly to the closest real walkable node.</li>
+<li>Markers can now be positioned and rotated dynamically. Just change their rotation property, or give them a new Coordinate</li>
+</ul>
+
+<p><em>v0.8.0</em></p>
+
+<ul>
+<li>Added iOS8 support to MapView (required custom OBJ file loader)</li>
+<li>Improvements to MapView loading time</li>
+<li>Added written directions for turns</li>
+<li>Added analytics</li>
+<li>Call <code>Analytics.selectedLocation(location)</code> and <code>Analytics.selectedCategory(category)</code> when the user selects locations and categories in your application (taps on a polygon, picks a category/location out of a list, selects a location/category during search, etc). It is up to your discretion what should count for your application.</li>
+<li>Implemented MappedIn.Delegate for SDK configuration and lifecycle handling</li>
+<li>The Direction class has been changed to the Directions.Instruction class</li>
+<li>The Directions.directions property has been renamed to Directions.instructions</li>
+<li>The Directions.Instruction.instruction property has been renamed to Directions.Instruction.description</li>
+<li>You must add a property called <q>mappedInDelegate</q> to your AppDelegate with an instance of MappedIn.Delegate</li>
+<li>In Swift:
+<code>swift
+class AppDelegate: UIApplicationDelegate {
+let mappedInDelegate = MappedIn.Delegate(AppDelegate)
+</code></li>
+<li>In Objective-C:
+<code>objective-c
+- (id)init {
+MIDelegate *mappedInDelegate = [[MIDelegate alloc] init:AppDelegate.self]
+</code></li>
+<li>The locationGenerator argument on getVenue() is being replaced by the Delegate.generateLocation method</li>
+<li>To use a custom generateLocation method, create your own Delegate class inheriting from MappedIn.Delegate and override the Delegate.generateLocation method. Set your AppDelegate.mappedInDelegate property to an instance of your custom class instead of the default MappedIn.Delegate class</li>
+</ul>
+
+<p><em>v0.7.0</em></p>
+
+<ul>
+<li>You can check if a MapViewMarker is already part of a MapView with mapview.hasMarker(marker), and adding a marker that&rsquo;s true of will no longer cause a crash.</li>
+</ul>
+
+<p><em>v0.6.0</em></p>
+
+<ul>
+<li>Added focusOn for arrays of Polygons</li>
+<li>Camera panning tracks fingers in orthographic and perspective mode</li>
+<li>focusScaleZoom = 1.0 should be the tightest zoom possible</li>
+</ul>
+
+<p><em>v0.5.0</em></p>
+
+<ul>
+<li>Implemented animated paths</li>
+<li>The <code>elevation</code> property on the MapView.Path class has been removed. The Path will now stick to <code>z=0</code></li>
+<li>The MapView.Path class has gained a <code>height</code> property specifying the height of the path when rendered</li>
+<li>Changed <code>maxCameraPitch</code> property to <code>maxPitch</code></li>
+</ul>
+
+<p><em>v0.4.0:</em></p>
+
+<ul>
+<li>Added orthographic camera support</li>
+<li>Fixed animation bug</li>
+<li>Fixed polygon logos blocking taps</li>
+</ul>
+
+<p><em>v0.3.0</em></p>
+
+<ul>
+<li>Implemented Custom Location Types</li>
+</ul>
+
+<p><em>v0.2.0:</em></p>
+
+<ul>
+<li>Update to Swift 2.2</li>
+<li>Rename Node to Coordinate</li>
+<li>Replace MapAnchor with Coordinates</li>
+<li>Coordinates gain the ability to be created from a Polygon (for MapAnchor support) and CLLocationCoordinate2D (latitude/longitude)</li>
+<li>Exposed the SCNView on the MapView</li>
+<li>A lot of under the hood work on georeferencing Map&rsquo;s</li>
+</ul>
+<h2 id='roadmap' class='heading'>Roadmap</h2>
+
+<p><em>Short Term:</em></p>
+
+<ul>
+<li>Map loading time improvements</li>
+<li>MapView refactor and API cleanup</li>
+<li>Venue loading time improvements</li>
+<li>Mappedin Events API</li>
+<li>Directions improvements</li>
+</ul>
+
+<p><em>Long Term:</em></p>
+
+<ul>
+<li>Offline data caching</li>
+<li>Geolocation based Venue prefetching</li>
+<li>Indoor Positioning</li>
+</ul>
+<h2 id='setup' class='heading'>Setup</h2>
+
+<ol>
+<li>Start by cloning this repo (or downloading the zip if you don&rsquo;t like git).</li>
+<li>Use <a href="https://cocoapods.org/">Cocoa Pods</a> to install the latest version of the <code>MappedIn.framework</code>
+
+<ul>
+<li>The sample repo contains an example <code>.podfile</code> configured to install the framework.</li>
+</ul></li>
+<li>Open the included Workspace in XCode.</li>
+<li>Build the Example project</li>
+<li>Open info.plist and input your MappedInUsername and MappedInPassword. If you don&rsquo;t know what those are, talk to your MappedIn representative.</li>
+<li>Run!</li>
+</ol>
+<h2 id='api-quick-start' class='heading'>API Quick Start</h2>
+
+<p>You can view all the documentation in this project&rsquo;s <a href="http://mappedin.github.io/ios/">GitHub Page</a>, but here&rsquo;s a quick start guide to just displaying a Map.</p>
+
+<p>Let&rsquo;s go through the key classes provided by the SDK and when you would use them.</p>
+<h3 id='mappedin' class='heading'>MappedIn</h3>
+
+<p>This is the class to start with. It controls all communication with the MappedIn API. Make sure you have your API key and Secret set in your .plist file, and then call </p>
+
+<p><code>MappedIn.getVenues(callBack: (venue: [Venue]) -&gt; Void)</code></p>
+
+<p>This will query the MappedIn servers and execute the <code>callBack</code> function you provided with a list of <code><a href="Classes/Venue.html">Venue</a></code>s your key has access to. Each <code><a href="Classes/Venue.html">Venue</a></code> will have basic details like the name and logo populated, but not the larger fields like <code>maps</code> and <code>locations</code>.</p>
+
+<p>To get all of the data for a specific venue, call</p>
+
+<p><code>MappedIn.getVenue(venue: Venue, callBack: (Venue) -&gt; Void)</code></p>
+
+<p>Similar to <code>getVenues</code>, this function will interface with the MappedIn API for you, sending the fully populated <code><a href="Classes/Venue.html">Venue</a></code> to your callback when it&rsquo;s done.</p>
+<h3 id='venue' class='heading'>Venue</h3>
+
+<p>The <code><a href="Classes/Venue.html">Venue</a></code> object will contain all information associated with a given venue (once it&rsquo;s been filled in with <code>getVenue</code>).</p>
+<h3 id='mapview' class='heading'>MapView</h3>
+
+<p>The <code><a href="Classes/MapView.html">MapView</a></code> class will display your your map for you/ Once you have a populated venue, set the <code>.venue</code> property on your <code><a href="Classes/MapView.html">MapView</a></code> and call <code>yourMapView.loadScene()</code></p>
+
+<p>That&rsquo;s the basics. Directions, Markers and other features will be covered in a future tutorial, but you can see them in action right now in the Single Venue project.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

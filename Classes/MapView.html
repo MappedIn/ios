@@ -14,7 +14,8 @@
     <a title="MapView Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,6 +153,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -205,33 +186,6 @@ call <code>setMap(Map)</code> to display the first map.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Mappedin@objc(cs)MapView(cpy)requiresConstraintBasedLayout"></a>
-                    <a name="//apple_ref/swift/Variable/requiresConstraintBasedLayout" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView(cpy)requiresConstraintBasedLayout">requiresConstraintBasedLayout</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:8Mappedin7MapViewC8delegateAA0bC8Delegate_pSgv"></a>
                     <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
                     <a class="token" href="#/s:8Mappedin7MapViewC8delegateAA0bC8Delegate_pSgv">delegate</a>
@@ -242,14 +196,14 @@ call <code>setMap(Map)</code> to display the first map.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the <code><a href="../Protocols/MapViewDelegate.html">MapViewDelegate</a></code> that will be sent events from the MapView.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MapViewDelegate.html">MapViewDelegate</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -286,9 +240,9 @@ call <code>setMap(Map)</code> to display the first map.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Mappedin@objc(cs)MapView(im)initWithCoder:"></a>
-                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView(im)initWithCoder:">init(coder:)</a>
+                    <a name="/s:8Mappedin7MapViewC17storeLabelsEnableSbv"></a>
+                    <a name="//apple_ref/swift/Property/storeLabelsEnable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin7MapViewC17storeLabelsEnableSbv">storeLabelsEnable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -296,14 +250,20 @@ call <code>setMap(Map)</code> to display the first map.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>When set the store labels will be drawn over top of venues.
+The store labels will always be rendered using <code>storeLabelDefaultFont</code>.</p>
+
+<p>This property does not override any per-<code><a href="../Classes/Polygon.html">Polygon</a></code> settings of store
+labels.</p>
+
+<p>Defaults to: <code>false</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">storeLabelsEnable</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
 
                         </div>
                       </div>
@@ -313,9 +273,9 @@ call <code>setMap(Map)</code> to display the first map.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Mappedin@objc(cs)MapView(im)layoutSubviews"></a>
-                    <a name="//apple_ref/swift/Method/layoutSubviews()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView(im)layoutSubviews">layoutSubviews()</a>
+                    <a name="/s:8Mappedin7MapViewC22storeLabelsDefaultFontSo16UIFontDescriptorCv"></a>
+                    <a name="//apple_ref/swift/Property/storeLabelsDefaultFont" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin7MapViewC22storeLabelsDefaultFontSo16UIFontDescriptorCv">storeLabelsDefaultFont</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -323,14 +283,17 @@ call <code>setMap(Map)</code> to display the first map.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Specific the font to be used by default (ignoring any per-<code>polygon</code>
+overrides).</p>
+
+<p>Defaults to: UIFontTextStyle.body</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">storeLabelsDefaultFont</span> <span class="o">=</span> <span class="kt">UIFontDescriptor</span><span class="o">.</span><span class="nf">preferredFontDescriptor</span><span class="p">(</span><span class="nv">withTextStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">body</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -401,8 +364,7 @@ call <code>setMap(Map)</code> to display the first map.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This switching is awkward and less than ideal in terms of performance,
-but it allows us to hide the internal workings of Elements for the time being</p>
+                        <p>Add an element to be rendered into the MapView</p>
 
                       </div>
                       <div class="declaration">
@@ -429,10 +391,7 @@ but it allows us to hide the internal workings of Elements for the time being</p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This switching is awkward and less than ideal in terms of performance,
-but it allows us to hide the internal workings of Elements for the time being</p>
-
-<p>O(n), should optimize at some point</p>
+                        <p>Remove an element from being rendered by the MapeView</p>
 
                       </div>
                       <div class="declaration">
@@ -459,14 +418,16 @@ but it allows us to hide the internal workings of Elements for the time being</p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Changes the polygon color, animated over some time. Use this to highlight polygons.</p>
+                        <p>Changes the polygon color, animated over some time. Use this to
+highlight polygons.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setColor</span><span class="p">(</span><span class="n">of</span> <span class="nv">polygon</span><span class="p">:</span> <span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setColor</span><span class="p">(</span><span class="n">of</span> <span class="nv">polygon</span><span class="p">:</span> <span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span>
+                     <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -529,14 +490,16 @@ but it allows us to hide the internal workings of Elements for the time being</p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Changes the polygon height over time. Can be useful as part of setColor to highlight a polygon.</p>
+                        <p>Changes the polygon height over time. Can be useful as part of setColor
+to highlight a polygon.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setHeight</span><span class="p">(</span><span class="n">of</span> <span class="nv">polygon</span><span class="p">:</span> <span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setHeight</span><span class="p">(</span><span class="n">of</span> <span class="nv">polygon</span><span class="p">:</span> <span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span>
+                      <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -586,141 +549,6 @@ but it allows us to hide the internal workings of Elements for the time being</p
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Mappedin@objc(cs)MapView(im)touchesBegan:withEvent:"></a>
-                    <a name="//apple_ref/swift/Method/touchesBegan(_:with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView(im)touchesBegan:withEvent:">touchesBegan(_:with:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Mappedin@objc(cs)MapView(im)touchesMoved:withEvent:"></a>
-                    <a name="//apple_ref/swift/Method/touchesMoved(_:with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView(im)touchesMoved:withEvent:">touchesMoved(_:with:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Mappedin@objc(cs)MapView(im)touchesEnded:withEvent:"></a>
-                    <a name="//apple_ref/swift/Method/touchesEnded(_:with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView(im)touchesEnded:withEvent:">touchesEnded(_:with:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Mappedin@objc(cs)MapView(im)touchesCancelled:withEvent:"></a>
-                    <a name="//apple_ref/swift/Method/touchesCancelled(_:with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView(im)touchesCancelled:withEvent:">touchesCancelled(_:with:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Mappedin@objc(cs)MapView(im)renderer:updateAtTime:"></a>
-                    <a name="//apple_ref/swift/Method/renderer(_:updateAtTime:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Mappedin@objc(cs)MapView(im)renderer:updateAtTime:">renderer(_:updateAtTime:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -738,14 +566,16 @@ but it allows us to hide the internal workings of Elements for the time being</p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>What direction, in Radians, is the Camera looking.
+From a bird eye view, A value of 0 would be North, and value
+of Pi / 2 would be east. 2 * Pi would be North again.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cameraHeading</span><span class="p">:</span> <span class="kt">Radians</span></code></pre>
 
                         </div>
                       </div>
@@ -765,14 +595,14 @@ but it allows us to hide the internal workings of Elements for the time being</p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>How the Camera is tilted down to see the Map view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cameraTilt</span><span class="p">:</span> <span class="kt">Radians</span></code></pre>
 
                         </div>
                       </div>
@@ -792,16 +622,88 @@ but it allows us to hide the internal workings of Elements for the time being</p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Given the following object that is conforms to the <code><a href="../Protocols/Focusable.html">Focusable</a></code> protocol
+frame that object in the current Camera view.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The animation will stack if applied with other animation, so calling
+  this function back to back will cause multiple animations</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">frame</span><span class="p">(</span><span class="n">_</span> <span class="nv">focusable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span><span class="p">,</span>
+                  <span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span><span class="p">,</span>
+                  <span class="nv">tilt</span><span class="p">:</span> <span class="kt">Radians</span><span class="p">,</span>
+                  <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>focusable</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An object that implemented the <code><a href="../Protocols/Focusable.html">Focusable</a></code> protocol
+                   This will be used to frame the bounds of the Camera</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>heading</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>What direction in Radians the camera should be pointed
+                 at the focusable object. <code>0</code> Being from the North and
+                 <code>Pi / 2</code> would be east.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tilt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>What direction the camera should be tilted down toward
+              the map. <code>0</code> Would be level, and <code>Pi / 2</code> would be directly
+              overhead.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A duration in which to animate the transition between
+              the current Camera position and the target camera
+              position.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -819,43 +721,86 @@ but it allows us to hide the internal workings of Elements for the time being</p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Given the following objects that is conforms to the <code><a href="../Protocols/Focusable.html">Focusable</a></code> protocol
+frame that object in the current Camera view.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The animation will stack if applied with other animation, so calling
+  this function back to back will cause multiple animations</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">frame</span><span class="p">(</span><span class="n">_</span> <span class="nv">focusable</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span><span class="p">],</span> <span class="nv">heading</span><span class="p">:</span> <span class="kt">Radians</span><span class="p">,</span> <span class="nv">tilt</span><span class="p">:</span> <span class="kt">Radians</span><span class="p">,</span> <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin7MapViewC5orbityAA9Focusable_p_Sf7headingSf4tiltSd4overtF"></a>
-                    <a name="//apple_ref/swift/Method/orbit(_:heading:tilt:over:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin7MapViewC5orbityAA9Focusable_p_Sf7headingSf4tiltSd4overtF">orbit(_:heading:tilt:over:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">SCNSceneRendererDelegate</span></code></pre>
-
-                        </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>focusable</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of object that implemented the <code><a href="../Protocols/Focusable.html">Focusable</a></code>
+                   protocol This will be used to frame the bounds
+                   of the Camera</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>heading</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>What direction in Radians the camera should be pointed
+                 at the focusable object. <code>0</code> Being from the North and
+                 <code>Pi / 2</code> would be east.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tilt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>What direction the camera should be tilted down toward
+              the map. <code>0</code> Would be level, and <code>Pi / 2</code> would be directly
+              overhead.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A duration in which to animate the transition between
+              the current Camera position and the target camera
+              position.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -865,8 +810,8 @@ but it allows us to hide the internal workings of Elements for the time being</p
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

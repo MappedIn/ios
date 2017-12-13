@@ -14,7 +14,8 @@
     <a title="Cylinder Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Mappedin Docs</a> (45% documented)</p>
+        <p><a href="../index.html">Mappedin Docs</a></p>
+        <p class="header-right"><a href="https://github.com/MappedIn/ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -89,37 +90,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/Bool.html">Bool</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Functions.html">Functions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1moiAA7Vector2VAD_SftF">*(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA10CoordinateC_ADtF">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:8Mappedin2eeoiSbAA3MapC_ADtF">==(_:_:)</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -183,13 +153,50 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin14CompletionDataa">CompletionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8Mappedin21CompletionJsonHandlera">CompletionJsonHandler</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
         <section>
           <section class="section">
             <h1>Cylinder</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Cylinder</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>A vertical cylinder that can be displayed in the <code><a href="../Classes/MapView.html">MapView</a></code>. This can be used
+to indicate a object of intrest, or a person in the map.</p>
+
+<ul>
+<li>Example:
+This will create an Cylinder and place it in the center of the map</li>
+</ul>
+<pre class="highlight swift"><code><span class="c1">// initialize this element, and set it to the origin </span>
+<span class="k">let</span> <span class="nv">cylinder</span> <span class="o">=</span> <span class="kt">Cylinder</span><span class="p">(</span>
+    <span class="nv">position</span><span class="p">:</span> <span class="kt">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="nv">diameter</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="nv">height</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.29</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1">// Add the element to the current Map View</span>
+<span class="n">myMapView</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">cylinder</span><span class="p">)</span>
+</code></pre>
+
+<p><em>The results in:</em></p>
+
+<p><img src="../img/cylinder.png" alt="Cylinder" title="Cylinder"></p>
 
           </section>
           <section class="section task-group-section">
@@ -208,8 +215,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The current diameter of the <code>Cylinder</code>, in Meters</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">diameter</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -227,8 +242,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The current height of the <code>Cylinder</code>, in Meters</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -246,27 +269,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The current color of the <code>Cylinder</code></p>
 
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin8CylinderC11focusPointsAA05FocusD0Vv"></a>
-                    <a name="//apple_ref/swift/Property/focusPoints" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin8CylinderC11focusPointsAA05FocusD0Vv">focusPoints</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -284,14 +296,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Initialize a Cylinder</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">PositionType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Position.html">Position</a></span><span class="o">&gt;</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt">PositionType</span><span class="p">,</span>
-        <span class="nv">diameter</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+    <span class="nv">diameter</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -367,8 +380,76 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set one or more of the <code>Cylinder</code> parameter&rsquo;s The parameter&rsquo;s will
+be set in a single animationInterval</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">diameter</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>diameter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired diameter of the <code>Cylinder</code> in Meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired height of the <code>Cylinder</code> in Meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired color of the <code>Cylinder</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Cylinder</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -386,8 +467,92 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set one or more of the <code>Cylinder</code> parameter&rsquo;s The parameter&rsquo;s will
+be set in a single animationInterval</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector3.html">Vector3</a></span><span class="p">,</span>
+                <span class="nv">diameter</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Cylinder</code> in map space
+                  This will exist in every map use a <code><a href="../Classes/Coordinate.html">Coordinate</a></code>
+                  for the position to make this show up on only one
+                  specific map.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>diameter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired diameter of the <code>Cylinder</code> in Meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired height of the <code>Cylinder</code> in Meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired color of the <code>Cylinder</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Cylinder</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -405,8 +570,91 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set one or more of the <code>Cylinder</code> parameter&rsquo;s The parameter&rsquo;s will
+be set in a single animationInterval</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">,</span>
+                <span class="nv">diameter</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">over</span>
+                <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Cylinder</code> This makes
+                  it appear in this spot only on the map associated
+                  with the Coordinate.<br></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>diameter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired diameter of the <code>Cylinder</code> in Meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired height of the <code>Cylinder</code> in Meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired color of the <code>Cylinder</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Cylinder</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -424,8 +672,56 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the position to a locations</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
 
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPosition</span><span class="p">(</span><span class="n">to</span> <span class="nv">position</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector3.html">Vector3</a></span><span class="p">,</span>
+                        <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Cylinder</code>
+                  This will exist in every map use a <code><a href="../Classes/Coordinate.html">Coordinate</a></code>
+                  for the position to make this show up on only one
+                  specific map.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Cylinder</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -443,8 +739,55 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the position to a locations</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
 
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPosition</span><span class="p">(</span><span class="n">to</span> <span class="nv">position</span><span class="p">:</span> <span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">,</span>
+                        <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired position of the <code>Cylinder</code>, This makes
+                  it appear in this spot only on the map associated
+                  with the Coordinate.<br></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Cylinder</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -462,8 +805,53 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the diameter of the <code>Cylinder</code> </p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
 
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setDiameter</span><span class="p">(</span><span class="n">to</span> <span class="nv">diameter</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span>
+                        <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>diameter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired diameter of the <code>Cylinder</code> in Meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Cylinder</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -481,8 +869,53 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the height of the <code>Cylinder</code>, animated over a time frame.</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
 
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setHeight</span><span class="p">(</span><span class="n">to</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span>
+                      <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the <code>Cylinder</code> in meters</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Cylinder</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -500,8 +933,52 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set the color of the <code>Cylinder</code>, animated over a time frame.</p>
+<h1 id='deprecated' class='heading'>Deprecated:</h1>
 
+<p>Use <code>set</code> as it is functionally equivalent but also follows Apple&rsquo;s
+named conventions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setColor</span><span class="p">(</span><span class="n">to</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="n">over</span> <span class="nv">animationInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>What color the <code>Cylinder</code> will be draw with</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>over</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval used to animate between the current
+              look of the <code>Cylinder</code> to the one set here</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -511,8 +988,8 @@ is. This may be a <code><a href="../Structs/Vector3.html">Vector3</a></code> or 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.com/" target="_blank" rel="external">Paul Bernhardt</a>. All rights reserved. (Last updated: 2017-11-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
