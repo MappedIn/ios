@@ -1,14 +1,8 @@
 source "https://github.com/MappedIn/podspec.git"
 workspace "iOS.xcworkspace"
-xcodeproj "Examples/Hello World/Hello World.xcodeproj"
-xcodeproj "Examples/Single Venue/Single Venue.xcodeproj"
+project "Examples/Walkthrough/Walkthrough.xcodeproj"
 
-target "Hello World" do
-	xcodeproj "Examples/Hello World/Hello World.xcodeproj"
-	pod "MappedIn", "~>0.11"
-end
-
-target "Single Venue" do
-	xcodeproj "Examples/Single Venue/Single Venue.xcodeproj"
-	pod "MappedIn", "~>0.11"
+target "Walkthrough" do
+	project "Examples/Walkthrough/Walkthrough.xcodeproj"
+	pod "MappedIn", "0.12.0-rc"
 end
