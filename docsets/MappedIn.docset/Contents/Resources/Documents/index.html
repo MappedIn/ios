@@ -142,6 +142,12 @@
                 <a href="Structs/ImageSet.html">ImageSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/SearchPagination.html">SearchPagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SearchResult.html">SearchResult</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Vector2.html">Vector2</a>
               </li>
               <li class="nav-group-task">
@@ -185,26 +191,69 @@ From your Mappedin rep. They will need to be added to your project.</p>
 <p>To view the data you can download from the <code><a href="Protocols/Service.html">Service</a></code> API, see the <code><a href="Classes/MapView.html">MapView</a></code>.</p>
 <h2 id='changes' class='heading'>Changes:</h2>
 
-<p><em>v0.13.0 (December 14th, 2017)</em></p>
+<p><em>v0.14.0 (January 26th, 2018)</em></p>
 
 <ul>
-<li>The <code><a href="Enums/HttpError.html">HttpError</a></code> code including, <code><a href="Enums/HttpError.html#/s:8Mappedin9HttpErrorO04httpC4CodeACSicACmF">HttpError.httpErrorCode</a></code> and
-<code><a href="Enums/HttpError.html#/s:8Mappedin9HttpErrorO014deserializableC0AcA014DeserializableC0OcACmF">HttpError.deserializableError</a></code>. These indicate to the developer if the data
-downloaded is corrupted or if the API keys they have used are invalid.</li>
+<li>Added the Search and the Suggestion APIs. These allow the Apps to find
+locations inside a Venue.
+&ldquo;<code>swift
+// The</code>search<code>field as been added to each and every Venue. It is a
+// protocol that implements the full</code>Search` functionality. This allows for
+// searching for locations in a venue. See the updated documentation for 
+// full information on how this protocol works.</li>
 </ul>
 
-<p><em>Example of the new error codes</em></p>
-<pre class="highlight swift"><code>   <span class="n">myService</span><span class="o">.</span><span class="nf">geVenue</span><span class="p">(</span><span class="n">venueListing</span><span class="p">)</span>
-      <span class="o">.</span><span class="nf">onError</span><span class="p">({</span><span class="n">error</span> <span class="k">in</span>
-          <span class="k">switch</span> <span class="n">error</span> <span class="p">{</span>
-          <span class="k">case</span> <span class="o">.</span><span class="nf">httpErrorCode</span><span class="p">(</span><span class="k">let</span> <span class="nv">code</span><span class="p">):</span>
-              <span class="nf">print</span><span class="p">(</span><span class="s">"Error code: </span><span class="se">\(</span><span class="n">code</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-          <span class="k">case</span> <span class="o">.</span><span class="nf">deserializableError</span><span class="p">(</span><span class="k">let</span> <span class="nv">deserializableError</span><span class="p">)</span>
-              <span class="nf">print</span><span class="p">(</span><span class="s">"Deserilization error: </span><span class="se">\(</span><span class="n">deserializableError</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-          <span class="k">default</span><span class="p">:</span>
-              <span class="nf">print</span><span class="p">(</span><span class="s">"Unhandled error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-          <span class="p">}</span>
-      <span class="p">})</span>
+<p>// Before you can call any of the search APIS, you must create a SearchDelegate.
+   struct MySearch: SearchDelegate {
+      // Results returned from the suggestions API.
+      func search(query: String, suggestions: [String]) {
+      }</p>
+<pre class="highlight plaintext"><code>  // Results returned from the search call.
+  func search(query: String, pagination: SearchPagination, results: [SearchResult]) {
+    for result in results {
+      // Currently the results can only be a location, but this may
+      // be expanded in the future.
+      switch result {
+      case .location(let location):
+        print("\(location.name)")
+      }
+    }
+  }
+
+  // Report any error that are encountered in any of the search APIs.
+  func search(error: SearchError) {
+      print(error)
+  }
+</code></pre>
+
+<p>}</p>
+
+<p>venue.search.delegate = MySearch() </p>
+
+<p>// This API is asynchronous, meaning it does not return here but will call
+   // the delegate when the search is completed.
+   venue.search.search(query: <q>some string</q>, page: 1, timeout: 1)</p>
+<pre class="highlight plaintext"><code>
+ - Bug fix that fixes crash when routing between multiple levels of a Venue.
+
+*v0.13.0 (December 14th, 2017)*
+ - The `HttpError` code including, `HttpError.httpErrorCode` and
+   `HttpError.deserializableError`. These indicate to the developer if the data
+   downloaded is corrupted or if the API keys they have used are invalid.
+
+   *Example of the new error codes*
+   ```swift
+   myService.geVenue(venueListing)
+      .onError({error in
+          switch error {
+          case .httpErrorCode(let code):
+              print("Error code: \(code)")
+          case .deserializableError(let deserializableError)
+              print("Deserilization error: \(deserializableError)")
+          default:
+              print("Unhandled error: \(error)")
+          }
+      })
 </code></pre>
 
 <ul>
@@ -418,7 +467,7 @@ MIDelegate *mappedInDelegate = [[MIDelegate alloc] init:AppDelegate.self]
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2017-12-13)</p>
+          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-01-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
