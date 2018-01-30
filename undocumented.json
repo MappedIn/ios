@@ -1,6 +1,13 @@
 {
   "warnings": [
     {
+      "file": "/Users/cora/Source/ios-sdk-2/Source/LocationProtocol.swift",
+      "line": 23,
+      "symbol": "Location.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/cora/Source/ios-sdk-2/Source/Search/Search.swift",
       "line": 9,
       "symbol": "Search",
