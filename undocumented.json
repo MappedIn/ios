@@ -1,54 +1,54 @@
 {
   "warnings": [
     {
-      "file": "/Users/cora/Source/io-sdk-alt/Source/LocationProtocol.swift",
+      "file": "/Users/cora/Source/ios-sdk-3/Source/LocationProtocol.swift",
       "line": 23,
       "symbol": "Location.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/cora/Source/io-sdk-alt/Source/Search/Search.swift",
+      "file": "/Users/cora/Source/ios-sdk-3/Source/Search/Search.swift",
       "line": 9,
       "symbol": "Search",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/cora/Source/io-sdk-alt/Source/Search/Search.swift",
+      "file": "/Users/cora/Source/ios-sdk-3/Source/Search/Search.swift",
       "line": 32,
       "symbol": "SearchResultType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/cora/Source/io-sdk-alt/Source/Search/Search.swift",
+      "file": "/Users/cora/Source/ios-sdk-3/Source/Search/Search.swift",
       "line": 57,
       "symbol": "SearchDelegate",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/cora/Source/io-sdk-alt/Source/Search/Search.swift",
+      "file": "/Users/cora/Source/ios-sdk-3/Source/Search/Search.swift",
       "line": 104,
       "symbol": "SearchError",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/cora/Source/io-sdk-alt/Source/Service.swift",
+      "file": "/Users/cora/Source/ios-sdk-3/Source/Service.swift",
       "line": 73,
       "symbol": "Service.searchUser",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/cora/Source/io-sdk-alt/Source/Service.swift",
+      "file": "/Users/cora/Source/ios-sdk-3/Source/Service.swift",
       "line": 74,
       "symbol": "Service.searchKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/cora/Source/io-sdk-alt"
+  "source_directory": "/Users/cora/Source/ios-sdk-3"
 }

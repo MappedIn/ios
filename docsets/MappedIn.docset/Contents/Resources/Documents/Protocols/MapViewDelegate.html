@@ -204,6 +204,9 @@
                         <p>When a user taps on the <code><a href="../Classes/MapView.html">MapView</a></code> and one or more <code><a href="../Classes/Polygon.html">Polygon</a></code> models are
 below it, this function will be called.</p>
 
+<p>Note: This API is called before the other <code>tapped</code> delegate functions, 
+      and does not take into account event routing.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -235,12 +238,177 @@ below it, this function will be called.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin15MapViewDelegateP6tappedSbAA0bC0C_AA7PolygonC7polygontF"></a>
+                    <a name="//apple_ref/swift/Method/tapped(_:polygon:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin15MapViewDelegateP6tappedSbAA0bC0C_AA7PolygonC7polygontF">tapped(_:polygon:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When a user taps on the <code><a href="../Classes/MapView.html">MapView</a></code> and one or more <code><a href="../Classes/Polygon.html">Polygon</a></code> models are
+below it, this function will be called for each polygon.</p>
+
+<p>Note: The <code>tapped</code> api always sends the event to the object that
+      closerst (ontop) of the camera view first.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">tapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">mapView</span><span class="p">:</span> <span class="kt"><a href="../Classes/MapView.html">MapView</a></span><span class="p">,</span> <span class="nv">polygon</span><span class="p">:</span> <span class="kt"><a href="../Classes/Polygon.html">Polygon</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>which mapview the user tapped on</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>polygon</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A polygon that was tapped</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>if the delegate accepted he tapped event, returning
+       true will stop the <code><a href="../Classes/MapView.html">MapView</a></code> from searching for any
+       other element which could have been tapped and calling
+       a delegate function for them.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin15MapViewDelegateP6tappedSbAA0bC0C_AA7Element_p7elementtF"></a>
+                    <a name="//apple_ref/swift/Method/tapped(_:element:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin15MapViewDelegateP6tappedSbAA0bC0C_AA7Element_p7elementtF">tapped(_:element:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When a user taps on the <code><a href="../Classes/MapView.html">MapView</a></code> and one or more <code><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></code> models are
+below it, this function will be called for each <code><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></code></p>
+
+<p>Note: The <code>tapped</code> api always sends the event to the object that
+      closerst (ontop) of the camera view first.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">tapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">mapView</span><span class="p">:</span> <span class="kt"><a href="../Classes/MapView.html">MapView</a></span><span class="p">,</span> <span class="nv">element</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>which mapview the user tapped on</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>element</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Protocols.html#/s:8Mappedin7ElementP">Element</a></code> that was tapped</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>if the delegate accepted he tapped event, returning
+       true will stop the <code><a href="../Classes/MapView.html">MapView</a></code> from searching for any
+       other element which could have been tapped and calling
+       a delegate function for them.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin15MapViewDelegateP17manipulatedCamerayyF"></a>
+                    <a name="//apple_ref/swift/Method/manipulatedCamera()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin15MapViewDelegateP17manipulatedCamerayyF">manipulatedCamera()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When a user moves the camera on the <code><a href="../Classes/MapView.html">MapView</a></code>, this function will be called.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">manipulatedCamera</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-02-13)</p>
+          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-02-21)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
