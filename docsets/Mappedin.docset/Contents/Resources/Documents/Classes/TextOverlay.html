@@ -200,9 +200,9 @@ to fill the backdrop of the <code>TextOverlay</code>.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin11TextOverlayCACx8position_So7UILabelC5labelAA11AnchorPointO06anchorH0tcAA8PositionRzlufc"></a>
-                    <a name="//apple_ref/swift/Method/init(position:label:anchorPoint:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin11TextOverlayCACx8position_So7UILabelC5labelAA11AnchorPointO06anchorH0tcAA8PositionRzlufc">init(position:label:anchorPoint:)</a>
+                    <a name="/s:8Mappedin11TextOverlayCACx8position_So7UILabelC5labelSC6CGSizeVSg4sizeAA11AnchorPointO06anchorJ0AJ16minimumTouchSizetcAA8PositionRzlufc"></a>
+                    <a name="//apple_ref/swift/Method/init(position:label:size:anchorPoint:minimumTouchSize:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11TextOverlayCACx8position_So7UILabelC5labelSC6CGSizeVSg4sizeAA11AnchorPointO06anchorJ0AJ16minimumTouchSizetcAA8PositionRzlufc">init(position:label:size:anchorPoint:minimumTouchSize:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -212,6 +212,9 @@ to fill the backdrop of the <code>TextOverlay</code>.</p>
                       <div class="abstract">
                         <p>Create a new TextOverlay</p>
 
+<p>Note: If you are using the minimumTouchSize the box will always pad in
+      all directions around the rendered element.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -219,7 +222,9 @@ to fill the backdrop of the <code>TextOverlay</code>.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">PositionType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Position.html">Position</a></span><span class="o">&gt;</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt">PositionType</span><span class="p">,</span>
                                     <span class="nv">label</span><span class="p">:</span> <span class="kt">UILabel</span><span class="p">,</span>
-                                    <span class="nv">anchorPoint</span><span class="p">:</span> <span class="kt"><a href="../Enums/AnchorPoint.html">AnchorPoint</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span></code></pre>
+                                    <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                    <span class="nv">anchorPoint</span><span class="p">:</span> <span class="kt"><a href="../Enums/AnchorPoint.html">AnchorPoint</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">center</span><span class="p">,</span>
+                                    <span class="nv">minimumTouchSize</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -257,6 +262,21 @@ combination of fonts, colors, sizes the SDK user may decide to use.</p>
                             <tr>
                               <td>
                                 <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The size of the image in unscaled pixels. If a scaling
+factor is applied, it is applied to this size automatically. If not
+size is provided, the size will always default to the size of the
+UILabel provided.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
                                 <em>anchorPoint</em>
                                 </code>
                               </td>
@@ -266,6 +286,22 @@ combination of fonts, colors, sizes the SDK user may decide to use.</p>
 <code>position</code> passed above will be associated with. The label is always
 projected onto the screen such that a ray passing from the camera
 would pass through the anchorPoint &amp; the position.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>minimumTouchSize</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>creates a larger invisible anchor that is
+only used for determine if a user has touched the overlay. The
+touch target will always be the size of the minimumTouchSize or
+the image size. Which ever is greater in both axis. The unit is in
+content scaled pixels. Defaults to (0, 0)</p>
                                 </div>
                               </td>
                             </tr>
@@ -280,7 +316,7 @@ would pass through the anchorPoint &amp; the position.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-03-21)</p>
+          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-03-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
