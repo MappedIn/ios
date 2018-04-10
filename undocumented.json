@@ -1,10 +1,31 @@
 {
   "warnings": [
     {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/APIRequest.swift",
+      "line": 153,
+      "symbol": "APIRequest.RequestError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/ImageSet.swift",
+      "line": 49,
+      "symbol": "ImageSet.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/christinemaiolo/Development/ios-sdk/Source/LocationProtocol.swift",
       "line": 23,
       "symbol": "Location.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/MapView.swift",
+      "line": 12,
+      "symbol": "Radians",
+      "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
@@ -33,20 +54,6 @@
       "line": 104,
       "symbol": "SearchError",
       "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Service.swift",
-      "line": 73,
-      "symbol": "Service.searchUser",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Service.swift",
-      "line": 74,
-      "symbol": "Service.searchKey",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],

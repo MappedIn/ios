@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>APIRequest Class Reference</title>
+    <title>CameraBounds Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/APIRequest" class="dashAnchor"></a>
-    <a title="APIRequest Class Reference"></a>
+    <a name="//apple_ref/swift/Struct/CameraBounds" class="dashAnchor"></a>
+    <a title="CameraBounds Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Mappedin Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Mappedin Reference</a>
         <img id="carat" src="../img/carat.png" />
-        APIRequest Class Reference
+        CameraBounds Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -167,29 +167,41 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>APIRequest</h1>
+            <h1>CameraBounds</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">APIRequest</span><span class="o">&lt;</span><span class="kt">DataType</span><span class="o">&gt;</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CameraBounds</span></code></pre>
 
                 </div>
               </div>
-            <p>An <code>APIRequest</code> is a class that is used to capture an asynchronous result
-from a HTTP request. This class will be called by the SDK when the result
-has completed, and acts as a way to communicate the data back to the client
-logic.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>Internally <code>APIRequest</code> will capture the state of the request if the SDK client
-did not install a callback in-time. This avoid any race with the asynchronous
-request.</p>
+            <p>The Camera bounds defines constraints that can be applied to the user&rsquo;s touch
+movements. This is used to stop keep the camera focused on the venue as a
+whole.</p>
 
-</div>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>All callbacks will always be invoked on the <code>main</code> application thread.</p>
+<p><img src="../img/camera_bounds.png" alt="Camera Bounds" title="Camera Bounds"></p>
 
-</div>
+<p>This diagram shows how the camera is constrained. The camera projects
+a ray that intersects with a 2D plane (xy), the plane height (z) is always 0
+in the map coordinate space.</p>
+
+<p>This point on the plane will always kept within a circle that is defined
+from the <code>center</code> point and the <code>radius</code> of the circle is set with the
+<code>radius</code> variable.</p>
+
+<p>The camera itself can be outside of the circle, but what it is focusing
+on will always lie within this region.</p>
+
+<p>The hight adjustment specifics how far up or down the Camera can be from
+the map. Zooming in or out is achieved in the SDK by moving the camera closer
+or further away from the center of view. So the field of view is always
+fixed with our camera.</p>
+
+<p>When the camera exceeds the bounds, a hard stop is used to force the camera
+to be constrained looking at the map. For the center of view, this is done
+by moving the camera along the plane until it distance is one radius away.
+Then the height bounds is applied. This is done such that the camera&rsquo;s
+distance away from it&rsquo;s center of view is scaled to keep the max height
+and min height constraints satisfied.</p>
 
           </section>
           <section class="section task-group-section">
@@ -198,9 +210,9 @@ request.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin10APIRequestC10onCompleteACyxGXDyxcF"></a>
-                    <a name="//apple_ref/swift/Method/onComplete(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin10APIRequestC10onCompleteACyxGXDyxcF">onComplete(_:)</a>
+                    <a name="/s:8Mappedin12CameraBoundsV6centerAA7Vector2VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/center" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin12CameraBoundsV6centerAA7Vector2VSgvp">center</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,46 +220,18 @@ request.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Install a new callback into the <code>APIRequest</code>. This callback will be called
-when the <code>APIRequest</code> has been completed. This function will not be
-called if an error has occurred, see <code>onError</code> handler for details
-on how to read out the error result.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>The <code>APIRequest</code> will maintain an internal copy of the completed
-    request data to handle the case that may occur if the <code>onComplete</code>
-    method is called after the request has already been completed.</p>
+                        <p>A point where the bounding sphere for the camera will use as the center</p>
 
-</div>
+<p>If not set, this will always default to center the map&rsquo;s bounding sphere</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">onComplete</span><span class="p">(</span><span class="n">_</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">DataType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">center</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector2.html">Vector2</a></span><span class="p">?</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A closure that will be called when the <code>APIRequest</code>
-                  completes.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -255,9 +239,9 @@ on how to read out the error result.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin10APIRequestC7onErrorACyxGXDyAA04HttpD0OcF"></a>
-                    <a name="//apple_ref/swift/Method/onError(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin10APIRequestC7onErrorACyxGXDyAA04HttpD0OcF">onError(_:)</a>
+                    <a name="/s:8Mappedin12CameraBoundsV6radiusSfSgvp"></a>
+                    <a name="//apple_ref/swift/Property/radius" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin12CameraBoundsV6radiusSfSgvp">radius</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -265,44 +249,17 @@ on how to read out the error result.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Install a new callback into the <code>APIRequest</code>. This callback will be called
-when the <code>APIRequest</code> can&rsquo;t be complete for one reason or another. The
-<code><a href="../Enums/HttpError.html">HttpError</a></code> return indicates what type of error has occurred.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>The <code>APIRequest</code> will maintain an internal copy of the any error
-    that was signed before the <code>onError</code> method was invoked, and will</p>
-
-</div>
+                        <p>The maximum distance away from the origin the Camera may be
+if not set this will always be the size of a bounding sphere</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">onError</span><span class="p">(</span><span class="n">_</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">RequestError</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">Float</span><span class="p">?</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A closure that will be called if the <code>APIRequest</code>
-                  fails to complete.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -310,9 +267,9 @@ when the <code>APIRequest</code> can&rsquo;t be complete for one reason or anoth
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin10APIRequestC16synchronousFetchxyKF"></a>
-                    <a name="//apple_ref/swift/Method/synchronousFetch()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin10APIRequestC16synchronousFetchxyKF">synchronousFetch()</a>
+                    <a name="/s:8Mappedin12CameraBoundsV9maxHeightSfvp"></a>
+                    <a name="//apple_ref/swift/Property/maxHeight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin12CameraBoundsV9maxHeightSfvp">maxHeight</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -320,20 +277,43 @@ when the <code>APIRequest</code> can&rsquo;t be complete for one reason or anoth
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>By blocking the current thread, fetch the any pending tasks.</p>
-
-<p>if an Error occurred, this function will throw the error.</p>
-
-<p>Note: Only one thread may call this function on a single <code>APIRequest</code>
-      Internally it modified the state of the APIRequest, so multiple
-      calls will cause one thread to block indefinitely.</p>
+                        <p>The maximum height of that the user may move the Camera, in meters
+Defaults to 2500</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">synchronousFetch</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DataType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxHeight</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin12CameraBoundsV9minHeightSfvp"></a>
+                    <a name="//apple_ref/swift/Property/minHeight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin12CameraBoundsV9minHeightSfvp">minHeight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>the minimum height of that the user may move the Camera, in meters
+Defaults to 25</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">minHeight</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
 
                         </div>
                       </div>
