@@ -1,61 +1,61 @@
 {
   "warnings": [
     {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/APIRequest.swift",
-      "line": 153,
+      "file": "/Users/cora/Source/ios-sdk/Source/APIRequest.swift",
+      "line": 156,
       "symbol": "APIRequest.RequestError",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/ImageSet.swift",
+      "file": "/Users/cora/Source/ios-sdk/Source/ImageSet.swift",
       "line": 49,
       "symbol": "ImageSet.subscript(_:)",
       "symbol_kind": "source.lang.swift.decl.function.subscript",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/LocationProtocol.swift",
+      "file": "/Users/cora/Source/ios-sdk/Source/LocationProtocol.swift",
       "line": 23,
       "symbol": "Location.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/MapView.swift",
+      "file": "/Users/cora/Source/ios-sdk/Source/MapView/MapView.swift",
       "line": 12,
       "symbol": "Radians",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/Search.swift",
+      "file": "/Users/cora/Source/ios-sdk/Source/Search/Search.swift",
       "line": 9,
       "symbol": "Search",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/Search.swift",
+      "file": "/Users/cora/Source/ios-sdk/Source/Search/Search.swift",
       "line": 32,
       "symbol": "SearchResultType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/Search.swift",
+      "file": "/Users/cora/Source/ios-sdk/Source/Search/Search.swift",
       "line": 57,
       "symbol": "SearchDelegate",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/Search.swift",
+      "file": "/Users/cora/Source/ios-sdk/Source/Search/Search.swift",
       "line": 104,
       "symbol": "SearchError",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/christinemaiolo/Development/ios-sdk"
+  "source_directory": "/Users/cora/Source/ios-sdk"
 }

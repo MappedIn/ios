@@ -170,11 +170,11 @@
             <h1>Navigatable</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Navigatable</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Navigatable</span></code></pre>
 
                 </div>
               </div>
-            <p>All classes that implement the Navigatable protocol can be navigated to and 
+            <p>All classes that implement the Navigatable protocol can be navigated to and
 from any other Navigatable object.</p>
 
 <p>For example, you can navigate from a Coordinate to a Location and you will
@@ -211,7 +211,7 @@ start or end at.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">navigatableCoordinates</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">navigatableCoordinates</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -225,9 +225,9 @@ start or end at.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin11NavigatablePAAE10directionsAA10DirectionsVSgqd__2to_tAaBRd__lF"></a>
-                    <a name="//apple_ref/swift/Method/directions(to:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin11NavigatablePAAE10directionsAA10DirectionsVSgqd__2to_tAaBRd__lF">directions(to:)</a>
+                    <a name="/s:8Mappedin11NavigatablePAAE10directionsAA10DirectionsVSgqd__2to_Sb10accessibletAaBRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/directions(to:accessible:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11NavigatablePAAE10directionsAA10DirectionsVSgqd__2to_Sb10accessibletAaBRd__lF">directions(to:accessible:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -243,12 +243,14 @@ start or end at.</p>
 <p>If there is no path, nil will be returned
 otherwise a <code><a href="../Structs/Directions.html">Directions</a></code> object will be returned with the path</p>
 
+<p>Accessible only directions can be specified as well</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">directions</span><span class="o">&lt;</span><span class="kt">VenueNavigatable</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">VenueNavigatable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Directions.html">Directions</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="n">directions</span><span class="o">&lt;</span><span class="kt">VenueNavigatable</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">VenueNavigatable</span><span class="p">,</span> <span class="nv">accessible</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Directions.html">Directions</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -258,9 +260,9 @@ otherwise a <code><a href="../Structs/Directions.html">Directions</a></code> obj
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin11NavigatablePAAE10directionsAA10DirectionsVSgqd__4from_tAaBRd__lF"></a>
-                    <a name="//apple_ref/swift/Method/directions(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin11NavigatablePAAE10directionsAA10DirectionsVSgqd__4from_tAaBRd__lF">directions(from:)</a>
+                    <a name="/s:8Mappedin11NavigatablePAAE10directionsAA10DirectionsVSgqd__4from_Sb10accessibletAaBRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/directions(from:accessible:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11NavigatablePAAE10directionsAA10DirectionsVSgqd__4from_Sb10accessibletAaBRd__lF">directions(from:accessible:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -271,17 +273,19 @@ otherwise a <code><a href="../Structs/Directions.html">Directions</a></code> obj
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Find the best path from the supplied origin to this location.</p>
+                        <p>Find the best accessible path from the supplied origin to this location.</p>
 
 <p>If there is no path, nil will be returned
 otherwise a <code><a href="../Structs/Directions.html">Directions</a></code> object will be returned with the path</p>
+
+<p>Accessible only directions can be specified as well</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">directions</span><span class="o">&lt;</span><span class="kt">VenueNavigatable</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">from</span> <span class="nv">origin</span><span class="p">:</span> <span class="kt">VenueNavigatable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Directions.html">Directions</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="n">directions</span><span class="o">&lt;</span><span class="kt">VenueNavigatable</span><span class="p">:</span> <span class="kt">Navigatable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">from</span> <span class="nv">origin</span><span class="p">:</span> <span class="kt">VenueNavigatable</span><span class="p">,</span> <span class="nv">accessible</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Directions.html">Directions</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -293,8 +297,8 @@ otherwise a <code><a href="../Structs/Directions.html">Directions</a></code> obj
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-04-10)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-04-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

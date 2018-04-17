@@ -170,7 +170,7 @@
             <h1>BinaryDecoder</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BinaryDecoder</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BinaryDecoder</span></code></pre>
 
                 </div>
               </div>
@@ -204,7 +204,7 @@ to you from your Mappedin rep.</p>
                         <p>Read a value out of the buffer  under the current cursor. The cursor will be
 advanced and an initialized value will be returned. If there is not sufficient
 space in the buffer a nil value will be returned.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foo</span> <span class="o">=</span> <span class="k">try</span> <span class="n">buffer</span><span class="o">.</span><span class="nf">pull</span><span class="p">(</span><span class="kt">Int32</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+<pre class="highlight plaintext"><code>let foo = try buffer.pull(Int32.self)
 </code></pre>
 
                       </div>
@@ -212,7 +212,7 @@ space in the buffer a nil value will be returned.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span>
     <span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">DeserializableType</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span></code></pre>
 
                         </div>
@@ -235,7 +235,7 @@ space in the buffer a nil value will be returned.</p>
                       <div class="abstract">
                         <p>This will pull an array of values from the Buffer, and advance the cursor until all values
 have been read. The length of the array is read from the buffer itself.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foo</span> <span class="o">=</span> <span class="k">try</span> <span class="n">buffer</span><span class="o">.</span><span class="nf">pull</span><span class="p">([</span><span class="kt">Int32</span><span class="p">]</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+<pre class="highlight plaintext"><code>let foo = try buffer.pull([Int32].self)
 </code></pre>
 
                       </div>
@@ -243,7 +243,7 @@ have been read. The length of the array is read from the buffer itself.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span>
     <span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span></code></pre>
 
                         </div>
@@ -267,7 +267,7 @@ have been read. The length of the array is read from the buffer itself.</p>
                         <p>This will pull an optional value from the buffer, this is identical to
 <code>pull</code> but will only pull a value after reading a flag from the buffer
 indicating if the optional value is present or not.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foo</span> <span class="o">=</span> <span class="k">try</span> <span class="n">buffer</span><span class="o">.</span><span class="nf">pull</span><span class="p">(</span><span class="kt">Int32</span><span class="p">?</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+<pre class="highlight plaintext"><code>let foo = try buffer.pull(Int32?.self)
 </code></pre>
 
                       </div>
@@ -275,7 +275,7 @@ indicating if the optional value is present or not.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">DeserializableType</span><span class="p">?</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">DeserializableType</span><span class="p">?</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -297,7 +297,7 @@ indicating if the optional value is present or not.</p>
                       <div class="abstract">
                         <p>Pull a value the BinaryDecoder, this is a bit nicer to use since it
 will infer the type rather then you having to explicitly supply it.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foo</span><span class="p">:</span> <span class="kt">UInt32</span> <span class="o">=</span> <span class="k">try</span> <span class="n">buffer</span><span class="o">.</span><span class="nf">pullValue</span><span class="p">()</span>
+<pre class="highlight plaintext"><code>let foo: UInt32 = try buffer.pullValue()
 </code></pre>
 
                       </div>
@@ -305,7 +305,7 @@ will infer the type rather then you having to explicitly supply it.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pullValue</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span></code></pre>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pullValue</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span></code></pre>
 
                         </div>
                       </div>
@@ -327,7 +327,7 @@ will infer the type rather then you having to explicitly supply it.</p>
                       <div class="abstract">
                         <p>Pull a array of values the BinaryDecoder, this is a bit nicer to use since it
 will infer the type rather then you having to explicitly supply it.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foo</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt32</span><span class="p">]</span> <span class="o">=</span> <span class="k">try</span> <span class="n">buffer</span><span class="o">.</span><span class="nf">pullValue</span><span class="p">()</span>
+<pre class="highlight plaintext"><code>let foo: [UInt32] = try buffer.pullValue()
 </code></pre>
 
                       </div>
@@ -335,7 +335,7 @@ will infer the type rather then you having to explicitly supply it.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pullValue</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pullValue</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -347,8 +347,8 @@ will infer the type rather then you having to explicitly supply it.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-04-10)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2018-04-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
