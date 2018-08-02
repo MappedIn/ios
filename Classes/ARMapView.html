@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BinaryDecoder Structure Reference</title>
+    <title>ARMapView Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/BinaryDecoder" class="dashAnchor"></a>
-    <a title="BinaryDecoder Structure Reference"></a>
+    <a name="//apple_ref/swift/Class/ARMapView" class="dashAnchor"></a>
+    <a title="ARMapView Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Mappedin Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Mappedin Reference</a>
         <img id="carat" src="../img/carat.png" />
-        BinaryDecoder Structure Reference
+        ARMapView Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -170,22 +170,17 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>BinaryDecoder</h1>
+            <h1>ARMapView</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BinaryDecoder</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ARMapView</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
 
                 </div>
               </div>
-            <p>A <code>BinaryDecoder</code> holds a buffer and allows for extraction of values from
-said buffer. This keeps track of what has been read from the buffer, and
-what is still pending for reading to allow the buffer to be read like
-a tape.</p>
-
-<p>This is a required component to make the <code><a href="../Protocols/Deserializable.html">Deserializable</a></code> protocol work.
-Currently, defining a custom <code><a href="../Classes/Location.html">Location</a></code> types requires some exposure of this
-object. This should only be interacted with by the generated code delivered
-to you from your Mappedin rep.</p>
+            <p>An ARMapView is similar to the MapView but instead shows a way to overlay
+the venue information onto the world. The mall&rsquo;s geometry is hidden, but elements
+can be placed in the view just like a MapView to allow the user to see pathing
+or other points of interest.</p>
 
           </section>
           <section class="section task-group-section">
@@ -194,9 +189,9 @@ to you from your Mappedin rep.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin13BinaryDecoderV4pullxxmKAA14DeserializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/pull(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin13BinaryDecoderV4pullxxmKAA14DeserializableRzlF">pull(_:)</a>
+                    <a name="/s:8Mappedin9ARMapViewC17arSessionDelegateSo09ARSessionF0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/arSessionDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9ARMapViewC17arSessionDelegateSo09ARSessionF0_pSgvp">arSessionDelegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -204,19 +199,14 @@ to you from your Mappedin rep.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Read a value out of the buffer  under the current cursor. The cursor will be
-advanced and an initialized value will be returned. If there is not sufficient
-space in the buffer a nil value will be returned.</p>
-<pre class="highlight plaintext"><code>let foo = try buffer.pull(Int32.self)
-</code></pre>
+                        <p>Access to the the ARSessionDelegate, see Apple&rsquo;s docs for an explanation</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">DeserializableType</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">arSessionDelegate</span><span class="p">:</span> <span class="kt">ARSessionDelegate</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -226,9 +216,9 @@ space in the buffer a nil value will be returned.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin13BinaryDecoderV4pullSayxGAEmKAA14DeserializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/pull(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin13BinaryDecoderV4pullSayxGAEmKAA14DeserializableRzlF">pull(_:)</a>
+                    <a name="/s:8Mappedin9ARMapViewC9arSessionSo9ARSessionCvp"></a>
+                    <a name="//apple_ref/swift/Property/arSession" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9ARMapViewC9arSessionSo9ARSessionCvp">arSession</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -236,18 +226,14 @@ space in the buffer a nil value will be returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This will pull an array of values from the Buffer, and advance the cursor until all values
-have been read. The length of the array is read from the buffer itself.</p>
-<pre class="highlight plaintext"><code>let foo = try buffer.pull([Int32].self)
-</code></pre>
+                        <p>Access the ARSession variable, see Apple&rsquo;s docs for an explanation.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">arSession</span><span class="p">:</span> <span class="kt">ARSession</span></code></pre>
 
                         </div>
                       </div>
@@ -257,9 +243,9 @@ have been read. The length of the array is read from the buffer itself.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin13BinaryDecoderV4pullxSgAEmKAA14DeserializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/pull(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin13BinaryDecoderV4pullxSgAEmKAA14DeserializableRzlF">pull(_:)</a>
+                    <a name="/s:8Mappedin9ARMapViewC3addyAA7ElementCF"></a>
+                    <a name="//apple_ref/swift/Method/add(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9ARMapViewC3addyAA7ElementCF">add(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -267,18 +253,14 @@ have been read. The length of the array is read from the buffer itself.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This will pull an optional value from the buffer, this is identical to
-<code>pull</code> but will only pull a value after reading a flag from the buffer
-indicating if the optional value is present or not.</p>
-<pre class="highlight plaintext"><code>let foo = try buffer.pull(Int32?.self)
-</code></pre>
+                        <p>Add an element to be rendered into the MapView</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pull</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">DeserializableType</span><span class="p">?</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:8Mappedin7ElementC">Element</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -288,9 +270,9 @@ indicating if the optional value is present or not.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin13BinaryDecoderV9pullValuexyKAA14DeserializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/pullValue()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin13BinaryDecoderV9pullValuexyKAA14DeserializableRzlF">pullValue()</a>
+                    <a name="/s:8Mappedin9ARMapViewC6removeyAA7ElementCF"></a>
+                    <a name="//apple_ref/swift/Method/remove(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9ARMapViewC6removeyAA7ElementCF">remove(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -298,17 +280,14 @@ indicating if the optional value is present or not.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Pull a value the BinaryDecoder, this is a bit nicer to use since it
-will infer the type rather then you having to explicitly supply it.</p>
-<pre class="highlight plaintext"><code>let foo: UInt32 = try buffer.pullValue()
-</code></pre>
+                        <p>Remove an element from being rendered by the MapeView</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pullValue</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">DeserializableType</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:8Mappedin7ElementC">Element</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -318,9 +297,9 @@ will infer the type rather then you having to explicitly supply it.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin13BinaryDecoderV9pullValueSayxGyKAA14DeserializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/pullValue()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin13BinaryDecoderV9pullValueSayxGyKAA14DeserializableRzlF">pullValue()</a>
+                    <a name="/s:8Mappedin9ARMapViewC25startDefaultConfigurationyyF"></a>
+                    <a name="//apple_ref/swift/Method/startDefaultConfiguration()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9ARMapViewC25startDefaultConfigurationyyF">startDefaultConfiguration()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -328,17 +307,96 @@ will infer the type rather then you having to explicitly supply it.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Pull a array of values the BinaryDecoder, this is a bit nicer to use since it
-will infer the type rather then you having to explicitly supply it.</p>
-<pre class="highlight plaintext"><code>let foo: [UInt32] = try buffer.pullValue()
-</code></pre>
+                        <p>Unlike a MapView which does not expose the AR Session, ARMapView requires
+a method invocation to start the AR Session. This uses the recommended
+settings if you do not wish to configure it yourself.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="kd">func</span> <span class="n">pullValue</span><span class="o">&lt;</span><span class="kt">DeserializableType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span><span class="o">&gt;</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeserializableType</span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">startDefaultConfiguration</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9ARMapViewC6setMapyAA0E0CF"></a>
+                    <a name="//apple_ref/swift/Method/setMap(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9ARMapViewC6setMapyAA0E0CF">setMap(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the MapView to display a specific map associated with the current venue.</p>
+
+<p>This will also display any Element objects that fall onto the new map.</p>
+
+<p>Note: Any Elements that existed that were not map specific will be
+      present after a new map is loaded.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setMap</span><span class="p">(</span><span class="n">_</span> <span class="nv">map</span><span class="p">:</span> <span class="kt"><a href="../Classes/Map.html">Map</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>map</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map to display</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9ARMapViewC15setRootLocationyAA10CoordinateC5coord_tF"></a>
+                    <a name="//apple_ref/swift/Method/setRootLocation(coord:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9ARMapViewC15setRootLocationyAA10CoordinateC5coord_tF">setRootLocation(coord:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>For AR to work the SDK requires some information on the current location
+this is used to center the map for the AR view. This coordinate should
+only be set once at the start of the app startup.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setRootLocation</span><span class="p">(</span><span class="nv">coord</span><span class="p">:</span> <span class="kt"><a href="../Classes/Coordinate.html">Coordinate</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
