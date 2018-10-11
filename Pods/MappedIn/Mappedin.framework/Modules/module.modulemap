@@ -1,0 +1,13 @@
+framework module Mappedin {
+    umbrella header "Mappedin.h"
+    
+    export *
+    module * { export * }
+    
+    private header "Geodesic.h"
+}
+
+module Mappedin.Swift {
+    header "Mappedin-Swift.h"
+    requires objc
+}
