@@ -4,5 +4,5 @@ project "Examples/Walkthrough/Walkthrough.xcodeproj"
 
 target "Walkthrough" do
 	project "Examples/Walkthrough/Walkthrough.xcodeproj"
-	pod "MappedIn", "0.12.0-rc"
+	pod "MappedIn", "1.4.0"
 end
