@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="top" id="iN0-l3-epB" customClass="FloorSelectionView" customModule="Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="248" height="290"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkF-SB-Bn4">
+                    <rect key="frame" x="7" y="0.0" width="33" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="33" id="CZx-pS-eeV"/>
+                        <constraint firstAttribute="height" constant="44" id="Rti-gr-cbH"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                    <state key="normal" image="Backward">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="floorButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="ah0-9Q-wR5"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qlw-zB-2x7">
+                    <rect key="frame" x="40" y="0.0" width="208" height="44"/>
+                    <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="bdO-nH-HsG"/>
+                        <constraint firstAttribute="width" constant="208" id="sJ6-zt-lyT"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="floorShortName">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="16" name="AvenirNext-DemiBold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Vo-R6-0FU">
+                    <rect key="frame" x="40" y="0.0" width="208" height="290"/>
+                    <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="208" id="T9L-Tw-vGr"/>
+                        <constraint firstAttribute="height" constant="290" id="fDT-cB-bfv"/>
+                    </constraints>
+                    <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Qlw-zB-2x7" firstAttribute="leading" secondItem="OkF-SB-Bn4" secondAttribute="trailing" id="0ZM-O7-sH6"/>
+                <constraint firstItem="7Vo-R6-0FU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="3pL-sZ-79c"/>
+                <constraint firstItem="Qlw-zB-2x7" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="VhW-mS-kf6"/>
+                <constraint firstItem="Qlw-zB-2x7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YP7-aF-1M6"/>
+                <constraint firstItem="7Vo-R6-0FU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="qcI-lK-uNd"/>
+                <constraint firstItem="OkF-SB-Bn4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rA6-xI-MXG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="floorLabelSelectorWidth" destination="sJ6-zt-lyT" id="75J-nm-e2f"/>
+                <outlet property="floorNavigationButton" destination="OkF-SB-Bn4" id="Ehv-y6-CGD"/>
+                <outlet property="floorShortHandLabel" destination="Qlw-zB-2x7" id="PAb-Yn-g9k"/>
+                <outlet property="floorTableSelectorHeight" destination="fDT-cB-bfv" id="cFJ-1a-rCO"/>
+                <outlet property="floorTableSelectorWidth" destination="T9L-Tw-vGr" id="aYy-jn-KMy"/>
+                <outlet property="floorTableView" destination="7Vo-R6-0FU" id="JG0-0M-84V"/>
+            </connections>
+            <point key="canvasLocation" x="-907.24637681159425" y="-924.45652173913049"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Backward" width="12" height="21"/>
+    </resources>
+</document>

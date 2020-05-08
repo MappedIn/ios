@@ -18,14 +18,19 @@ struct Service: Mappedin.Service {
     typealias VenueType = Venue
     let venueType = Venue.self
 
-    // Now the Keys and other secret data are pinned to your app here
-    // this will be used when doing any API requests to the Mappedin servers
+    //In order to use the Mappedin iOS SDK you will need an API Key and Secret.
+    // To get you started we've provided a key and secret in this repo that has
+    // access to some demo venues.
     //
-    // if these values are not set with the keys provided by Mappedin via
-    // our agents. Please contact us to get started.
-    let apiKey = ""
-    let apiSecret = ""
-    let dataKey = ""
+    // When you're ready to start using your own venues with the Mappedin iOS SDK
+    // you will need to contact a Mappedin representative to get your own unique
+    // key and secret.
+    //
+    // The keys and other secret data are pinned to your app here
+    // this will be used when doing any API requests to the Mappedin servers
+    let apiKey = "5eb0412d91b055001a68e999"
+    let apiSecret = "rvJ4gYNYV3GSePUO5FUNtU9EBBMJAlHq9dBBkZcot1GCtZUr"
+    let dataKey = "d5b94aa0"
 
     // not needed, just done to make sure you set the abover balues.
     init() {

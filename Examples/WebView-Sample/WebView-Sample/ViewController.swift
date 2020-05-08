@@ -24,7 +24,15 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Setup WebView with local html file. Another option is to use an external url and load it here.
+        /* Setup WebView with local html file. Another option is to use an external url and load it here.
+
+        To get you started we've provided a Mappedin key and secret that has access to some demo venues.
+         
+        When you're ready to start using your own venues you will need to contact a Mappedin representative
+        to get your own unique key and secret. Add your Mappedin api keys, search keys, and the venue's
+        slug to this file.
+
+         */
         if let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "Website") {
             webView.loadFileURL(url, allowingReadAccessTo: url)
             let myRequest = URLRequest(url: url)
