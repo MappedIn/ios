@@ -48,10 +48,11 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url {
             /*
-            Logic to decide which urls will be loaded in an external browser.
-            Because we are loading from a local file, any url starting with http would be external websites
-            */
-            if url.absoluteString.hasPrefix("http") {
+             Logic to decide which urls will be loaded in an external browser.
+             Because we are loading from a local file, any url starting with http would be external websites
+             Urls starting with tel should be opened on the browser as well, which should trigger the phone app to be opened
+             */
+            if url.absoluteString.hasPrefix("http") || url.absoluteString.hasPrefix("tel") {
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
                 return
