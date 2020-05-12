@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PathSelectView" customModule="Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="754" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2V-nD-Ypq">
+                    <rect key="frame" x="2" y="18" width="22.5" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="9GN-ou-bGf">
+                    <rect key="frame" x="28.5" y="0.0" width="723.5" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="d2V-nD-Ypq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="2" id="K7F-zK-N92"/>
+                <constraint firstItem="9GN-ou-bGf" firstAttribute="centerY" secondItem="d2V-nD-Ypq" secondAttribute="centerY" id="Pfh-8e-C5F"/>
+                <constraint firstItem="9GN-ou-bGf" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="WSs-nB-u0q"/>
+                <constraint firstItem="d2V-nD-Ypq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="18" id="Yl5-YR-fe8"/>
+                <constraint firstItem="9GN-ou-bGf" firstAttribute="leading" secondItem="d2V-nD-Ypq" secondAttribute="trailing" constant="4" id="htN-Yx-4Ld"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9GN-ou-bGf" secondAttribute="trailing" constant="2" id="l7Y-I2-6ic"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="toSearchBar" destination="9GN-ou-bGf" id="umz-f3-ZPk"/>
+            </connections>
+            <point key="canvasLocation" x="148" y="-251"/>
+        </view>
+    </objects>
+</document>
