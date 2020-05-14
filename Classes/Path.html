@@ -65,6 +65,9 @@
                 <a href="../Classes/Path.html">Path</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/PathSolver.html">PathSolver</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/Polygon.html">Polygon</a>
               </li>
               <li class="nav-group-task">
@@ -146,6 +149,9 @@
                 <a href="../Structs/ImageSet.html">ImageSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/PhoneNumber.html">PhoneNumber</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/SearchPagination.html">SearchPagination</a>
               </li>
               <li class="nav-group-task">
@@ -170,7 +176,7 @@
             <h1>Path</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Path</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:8Mappedin7ElementC">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Path</span> <span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:8Mappedin7ElementC">Element</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span></code></pre>
 
                 </div>
               </div>
@@ -202,7 +208,7 @@ their desired location.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -229,7 +235,7 @@ their desired location.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -256,7 +262,7 @@ their desired location.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -283,7 +289,7 @@ their desired location.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">pulseColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">pulseColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -311,7 +317,7 @@ None means unlimited</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">pulseLimit</span><span class="p">:</span> <span class="kt">Optional</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">pulseLimit</span><span class="p">:</span> <span class="kt">Optional</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -338,7 +344,7 @@ None means unlimited</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">pulseEnabled</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">pulseEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -366,7 +372,7 @@ of the path to the end.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">pulseTime</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">pulseTime</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -517,8 +523,8 @@ of the path to the end.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2019-02-25)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2020-05-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

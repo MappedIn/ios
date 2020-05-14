@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Position Protocol Reference</title>
+    <title>PhoneNumber Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/Position" class="dashAnchor"></a>
-    <a title="Position Protocol Reference"></a>
+    <a name="//apple_ref/swift/Struct/PhoneNumber" class="dashAnchor"></a>
+    <a title="PhoneNumber Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Mappedin Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Mappedin Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Position Protocol Reference
+        PhoneNumber Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -173,17 +173,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Position</h1>
+            <h1>PhoneNumber</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Position</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PhoneNumber</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span></code></pre>
 
                 </div>
               </div>
-            <p>A position is anything that can return a vector3 in a map, it is used
-to help place <code>Elements</code> in the screen.</p>
-
-<p>The most types to be used as a Position are <code><a href="../Structs/Vector3.html">Vector3</a></code> or <code><a href="../Classes/Coordinate.html">Coordinate</a></code></p>
+            <p>A PhoneNumber is a simple collection of a number and extension for a venue or location</p>
 
           </section>
           <section class="section task-group-section">
@@ -192,9 +189,9 @@ to help place <code>Elements</code> in the screen.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin8PositionP6vectorAA7Vector3Vvp"></a>
-                    <a name="//apple_ref/swift/Property/vector" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin8PositionP6vectorAA7Vector3Vvp">vector</a>
+                    <a name="/s:8Mappedin14DeserializableP4fromxAA13BinaryDecoderVz_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin14DeserializableP4fromxAA13BinaryDecoderVz_tKcfc">init(from:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -202,14 +199,13 @@ to help place <code>Elements</code> in the screen.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A vector describing where in map space the position is located</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">vector</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector3.html">Vector3</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">buffer</span><span class="p">:</span> <span class="k">inout</span> <span class="kt"><a href="../Structs/BinaryDecoder.html">BinaryDecoder</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>

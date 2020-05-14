@@ -64,6 +64,9 @@
                 <a href="Classes/Path.html">Path</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/PathSolver.html">PathSolver</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/Polygon.html">Polygon</a>
               </li>
               <li class="nav-group-task">
@@ -145,6 +148,9 @@
                 <a href="Structs/ImageSet.html">ImageSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/PhoneNumber.html">PhoneNumber</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/SearchPagination.html">SearchPagination</a>
               </li>
               <li class="nav-group-task">
@@ -182,6 +188,113 @@ From your Mappedin rep. They will need to be added to your project.</p>
 
 <p>To view the data you can download from the <code><a href="Protocols/Service.html">Service</a></code> API, see the <code><a href="Classes/MapView.html">MapView</a></code>.</p>
 <h2 id='changes' class='heading'>Changes:</h2>
+
+<p><em>v1.11.0 (May 11th, 2020)</em></p>
+
+<ul>
+<li>Added Coordinate method to convert coordinate to CLLocationCoordinate2D.</li>
+<li>Added tap delegate that provides the CLLocationCoordinate2D of a tap on the map.</li>
+</ul>
+
+<p><em>v1.10.0 (April 8th, 2020)</em></p>
+
+<ul>
+<li>Added ExitConnection action type for instructions and adjusted logic so that ExitConnection would be after every TakeConnection Action</li>
+</ul>
+
+<p><em>v1.9.1 (March 30th, 2020)</em></p>
+
+<ul>
+<li>Fixed bug where instruction for exiting connection isn&rsquo;t appended to instruction list.</li>
+</ul>
+
+<p><em>v1.9.0 (February 12th, 2020)</em></p>
+
+<ul>
+<li>Added optional languageCode parameter to getVenue to request loading a venue for a specific language if available</li>
+<li>Can access a list of all supported languages for Venue with venue.languageCodes, and the default language with venue.defaultLanguage</li>
+</ul>
+
+<p><em>v1.8.0 (December 12th, 2019)</em></p>
+
+<ul>
+<li>Added support to set the position of ImageOverlays and animate their movement.</li>
+</ul>
+
+<p><em>v1.7.2 (December 4th, 2019)</em></p>
+
+<ul>
+<li>Added support to change background color of mapView</li>
+<li>Fixed multifloor directions logic to better handle escalators and better match behavior on our other platforms</li>
+</ul>
+
+<p><em>v1.7.1 (November 21st, 2019)</em></p>
+
+<ul>
+<li>Cleanup of unused project libraries</li>
+</ul>
+
+<p><em>v1.7.0 (November 8th, 2019)</em></p>
+
+<ul>
+<li>Upgrade to Swift 5.1.2</li>
+<li>Adds support for multi-waypoint routing</li>
+</ul>
+
+<p><em>v1.6.1 (October 25th, 2019)</em></p>
+
+<ul>
+<li>Fixed Mappedin Search duplicates</li>
+</ul>
+
+<p><em>v1.6.0 (September 24th, 2019)</em></p>
+
+<ul>
+<li>Upgrade to Swift 5.1 and iOS 13</li>
+</ul>
+
+<p><em>v1.6.0-beta (September 20th, 2019)</em></p>
+
+<ul>
+<li>Upgrading to Swift 5.1 and iOS 13</li>
+</ul>
+
+<p><em>v1.5.0 (September 12th, 2019)</em></p>
+
+<ul>
+<li>Adds Mappedin Search capabilities</li>
+</ul>
+
+<p><em>v1.4.4 (August 1st, 2019)</em></p>
+
+<ul>
+<li>Fixed artifact appearing when drawing Overlays</li>
+<li>Fixed PhoneNumber class to make it available publicly</li>
+</ul>
+
+<p><em>v1.4.3 (July 9th, 2019)</em></p>
+
+<ul>
+<li>Fixed an issue with accesible directions</li>
+</ul>
+
+<p><em>v1.4.2 (June 28th, 2019)</em></p>
+
+<ul>
+<li>Adds PhoneNumber class</li>
+</ul>
+
+<p><em>v1.4.1 (May 15th, 2019)</em></p>
+
+<ul>
+<li>Access to more properties for categories and venues</li>
+</ul>
+
+<p><em>v1.4.0 (April 16th, 2019)</em></p>
+
+<ul>
+<li>Migrate to using Swift 5</li>
+</ul>
 
 <p><em>v1.3.0 (February 21st, 2019)</em></p>
 
@@ -248,24 +361,29 @@ the incorrect distance if a single point was given.</li>
 </ul>
 
 <p><em>v0.21.0-beta (August 1st, 2018)</em></p>
+
+<ul>
 <li>Added experimental ARKit support.</li>
-<div class="aside aside-requires">
+</ul><div class="aside aside-requires">
     <p class="aside-title">Requires</p>
     Requires iOS 10.
 
 </div>
 
 <p><em>v0.20.0 (May 9th, 2018)</em></p>
+
+<ul>
 <li>Performance for the Overlays has been improved for the Metal rendering path.
 Should render smoothly a 100+ overlays.</li>
-<div class="aside aside-bug">
+</ul><div class="aside aside-bug">
     <p class="aside-title">Bug</p>
     Bug Fix: Directions was not taking into account the weight of floor connections
 resulting in navigation taking shortcuts though other floors. This is now
 correctly handled.
 
-</div>
+</div><ul>
 <li>Mappedin SDK requires iOS 9 to function</li>
+</ul>
 
 <p><em>v0.19.0 (April 17th, 2018)</em></p>
 
@@ -543,7 +661,7 @@ conventions used by Apple and were redundant.</p>
 <li>The Direction class has been changed to the Directions.Instruction class</li>
 <li>The Directions.directions property has been renamed to Directions.instructions</li>
 <li>The Directions.Instruction.instruction property has been renamed to Directions.Instruction.description</li>
-<li>You must add a property called <q>mappedInDelegate</q> to your AppDelegate with an instance of MappedIn.Delegate</li>
+<li>You must add a property called &ldquo;mappedInDelegate&rdquo; to your AppDelegate with an instance of MappedIn.Delegate</li>
 <li>In Swift:
 <code>swift
 class AppDelegate: UIApplicationDelegate {
@@ -668,8 +786,8 @@ MIDelegate *mappedInDelegate = [[MIDelegate alloc] init:AppDelegate.self]
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2019-02-25)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2020-05-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -10,6 +10,7 @@
     
   </head>
   <body>
+    <a name="//apple_ref/swift/Section/Structures" class="dashAnchor"></a>
     <a title="Structures  Reference"></a>
     <header>
       <div class="content-wrapper">
@@ -62,6 +63,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Path.html">Path</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PathSolver.html">PathSolver</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Polygon.html">Polygon</a>
@@ -145,6 +149,9 @@
                 <a href="Structs/ImageSet.html">ImageSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/PhoneNumber.html">PhoneNumber</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/SearchPagination.html">SearchPagination</a>
               </li>
               <li class="nav-group-task">
@@ -173,6 +180,190 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9AnalyticsV"></a>
+                    <a name="//apple_ref/swift/Struct/Analytics" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9AnalyticsV">Analytics</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Analytics class is for sending analytics data to the Mappedin CMS. Some analytics events are fired automatically, but you are responsible for sending selectedLocation and selectedCategory, and they should also be fired in other parts of your app, even when the Map is not visible. This will make Smart Search work better for your venues</p>
+
+                        <a href="Structs/Analytics.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Analytics</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin13BinaryDecoderV"></a>
+                    <a name="//apple_ref/swift/Struct/BinaryDecoder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin13BinaryDecoderV">BinaryDecoder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>BinaryDecoder</code> holds a buffer and allows for extraction of values from
+said buffer. This keeps track of what has been read from the buffer, and
+what is still pending for reading to allow the buffer to be read like
+a tape.</p>
+
+<p>This is a required component to make the <code><a href="Protocols/Deserializable.html">Deserializable</a></code> protocol work.
+Currently, defining a custom <code><a href="Classes/Location.html">Location</a></code> types requires some exposure of this
+object. This should only be interacted with by the generated code delivered
+to you from your Mappedin rep.</p>
+
+                        <a href="Structs/BinaryDecoder.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BinaryDecoder</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin7Vector2V"></a>
+                    <a name="//apple_ref/swift/Struct/Vector2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin7Vector2V">Vector2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Representation of a 2D Vector</p>
+
+                        <a href="Structs/Vector2.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Vector2</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin7Vector3V"></a>
+                    <a name="//apple_ref/swift/Struct/Vector3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin7Vector3V">Vector3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Representation of a 3D Vector</p>
+
+                        <a href="Structs/Vector3.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Vector3</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Vector3</span><span class="p">:</span> <span class="kt"><a href="Protocols/Position.html">Position</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Vector3</span><span class="p">:</span> <span class="kt"><a href="Protocols/Focusable.html">Focusable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Vector3</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin10DirectionsV"></a>
+                    <a name="//apple_ref/swift/Struct/Directions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10DirectionsV">Directions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Directions object will contain an array of Coordinate objects on a path,
+and a corresponding list of Instruction objects representing the
+instructions to display to the user.</p>
+
+                        <a href="Structs/Directions.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Directions</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8ImageSetV"></a>
+                    <a name="//apple_ref/swift/Struct/ImageSet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8ImageSetV">ImageSet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An ImageSet is a collection of image URLs corresponding to different resizes
+of the same base image. These resizes are done by the Mappedin CMS, and you
+will get an image that is equal or the next step bigger than the size you
+specified, if available.</p>
+
+                        <a href="Structs/ImageSet.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ImageSet</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -228,16 +419,12 @@ and min height constraints satisfied.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin7Vector2V"></a>
-                    <a name="//apple_ref/swift/Struct/Vector2" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin7Vector2V">Vector2</a>
+                    <a name="/s:8Mappedin11FocusPointsV"></a>
+                    <a name="//apple_ref/swift/Struct/FocusPoints" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11FocusPointsV">FocusPoints</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -245,25 +432,50 @@ and min height constraints satisfied.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Representation of a 2D Vector</p>
+                        <p>A <code>FocusPoints</code> is a collection of one or more <code><a href="Protocols/Focusable.html">Focusable</a></code> objects. It is
+used internally in the API and is not intended to be created by the API users
+themselves. A number of objects implement this <code><a href="Protocols/Focusable.html">Focusable</a></code> protocol.</p>
 
-                        <a href="Structs/Vector2.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Vector2</span><span class="p">:</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FocusPoints</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin11PhoneNumberV"></a>
+                    <a name="//apple_ref/swift/Struct/PhoneNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11PhoneNumberV">PhoneNumber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A PhoneNumber is a simple collection of a number and extension for a venue or location</p>
+
+                        <a href="Structs/PhoneNumber.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PhoneNumber</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -321,143 +533,6 @@ This can be used if we need to expand our results.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin8ImageSetV"></a>
-                    <a name="//apple_ref/swift/Struct/ImageSet" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin8ImageSetV">ImageSet</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>An ImageSet is a collection of image URLs corresponding to different resizes
-of the same base image. These resizes are done by the Mappedin CMS, and you
-will get an image that is equal or the next step bigger than the size you
-specified, if available.</p>
-
-                        <a href="Structs/ImageSet.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ImageSet</span><span class="p">:</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin9AnalyticsV"></a>
-                    <a name="//apple_ref/swift/Struct/Analytics" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin9AnalyticsV">Analytics</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The Analytics class is for sending analytics data to the Mappedin CMS. Some analytics events are fired automatically, but you are responsible for sending selectedLocation and selectedCategory, and they should also be fired in other parts of your app, even when the Map is not visible. This will make Smart Search work better for your venues</p>
-
-                        <a href="Structs/Analytics.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Analytics</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin10DirectionsV"></a>
-                    <a name="//apple_ref/swift/Struct/Directions" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin10DirectionsV">Directions</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A Directions object will contain an array of Coordinate objects on a path,
-and a corresponding list of Instruction objects representing the
-instructions to display to the user.</p>
-
-                        <a href="Structs/Directions.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Directions</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin7Vector3V"></a>
-                    <a name="//apple_ref/swift/Struct/Vector3" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin7Vector3V">Vector3</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Representation of a 3D Vector</p>
-
-                        <a href="Structs/Vector3.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Vector3</span><span class="p">:</span> <span class="kt"><a href="Protocols/Deserializable.html">Deserializable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -490,84 +565,11 @@ identify a Venue and fetch it the Mappedin servers using the
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin13BinaryDecoderV"></a>
-                    <a name="//apple_ref/swift/Struct/BinaryDecoder" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin13BinaryDecoderV">BinaryDecoder</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A <code>BinaryDecoder</code> holds a buffer and allows for extraction of values from
-said buffer. This keeps track of what has been read from the buffer, and
-what is still pending for reading to allow the buffer to be read like
-a tape.</p>
-
-<p>This is a required component to make the <code><a href="Protocols/Deserializable.html">Deserializable</a></code> protocol work.
-Currently, defining a custom <code><a href="Classes/Location.html">Location</a></code> types requires some exposure of this
-object. This should only be interacted with by the generated code delivered
-to you from your Mappedin rep.</p>
-
-                        <a href="Structs/BinaryDecoder.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BinaryDecoder</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin11FocusPointsV"></a>
-                    <a name="//apple_ref/swift/Struct/FocusPoints" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin11FocusPointsV">FocusPoints</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A <code>FocusPoints</code> is a collection of one or more <code><a href="Protocols/Focusable.html">Focusable</a></code> objects. It is
-used internally in the API and is not intended to be created by the API users
-themselves. A number of objects implement this <code><a href="Protocols/Focusable.html">Focusable</a></code> protocol.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FocusPoints</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2019-02-25)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2020-05-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

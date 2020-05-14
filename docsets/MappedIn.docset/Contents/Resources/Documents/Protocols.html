@@ -10,6 +10,7 @@
     
   </head>
   <body>
+    <a name="//apple_ref/swift/Section/Protocols" class="dashAnchor"></a>
     <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
@@ -62,6 +63,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Path.html">Path</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PathSolver.html">PathSolver</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Polygon.html">Polygon</a>
@@ -145,6 +149,9 @@
                 <a href="Structs/ImageSet.html">ImageSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/PhoneNumber.html">PhoneNumber</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/SearchPagination.html">SearchPagination</a>
               </li>
               <li class="nav-group-task">
@@ -176,6 +183,164 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:8Mappedin14DeserializableP"></a>
+                    <a name="//apple_ref/swift/Protocol/Deserializable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin14DeserializableP">Deserializable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Deserializable</code> is a type that can be extracted from a <code><a href="Structs/BinaryDecoder.html">BinaryDecoder</a></code>.</p>
+
+<p>This is typically used to extract an object or a struct from the decoder
+when a <code><a href="Classes/Map.html">Map</a></code> is being loaded.</p>
+
+<p>Note: Mappedin will supply source that implements this for you
+      you should not have to do anything.</p>
+
+                        <a href="Protocols/Deserializable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Deserializable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin27DirectionsInstructionActionP"></a>
+                    <a name="//apple_ref/swift/Protocol/DirectionsInstructionAction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin27DirectionsInstructionActionP">DirectionsInstructionAction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A protocol used to classify what is or what isn&rsquo;t an Direction Action</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">DirectionsInstructionAction</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin11NavigatableP"></a>
+                    <a name="//apple_ref/swift/Protocol/Navigatable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11NavigatableP">Navigatable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>All classes that implement the Navigatable protocol can be navigated to and
+from any other Navigatable object.</p>
+
+<p>For example, you can navigate from a Coordinate to a Location and you will
+get a path from that Coordinate to the closest entrance node belonging to
+that Location. Beyond just pathing to a store, this might also be used for
+a &ldquo;take me to the closest washroom&rdquo; function. You can also navigate from an
+array of Navigatables to an Array of other Navigatables, and you will get
+the shortest path between an item in the first group to the second. This
+allows the ability to do advanced, high level things like &ldquo;find a place to
+park that takes you closest to any restaurant&rdquo;.</p>
+
+                        <a href="Protocols/Navigatable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Navigatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9FocusableP"></a>
+                    <a name="//apple_ref/swift/Protocol/Focusable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9FocusableP">Focusable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows the Camera of the <code><a href="Classes/MapView.html">MapView</a></code> to focus on this position.</p>
+
+<p>This is currently not intended to be implemented directly by 3rd party, but
+as an aid to glue SDK components together and keep the API simple.</p>
+
+                        <a href="Protocols/Focusable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Focusable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin15MapViewDelegateP"></a>
+                    <a name="//apple_ref/swift/Protocol/MapViewDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin15MapViewDelegateP">MapViewDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>MapViewDelegate</code> will receive events and messages from the <code><a href="Classes/MapView.html">MapView</a></code>.</p>
+
+                        <a href="Protocols/MapViewDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MapViewDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:8Mappedin8PositionP"></a>
                     <a name="//apple_ref/swift/Protocol/Position" class="dashAnchor"></a>
                     <a class="token" href="#/s:8Mappedin8PositionP">Position</a>
@@ -204,10 +369,6 @@ to help place <code>Elements</code> in the screen.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -270,189 +431,11 @@ required to use the Mappedin SDK</p>
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin15MapViewDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/MapViewDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin15MapViewDelegateP">MapViewDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The <code>MapViewDelegate</code> will receive events and messages from the <code><a href="Classes/MapView.html">MapView</a></code>.</p>
-
-                        <a href="Protocols/MapViewDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MapViewDelegate</span><span class="p">:</span> <span class="kd">class</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin14DeserializableP"></a>
-                    <a name="//apple_ref/swift/Protocol/Deserializable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin14DeserializableP">Deserializable</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p><code>Deserializable</code> is a type that can be extracted from a <code><a href="Structs/BinaryDecoder.html">BinaryDecoder</a></code>.</p>
-
-<p>This is typically used to extract an object or a struct from the decoder
-when a <code><a href="Classes/Map.html">Map</a></code> is being loaded.</p>
-
-<p>Note: Mappedin will supply source that implements this for you
-      you should not have to do anything.</p>
-
-                        <a href="Protocols/Deserializable.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Deserializable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin27DirectionsInstructionActionP"></a>
-                    <a name="//apple_ref/swift/Protocol/DirectionsInstructionAction" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin27DirectionsInstructionActionP">DirectionsInstructionAction</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A protocol used to classify what is or what isn&rsquo;t an Direction Action</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">DirectionsInstructionAction</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin11NavigatableP"></a>
-                    <a name="//apple_ref/swift/Protocol/Navigatable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin11NavigatableP">Navigatable</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>All classes that implement the Navigatable protocol can be navigated to and
-from any other Navigatable object.</p>
-
-<p>For example, you can navigate from a Coordinate to a Location and you will
-get a path from that Coordinate to the closest entrance node belonging to
-that Location. Beyond just pathing to a store, this might also be used for
-a <q>take me to the closest washroom</q> function. You can also navigate from an
-array of Navigatables to an Array of other Navigatables, and you will get
-the shortest path between an item in the first group to the second. This
-allows the ability to do advanced, high level things like <q>find a place to
-park that takes you closest to any restaurant</q>.</p>
-
-                        <a href="Protocols/Navigatable.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Navigatable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Mappedin9FocusableP"></a>
-                    <a name="//apple_ref/swift/Protocol/Focusable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin9FocusableP">Focusable</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Allows the Camera of the <code><a href="Classes/MapView.html">MapView</a></code> to focus on this position.</p>
-
-<p>This is currently not intended to be implemented directly by 3rd party, but
-as an aid to glue SDK components together and keep the API simple.</p>
-
-                        <a href="Protocols/Focusable.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Focusable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2019-02-25)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2020-05-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

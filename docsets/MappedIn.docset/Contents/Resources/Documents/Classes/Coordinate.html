@@ -65,6 +65,9 @@
                 <a href="../Classes/Path.html">Path</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/PathSolver.html">PathSolver</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/Polygon.html">Polygon</a>
               </li>
               <li class="nav-group-task">
@@ -146,6 +149,9 @@
                 <a href="../Structs/ImageSet.html">ImageSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/PhoneNumber.html">PhoneNumber</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/SearchPagination.html">SearchPagination</a>
               </li>
               <li class="nav-group-task">
@@ -170,7 +176,9 @@
             <h1>Coordinate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Navigatable.html">Navigatable</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span><span class="p">,</span> <span class="kt">Indexed</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Coordinate</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Navigatable.html">Navigatable</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Focusable.html">Focusable</a></span><span class="p">,</span> <span class="kt">Indexed</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Position.html">Position</a></span></code></pre>
 
                 </div>
               </div>
@@ -202,7 +210,7 @@ in the way that it is tagged to only pertain to a single map.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">vector2</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector2.html">Vector2</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">vector2</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector2.html">Vector2</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -229,7 +237,7 @@ in the way that it is tagged to only pertain to a single map.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -256,7 +264,7 @@ in the way that it is tagged to only pertain to a single map.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -283,7 +291,7 @@ in the way that it is tagged to only pertain to a single map.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">z</span><span class="p">:</span> <span class="kt">Float</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">z</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -310,7 +318,7 @@ in the way that it is tagged to only pertain to a single map.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">vector</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector3.html">Vector3</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">vector</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector3.html">Vector3</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -320,9 +328,9 @@ in the way that it is tagged to only pertain to a single map.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Mappedin10CoordinateC5venueAA5VenueCSgXwvp"></a>
+                    <a name="/s:8Mappedin10CoordinateC5venueAA5VenueCSgvp"></a>
                     <a name="//apple_ref/swift/Property/venue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Mappedin10CoordinateC5venueAA5VenueCSgXwvp">venue</a>
+                    <a class="token" href="#/s:8Mappedin10CoordinateC5venueAA5VenueCSgvp">venue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -337,7 +345,7 @@ in the way that it is tagged to only pertain to a single map.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">venue</span><span class="p">:</span> <span class="kt"><a href="../Classes/Venue.html">Venue</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">venue</span><span class="p">:</span> <span class="kt"><a href="../Classes/Venue.html">Venue</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -364,7 +372,7 @@ in the way that it is tagged to only pertain to a single map.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">map</span><span class="p">:</span> <span class="kt"><a href="../Classes/Map.html">Map</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">map</span><span class="p">:</span> <span class="kt"><a href="../Classes/Map.html">Map</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -448,6 +456,33 @@ is bound correctly to a floor on a venue.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">vector</span><span class="p">:</span> <span class="kt"><a href="../Structs/Vector3.html">Vector3</a></span><span class="p">,</span> <span class="nv">map</span><span class="p">:</span> <span class="kt"><a href="../Classes/Map.html">Map</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin10CoordinateC12toCLLocationSo0D12Coordinate2DVyF"></a>
+                    <a name="//apple_ref/swift/Method/toCLLocation()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10CoordinateC12toCLLocationSo0D12Coordinate2DVyF">toCLLocation()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the  Core Location coordinate for this Coordinate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">toCLLocation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CLLocationCoordinate2D</span></code></pre>
 
                         </div>
                       </div>
@@ -675,8 +710,8 @@ this <code>Coordinate</code>.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2019-02-25)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="http://www.mappedin.ca" target="_blank" rel="external">Mappedin</a>. All rights reserved. (Last updated: 2020-05-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
