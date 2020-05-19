@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Deserializable Protocol Reference</title>
+    <title>PhoneNumber Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/Deserializable" class="dashAnchor"></a>
-    <a title="Deserializable Protocol Reference"></a>
+    <a name="//apple_ref/swift/Struct/PhoneNumber" class="dashAnchor"></a>
+    <a title="PhoneNumber Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Mappedin Docs</a></p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Mappedin Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Deserializable Protocol Reference
+        PhoneNumber Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -173,20 +173,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Deserializable</h1>
+            <h1>PhoneNumber</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Deserializable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PhoneNumber</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Deserializable.html">Deserializable</a></span></code></pre>
 
                 </div>
               </div>
-            <p><code>Deserializable</code> is a type that can be extracted from a <code><a href="../Structs/BinaryDecoder.html">BinaryDecoder</a></code>.</p>
-
-<p>This is typically used to extract an object or a struct from the decoder
-when a <code><a href="../Classes/Map.html">Map</a></code> is being loaded.</p>
-
-<p>Note: Mappedin will supply source that implements this for you
-      you should not have to do anything.</p>
+            <p>A PhoneNumber is a simple collection of a number and extension for a venue or location</p>
 
           </section>
           <section class="section task-group-section">
@@ -199,27 +193,19 @@ when a <code><a href="../Classes/Map.html">Map</a></code> is being loaded.</p>
                     <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:8Mappedin14DeserializableP4fromxAA13BinaryDecoderVz_tKcfc">init(from:)</a>
                     </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initialize a type by reading it from the buffer</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
                         
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">buffer</span><span class="p">:</span> <span class="k">inout</span> <span class="kt"><a href="../Structs/BinaryDecoder.html">BinaryDecoder</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">buffer</span><span class="p">:</span> <span class="k">inout</span> <span class="kt"><a href="../Structs/BinaryDecoder.html">BinaryDecoder</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>

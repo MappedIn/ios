@@ -8,6 +8,76 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/CollectionHelpers.swift",
+      "line": 12,
+      "symbol": "Sequence.lookAround()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/CollectionHelpers.swift",
+      "line": 40,
+      "symbol": "Sequence.slidingWindow(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/CollectionHelpers.swift",
+      "line": 69,
+      "symbol": "Sequence.distinct()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Directions/Dijkstra.swift",
+      "line": 11,
+      "symbol": "SrcDst",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Directions/NavigationGraph.swift",
+      "line": 9,
+      "symbol": "NavigationGraph",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Directions/NavigationGraph.swift",
+      "line": 9,
+      "symbol": "NavigationGraph",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Directions/NavigationGraph.swift",
+      "line": 25,
+      "symbol": "NavigationGraph",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Http.swift",
+      "line": 43,
+      "symbol": "URLSession.dataTask(with:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Http.swift",
+      "line": 51,
+      "symbol": "URLSession.downloadTask(with:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Http.swift",
+      "line": 64,
+      "symbol": "HTTPClient",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/christinemaiolo/Development/ios-sdk/Source/ImageSet.swift",
       "line": 49,
       "symbol": "ImageSet.subscript(_:)",
@@ -22,10 +92,262 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapModel.swift",
+      "line": 177,
+      "symbol": "MapModel.Triangle",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapModel.swift",
+      "line": 272,
+      "symbol": "MapModel",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Elements/Path.swift",
+      "line": 569,
+      "symbol": "UIColor.vector4",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/MapView.swift",
       "line": 12,
       "symbol": "Radians",
       "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Renderer.swift",
+      "line": 139,
+      "symbol": "Renderer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Renderer.swift",
+      "line": 673,
+      "symbol": "SCNView.mtlDevice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Touch.swift",
+      "line": 13,
+      "symbol": "MapView._touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Touch.swift",
+      "line": 238,
+      "symbol": "MapView._touchesMoved(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Touch.swift",
+      "line": 255,
+      "symbol": "MapView._touchesEnded(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Touch.swift",
+      "line": 373,
+      "symbol": "MapView._touchesCancelled(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Vertex.swift",
+      "line": 18,
+      "symbol": "Vector3.componentSize",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Vertex.swift",
+      "line": 19,
+      "symbol": "Vector3.componentCount",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Vertex.swift",
+      "line": 23,
+      "symbol": "Vector2.componentSize",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/MapView/Vertex.swift",
+      "line": 24,
+      "symbol": "Vector2.componentCount",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 83,
+      "symbol": "SCNVector3.scaleToScreen(width:height:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 92,
+      "symbol": "SCNVector3.scaleFromScreen(width:height:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 100,
+      "symbol": "SCNVector3.rounded()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 110,
+      "symbol": "SCNVector4.normalize()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 114,
+      "symbol": "SCNVector4.vector3",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 120,
+      "symbol": "SCNVector3.vector3",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 130,
+      "symbol": "Float.scaleToScreen(axis:size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 136,
+      "symbol": "Float.scaleFromScreen(axis:size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Math.swift",
+      "line": 143,
+      "symbol": "CGSize.point",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Pathing/MetalUtils.swift",
+      "line": 17,
+      "symbol": "Float32.pixelFormat()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Pathing/MetalUtils.swift",
+      "line": 23,
+      "symbol": "UInt32.pixelFormat()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Pathing/MetalUtils.swift",
+      "line": 29,
+      "symbol": "Int32.pixelFormat()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Pathing/Pathing.swift",
+      "line": 12,
+      "symbol": "PathSolverDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Pathing/Pathing.swift",
+      "line": 24,
+      "symbol": "PathSolverError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Pathing/Pathing.swift",
+      "line": 48,
+      "symbol": "PathSolver.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/PhoneNumber.swift",
+      "line": 14,
+      "symbol": "PhoneNumber.number",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/PhoneNumber.swift",
+      "line": 15,
+      "symbol": "PhoneNumber.ext",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/MappedinSearch.swift",
+      "line": 9,
+      "symbol": "MappedinSearch",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/MappedinSearch.swift",
+      "line": 18,
+      "symbol": "MappedinSearchLocation",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/MappedinSearch.swift",
+      "line": 24,
+      "symbol": "MappedinSearchCategory",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/MappedinSearch.swift",
+      "line": 30,
+      "symbol": "MappedinSearchResultType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/MappedinSearch.swift",
+      "line": 46,
+      "symbol": "MappedinSearchDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Search/MappedinSearch.swift",
+      "line": 79,
+      "symbol": "MappedinSearchError",
+      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
@@ -54,6 +376,13 @@
       "line": 104,
       "symbol": "SearchError",
       "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/christinemaiolo/Development/ios-sdk/Source/Venue.swift",
+      "line": 169,
+      "symbol": "Venue.mappedinSearch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],
