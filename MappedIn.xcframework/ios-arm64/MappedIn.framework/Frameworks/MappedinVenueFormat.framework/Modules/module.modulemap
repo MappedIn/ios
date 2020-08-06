@@ -1,0 +1,11 @@
+framework module MappedinVenueFormat {
+  umbrella header "MappedinVenueFormat.h"
+
+  export *
+  module * { export * }
+}
+
+module MappedinVenueFormat.Swift {
+    header "MappedinVenueFormat-Swift.h"
+    requires objc
+}
