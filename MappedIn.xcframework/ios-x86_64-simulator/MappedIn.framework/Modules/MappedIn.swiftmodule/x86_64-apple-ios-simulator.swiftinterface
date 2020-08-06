@@ -11,66 +11,66 @@ import UIKit
 @_hasMissingDesignatedInitializers open class MiCategory {
   final public let id: Swift.String
   final public let name: Swift.String
-  final public let picture: MappedIn.MiPicture?
-  public init(id: Swift.String, name: Swift.String, picture: MappedIn.MiPicture? = nil)
-  public var locations: [MappedIn.MiLocation]
+  final public let picture: MiPicture?
+  public init(id: Swift.String, name: Swift.String, picture: MiPicture? = nil)
+  public var locations: [MiLocation]
   @objc deinit
 }
 @_hasMissingDesignatedInitializers open class MiLevelManager {
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers open class MiMapView : Mapbox.MGLMapView, UIKit.UIGestureRecognizerDelegate {
-  public var venue: MappedIn.MiVenue? {
+  public var venue: MiVenue? {
     get
   }
-  public var levelLayersManager: MappedIn.MiLayerManager? {
+  public var levelLayersManager: MiLayerManager? {
     get
   }
-  public var polygonStyleManager: MappedIn.MiPolygonStyleManager? {
+  public var polygonStyleManager: MiPolygonStyleManager? {
     get
   }
-  public var positionManager: MappedIn.MiPositionManager? {
+  public var positionManager: MiPositionManager? {
     get
   }
-  public var cameraManager: MappedIn.MiCameraManager? {
+  public var cameraManager: MiCameraManager? {
     get
   }
-  public var pathManager: MappedIn.MiPathManager? {
+  public var pathManager: MiPathManager? {
     get
   }
-  public var levelManager: MappedIn.MiLevelManager? {
+  public var levelManager: MiLevelManager? {
     get
   }
-  public var levels: [MappedIn.MiLevel] {
+  public var levels: [MiLevel] {
     get
   }
-  public var currentLevel: MappedIn.MiLevel? {
+  public var currentLevel: MiLevel? {
     get
   }
-  weak public var miDelegate: MappedIn.MiMapViewDelegate?
+  weak public var miDelegate: MiMapViewDelegate?
   @objc override dynamic public init(frame: CoreGraphics.CGRect, styleURL: Foundation.URL?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc override dynamic public var delegate: Mapbox.MGLMapViewDelegate? {
     @objc get
     @objc set(newDelegate)
   }
-  public func loadMap(venue: MappedIn.MiVenue, defaultLevel: MappedIn.MiLevel? = nil)
+  public func loadMap(venue: MiVenue, defaultLevel: MiLevel? = nil)
   @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
-  public func setLevel(level: MappedIn.MiLevel)
+  public func setLevel(level: MiLevel)
   public func incrementLevel()
   public func decrementLevel()
   public func canIncrementLevel() -> Swift.Bool
   public func canDecrementLevel() -> Swift.Bool
   public func clearAllPolygonStyles()
-  public func createNavigationPath<VenueNavigatable>(from: VenueNavigatable, to: VenueNavigatable, accessible: Swift.Bool = false, pathWidth: Swift.Double = 10.0, pathColor: UIKit.UIColor = UIColor.white) -> (MappedIn.MiDirections, MappedIn.MiPath)? where VenueNavigatable : MappedIn.MiNavigable
-  public func addPath(path: MappedIn.MiPath)
-  public func removePath(path: MappedIn.MiPath)
-  public func removeAllPaths(level: MappedIn.MiLevel? = nil)
+  public func createNavigationPath<VenueNavigatable>(from: VenueNavigatable, to: VenueNavigatable, accessible: Swift.Bool = false, pathWidth: Swift.Double = 10.0, pathColor: UIKit.UIColor = UIColor.white) -> (MiDirections, MiPath)? where VenueNavigatable : MiNavigable
+  public func addPath(path: MiPath)
+  public func removePath(path: MiPath)
+  public func removeAllPaths(level: MiLevel? = nil)
   public func clearPolygonStyle(id: Swift.String)
-  public func setPolygonColor(id: Swift.String, styleProperties: MappedIn.MiHighlightProperties)
-  public func setPolygonOutline(id: Swift.String, styleProperties: MappedIn.MiOutlineProperties)
-  public func focusOn(focusable: MappedIn.MiFocusable, heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double)
-  public func focusOn(focusables: [MappedIn.MiFocusable], heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double)
+  public func setPolygonColor(id: Swift.String, styleProperties: MiHighlightProperties)
+  public func setPolygonOutline(id: Swift.String, styleProperties: MiOutlineProperties)
+  public func focusOn(focusable: MiFocusable, heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double)
+  public func focusOn(focusables: [MiFocusable], heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double)
   public func focusOnCurrentLevel(heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double = 0)
   @objc override dynamic public var userLocation: Mapbox.MGLUserLocation? {
     @objc get
@@ -79,20 +79,20 @@ import UIKit
   public func updateUserPosition(point: CoreLocation.CLLocationCoordinate2D, level: Swift.Int? = nil)
   public func show3DLayers()
   public func hide3DLayers()
-  public func spacesInView() -> [MappedIn.MiSpace]
+  public func spacesInView() -> [MiSpace]
   public func changeBackgroundColor(color: Foundation.NSExpression)
   public func changeBackgroundColor(color: UIKit.UIColor)
-  public func addLocationSmartLabels(level: MappedIn.MiLevel)
-  public func displayOverlays(overlays: [MappedIn.MiOverlay])
-  public func removeAllOverlays(level: MappedIn.MiLevel? = nil)
-  public func getOverlays(level: MappedIn.MiLevel? = nil) -> [MappedIn.MiOverlay]
-  public func removeOverlays(overlays: [MappedIn.MiOverlay])
+  public func addLocationSmartLabels(level: MiLevel)
+  public func displayOverlays(overlays: [MiOverlay])
+  public func removeAllOverlays(level: MiLevel? = nil)
+  public func getOverlays(level: MiLevel? = nil) -> [MiOverlay]
+  public func removeOverlays(overlays: [MiOverlay])
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @_hasMissingDesignatedInitializers open class MiDirections {
-  public var path: [MappedIn.MiNode]
-  public var instructions: [MappedIn.MiInstruction]
+  public var path: [MiNode]
+  public var instructions: [MiInstruction]
   final public let distance: Swift.Double
   @objc deinit
 }
@@ -101,8 +101,8 @@ import UIKit
 }
 @_hasMissingDesignatedInitializers open class MiLayerManager {
   final public let id: Swift.String
-  public var smartLabelManager: MappedIn.MiSmartLabelManager?
-  public var overlayManager: MappedIn.MiOverlayManager?
+  public var smartLabelManager: MiSmartLabelManager?
+  public var overlayManager: MiOverlayManager?
   public func setStyles()
   public func enableLayer(layer: Swift.Int, enable: Swift.Bool)
   @objc deinit
@@ -110,14 +110,14 @@ import UIKit
 public enum MiGestureType {
   case PINCH
   case PAN
-  public static func == (a: MappedIn.MiGestureType, b: MappedIn.MiGestureType) -> Swift.Bool
+  public static func == (a: MiGestureType, b: MiGestureType) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-@_hasMissingDesignatedInitializers open class MiNode : MappedIn.MiNavigable, Swift.Hashable, MappedIn.MiFocusable {
-  public var navigatableNodes: [MappedIn.MiNode] {
+@_hasMissingDesignatedInitializers open class MiNode : MiNavigable, Swift.Hashable, MiFocusable {
+  public var navigatableNodes: [MiNode] {
     get
   }
   final public let id: Swift.String
@@ -138,17 +138,17 @@ public enum MiGestureType {
     get
   }
   final public let levelId: Swift.String
-  public var level: MappedIn.MiLevel? {
+  public var level: MiLevel? {
     get
   }
-  public var spaces: [MappedIn.MiSpace] {
+  public var spaces: [MiSpace] {
     get
   }
-  public var locations: [MappedIn.MiLocation] {
+  public var locations: [MiLocation] {
     get
   }
-  public func getPoints() -> [MappedIn.MiFocusPoint]
-  public static func == (lhs: MappedIn.MiNode, rhs: MappedIn.MiNode) -> Swift.Bool
+  public func getPoints() -> [MiFocusPoint]
+  public static func == (lhs: MiNode, rhs: MiNode) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   @objc deinit
   open var hashValue: Swift.Int {
@@ -158,11 +158,11 @@ public enum MiGestureType {
 @_hasMissingDesignatedInitializers open class MiCameraManager {
   public func setTilt(tilt: Swift.Double, over: Swift.Double)
   public func disableTilt(over: Swift.Double = 1)
-  public func focusOn(focusables: [MappedIn.MiFocusable], heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double)
-  public func focusOn(focusable: MappedIn.MiFocusable, heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double = 0)
+  public func focusOn(focusables: [MiFocusable], heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double)
+  public func focusOn(focusable: MiFocusable, heading: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: Swift.Double = 0, over: Swift.Double = 0)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers open class MiPolygonOutlineManager : MappedIn.MiBasePolygonStyleManager {
+@_hasMissingDesignatedInitializers open class MiPolygonOutlineManager : MiBasePolygonStyleManager {
   @objc deinit
 }
 public struct MiPicture : Swift.Codable {
@@ -192,7 +192,7 @@ public enum MIGetVenueResultCode {
   case FAILED_TO_GET_MANIFEST
   case FAILED_TO_DOWNLOAD
   case FAILED_TO_PARSE_FILES
-  public static func == (a: MappedIn.MIGetVenueResultCode, b: MappedIn.MIGetVenueResultCode) -> Swift.Bool
+  public static func == (a: MIGetVenueResultCode, b: MIGetVenueResultCode) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
@@ -213,14 +213,14 @@ public enum HttpError : Swift.Error {
 public struct MiAnalytics {
   public static var deviceData: [Swift.String : Any]
   public static func updateSessionId()
-  public static func enteredApp(completionHandler: MappedIn.DataCompletionHandler? = nil)
-  public static func exitedApp(completionHandler: MappedIn.DataCompletionHandler? = nil)
-  public static func selectedVenue(_ venue: Swift.String, completionHandler: MappedIn.DataCompletionHandler? = nil)
-  public static func selectedLocation(_ location: MappedIn.MiLocation, _ venue: Swift.String?, completionHandler: MappedIn.DataCompletionHandler? = nil)
-  public static func selectedCategory(_ venue: Swift.String, _ categoryId: Swift.String, completionHandler: MappedIn.DataCompletionHandler? = nil)
-  public static func startedWayfindTo(_ location: MappedIn.MiLocation, _ venue: Swift.String?, completionHandler: MappedIn.DataCompletionHandler? = nil) -> MappedIn.MiAnalytics.MiWayfind
+  public static func enteredApp(completionHandler: DataCompletionHandler? = nil)
+  public static func exitedApp(completionHandler: DataCompletionHandler? = nil)
+  public static func selectedVenue(_ venue: Swift.String, completionHandler: DataCompletionHandler? = nil)
+  public static func selectedLocation(_ location: MiLocation, _ venue: Swift.String?, completionHandler: DataCompletionHandler? = nil)
+  public static func selectedCategory(_ venue: Swift.String, _ categoryId: Swift.String, completionHandler: DataCompletionHandler? = nil)
+  public static func startedWayfindTo(_ location: MiLocation, _ venue: Swift.String?, completionHandler: DataCompletionHandler? = nil) -> MiAnalytics.MiWayfind
   @_hasMissingDesignatedInitializers open class MiWayfind {
-    public func successful(completionHandler: MappedIn.DataCompletionHandler? = nil)
+    public func successful(completionHandler: DataCompletionHandler? = nil)
     @objc deinit
   }
 }
@@ -245,41 +245,41 @@ open class MiStyleProperties {
 }
 @_hasMissingDesignatedInitializers open class MiOverlayManager {
   public func getOverlayFeatures() -> [Mapbox.MGLPointFeature]
-  public func displayOverlays(overlays: [MappedIn.MiOverlay])
-  public func removeOverlays(overlays: [MappedIn.MiOverlay])
+  public func displayOverlays(overlays: [MiOverlay])
+  public func removeOverlays(overlays: [MiOverlay])
   public func clear()
   public func addLayer()
   public func removeLayer()
   @objc deinit
 }
-open class MiOutlineProperties : MappedIn.MiStyleProperties {
+open class MiOutlineProperties : MiStyleProperties {
   public init(color: UIKit.UIColor, width: Swift.Double, opacity: Swift.Double)
   @objc deinit
   override public init(color: UIKit.UIColor, opacity: Swift.Double)
 }
 @_hasMissingDesignatedInitializers open class MiPathSegment {
-  public var level: MappedIn.MiLevel? {
+  public var level: MiLevel? {
     get
   }
   @objc deinit
 }
-@_hasMissingDesignatedInitializers open class MiLocation : MappedIn.BaseObject, MappedIn.MiNavigable {
+@_hasMissingDesignatedInitializers open class MiLocation : BaseObject, MiNavigable {
   final public let name: Swift.String
   final public let externalId: Swift.String?
-  public var navigatableNodes: [MappedIn.MiNode]
-  public var spaces: [MappedIn.MiSpace]
-  public var categories: [MappedIn.MiCategory]
-  final public let logo: MappedIn.MiPicture?
-  final public let picture: MappedIn.MiPicture?
+  public var navigatableNodes: [MiNode]
+  public var spaces: [MiSpace]
+  public var categories: [MiCategory]
+  final public let logo: MiPicture?
+  final public let picture: MiPicture?
   @objc deinit
 }
-@_inheritsConvenienceInitializers open class MiHighlightProperties : MappedIn.MiStyleProperties {
+@_inheritsConvenienceInitializers open class MiHighlightProperties : MiStyleProperties {
   @objc deinit
   override public init(color: UIKit.UIColor, opacity: Swift.Double)
 }
 @_hasMissingDesignatedInitializers open class MiPolygonStyleManager {
-  public func setPolygonColor(id: Swift.String, styleProperties: MappedIn.MiHighlightProperties)
-  public func setPolygonOutline(id: Swift.String, styleProperties: MappedIn.MiOutlineProperties)
+  public func setPolygonColor(id: Swift.String, styleProperties: MiHighlightProperties)
+  public func setPolygonOutline(id: Swift.String, styleProperties: MiOutlineProperties)
   public func clearAllPolygonStyles()
   public func clearPolygonStyle(id: Swift.String)
   @objc deinit
@@ -289,60 +289,60 @@ open class MiOverlay {
   final public let coordinates: CoreLocation.CLLocationCoordinate2D
   final public let feature: Mapbox.MGLPointFeature
   final public let image: UIKit.UIImage
-  final public let level: MappedIn.MiLevel
-  public init(coordinates: CoreLocation.CLLocationCoordinate2D, level: MappedIn.MiLevel, image: UIKit.UIImage)
-  convenience public init(coordinates: CoreLocation.CLLocationCoordinate2D, level: MappedIn.MiLevel, view: UIKit.UIView)
+  final public let level: MiLevel
+  public init(coordinates: CoreLocation.CLLocationCoordinate2D, level: MiLevel, image: UIKit.UIImage)
+  convenience public init(coordinates: CoreLocation.CLLocationCoordinate2D, level: MiLevel, view: UIKit.UIView)
   @objc deinit
 }
 public class MappedIn {
   public init()
   public init(mappedinKey: Swift.String, mappedinSecret: Swift.String, mappedinEndpoint: Swift.String? = nil)
-  public func getVenue(venueSlug: Swift.String, enableOfflineSupport: Swift.Bool = true, completionHandler: @escaping (MappedIn.MIGetVenueResultCode, MappedIn.MiVenue?) -> (Swift.Void))
-  public func getVenues(completionHandler: @escaping (MappedIn.MIGetVenueResultCode, [(Swift.String, Swift.String)]) -> (Swift.Void))
+  public func getVenue(venueSlug: Swift.String, enableOfflineSupport: Swift.Bool = true, completionHandler: @escaping (MIGetVenueResultCode, MiVenue?) -> (Swift.Void))
+  public func getVenues(completionHandler: @escaping (MIGetVenueResultCode, [(Swift.String, Swift.String)]) -> (Swift.Void))
   @objc deinit
 }
-@_hasMissingDesignatedInitializers open class MiPolygonHighlightManager : MappedIn.MiBasePolygonStyleManager {
+@_hasMissingDesignatedInitializers open class MiPolygonHighlightManager : MiBasePolygonStyleManager {
   @objc deinit
 }
 public protocol MiMapViewDelegate : AnyObject {
   func onTapNothing()
-  func didTapSpace(space: MappedIn.MiSpace) -> Swift.Bool
+  func didTapSpace(space: MiSpace) -> Swift.Bool
   func onTapCoordinates(point: CoreLocation.CLLocationCoordinate2D)
-  func didTapOverlay(overlay: MappedIn.MiOverlay) -> Swift.Bool
-  func onLevelChange(level: MappedIn.MiLevel)
-  func onManipulateCamera(gesture: MappedIn.MiGestureType)
-  func onMapLoaded(status: MappedIn.MiMapStatus)
+  func didTapOverlay(overlay: MiOverlay) -> Swift.Bool
+  func onLevelChange(level: MiLevel)
+  func onManipulateCamera(gesture: MiGestureType)
+  func onMapLoaded(status: MiMapStatus)
 }
 @_hasMissingDesignatedInitializers open class MiSmartLabel {
-  final public let level: MappedIn.MiLevel
+  final public let level: MiLevel
   final public let text: Swift.String
   final public let point: Mapbox.MGLPointFeature
   final public let id: Swift.String
   @objc deinit
 }
 public protocol MiFocusable {
-  func getPoints() -> [MappedIn.MiFocusPoint]
+  func getPoints() -> [MiFocusPoint]
 }
-@_hasMissingDesignatedInitializers open class MiLevel : MappedIn.BaseObject, Swift.Hashable, MappedIn.MiFocusable {
+@_hasMissingDesignatedInitializers open class MiLevel : BaseObject, Swift.Hashable, MiFocusable {
   final public let name: Swift.String
   final public let abbreviation: Swift.String
   final public let elevation: Swift.Int
-  public var nodes: [Swift.String : MappedIn.MiNode]
+  public var nodes: [Swift.String : MiNode]
   final public let building: Swift.String
-  public var connections: [Swift.String : MappedIn.MiConnection] {
+  public var connections: [Swift.String : MiConnection] {
     get
   }
-  public var locations: [Swift.String : MappedIn.MiLocation] {
+  public var locations: [Swift.String : MiLocation] {
     get
   }
-  public var spaces: [Swift.String : MappedIn.MiSpace] {
+  public var spaces: [Swift.String : MiSpace] {
     get
   }
-  public var smartLabels: [MappedIn.MiSmartLabel] {
+  public var smartLabels: [MiSmartLabel] {
     get
   }
-  public func getPoints() -> [MappedIn.MiFocusPoint]
-  public static func == (lhs: MappedIn.MiLevel, rhs: MappedIn.MiLevel) -> Swift.Bool
+  public func getPoints() -> [MiFocusPoint]
+  public static func == (lhs: MiLevel, rhs: MiLevel) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   @objc deinit
   open var hashValue: Swift.Int {
@@ -352,10 +352,10 @@ public protocol MiFocusable {
 @_hasMissingDesignatedInitializers open class MiVenue {
   final public let slug: Swift.String
   final public let name: Swift.String
-  final public let levels: [MappedIn.MiLevel]
-  final public let locations: [MappedIn.MiLocation]
-  final public let spaces: [MappedIn.MiSpace]
-  final public let categories: [MappedIn.MiCategory]
+  final public let levels: [MiLevel]
+  final public let locations: [MiLocation]
+  final public let spaces: [MiSpace]
+  final public let categories: [MiCategory]
   @objc deinit
 }
 @_hasMissingDesignatedInitializers open class BaseObject {
@@ -366,7 +366,7 @@ public protocol MiFocusable {
   @objc deinit
 }
 public protocol MiNavigable {
-  var navigatableNodes: [MappedIn.MiNode] { get }
+  var navigatableNodes: [MiNode] { get }
 }
 extension MiNavigable {
   public var isNavigatable: Swift.Bool {
@@ -374,14 +374,14 @@ extension MiNavigable {
   }
 }
 extension MiNavigable {
-  public func directions<VenueNavigatable>(activeVenue: MappedIn.MiVenue, to destination: VenueNavigatable, accessible: Swift.Bool = false) -> MappedIn.MiDirections? where VenueNavigatable : MappedIn.MiNavigable
-  public func directions<VenueNavigatable>(activeVenue: MappedIn.MiVenue, from origin: VenueNavigatable, accessible: Swift.Bool = false) -> MappedIn.MiDirections? where VenueNavigatable : MappedIn.MiNavigable
+  public func directions<VenueNavigatable>(activeVenue: MiVenue, to destination: VenueNavigatable, accessible: Swift.Bool = false) -> MiDirections? where VenueNavigatable : MiNavigable
+  public func directions<VenueNavigatable>(activeVenue: MiVenue, from origin: VenueNavigatable, accessible: Swift.Bool = false) -> MiDirections? where VenueNavigatable : MiNavigable
 }
-@_hasMissingDesignatedInitializers open class MiSpace : MappedIn.BaseObject, MappedIn.MiNavigable, Swift.Equatable, MappedIn.MiFocusable {
-  public var navigatableNodes: [MappedIn.MiNode] {
+@_hasMissingDesignatedInitializers open class MiSpace : BaseObject, MiNavigable, Swift.Equatable, MiFocusable {
+  public var navigatableNodes: [MiNode] {
     get
   }
-  public var level: MappedIn.MiLevel? {
+  public var level: MiLevel? {
     get
   }
   final public let levelId: Swift.String
@@ -394,61 +394,61 @@ extension MiNavigable {
   public var feature: Mapbox.MGLShape? {
     get
   }
-  public var entrances: [MappedIn.MiNode] {
+  public var entrances: [MiNode] {
     get
   }
-  public var pointNode: MappedIn.MiNode? {
+  public var pointNode: MiNode? {
     get
   }
-  public var locations: [MappedIn.MiLocation] {
+  public var locations: [MiLocation] {
     get
   }
-  public func getPoints() -> [MappedIn.MiFocusPoint]
-  public static func == (lhs: MappedIn.MiSpace, rhs: MappedIn.MiSpace) -> Swift.Bool
+  public func getPoints() -> [MiFocusPoint]
+  public static func == (lhs: MiSpace, rhs: MiSpace) -> Swift.Bool
   @objc deinit
 }
-public typealias MiAction = MappedIn.DirectionsInstructionAction
-public struct Departure : MappedIn.MiAction {
+public typealias MiAction = DirectionsInstructionAction
+public struct Departure : MiAction {
 }
-public struct Arrival : MappedIn.MiAction {
+public struct Arrival : MiAction {
 }
-public struct Turn : MappedIn.MiAction {
+public struct Turn : MiAction {
   public enum Bearing {
     case left
     case slightLeft
     case straight
     case slightRight
     case right
-    public static func == (a: MappedIn.Turn.Bearing, b: MappedIn.Turn.Bearing) -> Swift.Bool
+    public static func == (a: Turn.Bearing, b: Turn.Bearing) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
     }
     public func hash(into hasher: inout Swift.Hasher)
   }
-  public let relativeBearing: MappedIn.Turn.Bearing
+  public let relativeBearing: Turn.Bearing
 }
-public struct TakeConnection : MappedIn.MiAction {
-  public let fromLevel: MappedIn.MiLevel
-  public let toLevel: MappedIn.MiLevel
-  public let connection: MappedIn.MiConnection
+public struct TakeConnection : MiAction {
+  public let fromLevel: MiLevel
+  public let toLevel: MiLevel
+  public let connection: MiConnection
 }
-public struct ExitConnection : MappedIn.MiAction {
-  public let fromLevel: MappedIn.MiLevel
-  public let toLevel: MappedIn.MiLevel
-  public let connection: MappedIn.MiConnection
+public struct ExitConnection : MiAction {
+  public let fromLevel: MiLevel
+  public let toLevel: MiLevel
+  public let connection: MiConnection
 }
 public protocol DirectionsInstructionAction {
 }
 @_hasMissingDesignatedInitializers open class MiBasePolygonStyleManager {
-  public func stylePolygon(id: Swift.String, styleProperties: MappedIn.MiStyleProperties)
+  public func stylePolygon(id: Swift.String, styleProperties: MiStyleProperties)
   public func clearAllPolygonStyles()
   public func clearPolygonStyle(id: Swift.String)
   @objc deinit
 }
 public struct MiInstruction {
-  public let node: MappedIn.MiNode
-  public let action: MappedIn.MiAction
-  public let atLocation: MappedIn.MiLocation?
+  public let node: MiNode
+  public let action: MiAction
+  public let atLocation: MiLocation?
   public var description: Swift.String {
     get
   }
@@ -456,19 +456,19 @@ public struct MiInstruction {
 public enum MiMapStatus {
   case loaded
   case error
-  public static func == (a: MappedIn.MiMapStatus, b: MappedIn.MiMapStatus) -> Swift.Bool
+  public static func == (a: MiMapStatus, b: MiMapStatus) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-@_hasMissingDesignatedInitializers open class MiPath : MappedIn.MiFocusable {
-  public var segments: [MappedIn.MiPathSegment] {
+@_hasMissingDesignatedInitializers open class MiPath : MiFocusable {
+  public var segments: [MiPathSegment] {
     get
   }
-  public init(pathPoints: [CoreLocation.CLLocationCoordinate2D], pathWidth: Swift.Double, pathColor: UIKit.UIColor, level: MappedIn.MiLevel? = nil)
-  public init(path: [MappedIn.MiNode], pathWidth: Swift.Double, pathColor: UIKit.UIColor)
-  public func getPoints() -> [MappedIn.MiFocusPoint]
+  public init(pathPoints: [CoreLocation.CLLocationCoordinate2D], pathWidth: Swift.Double, pathColor: UIKit.UIColor, level: MiLevel? = nil)
+  public init(path: [MiNode], pathWidth: Swift.Double, pathColor: UIKit.UIColor)
+  public func getPoints() -> [MiFocusPoint]
   @objc deinit
 }
 public struct MiBackgroundStyle {
@@ -500,27 +500,27 @@ public struct MiLabelsStyle {
 public struct MiPathStyle {
 }
 public struct MiLayerStyles {
-  public var backgroundStyle: MappedIn.MiBackgroundStyle
-  public var levelStyle: MappedIn.MiLevelStyle
-  public var spaceStyle: MappedIn.MiSpaceStyle
-  public var spaceWallStyle: MappedIn.MiSpaceWallStyle
-  public var spaceOutlineStyle: MappedIn.MiSpaceOutlineWallStyle
-  public var obstructionStyle: MappedIn.MiObstructionStyle
-  public var obstructionOutlineStyle: MappedIn.MiObstructionOutlineStyle
-  public var aestheticStyle: MappedIn.MiObstructionStyle
-  public var labelsStyle: MappedIn.MiLabelsStyle
-  public var level3DStyle: MappedIn.Mi3DStyle
-  public var space3DStyle: MappedIn.Mi3DStyle
-  public var obstruction3DStyle: MappedIn.Mi3DStyle
-  public var aesthetic3DStyle: MappedIn.Mi3DStyle
-  public var pathStyle: MappedIn.MiPathStyle
+  public var backgroundStyle: MiBackgroundStyle
+  public var levelStyle: MiLevelStyle
+  public var spaceStyle: MiSpaceStyle
+  public var spaceWallStyle: MiSpaceWallStyle
+  public var spaceOutlineStyle: MiSpaceOutlineWallStyle
+  public var obstructionStyle: MiObstructionStyle
+  public var obstructionOutlineStyle: MiObstructionOutlineStyle
+  public var aestheticStyle: MiObstructionStyle
+  public var labelsStyle: MiLabelsStyle
+  public var level3DStyle: Mi3DStyle
+  public var space3DStyle: Mi3DStyle
+  public var obstruction3DStyle: Mi3DStyle
+  public var aesthetic3DStyle: Mi3DStyle
+  public var pathStyle: MiPathStyle
   public init()
 }
-extension MappedIn.MiGestureType : Swift.Equatable {}
-extension MappedIn.MiGestureType : Swift.Hashable {}
-extension MappedIn.MIGetVenueResultCode : Swift.Equatable {}
-extension MappedIn.MIGetVenueResultCode : Swift.Hashable {}
-extension MappedIn.Turn.Bearing : Swift.Equatable {}
-extension MappedIn.Turn.Bearing : Swift.Hashable {}
-extension MappedIn.MiMapStatus : Swift.Equatable {}
-extension MappedIn.MiMapStatus : Swift.Hashable {}
+extension MiGestureType : Swift.Equatable {}
+extension MiGestureType : Swift.Hashable {}
+extension MIGetVenueResultCode : Swift.Equatable {}
+extension MIGetVenueResultCode : Swift.Hashable {}
+extension Turn.Bearing : Swift.Equatable {}
+extension Turn.Bearing : Swift.Hashable {}
+extension MiMapStatus : Swift.Equatable {}
+extension MiMapStatus : Swift.Hashable {}
