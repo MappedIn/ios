@@ -1,0 +1,13 @@
+{
+    "version": 8,
+    "sources": {
+        "mi-tiles": {
+            "type": "vector",
+            "url":
+                "https://mi-tiles.mappedin.com/data/v3.json"
+        }
+    },
+    "layers": [
+    ],
+    "glyphs": "https://mi-tiles.mappedin.com/fonts/{fontstack}/{range}.pbf"
+}
