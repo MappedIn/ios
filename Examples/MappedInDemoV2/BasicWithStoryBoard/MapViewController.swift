@@ -8,7 +8,7 @@
 
 import UIKit
 import Mapbox
-import MappedIn
+import Mappedin
 
 class MapViewController: UIViewController{
     
@@ -30,7 +30,7 @@ class MapViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mappedIn = MappedIn()
+        let mappedIn = Mappedin()
         let customStyleURL = Bundle.main.url(forResource: "third_party_style", withExtension: "json")!
         mapView = MiMapView(frame: view.bounds, styleURL: customStyleURL)
         view.addSubview(mapView)
