@@ -12,10 +12,7 @@
 		3B379BA324F84099004FB0DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B379BA224F84099004FB0DA /* SceneDelegate.swift */; };
 		3B379BAA24F8409A004FB0DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B379BA924F8409A004FB0DA /* Assets.xcassets */; };
 		3B379BAD24F8409A004FB0DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B379BAB24F8409A004FB0DA /* LaunchScreen.storyboard */; };
-		3B379BC124F8410A004FB0DA /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B379BBE24F84109004FB0DA /* NavigationDelegate.swift */; };
 		3B379BC224F8410A004FB0DA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B379BBF24F8410A004FB0DA /* MapViewController.swift */; };
-		3B379BC324F8410A004FB0DA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B379BBD24F84109004FB0DA /* TableViewController.swift */; };
-		3B379BC424F8410A004FB0DA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B379BBC24F84109004FB0DA /* LocationViewController.swift */; };
 		3B379BC524F84375004FB0DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B379BBB24F840E3004FB0DA /* Main.storyboard */; };
 		3B379BC624F844E7004FB0DA /* mappedinConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B379BC024F8410A004FB0DA /* mappedinConfig.plist */; };
 		3B379BC824F8454E004FB0DA /* third_party_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B379BC724F8454E004FB0DA /* third_party_style.json */; };
@@ -31,9 +28,6 @@
 		3B379BAC24F8409A004FB0DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B379BAE24F8409A004FB0DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B379BBB24F840E3004FB0DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		3B379BBC24F84109004FB0DA /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		3B379BBD24F84109004FB0DA /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		3B379BBE24F84109004FB0DA /* NavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		3B379BBF24F8410A004FB0DA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3B379BC024F8410A004FB0DA /* mappedinConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mappedinConfig.plist; sourceTree = "<group>"; };
 		3B379BC724F8454E004FB0DA /* third_party_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = third_party_style.json; sourceTree = "<group>"; };
@@ -85,10 +79,7 @@
 				3B379BC724F8454E004FB0DA /* third_party_style.json */,
 				3B379BBB24F840E3004FB0DA /* Main.storyboard */,
 				3B379BC024F8410A004FB0DA /* mappedinConfig.plist */,
-				3B379BBD24F84109004FB0DA /* TableViewController.swift */,
 				3B379BBF24F8410A004FB0DA /* MapViewController.swift */,
-				3B379BBC24F84109004FB0DA /* LocationViewController.swift */,
-				3B379BBE24F84109004FB0DA /* NavigationDelegate.swift */,
 				3B379BA024F84099004FB0DA /* AppDelegate.swift */,
 				3B379BA224F84099004FB0DA /* SceneDelegate.swift */,
 				3B379BA924F8409A004FB0DA /* Assets.xcassets */,
@@ -223,10 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B379BC424F8410A004FB0DA /* LocationViewController.swift in Sources */,
-				3B379BC324F8410A004FB0DA /* TableViewController.swift in Sources */,
 				3B379BA124F84099004FB0DA /* AppDelegate.swift in Sources */,
-				3B379BC124F8410A004FB0DA /* NavigationDelegate.swift in Sources */,
 				3B379BC224F8410A004FB0DA /* MapViewController.swift in Sources */,
 				3B379BA324F84099004FB0DA /* SceneDelegate.swift in Sources */,
 			);
