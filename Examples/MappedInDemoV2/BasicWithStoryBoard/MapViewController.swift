@@ -12,7 +12,7 @@ import Mappedin
 
 class MapViewController: UIViewController{
     
-    var venueSlug: String? = "the-dubai-mall"
+    var venueSlug: String = "mappedin-demo-mall"
     var venue:MiVenue!
 
     var mapView: MiMapView!
@@ -37,12 +37,11 @@ class MapViewController: UIViewController{
         view.sendSubviewToBack(mapView)
         mapView.miDelegate = self
         
-        if let venueSlug = self.venueSlug{
-            mappedIn.getVenue(venueSlug: venueSlug, completionHandler: {(resultCode, venue) -> Void in
-                self.venue = venue
-                self.mapView.loadMap(venue: venue!)
-            })
-        }
+        
+        mappedIn.getVenue(venueSlug: venueSlug, completionHandler: {(resultCode, venue) -> Void in
+            self.venue = venue
+            self.mapView.loadMap(venue: venue!)
+        })
     }
 
     func incrementLevel() {
