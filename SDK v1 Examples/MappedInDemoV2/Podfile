@@ -1,9 +1,0 @@
-# Uncomment the next line to define a global platform for your project
-use_frameworks!
-
-target 'BasicWithStoryBoard' do
-  workspace "MappedInDemoV2"
-  project "BasicWithStoryBoard.xcodeproj"
-  pod 'MappedIn', '2.0.1-beta'
-  pod 'Kingfisher', '4.10.1'
-end
