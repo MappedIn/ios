@@ -1,8 +1,0 @@
-source "https://github.com/MappedIn/podspec.git"
-workspace "iOS.xcworkspace"
-project "Examples/Walkthrough/Walkthrough.xcodeproj"
-
-target "Walkthrough" do
-	project "Examples/Walkthrough/Walkthrough.xcodeproj"
-	pod "MappedIn", "1.11.0"
-end

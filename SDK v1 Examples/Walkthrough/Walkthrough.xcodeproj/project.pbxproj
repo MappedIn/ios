@@ -21,8 +21,8 @@
 		87AFAE871FAD03BF00990BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87AFAE891FAD03BF00990BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87AFAE8F1FAD03FA00990BCE /* Walkthrough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = SOURCE_ROOT; };
-		9D99B40DF08AB98FABA96E23 /* Pods-Walkthrough.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walkthrough.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Walkthrough/Pods-Walkthrough.release.xcconfig"; sourceTree = "<group>"; };
-		D14D982158424AE1A0D76967 /* Pods-Walkthrough.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walkthrough.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Walkthrough/Pods-Walkthrough.debug.xcconfig"; sourceTree = "<group>"; };
+		9D99B40DF08AB98FABA96E23 /* Pods-Walkthrough.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walkthrough.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walkthrough/Pods-Walkthrough.release.xcconfig"; sourceTree = "<group>"; };
+		D14D982158424AE1A0D76967 /* Pods-Walkthrough.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walkthrough.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walkthrough/Pods-Walkthrough.debug.xcconfig"; sourceTree = "<group>"; };
 		DE2FC2202B772BBB93D2B6F7 /* libPods-Walkthrough.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Walkthrough.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
