@@ -33,12 +33,9 @@ class MapViewController: UIViewController{
         // Create a Mappedin object and enter your keys through the property list file or the initializer
         let mappedIn = Mappedin()
         
-        //
-        let customStyleURL = Bundle.main.url(forResource: "third_party_style", withExtension: "json")!
-        
         // Initialize an MiMapView object with the viewport bounds to contain the map
         // and the Mapbox style URL, if any.
-        mapView = MiMapView(frame: view.bounds, styleURL: customStyleURL)
+        mapView = MiMapView(frame: view.bounds, styleURL: nil)
         
         // Sets the MiMapViewDelegate
         mapView.miDelegate = self

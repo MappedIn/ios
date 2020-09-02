@@ -15,7 +15,6 @@
 		3B379BC224F8410A004FB0DA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B379BBF24F8410A004FB0DA /* MapViewController.swift */; };
 		3B379BC524F84375004FB0DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B379BBB24F840E3004FB0DA /* Main.storyboard */; };
 		3B379BC624F844E7004FB0DA /* mappedinConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B379BC024F8410A004FB0DA /* mappedinConfig.plist */; };
-		3B379BC824F8454E004FB0DA /* third_party_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B379BC724F8454E004FB0DA /* third_party_style.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +27,6 @@
 		3B379BBB24F840E3004FB0DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3B379BBF24F8410A004FB0DA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3B379BC024F8410A004FB0DA /* mappedinConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mappedinConfig.plist; sourceTree = "<group>"; };
-		3B379BC724F8454E004FB0DA /* third_party_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = third_party_style.json; sourceTree = "<group>"; };
 		40BDBC91FF198A9B7DB963B3 /* Pods-BasicWithStoryBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicWithStoryBoard.release.xcconfig"; path = "Target Support Files/Pods-BasicWithStoryBoard/Pods-BasicWithStoryBoard.release.xcconfig"; sourceTree = "<group>"; };
 		46AA9F7C930E6ABBA487E3B8 /* Pods-BasicWithStoryBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicWithStoryBoard.debug.xcconfig"; path = "Target Support Files/Pods-BasicWithStoryBoard/Pods-BasicWithStoryBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		E25535C7EA1D2F69C71F644C /* Pods_BasicWithStoryBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasicWithStoryBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +74,6 @@
 		3B379B9F24F84099004FB0DA /* BasicWithStoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				3B379BC724F8454E004FB0DA /* third_party_style.json */,
 				3B379BBB24F840E3004FB0DA /* Main.storyboard */,
 				3B379BC024F8410A004FB0DA /* mappedinConfig.plist */,
 				3B379BBF24F8410A004FB0DA /* MapViewController.swift */,
@@ -161,7 +158,6 @@
 				3B379BC624F844E7004FB0DA /* mappedinConfig.plist in Resources */,
 				3B379BAD24F8409A004FB0DA /* LaunchScreen.storyboard in Resources */,
 				3B379BAA24F8409A004FB0DA /* Assets.xcassets in Resources */,
-				3B379BC824F8454E004FB0DA /* third_party_style.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
