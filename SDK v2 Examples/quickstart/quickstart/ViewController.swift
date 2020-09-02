@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Create a Mappedin object and enter your keys through the initializer
-        let mappedIn = Mappedin(mappedinKey: "5f2c5b9aa5fdf5001a6b971d", mappedinSecret: "tsKYDtd9xnks2WNu9YHS5SrfHwwENGeHnaAyMTI5jPhpsEbU")
+        let mappedIn = Mappedin(mappedinKey: "5f4e59bb91b055001a68e9d9", mappedinSecret: "gmwQbwuNv7cvDYggcYl4cMa5c7n0vh4vqNQEkoyLRuJ4vU42")
         
         let mapView = MiMapView(frame: view.bounds, styleURL: nil)
         view.addSubview(mapView)
