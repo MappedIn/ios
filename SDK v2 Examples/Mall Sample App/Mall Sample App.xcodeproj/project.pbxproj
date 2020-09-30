@@ -1,0 +1,821 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70DAA12C406CFEAC6D407FFD /* Pods_Mall_Sample_App_Mall_Sample_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA80068DEB7973F055215FA /* Pods_Mall_Sample_App_Mall_Sample_AppUITests.framework */; };
+		B6E267E9BDB6FA19113DF5DD /* Pods_Mall_Sample_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A162F55F7CADB358EC7BD440 /* Pods_Mall_Sample_AppTests.framework */; };
+		EBB753C7169E3B63D945BC80 /* Pods_Mall_Sample_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFA767286232A313F6E5BBA /* Pods_Mall_Sample_App.framework */; };
+		EC60E32D2523DC0B005EC230 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC60E32C2523DC0B005EC230 /* LocationViewController.swift */; };
+		EC60E32F2523DC35005EC230 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC60E32E2523DC35005EC230 /* LocationCell.swift */; };
+		EC60E3312523DC56005EC230 /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC60E3302523DC56005EC230 /* NavigationDelegate.swift */; };
+		EC60E3332523DC87005EC230 /* GetDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC60E3322523DC87005EC230 /* GetDirectionViewController.swift */; };
+		EC60E3352523DCA7005EC230 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC60E3342523DCA7005EC230 /* LocationDetailsViewController.swift */; };
+		EC60E3372523DCFA005EC230 /* StoreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC60E3362523DCFA005EC230 /* StoreDetailsView.swift */; };
+		EC60E3392523DD32005EC230 /* StoreDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC60E3382523DD32005EC230 /* StoreDetailsView.xib */; };
+		EC60E33B2524C2FF005EC230 /* third_party_style.json in Resources */ = {isa = PBXBuildFile; fileRef = EC60E33A2524C2FF005EC230 /* third_party_style.json */; };
+		ECBA1FB22523ACCA0061C8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA1FB12523ACCA0061C8D5 /* AppDelegate.swift */; };
+		ECBA1FB42523ACCA0061C8D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA1FB32523ACCA0061C8D5 /* SceneDelegate.swift */; };
+		ECBA1FB62523ACCA0061C8D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA1FB52523ACCA0061C8D5 /* ViewController.swift */; };
+		ECBA1FB92523ACCA0061C8D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA1FB72523ACCA0061C8D5 /* Main.storyboard */; };
+		ECBA1FBB2523ACCC0061C8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBA1FBA2523ACCC0061C8D5 /* Assets.xcassets */; };
+		ECBA1FBE2523ACCC0061C8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA1FBC2523ACCC0061C8D5 /* LaunchScreen.storyboard */; };
+		ECBA1FC92523ACCC0061C8D5 /* Mall_Sample_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA1FC82523ACCC0061C8D5 /* Mall_Sample_AppTests.swift */; };
+		ECBA1FD42523ACCC0061C8D5 /* Mall_Sample_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA1FD32523ACCC0061C8D5 /* Mall_Sample_AppUITests.swift */; };
+		ECC00667252516DB0035CFD3 /* LevelSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC00666252516DB0035CFD3 /* LevelSelectorViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECBA1FC52523ACCC0061C8D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECBA1FA62523ACCA0061C8D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECBA1FAD2523ACCA0061C8D5;
+			remoteInfo = "Mall Sample App";
+		};
+		ECBA1FD02523ACCC0061C8D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECBA1FA62523ACCA0061C8D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECBA1FAD2523ACCA0061C8D5;
+			remoteInfo = "Mall Sample App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FA80068DEB7973F055215FA /* Pods_Mall_Sample_App_Mall_Sample_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mall_Sample_App_Mall_Sample_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4277ADBCCB1612A420B448D0 /* Pods-Mall Sample AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mall Sample AppTests.release.xcconfig"; path = "Target Support Files/Pods-Mall Sample AppTests/Pods-Mall Sample AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		6675F2199D951770F856C36B /* Pods-Mall Sample App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mall Sample App.release.xcconfig"; path = "Target Support Files/Pods-Mall Sample App/Pods-Mall Sample App.release.xcconfig"; sourceTree = "<group>"; };
+		96753D644E7EB5DDCAF37D57 /* Pods-Mall Sample AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mall Sample AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Mall Sample AppTests/Pods-Mall Sample AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9EBD359A736319E6E178AC2E /* Pods-Mall Sample App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mall Sample App.debug.xcconfig"; path = "Target Support Files/Pods-Mall Sample App/Pods-Mall Sample App.debug.xcconfig"; sourceTree = "<group>"; };
+		9FFA767286232A313F6E5BBA /* Pods_Mall_Sample_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mall_Sample_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A162F55F7CADB358EC7BD440 /* Pods_Mall_Sample_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mall_Sample_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2588E4271BA99AA98580381 /* Pods-Mall Sample App-Mall Sample AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mall Sample App-Mall Sample AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mall Sample App-Mall Sample AppUITests/Pods-Mall Sample App-Mall Sample AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E000AACEB7EB5F0DB6EC73EC /* Pods-Mall Sample App-Mall Sample AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mall Sample App-Mall Sample AppUITests.release.xcconfig"; path = "Target Support Files/Pods-Mall Sample App-Mall Sample AppUITests/Pods-Mall Sample App-Mall Sample AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EC60E32C2523DC0B005EC230 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		EC60E32E2523DC35005EC230 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		EC60E3302523DC56005EC230 /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
+		EC60E3322523DC87005EC230 /* GetDirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionViewController.swift; sourceTree = "<group>"; };
+		EC60E3342523DCA7005EC230 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		EC60E3362523DCFA005EC230 /* StoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailsView.swift; sourceTree = "<group>"; };
+		EC60E3382523DD32005EC230 /* StoreDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDetailsView.xib; sourceTree = "<group>"; };
+		EC60E33A2524C2FF005EC230 /* third_party_style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = third_party_style.json; sourceTree = "<group>"; };
+		ECBA1FAE2523ACCA0061C8D5 /* Mall Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mall Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECBA1FB12523ACCA0061C8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ECBA1FB32523ACCA0061C8D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ECBA1FB52523ACCA0061C8D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECBA1FB82523ACCA0061C8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECBA1FBA2523ACCC0061C8D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECBA1FBD2523ACCC0061C8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECBA1FBF2523ACCC0061C8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECBA1FC42523ACCC0061C8D5 /* Mall Sample AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mall Sample AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECBA1FC82523ACCC0061C8D5 /* Mall_Sample_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mall_Sample_AppTests.swift; sourceTree = "<group>"; };
+		ECBA1FCA2523ACCC0061C8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECBA1FCF2523ACCC0061C8D5 /* Mall Sample AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mall Sample AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECBA1FD32523ACCC0061C8D5 /* Mall_Sample_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mall_Sample_AppUITests.swift; sourceTree = "<group>"; };
+		ECBA1FD52523ACCC0061C8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC00666252516DB0035CFD3 /* LevelSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECBA1FAB2523ACCA0061C8D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB753C7169E3B63D945BC80 /* Pods_Mall_Sample_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECBA1FC12523ACCC0061C8D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6E267E9BDB6FA19113DF5DD /* Pods_Mall_Sample_AppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECBA1FCC2523ACCC0061C8D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70DAA12C406CFEAC6D407FFD /* Pods_Mall_Sample_App_Mall_Sample_AppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F58B4F0A2AC2B261D0FAE9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EBD359A736319E6E178AC2E /* Pods-Mall Sample App.debug.xcconfig */,
+				6675F2199D951770F856C36B /* Pods-Mall Sample App.release.xcconfig */,
+				C2588E4271BA99AA98580381 /* Pods-Mall Sample App-Mall Sample AppUITests.debug.xcconfig */,
+				E000AACEB7EB5F0DB6EC73EC /* Pods-Mall Sample App-Mall Sample AppUITests.release.xcconfig */,
+				96753D644E7EB5DDCAF37D57 /* Pods-Mall Sample AppTests.debug.xcconfig */,
+				4277ADBCCB1612A420B448D0 /* Pods-Mall Sample AppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC93EA7FCA317AD45BD22416 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FFA767286232A313F6E5BBA /* Pods_Mall_Sample_App.framework */,
+				0FA80068DEB7973F055215FA /* Pods_Mall_Sample_App_Mall_Sample_AppUITests.framework */,
+				A162F55F7CADB358EC7BD440 /* Pods_Mall_Sample_AppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECBA1FA52523ACCA0061C8D5 = {
+			isa = PBXGroup;
+			children = (
+				ECBA1FB02523ACCA0061C8D5 /* Mall Sample App */,
+				ECBA1FC72523ACCC0061C8D5 /* Mall Sample AppTests */,
+				ECBA1FD22523ACCC0061C8D5 /* Mall Sample AppUITests */,
+				ECBA1FAF2523ACCA0061C8D5 /* Products */,
+				5F58B4F0A2AC2B261D0FAE9B /* Pods */,
+				EC93EA7FCA317AD45BD22416 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ECBA1FAF2523ACCA0061C8D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA1FAE2523ACCA0061C8D5 /* Mall Sample App.app */,
+				ECBA1FC42523ACCC0061C8D5 /* Mall Sample AppTests.xctest */,
+				ECBA1FCF2523ACCC0061C8D5 /* Mall Sample AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECBA1FB02523ACCA0061C8D5 /* Mall Sample App */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA1FB12523ACCA0061C8D5 /* AppDelegate.swift */,
+				ECBA1FB32523ACCA0061C8D5 /* SceneDelegate.swift */,
+				ECBA1FB52523ACCA0061C8D5 /* ViewController.swift */,
+				ECBA1FB72523ACCA0061C8D5 /* Main.storyboard */,
+				EC60E3362523DCFA005EC230 /* StoreDetailsView.swift */,
+				EC60E3382523DD32005EC230 /* StoreDetailsView.xib */,
+				ECBA1FBA2523ACCC0061C8D5 /* Assets.xcassets */,
+				ECBA1FBC2523ACCC0061C8D5 /* LaunchScreen.storyboard */,
+				ECBA1FBF2523ACCC0061C8D5 /* Info.plist */,
+				EC60E32C2523DC0B005EC230 /* LocationViewController.swift */,
+				EC60E32E2523DC35005EC230 /* LocationCell.swift */,
+				ECC00666252516DB0035CFD3 /* LevelSelectorViewController.swift */,
+				EC60E3302523DC56005EC230 /* NavigationDelegate.swift */,
+				EC60E3322523DC87005EC230 /* GetDirectionViewController.swift */,
+				EC60E3342523DCA7005EC230 /* LocationDetailsViewController.swift */,
+				EC60E33A2524C2FF005EC230 /* third_party_style.json */,
+			);
+			path = "Mall Sample App";
+			sourceTree = "<group>";
+		};
+		ECBA1FC72523ACCC0061C8D5 /* Mall Sample AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA1FC82523ACCC0061C8D5 /* Mall_Sample_AppTests.swift */,
+				ECBA1FCA2523ACCC0061C8D5 /* Info.plist */,
+			);
+			path = "Mall Sample AppTests";
+			sourceTree = "<group>";
+		};
+		ECBA1FD22523ACCC0061C8D5 /* Mall Sample AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA1FD32523ACCC0061C8D5 /* Mall_Sample_AppUITests.swift */,
+				ECBA1FD52523ACCC0061C8D5 /* Info.plist */,
+			);
+			path = "Mall Sample AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECBA1FAD2523ACCA0061C8D5 /* Mall Sample App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECBA1FD82523ACCC0061C8D5 /* Build configuration list for PBXNativeTarget "Mall Sample App" */;
+			buildPhases = (
+				EA2C0FB7E0822D0F8274B357 /* [CP] Check Pods Manifest.lock */,
+				443607986C786B0716BC43EE /* [CP] Prepare Artifacts */,
+				ECBA1FAA2523ACCA0061C8D5 /* Sources */,
+				ECBA1FAB2523ACCA0061C8D5 /* Frameworks */,
+				ECBA1FAC2523ACCA0061C8D5 /* Resources */,
+				EE107168B96F1D1E2D806A53 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mall Sample App";
+			productName = "Mall Sample App";
+			productReference = ECBA1FAE2523ACCA0061C8D5 /* Mall Sample App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ECBA1FC32523ACCC0061C8D5 /* Mall Sample AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECBA1FDB2523ACCC0061C8D5 /* Build configuration list for PBXNativeTarget "Mall Sample AppTests" */;
+			buildPhases = (
+				8C22F09866A986AA70F50401 /* [CP] Check Pods Manifest.lock */,
+				ECBA1FC02523ACCC0061C8D5 /* Sources */,
+				ECBA1FC12523ACCC0061C8D5 /* Frameworks */,
+				ECBA1FC22523ACCC0061C8D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECBA1FC62523ACCC0061C8D5 /* PBXTargetDependency */,
+			);
+			name = "Mall Sample AppTests";
+			productName = "Mall Sample AppTests";
+			productReference = ECBA1FC42523ACCC0061C8D5 /* Mall Sample AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ECBA1FCE2523ACCC0061C8D5 /* Mall Sample AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECBA1FDE2523ACCC0061C8D5 /* Build configuration list for PBXNativeTarget "Mall Sample AppUITests" */;
+			buildPhases = (
+				CAF4BA74F7453419A5D371D1 /* [CP] Check Pods Manifest.lock */,
+				593CC0AB102F49DF4C0E0A76 /* [CP] Prepare Artifacts */,
+				ECBA1FCB2523ACCC0061C8D5 /* Sources */,
+				ECBA1FCC2523ACCC0061C8D5 /* Frameworks */,
+				ECBA1FCD2523ACCC0061C8D5 /* Resources */,
+				4317BD44E9F859C884DB2046 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECBA1FD12523ACCC0061C8D5 /* PBXTargetDependency */,
+			);
+			name = "Mall Sample AppUITests";
+			productName = "Mall Sample AppUITests";
+			productReference = ECBA1FCF2523ACCC0061C8D5 /* Mall Sample AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECBA1FA62523ACCA0061C8D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = Mappedin;
+				TargetAttributes = {
+					ECBA1FAD2523ACCA0061C8D5 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					ECBA1FC32523ACCC0061C8D5 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = ECBA1FAD2523ACCA0061C8D5;
+					};
+					ECBA1FCE2523ACCC0061C8D5 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = ECBA1FAD2523ACCA0061C8D5;
+					};
+				};
+			};
+			buildConfigurationList = ECBA1FA92523ACCA0061C8D5 /* Build configuration list for PBXProject "Mall Sample App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECBA1FA52523ACCA0061C8D5;
+			productRefGroup = ECBA1FAF2523ACCA0061C8D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECBA1FAD2523ACCA0061C8D5 /* Mall Sample App */,
+				ECBA1FC32523ACCC0061C8D5 /* Mall Sample AppTests */,
+				ECBA1FCE2523ACCC0061C8D5 /* Mall Sample AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECBA1FAC2523ACCA0061C8D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBA1FBE2523ACCC0061C8D5 /* LaunchScreen.storyboard in Resources */,
+				ECBA1FBB2523ACCC0061C8D5 /* Assets.xcassets in Resources */,
+				ECBA1FB92523ACCA0061C8D5 /* Main.storyboard in Resources */,
+				EC60E3392523DD32005EC230 /* StoreDetailsView.xib in Resources */,
+				EC60E33B2524C2FF005EC230 /* third_party_style.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECBA1FC22523ACCC0061C8D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECBA1FCD2523ACCC0061C8D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4317BD44E9F859C884DB2046 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App-Mall Sample AppUITests/Pods-Mall Sample App-Mall Sample AppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App-Mall Sample AppUITests/Pods-Mall Sample App-Mall Sample AppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App-Mall Sample AppUITests/Pods-Mall Sample App-Mall Sample AppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		443607986C786B0716BC43EE /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App/Pods-Mall Sample App-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App/Pods-Mall Sample App-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App/Pods-Mall Sample App-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		593CC0AB102F49DF4C0E0A76 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App-Mall Sample AppUITests/Pods-Mall Sample App-Mall Sample AppUITests-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App-Mall Sample AppUITests/Pods-Mall Sample App-Mall Sample AppUITests-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App-Mall Sample AppUITests/Pods-Mall Sample App-Mall Sample AppUITests-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C22F09866A986AA70F50401 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mall Sample AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF4BA74F7453419A5D371D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mall Sample App-Mall Sample AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA2C0FB7E0822D0F8274B357 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mall Sample App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE107168B96F1D1E2D806A53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App/Pods-Mall Sample App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App/Pods-Mall Sample App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mall Sample App/Pods-Mall Sample App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECBA1FAA2523ACCA0061C8D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC60E32F2523DC35005EC230 /* LocationCell.swift in Sources */,
+				EC60E3312523DC56005EC230 /* NavigationDelegate.swift in Sources */,
+				ECC00667252516DB0035CFD3 /* LevelSelectorViewController.swift in Sources */,
+				EC60E32D2523DC0B005EC230 /* LocationViewController.swift in Sources */,
+				ECBA1FB62523ACCA0061C8D5 /* ViewController.swift in Sources */,
+				ECBA1FB22523ACCA0061C8D5 /* AppDelegate.swift in Sources */,
+				ECBA1FB42523ACCA0061C8D5 /* SceneDelegate.swift in Sources */,
+				EC60E3352523DCA7005EC230 /* LocationDetailsViewController.swift in Sources */,
+				EC60E3332523DC87005EC230 /* GetDirectionViewController.swift in Sources */,
+				EC60E3372523DCFA005EC230 /* StoreDetailsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECBA1FC02523ACCC0061C8D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBA1FC92523ACCC0061C8D5 /* Mall_Sample_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECBA1FCB2523ACCC0061C8D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBA1FD42523ACCC0061C8D5 /* Mall_Sample_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECBA1FC62523ACCC0061C8D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECBA1FAD2523ACCA0061C8D5 /* Mall Sample App */;
+			targetProxy = ECBA1FC52523ACCC0061C8D5 /* PBXContainerItemProxy */;
+		};
+		ECBA1FD12523ACCC0061C8D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECBA1FAD2523ACCA0061C8D5 /* Mall Sample App */;
+			targetProxy = ECBA1FD02523ACCC0061C8D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ECBA1FB72523ACCA0061C8D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECBA1FB82523ACCA0061C8D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ECBA1FBC2523ACCC0061C8D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECBA1FBD2523ACCC0061C8D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECBA1FD62523ACCC0061C8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ECBA1FD72523ACCC0061C8D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECBA1FD92523ACCC0061C8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EBD359A736319E6E178AC2E /* Pods-Mall Sample App.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6C2924QA5;
+				INFOPLIST_FILE = "Mall Sample App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Mall-Sample-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECBA1FDA2523ACCC0061C8D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6675F2199D951770F856C36B /* Pods-Mall Sample App.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6C2924QA5;
+				INFOPLIST_FILE = "Mall Sample App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Mall-Sample-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ECBA1FDC2523ACCC0061C8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96753D644E7EB5DDCAF37D57 /* Pods-Mall Sample AppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6C2924QA5;
+				INFOPLIST_FILE = "Mall Sample AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Mall-Sample-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mall Sample App.app/Mall Sample App";
+			};
+			name = Debug;
+		};
+		ECBA1FDD2523ACCC0061C8D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4277ADBCCB1612A420B448D0 /* Pods-Mall Sample AppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6C2924QA5;
+				INFOPLIST_FILE = "Mall Sample AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Mall-Sample-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mall Sample App.app/Mall Sample App";
+			};
+			name = Release;
+		};
+		ECBA1FDF2523ACCC0061C8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2588E4271BA99AA98580381 /* Pods-Mall Sample App-Mall Sample AppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6C2924QA5;
+				INFOPLIST_FILE = "Mall Sample AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Mall-Sample-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mall Sample App";
+			};
+			name = Debug;
+		};
+		ECBA1FE02523ACCC0061C8D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E000AACEB7EB5F0DB6EC73EC /* Pods-Mall Sample App-Mall Sample AppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H6C2924QA5;
+				INFOPLIST_FILE = "Mall Sample AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mappedin.Mall-Sample-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mall Sample App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECBA1FA92523ACCA0061C8D5 /* Build configuration list for PBXProject "Mall Sample App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECBA1FD62523ACCC0061C8D5 /* Debug */,
+				ECBA1FD72523ACCC0061C8D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECBA1FD82523ACCC0061C8D5 /* Build configuration list for PBXNativeTarget "Mall Sample App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECBA1FD92523ACCC0061C8D5 /* Debug */,
+				ECBA1FDA2523ACCC0061C8D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECBA1FDB2523ACCC0061C8D5 /* Build configuration list for PBXNativeTarget "Mall Sample AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECBA1FDC2523ACCC0061C8D5 /* Debug */,
+				ECBA1FDD2523ACCC0061C8D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECBA1FDE2523ACCC0061C8D5 /* Build configuration list for PBXNativeTarget "Mall Sample AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECBA1FDF2523ACCC0061C8D5 /* Debug */,
+				ECBA1FE02523ACCC0061C8D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECBA1FA62523ACCA0061C8D5 /* Project object */;
+}
