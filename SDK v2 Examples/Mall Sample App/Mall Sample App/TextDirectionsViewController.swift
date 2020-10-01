@@ -11,18 +11,23 @@ import Mappedin
 
 class TextDirectionsViewController: UIViewController {
 
-    
-    // give cancel button actions
     // assign label to instructions or programmatically add labels
-    var instructions: [MiInstruction]!
-    @IBOutlet weak var textDirections: UILabel!
+    var instructions: [MiInstruction]?
+    @IBOutlet weak var instructionsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for _ in instructions {
-            print()
+        if let listInstructions = self.instructions {
+            // create labels for instructions
+            for _ in listInstructions {
+                print()
+            }
+        } else {
+            // create label to say that you're at your destination
         }
-
+    }
+    @IBAction func closeTextDirections(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

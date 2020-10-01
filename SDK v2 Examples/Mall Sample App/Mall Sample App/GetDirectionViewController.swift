@@ -21,12 +21,14 @@ class GetDirectionsViewController: UIViewController {
     var selectedPolygons = Set<String>()
     var spaceTapped: MiSpace?
     var directionInstructions: [MiInstruction]?
+    @IBOutlet weak var venueLevel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var showLocationLabels: UISwitch!
-    
+    @IBOutlet weak var viewDirections: UIButton!
     
     override func viewDidLoad() {
+        viewDirections.isHidden = true
         super.viewDidLoad()
         
                
@@ -80,8 +82,14 @@ class GetDirectionsViewController: UIViewController {
             }
         }
         
-        if let destination = segue.destination as?  TextDirectionsViewController{
+        if let destination = segue.destination as?  TextDirectionsViewController {
             destination.instructions = self.directionInstructions
+        }
+        
+        if let destination = segue.destination as? LevelSelectorViewController {
+            destination.mapView = mapView
+            destination.venue = venue
+            destination.venueLevel = venueLevel
         }
     }
     
@@ -100,6 +108,10 @@ class GetDirectionsViewController: UIViewController {
     
     @IBAction func viewTextDirections(_ sender: Any) {
         performSegue(withIdentifier: "viewTextDirections", sender: nil)
+    }
+    
+    @IBAction func didTapLevelSelector(_ sender: Any) {
+        performSegue(withIdentifier: "levelSelectorSegue2", sender: nil)
     }
 }
 
@@ -187,6 +199,7 @@ extension GetDirectionsViewController: NavigationDelegate {
         if let startLocation = startLocation, let endLocation = endLocation {
             directions = mapView.createNavigationPath(from: startLocation, to: endLocation, pathWidth: 10, pathColor: UIColor.blue)
             previousPath = directions?.1
+            self.viewDirections.isHidden = false
             
         }
         
@@ -209,7 +222,6 @@ extension GetDirectionsViewController: NavigationDelegate {
         mapView.focusOnCurrentLevel(padding: 0, over: 1000.0)
         
         self.directionInstructions = directions?.0.instructions
-
     }
 
     func highlightPathSpace(navigationLocation: NavigationLocation, space: MiSpace?) {
