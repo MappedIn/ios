@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Mall Sample App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Mall Sample App
+  pod 'MappedIn', '2.0.0'
+  pod 'Kingfisher', '4.10.1'
+
+  target 'Mall Sample AppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Mall Sample AppUITests' do
+    # Pods for testing
+  end
+
+end

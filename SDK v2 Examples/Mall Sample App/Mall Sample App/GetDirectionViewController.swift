@@ -20,10 +20,11 @@ class GetDirectionsViewController: UIViewController {
     var previousPath: MiPath?
     var selectedPolygons = Set<String>()
     var spaceTapped: MiSpace?
+    var directionInstructions: [MiInstruction]?
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var showLocationLabels: UISwitch!
-    @IBOutlet weak var toggle3D: UISwitch!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,10 @@ class GetDirectionsViewController: UIViewController {
                 destination.navLocation = .end
             }
         }
+        
+        if let destination = segue.destination as?  TextDirectionsViewController{
+            destination.instructions = self.directionInstructions
+        }
     }
     
     @IBAction func selectDestination(_ sender: Any) {
@@ -93,47 +98,8 @@ class GetDirectionsViewController: UIViewController {
         
     }
     
-    @IBAction func didToggle3D(_ sender: Any) {
-         toggle3D(enable: toggle3D.isOn)
-    }
-    
-    @IBAction func didTapLevelUp(_ sender: Any) {
-        incrementLevel()
-    }
-    
-    @IBAction func didTapLevelDown(_ sender: Any) {
-        decrementLevel()
-    }
-    
-    func decrementLevel() {
-        if mapView.canDecrementLevel() {
-            mapView.decrementLevel()
-        }
-    }
-    
-    func incrementLevel() {
-           if mapView.canIncrementLevel() {
-               mapView.incrementLevel()
-           }
-       }
-    
-    func toggle3D(enable: Bool) {
-        if enable {
-            show3DLayers()
-        } else {
-            hide3DLayers()
-        }
-    }
-    
-    //changes visibility of layers so only 3D layers are visible and allows map to be tilted
-    private func show3DLayers() {
-        mapView.show3DLayers()
-        mapView.isPitchEnabled = true
-    }
-
-    //changes visibility of layers so only 2D layers are visible and disables map tilt
-    private func hide3DLayers() {
-        mapView.hide3DLayers()
+    @IBAction func viewTextDirections(_ sender: Any) {
+        performSegue(withIdentifier: "viewTextDirections", sender: nil)
     }
 }
 
@@ -241,6 +207,8 @@ extension GetDirectionsViewController: NavigationDelegate {
         highlightPathSpace(navigationLocation: .end, space: endSpaces?.first)
         
         mapView.focusOnCurrentLevel(padding: 0, over: 1000.0)
+        
+        self.directionInstructions = directions?.0.instructions
 
     }
 
