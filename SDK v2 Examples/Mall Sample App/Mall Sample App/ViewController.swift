@@ -183,6 +183,8 @@ extension ViewController: NavigationDelegate {
             storeDetailsView.location = location
             storeDetailsView.isHidden = false
             spaceTapped = startSpace
+            venueLevel.text = startSpace.level?.name
+            
             startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
             
             for space in startLocation?.spaces ?? [] {
@@ -196,9 +198,7 @@ extension ViewController: NavigationDelegate {
             }
             
             mapView.focusOn(focusable: startSpace, heading: 0, over: 1000.0)
-            
-            
-            
+        
         }
     }
     
