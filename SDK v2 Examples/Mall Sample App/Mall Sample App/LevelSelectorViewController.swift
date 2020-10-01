@@ -28,6 +28,7 @@ class LevelSelectorViewController: UIViewController {
     
     @IBAction func toolbarDone(_ sender: Any) {
         self.venueLevel.text = self.mapView.currentLevel?.name
+        mapView.focusOnCurrentLevel()
         self.dismiss(animated: true, completion: nil)
     }
     
