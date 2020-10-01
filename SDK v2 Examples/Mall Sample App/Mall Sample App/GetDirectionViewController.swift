@@ -44,7 +44,7 @@ class GetDirectionsViewController: UIViewController {
                 self.venue = venue
                 self.mapView.loadMap(venue: venue!)
                 if let location = self.spaceTapped?.locations.first {
-                        self.onLocationUpdate(navigationLocation: NavigationLocation.start, location: location)
+                        self.onLocationUpdate(navigationLocation: NavigationLocation.end, location: location)
                     
                 }
             })
@@ -55,7 +55,7 @@ class GetDirectionsViewController: UIViewController {
         if let location = spaceTapped?.locations.first {
             if let space = spaceTapped {
                 mapView.focusOn(focusable: space, heading: 0, padding: 10, over: 1000.0)
-                onLocationUpdate(navigationLocation: NavigationLocation.start, location: location)
+                onLocationUpdate(navigationLocation: NavigationLocation.end, location: location)
             }
         }
     }
@@ -78,7 +78,7 @@ class GetDirectionsViewController: UIViewController {
             destination.categories.append(otherCategory)
             destination.navDelegate = self
             if segue.identifier == "chooseDestination" {
-                destination.navLocation = .end
+                destination.navLocation = .start
             }
         }
         
@@ -93,7 +93,8 @@ class GetDirectionsViewController: UIViewController {
         }
     }
     
-    @IBAction func selectDestination(_ sender: Any) {
+    
+    @IBAction func selectStartLocation(_ sender: Any) {
         performSegue(withIdentifier: "chooseDestination", sender: nil)
     }
     
@@ -127,8 +128,8 @@ extension GetDirectionsViewController: MiMapViewDelegate {
     }
 
     func didTapSpace(space: MiSpace) -> Bool {
-        endLocation = space.locations.first
-        onLocationUpdate(navigationLocation: NavigationLocation.start, location: location)
+        startLocation = space.locations.first
+        onLocationUpdate(navigationLocation: NavigationLocation.end, location: location)
         return true
     }
 
@@ -168,7 +169,7 @@ extension GetDirectionsViewController: NavigationDelegate {
                     }
                 }
 
-                startLocation = location
+                
                 for space in startLocation?.spaces ?? [] {
                     highlightPathSpace(navigationLocation: .start, space: space)
                 }
@@ -176,6 +177,7 @@ extension GetDirectionsViewController: NavigationDelegate {
                 mapView.focusOn(focusable: startSpace, heading: 0, over: 1000.0)
             }
 
+        startLocation = location
         case .end:
             if let prevLocation = endLocation {
                 for space in prevLocation.spaces {

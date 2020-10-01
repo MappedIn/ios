@@ -28,6 +28,7 @@
 		ECBA1FD42523ACCC0061C8D5 /* Mall_Sample_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA1FD32523ACCC0061C8D5 /* Mall_Sample_AppUITests.swift */; };
 		ECC00667252516DB0035CFD3 /* LevelSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC00666252516DB0035CFD3 /* LevelSelectorViewController.swift */; };
 		ECC0066925261A730035CFD3 /* TextDirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC0066825261A730035CFD3 /* TextDirectionsViewController.swift */; };
+		ECC0066B252655520035CFD3 /* InstructionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC0066A252655520035CFD3 /* InstructionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		ECBA1FD52523ACCC0061C8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECC00666252516DB0035CFD3 /* LevelSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorViewController.swift; sourceTree = "<group>"; };
 		ECC0066825261A730035CFD3 /* TextDirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDirectionsViewController.swift; sourceTree = "<group>"; };
+		ECC0066A252655520035CFD3 /* InstructionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				EC60E3342523DCA7005EC230 /* LocationDetailsViewController.swift */,
 				EC60E33A2524C2FF005EC230 /* third_party_style.json */,
 				ECC0066825261A730035CFD3 /* TextDirectionsViewController.swift */,
+				ECC0066A252655520035CFD3 /* InstructionTableViewCell.swift */,
 			);
 			path = "Mall Sample App";
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				EC60E32D2523DC0B005EC230 /* LocationViewController.swift in Sources */,
 				ECC0066925261A730035CFD3 /* TextDirectionsViewController.swift in Sources */,
 				ECBA1FB62523ACCA0061C8D5 /* ViewController.swift in Sources */,
+				ECC0066B252655520035CFD3 /* InstructionTableViewCell.swift in Sources */,
 				ECBA1FB22523ACCA0061C8D5 /* AppDelegate.swift in Sources */,
 				ECBA1FB42523ACCA0061C8D5 /* SceneDelegate.swift in Sources */,
 				EC60E3352523DCA7005EC230 /* LocationDetailsViewController.swift in Sources */,

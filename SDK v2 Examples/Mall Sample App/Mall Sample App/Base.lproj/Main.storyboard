@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waw-VG-a5F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="-514"/>
+            <point key="canvasLocation" x="1497" y="-340"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LH7-k5-Nhh">
@@ -205,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="94"/>
+            <point key="canvasLocation" x="-287" y="385"/>
         </scene>
         <!--Location Details View Controller-->
         <scene sceneID="ryg-4q-j6g">
@@ -370,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckL-8B-0dZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1466.4000000000001" y="334.18290854572717"/>
+            <point key="canvasLocation" x="1497" y="385"/>
         </scene>
         <!--Get Directions View Controller-->
         <scene sceneID="lEf-qY-gnC">
@@ -449,6 +449,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="selectStartLocation:" destination="nly-sI-Fze" eventType="touchUpInside" id="GYJ-oe-kWZ"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqZ-VZ-SGI" userLabel="lineView">
                                         <rect key="frame" x="10" y="40" width="355" height="1"/>
@@ -471,9 +474,6 @@
                                         <state key="normal" title="Enter your destination">
                                             <color key="titleColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="selectDestination:" destination="nly-sI-Fze" eventType="touchUpInside" id="iOz-LI-fEQ"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -542,63 +542,70 @@
                     <connections>
                         <outlet property="endButton" destination="qH0-Om-c3N" id="CSM-5N-S6C"/>
                         <outlet property="showLocationLabels" destination="7R7-ii-tXb" id="lKZ-nL-hNg"/>
-                        <outlet property="startButton" destination="bBb-Sj-fZb" id="9aV-86-Jz9"/>
+                        <outlet property="startButton" destination="bBb-Sj-fZb" id="JAV-YI-M4y"/>
                         <outlet property="venueLevel" destination="Q4m-13-y34" id="Mbf-v7-lee"/>
                         <outlet property="viewDirections" destination="SZx-1l-QiZ" id="B7l-Sd-vxd"/>
                         <segue destination="2oc-hO-3HN" kind="show" identifier="chooseDestination" id="5fs-Xa-SZt"/>
-                        <segue destination="ziZ-ww-Usk" kind="presentation" identifier="viewTextDirections" id="f53-nd-CdZ"/>
                         <segue destination="V7E-og-MIu" kind="presentation" identifier="levelSelectorSegue2" id="7w5-hb-o1W"/>
+                        <segue destination="Zwg-tF-czV" kind="presentation" identifier="viewTextDirections" id="Gvl-sH-FWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lY-nH-11f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="1170"/>
+            <point key="canvasLocation" x="596" y="1152"/>
         </scene>
         <!--Text Directions View Controller-->
-        <scene sceneID="kp9-WE-4KF">
+        <scene sceneID="Z3Z-LZ-j7i">
             <objects>
-                <viewController id="ziZ-ww-Usk" customClass="TextDirectionsViewController" customModule="Mall_Sample_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YwC-ae-iNb">
+                <tableViewController id="Zwg-tF-czV" customClass="TextDirectionsViewController" customModule="Mall_Sample_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="10" sectionHeaderHeight="28" sectionFooterHeight="28" id="dcD-6V-muP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8t-Uq-soc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="jKp-cF-tNg"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Close" id="YuU-zB-fg1">
-                                        <connections>
-                                            <action selector="closeTextDirections:" destination="ziZ-ww-Usk" id="1L6-kD-CT1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlY-wy-4II">
-                                <rect key="frame" x="0.0" y="60" width="375" height="587"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="N8t-Uq-soc" firstAttribute="trailing" secondItem="uVu-N1-w9k" secondAttribute="trailing" id="HnX-8U-OLK"/>
-                            <constraint firstItem="N8t-Uq-soc" firstAttribute="leading" secondItem="uVu-N1-w9k" secondAttribute="leading" id="JeC-bm-u4f"/>
-                            <constraint firstItem="wlY-wy-4II" firstAttribute="leading" secondItem="uVu-N1-w9k" secondAttribute="leading" id="V0j-Bt-89E"/>
-                            <constraint firstItem="N8t-Uq-soc" firstAttribute="top" secondItem="uVu-N1-w9k" secondAttribute="top" id="Zuh-gf-fdl"/>
-                            <constraint firstItem="wlY-wy-4II" firstAttribute="top" secondItem="N8t-Uq-soc" secondAttribute="bottom" id="hsL-Nw-dBd"/>
-                            <constraint firstItem="uVu-N1-w9k" firstAttribute="bottom" secondItem="wlY-wy-4II" secondAttribute="bottom" id="u04-EW-etO"/>
-                            <constraint firstItem="uVu-N1-w9k" firstAttribute="trailing" secondItem="wlY-wy-4II" secondAttribute="trailing" id="wyV-wO-lZ4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="uVu-N1-w9k"/>
-                    </view>
-                    <connections>
-                        <outlet property="instructionsView" destination="wlY-wy-4II" id="4iH-V5-tEp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zg7-Ud-O9m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="opA-qq-VTz">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x1w-kG-EYJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <items>
+                                        <barButtonItem title="Close" id="tiF-6j-i36">
+                                            <connections>
+                                                <action selector="didTapCloseDirections:" destination="Zwg-tF-czV" id="zsc-VX-Wab"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </items>
+                                </toolbar>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text Directions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx3-ed-pAm">
+                                    <rect key="frame" x="126" y="12" width="123" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InstructionTableViewCell" id="9nK-FA-Kk3" customClass="InstructionTableViewCell" customModule="Mall_Sample_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9nK-FA-Kk3" id="WYi-UF-jhI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Zwg-tF-czV" id="0hx-0B-duM"/>
+                            <outlet property="delegate" destination="Zwg-tF-czV" id="Yop-VT-Lpg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Nt-v9-RzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471" y="1943"/>
+            <point key="canvasLocation" x="596" y="1916"/>
         </scene>
         <!--Directory-->
         <scene sceneID="nKm-L0-vZW">
@@ -710,12 +717,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpt-Vg-4yD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-919" y="865"/>
+            <point key="canvasLocation" x="-287" y="1916"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7w5-hb-o1W"/>
-        <segue reference="5fs-Xa-SZt"/>
+        <segue reference="Vyn-IV-NEH"/>
+        <segue reference="dFo-Br-WbY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>

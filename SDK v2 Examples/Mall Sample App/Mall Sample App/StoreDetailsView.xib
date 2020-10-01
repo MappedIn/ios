@@ -124,25 +124,15 @@
                         <constraint firstAttribute="height" constant="1" id="Bkp-jC-Gje"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVZ-Op-6rS">
-                    <rect key="frame" x="0.0" y="254" width="414" height="1"/>
-                    <color key="backgroundColor" red="0.86868128044351101" green="0.86868128044351101" blue="0.86868128044351101" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="sUK-WC-9Pt"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="Rlc-lv-jYg" firstAttribute="top" secondItem="Phj-Tc-4YU" secondAttribute="bottom" constant="40" id="0Pe-1F-5ft"/>
                 <constraint firstItem="nI1-JS-xUi" firstAttribute="trailing" secondItem="xKx-2k-YWS" secondAttribute="trailing" id="4yy-gD-QVo"/>
                 <constraint firstItem="Phj-Tc-4YU" firstAttribute="leading" secondItem="nI1-JS-xUi" secondAttribute="leading" constant="20" id="7zT-Lf-VUf"/>
-                <constraint firstItem="TVZ-Op-6rS" firstAttribute="top" secondItem="Rlc-lv-jYg" secondAttribute="bottom" constant="20" id="GyZ-Up-FMU"/>
                 <constraint firstItem="nI1-JS-xUi" firstAttribute="trailing" secondItem="Phj-Tc-4YU" secondAttribute="trailing" constant="20" id="MRH-KZ-w10"/>
                 <constraint firstAttribute="trailing" secondItem="Rlc-lv-jYg" secondAttribute="trailing" constant="20" id="PmN-gD-LEy"/>
                 <constraint firstItem="Rlc-lv-jYg" firstAttribute="leading" secondItem="COp-5Y-49q" secondAttribute="leading" constant="20" id="QSC-7U-Jc5"/>
-                <constraint firstAttribute="trailing" secondItem="TVZ-Op-6rS" secondAttribute="trailing" id="auj-92-Eov"/>
-                <constraint firstItem="TVZ-Op-6rS" firstAttribute="leading" secondItem="COp-5Y-49q" secondAttribute="leading" id="fke-4p-wLs"/>
                 <constraint firstItem="Phj-Tc-4YU" firstAttribute="centerX" secondItem="COp-5Y-49q" secondAttribute="centerX" id="meV-gl-f5r"/>
                 <constraint firstItem="xKx-2k-YWS" firstAttribute="leading" secondItem="nI1-JS-xUi" secondAttribute="leading" id="n6o-pe-jgC"/>
                 <constraint firstItem="xKx-2k-YWS" firstAttribute="top" secondItem="Phj-Tc-4YU" secondAttribute="bottom" constant="20" id="qXI-0f-TFa"/>

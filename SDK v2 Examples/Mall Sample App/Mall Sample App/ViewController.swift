@@ -55,7 +55,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         if let destination = segue.destination as? GetDirectionsViewController {
             destination.mapView = mapView
             destination.location = locationDetails
-            destination.startLocation = locationDetails
+            destination.endLocation = locationDetails
             destination.venue = self.venue
             destination.venueSlug = self.venueSlug
             destination.spaceTapped = self.spaceTapped
