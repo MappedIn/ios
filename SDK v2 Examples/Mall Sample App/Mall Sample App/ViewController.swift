@@ -21,10 +21,12 @@ class ViewController: UIViewController, StoreDetailsDelegate {
     var selectedPolygons = Set<String>()
     var locationDetails: MiLocation?
     var spaceTapped: MiSpace?
+    var directionInstructions: [MiInstruction]?
     @IBOutlet weak var venueName: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var storeDetailsView: StoreDetailsView!
     @IBOutlet weak var venueLevel: UILabel!
+    var viewDirections: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocationViewController {
@@ -53,18 +55,24 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         }
         
         if let destination = segue.destination as? GetDirectionsViewController {
-            destination.mapView = mapView
             destination.location = locationDetails
             destination.endLocation = locationDetails
             destination.venue = self.venue
-            destination.venueSlug = self.venueSlug
-            destination.spaceTapped = self.spaceTapped
+            destination.mapView = mapView
+            destination.directionInstructions = self.directionInstructions
+            destination.storeDetailsView = self.storeDetailsView
+            destination.showTextDirections = self.viewDirections
+            destination.mainViewController = self
         }
         
         if let destination = segue.destination as? LevelSelectorViewController {
             destination.mapView = mapView
             destination.venue = venue
             destination.venueLevel = venueLevel
+        }
+        
+        if let destination = segue.destination as? TextDirectionsViewController {
+            destination.instructions = directionInstructions
         }
     }
     
@@ -76,10 +84,13 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         
         mapView = MiMapView(frame: view.bounds, styleURL: nil)
         view.addSubview(mapView)
-        self.view.sendSubviewToBack(mapView)
+        view.sendSubviewToBack(mapView)
         
         mapView.miDelegate = self
         storeDetailsView.delegate = self
+        
+        // create view text directions button
+        createViewTextDirectionsButtion()
         
         mappedin.getVenue(venueSlug: self.venueSlug) { (result, venue) in
             if let venue = venue {
@@ -106,11 +117,20 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         performSegue(withIdentifier: "GetDirectionsSegue", sender: nil)
     }
     
+    @objc func didTapViewDirections() {
+        performSegue(withIdentifier: "viewTextDirections", sender: nil)
+    }
+    
     func didTapHideViewDetails() {
         mapView.clearAllPolygonStyles()
+        mapView.removeAllPaths()
         mapView.focusOnCurrentLevel(padding: 10, over: 1000.0)
         storeDetailsView.isHidden = true
         startButton.setAttributedTitle(NSAttributedString(string: "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
+    }
+    
+    func onGetTextDirections(instructions: [MiInstruction]) {
+        self.directionInstructions = instructions
     }
     
     @IBAction func chooseLocation(_ sender: Any) {
@@ -122,6 +142,16 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         performSegue(withIdentifier: "LocationSelectorSegue", sender: nil)
     }
     
+    func createViewTextDirectionsButtion() {
+        viewDirections = UIButton(frame: CGRect(x: 0, y: 570, width: 380, height: 50))
+        viewDirections.setTitle("View Text Directions", for: .normal)
+        viewDirections.setTitleColor(.black, for: .normal)
+        viewDirections.addTarget(self, action: #selector(didTapViewDirections), for: .touchUpInside)
+        viewDirections.backgroundColor = .white
+        viewDirections.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        view.addSubview(viewDirections)
+        viewDirections.isHidden = true
+    }
     
 }
 
@@ -165,12 +195,12 @@ extension ViewController: MiMapViewDelegate {
     }
 }
 
-
-
-// check this not sure if necessary
 extension ViewController: NavigationDelegate {
     func onLocationUpdate(navigationLocation: NavigationLocation, location: MiLocation?) {
     
+        mapView.removeAllPaths()
+        mapView.clearAllPolygonStyles()
+        
         if let startSpace = location?.spaces.first {
             if let prevLocation = startLocation {
                 for space in prevLocation.spaces {
@@ -181,6 +211,7 @@ extension ViewController: NavigationDelegate {
             startLocation = location
             locationDetails = location
             storeDetailsView.location = location
+            viewDirections.isHidden = true
             storeDetailsView.isHidden = false
             spaceTapped = startSpace
             venueLevel.text = startSpace.level?.name

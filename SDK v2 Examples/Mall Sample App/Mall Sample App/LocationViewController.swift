@@ -76,6 +76,7 @@ class LocationViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navDelegate?.onLocationUpdate(navigationLocation: navLocation, location: filteredCategories[indexPath.section].locations[indexPath.row])
         self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

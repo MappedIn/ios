@@ -10,54 +10,28 @@ import UIKit
 import Mappedin
 import Mapbox
 
+
 class GetDirectionsViewController: UIViewController {
     var mapView: MiMapView!
-    var venueSlug: String?
+    var previousStateMapView: MiMapView!
     var venue:MiVenue!
     var location: MiLocation?
     var startLocation: MiLocation?
     var endLocation: MiLocation?
+    var directionInstructions: [MiInstruction]?
     var previousPath: MiPath?
     var selectedPolygons = Set<String>()
-    var spaceTapped: MiSpace?
-    var directionInstructions: [MiInstruction]?
-    @IBOutlet weak var venueLevel: UILabel!
+    var storeDetailsView: UIView!
+    var showTextDirections: UIButton!
+    var mainViewController: ViewController!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var endButton: UIButton!
-    @IBOutlet weak var showLocationLabels: UISwitch!
-    @IBOutlet weak var viewDirections: UIButton!
     
     override func viewDidLoad() {
-        viewDirections.isHidden = true
+        previousStateMapView = mapView
         super.viewDidLoad()
+        endButton.setAttributedTitle(NSAttributedString(string: endLocation?.name ?? "Enter your destination", attributes: [NSAttributedString.Key.foregroundColor: endLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
         
-               
-        let mappedIn = Mappedin()
-        let customStyleURL = Bundle.main.url(forResource: "third_party_style", withExtension: "json")!
-        mapView = MiMapView(frame: view.bounds, styleURL: customStyleURL)
-        view.addSubview(mapView)
-        view.sendSubviewToBack(mapView)
-        mapView.miDelegate = self
-
-        if let venueSlug = self.venueSlug{
-            mappedIn.getVenue(venueSlug: venueSlug, completionHandler: {(resultCode, venue) -> Void in
-                self.venue = venue
-                self.mapView.loadMap(venue: venue!)
-                if let location = self.spaceTapped?.locations.first {
-                        self.onLocationUpdate(navigationLocation: NavigationLocation.end, location: location)
-                    
-                }
-            })
-        }
-    }
-    
-    func updateDetails() {
-        if let location = spaceTapped?.locations.first {
-            if let space = spaceTapped {
-                mapView.focusOn(focusable: space, heading: 0, padding: 10, over: 1000.0)
-                onLocationUpdate(navigationLocation: NavigationLocation.end, location: location)
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,89 +51,40 @@ class GetDirectionsViewController: UIViewController {
             otherCategory.locations = otherLocations
             destination.categories.append(otherCategory)
             destination.navDelegate = self
-            if segue.identifier == "chooseDestination" {
+            if segue.identifier == "startLocation" {
                 destination.navLocation = .start
+            } else if segue.identifier == "endLocation" {
+                destination.navLocation = .end
             }
         }
-        
-        if let destination = segue.destination as?  TextDirectionsViewController {
-            destination.instructions = self.directionInstructions
+    }
+    
+    
+    @IBAction func didTapShowDirections(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        self.storeDetailsView.isHidden = true
+        self.showTextDirections.isHidden = false
+        if let instruction = directionInstructions {
+            self.mainViewController.onGetTextDirections(instructions: instruction)
         }
-        
-        if let destination = segue.destination as? LevelSelectorViewController {
-            destination.mapView = mapView
-            destination.venue = venue
-            destination.venueLevel = venueLevel
-        }
     }
     
-    
-    @IBAction func selectStartLocation(_ sender: Any) {
-        performSegue(withIdentifier: "chooseDestination", sender: nil)
-    }
-    
-    @IBAction func didToggleLocationLabels(_ sender: Any) {
-        if ( showLocationLabels.isOn ) {
-            mapView.displayLocationLabels()
-        } else {
-            mapView.hideLocationLabels()
-        }
-        
-    }
-    
-    @IBAction func viewTextDirections(_ sender: Any) {
-        performSegue(withIdentifier: "viewTextDirections", sender: nil)
-    }
-    
-    @IBAction func didTapLevelSelector(_ sender: Any) {
-        performSegue(withIdentifier: "levelSelectorSegue2", sender: nil)
-    }
-}
-
-extension GetDirectionsViewController: MiMapViewDelegate {
-    func onMapLoaded(status: MiMapStatus) {
-        self.mapView.focusOnCurrentLevel()
-    }
-    
-    func onManipulateCamera(gesture: MiGestureType) {
-    }
-
-    func onTapNothing() {
-    }
-
-    func didTapSpace(space: MiSpace) -> Bool {
-        startLocation = space.locations.first
-        onLocationUpdate(navigationLocation: NavigationLocation.end, location: location)
-        return true
-    }
-
-    func onTapCoordinates(point: CLLocationCoordinate2D) {
-    }
-
-    func didTapOverlay(overlay: MiOverlay) -> Bool {
-        return true
-    }
-
-    func createLabelView(text: String, padding: Double = 5) -> UIView {
-        return UIView()
-    }
-    
-    func onLevelChange(level: MiLevel) {
-        mapView.focusOnCurrentLevel(padding: 50)
+    @IBAction func didTapCancel(_ sender: Any) {
+        self.mapView = self.previousStateMapView
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
 extension GetDirectionsViewController: NavigationDelegate {
     func onLocationUpdate(navigationLocation: NavigationLocation, location: MiLocation?) {
-
-        if (startLocation != nil && endLocation != nil) {
-            if let path = previousPath {
-                mapView.removePath(path: path)
-                previousPath = nil
-            }
-            mapView.clearAllPolygonStyles()
+ 
+        if let path = previousPath {
+            mapView.removePath(path: path)
+            previousPath = nil
         }
+        mapView.clearAllPolygonStyles()
 
+        
         switch navigationLocation {
         case .start:
             if let startSpace = location?.spaces.first {
@@ -168,23 +93,26 @@ extension GetDirectionsViewController: NavigationDelegate {
                         mapView.clearPolygonStyle(id: space.id)
                     }
                 }
-
                 
+                startLocation = location
                 for space in startLocation?.spaces ?? [] {
                     highlightPathSpace(navigationLocation: .start, space: space)
                 }
-                
+                if let startLevel = startSpace.navigatableNodes.first?.level {
+                    if (mapView.currentLevel?.id != startLevel.id) {
+                        mapView.setLevel(level: startLevel)
+                    }
+                }
                 mapView.focusOn(focusable: startSpace, heading: 0, over: 1000.0)
             }
-
-        startLocation = location
+            
         case .end:
             if let prevLocation = endLocation {
                 for space in prevLocation.spaces {
                     mapView.clearPolygonStyle(id: space.id)
                 }
             }
-
+            
             if (location?.spaces.first) != nil {
                 endLocation = location
                 for space in endLocation?.spaces ?? [] {
@@ -192,19 +120,14 @@ extension GetDirectionsViewController: NavigationDelegate {
                 }
             }
         }
-
-        startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Enter your starting location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
-
-        endButton.setAttributedTitle(NSAttributedString(string: endLocation?.name ?? "Enter your destination", attributes: [NSAttributedString.Key.foregroundColor: endLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
-
+        
+        startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
+        
         var directions: (MiDirections, MiPath)? = nil
         if let startLocation = startLocation, let endLocation = endLocation {
             directions = mapView.createNavigationPath(from: startLocation, to: endLocation, pathWidth: 10, pathColor: UIColor.blue)
             previousPath = directions?.1
-            self.viewDirections.isHidden = false
-            
         }
-        
         
         let startSpaces = directions?.0.pathNodes.first?.spaces.filter { space in
             startLocation?.spaces.contains(space) ?? false
@@ -214,18 +137,19 @@ extension GetDirectionsViewController: NavigationDelegate {
             if let currentLevel = directions?.0.pathNodes.first?.level {
                 mapView.setLevel(level: currentLevel)
             }
+            mapView.focusOn(focusable: startSpace, heading: 0, over: 1000.0)
         }
-
+        
         let endSpaces = directions?.0.pathNodes.last?.spaces.filter { space in
             endLocation?.spaces.contains(space) ?? false
         }
         highlightPathSpace(navigationLocation: .end, space: endSpaces?.first)
         
-        mapView.focusOnCurrentLevel(padding: 0, over: 1000.0)
-        
-        self.directionInstructions = directions?.0.instructions
+        mapView.focusOnCurrentLevel()
+            
+        directionInstructions = directions?.0.instructions
     }
-
+    
     func highlightPathSpace(navigationLocation: NavigationLocation, space: MiSpace?) {
         if let space = space {
             let highlight: MiColorProperties
