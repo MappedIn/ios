@@ -94,6 +94,7 @@ class GetDirectionsViewController: UIViewController {
             mapView.displayOverlays(overlays: [overlay])
         }
         
+        mainViewController.venueLevel.text = mapView.currentLevel?.name
         mapView.focusOnCurrentLevel()
             
         directionsToDestination = directions?.0

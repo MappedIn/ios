@@ -26,6 +26,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var storeDetailsView: StoreDetailsView!
     @IBOutlet weak var venueLevel: UILabel!
+    @IBOutlet weak var cancelSearchLocation: UIButton!
     var viewDirections: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -120,12 +121,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
     }
     
     func didTapHideViewDetails() {
-        mapView.clearAllPolygonStyles()
-        mapView.removeAllPaths()
-        mapView.removeAllOverlays()
-        mapView.focusOnCurrentLevel(padding: 10, over: 1000.0)
-        storeDetailsView.isHidden = true
-        startButton.setAttributedTitle(NSAttributedString(string: "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
+        resetMap()
     }
     
     func onGetTextDirections(directions: MiDirections) {
@@ -139,6 +135,20 @@ class ViewController: UIViewController, StoreDetailsDelegate {
 // TODO : Place this view in a separate xib file
     @IBAction func didTapPickerView(_ sender: Any) {
         performSegue(withIdentifier: "LocationSelectorSegue", sender: nil)
+    }
+    
+    @IBAction func didTapCancelLocation(_ sender: Any) {
+        resetMap()
+    }
+    
+    func resetMap() {
+        mapView.clearAllPolygonStyles()
+        mapView.removeAllPaths()
+        mapView.removeAllOverlays()
+        mapView.focusOnCurrentLevel(padding: 10, over: 1000.0)
+        storeDetailsView.isHidden = true
+        cancelSearchLocation.isHidden = true
+        startButton.setAttributedTitle(NSAttributedString(string: "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
     }
     
     func createViewTextDirectionsButtion() {
@@ -197,9 +207,7 @@ extension ViewController: MiMapViewDelegate {
 extension ViewController: NavigationDelegate {
     func onLocationUpdate(navigationLocation: NavigationLocation, location: MiLocation?) {
     
-        mapView.removeAllPaths()
-        mapView.removeAllOverlays()
-        mapView.clearAllPolygonStyles()
+        resetMap()
         
         if let startSpace = location?.spaces.first {
             if let prevLocation = startLocation {
@@ -213,6 +221,7 @@ extension ViewController: NavigationDelegate {
             storeDetailsView.location = location
             viewDirections.isHidden = true
             storeDetailsView.isHidden = false
+            cancelSearchLocation.isHidden = false
             spaceTapped = startSpace
             venueLevel.text = startSpace.level?.name
             

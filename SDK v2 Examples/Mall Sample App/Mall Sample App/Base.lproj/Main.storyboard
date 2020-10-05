@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="2oc-hO-3HN" customClass="LocationViewController" customModule="Mall_Sample_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nCD-7i-GTH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="Rui-yp-dki">
@@ -99,16 +99,29 @@
                                             <constraint firstAttribute="height" constant="1" id="irR-69-mEc"/>
                                         </constraints>
                                     </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeW-fV-864">
+                                        <rect key="frame" x="325" y="13" width="20" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="gdQ-I1-sbK"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="xmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="didTapCancelLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CUI-Jn-Ra6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="JYy-aE-bpG" firstAttribute="centerX" secondItem="WjW-r6-3KE" secondAttribute="centerX" id="0SM-bH-fXM"/>
                                     <constraint firstAttribute="trailing" secondItem="rOC-Sv-5DI" secondAttribute="trailing" constant="10" id="4vX-Tk-dZb"/>
                                     <constraint firstItem="JYy-aE-bpG" firstAttribute="centerY" secondItem="WjW-r6-3KE" secondAttribute="centerY" id="9HQ-dl-AwZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="LeW-fV-864" secondAttribute="trailing" constant="10" id="All-vP-bDl"/>
                                     <constraint firstItem="rOC-Sv-5DI" firstAttribute="leading" secondItem="WjW-r6-3KE" secondAttribute="leading" constant="10" id="CTx-gM-yWG"/>
                                     <constraint firstAttribute="height" constant="50" id="SQj-5L-zv8"/>
                                     <constraint firstItem="rOC-Sv-5DI" firstAttribute="top" secondItem="JYy-aE-bpG" secondAttribute="bottom" id="etc-Qa-QpW"/>
                                     <constraint firstAttribute="trailing" secondItem="JYy-aE-bpG" secondAttribute="trailing" constant="10" id="kRZ-wL-BWs"/>
+                                    <constraint firstItem="rOC-Sv-5DI" firstAttribute="top" secondItem="LeW-fV-864" secondAttribute="bottom" constant="5" id="nUY-VQ-TvL"/>
                                     <constraint firstItem="rOC-Sv-5DI" firstAttribute="centerX" secondItem="WjW-r6-3KE" secondAttribute="centerX" id="r9i-dS-9Pm"/>
                                     <constraint firstItem="JYy-aE-bpG" firstAttribute="leading" secondItem="WjW-r6-3KE" secondAttribute="leading" constant="10" id="yK1-fz-9eV"/>
                                 </constraints>
@@ -194,6 +207,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="11J-1M-dke"/>
                     <navigationItem key="navigationItem" id="ndV-K2-gQp"/>
                     <connections>
+                        <outlet property="cancelSearchLocation" destination="LeW-fV-864" id="Scm-BD-R5h"/>
                         <outlet property="startButton" destination="JYy-aE-bpG" id="ZUJ-ZH-YvE"/>
                         <outlet property="storeDetailsView" destination="ewa-3J-nEn" id="dGd-0B-NTD"/>
                         <outlet property="venueLevel" destination="uMG-kM-Mib" id="UTP-QI-Nn4"/>
@@ -739,12 +753,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CsD-rZ-QYb"/>
+        <segue reference="dFo-Br-WbY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="map" catalog="system" width="128" height="113"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
