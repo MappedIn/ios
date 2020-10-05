@@ -15,7 +15,7 @@ class InstructionTableViewCell: UITableViewCell {
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(selected, animated: false)
     }
 
     override func layoutSubviews() {
@@ -25,7 +25,7 @@ class InstructionTableViewCell: UITableViewCell {
         let viewHeight = contentView.frame.size.height
         self.imageView?.frame = CGRect(x: 320, y: 30, width: viewHeight-50, height: viewHeight-50)
         self.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        self.textLabel?.frame = CGRect(x: 28, y: 5, width: viewWidth-60, height: viewHeight-10)
+        self.textLabel?.frame = CGRect(x: 28, y: 5, width: viewWidth-100, height: viewHeight-10)
     }
     
     override func prepareForReuse() {
