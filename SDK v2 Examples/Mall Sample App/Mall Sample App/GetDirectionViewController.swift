@@ -18,12 +18,13 @@ class GetDirectionsViewController: UIViewController {
     var location: MiLocation?
     var startLocation: MiLocation?
     var endLocation: MiLocation?
-    var directionInstructions: [MiInstruction]?
+    var directionsToDestination: MiDirections?
     var previousPath: MiPath?
     var selectedPolygons = Set<String>()
     var storeDetailsView: UIView!
     var showTextDirections: UIButton!
     var mainViewController: ViewController!
+    @IBOutlet weak var accessibilityToggle: UISwitch!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var endButton: UIButton!
     
@@ -61,11 +62,41 @@ class GetDirectionsViewController: UIViewController {
     
     
     @IBAction func didTapShowDirections(_ sender: Any) {
+        var directions: (MiDirections, MiPath)? = nil
+        if let startLocation = startLocation, let endLocation = endLocation {
+            if (!accessibilityToggle.isOn) {
+                directions = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: false, pathWidth: 10, pathColor: UIColor.blue)
+            } else {
+                directions = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: true, pathWidth: 10, pathColor: UIColor.blue)
+            }
+            
+            previousPath = directions?.1
+        }
+        
+        let startSpaces = directions?.0.pathNodes.first?.spaces.filter { space in
+            startLocation?.spaces.contains(space) ?? false
+        }
+        if let startSpace = startSpaces?.first {
+            highlightPathSpace(navigationLocation: .start, space: startSpace)
+            if let currentLevel = directions?.0.pathNodes.first?.level {
+                mapView.setLevel(level: currentLevel)
+            }
+            mapView.focusOn(focusable: startSpace, heading: 0, over: 1000.0)
+        }
+        
+        let endSpaces = directions?.0.pathNodes.last?.spaces.filter { space in
+            endLocation?.spaces.contains(space) ?? false
+        }
+        highlightPathSpace(navigationLocation: .end, space: endSpaces?.first)
+        
+        mapView.focusOnCurrentLevel()
+            
+        directionsToDestination = directions?.0
         self.dismiss(animated: true, completion: nil)
         self.storeDetailsView.isHidden = true
         self.showTextDirections.isHidden = false
-        if let instruction = directionInstructions {
-            self.mainViewController.onGetTextDirections(instructions: instruction)
+        if let directions = directionsToDestination {
+            self.mainViewController.onGetTextDirections(directions: directions)
         }
     }
     
@@ -73,6 +104,7 @@ class GetDirectionsViewController: UIViewController {
         self.mapView = self.previousStateMapView
         self.dismiss(animated: true, completion: nil)
     }
+
 }
 
 extension GetDirectionsViewController: NavigationDelegate {
@@ -123,31 +155,7 @@ extension GetDirectionsViewController: NavigationDelegate {
         
         startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
         
-        var directions: (MiDirections, MiPath)? = nil
-        if let startLocation = startLocation, let endLocation = endLocation {
-            directions = mapView.createNavigationPath(from: startLocation, to: endLocation, pathWidth: 10, pathColor: UIColor.blue)
-            previousPath = directions?.1
-        }
-        
-        let startSpaces = directions?.0.pathNodes.first?.spaces.filter { space in
-            startLocation?.spaces.contains(space) ?? false
-        }
-        if let startSpace = startSpaces?.first {
-            highlightPathSpace(navigationLocation: .start, space: startSpace)
-            if let currentLevel = directions?.0.pathNodes.first?.level {
-                mapView.setLevel(level: currentLevel)
-            }
-            mapView.focusOn(focusable: startSpace, heading: 0, over: 1000.0)
-        }
-        
-        let endSpaces = directions?.0.pathNodes.last?.spaces.filter { space in
-            endLocation?.spaces.contains(space) ?? false
-        }
-        highlightPathSpace(navigationLocation: .end, space: endSpaces?.first)
-        
-        mapView.focusOnCurrentLevel()
-            
-        directionInstructions = directions?.0.instructions
+    
     }
     
     func highlightPathSpace(navigationLocation: NavigationLocation, space: MiSpace?) {

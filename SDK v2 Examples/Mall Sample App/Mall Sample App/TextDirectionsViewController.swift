@@ -11,7 +11,7 @@ import Mappedin
 
 class TextDirectionsViewController: UITableViewController {
 
-    var instructions: [MiInstruction]?
+    var directions: MiDirections!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +22,20 @@ class TextDirectionsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return instructions?.count ?? 0
+        return directions.instructions.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InstructionTableViewCell", for: indexPath)
         
-        let instruction = instructions?[indexPath.row]
+        let instruction = directions.instructions[indexPath.row]
+//        let distance = directions.distance
         
-        cell.textLabel?.text = instruction?.description
+        cell.textLabel?.text = instruction.description
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+//        cell.detailTextLabel?.text
         
-        switch instruction?.action {
+        switch instruction.action {
             case is Departure:
                 cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
                 cell.imageView?.image = UIImage(systemName: "smallcircle.circle.fill")
@@ -41,7 +43,7 @@ class TextDirectionsViewController: UITableViewController {
                 cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
                 cell.imageView?.image = UIImage(systemName: "mappin.circle.fill")
             case is Turn:
-                if let turn = instruction?.action as? Turn {
+                if let turn = instruction.action as? Turn {
                     switch (turn.relativeBearing) {
                     case .left:
                         cell.imageView?.image = UIImage(systemName: "arrow.left.circle.fill")

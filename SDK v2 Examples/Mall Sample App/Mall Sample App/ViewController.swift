@@ -21,7 +21,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
     var selectedPolygons = Set<String>()
     var locationDetails: MiLocation?
     var spaceTapped: MiSpace?
-    var directionInstructions: [MiInstruction]?
+    var directions: MiDirections?
     @IBOutlet weak var venueName: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var storeDetailsView: StoreDetailsView!
@@ -59,7 +59,6 @@ class ViewController: UIViewController, StoreDetailsDelegate {
             destination.endLocation = locationDetails
             destination.venue = self.venue
             destination.mapView = mapView
-            destination.directionInstructions = self.directionInstructions
             destination.storeDetailsView = self.storeDetailsView
             destination.showTextDirections = self.viewDirections
             destination.mainViewController = self
@@ -72,8 +71,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         }
         
         if let destination = segue.destination as? TextDirectionsViewController {
-            destination.instructions = directionInstructions
-        }
+            destination.directions = directions        }
     }
     
     
@@ -129,8 +127,8 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         startButton.setAttributedTitle(NSAttributedString(string: "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
     }
     
-    func onGetTextDirections(instructions: [MiInstruction]) {
-        self.directionInstructions = instructions
+    func onGetTextDirections(directions: MiDirections) {
+        self.directions = directions
     }
     
     @IBAction func chooseLocation(_ sender: Any) {

@@ -563,6 +563,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="X4Y-ur-oid"/>
                     <connections>
+                        <outlet property="accessibilityToggle" destination="Fxm-HJ-sfC" id="Jcd-Id-4dY"/>
                         <outlet property="endButton" destination="qH0-Om-c3N" id="CSM-5N-S6C"/>
                         <outlet property="startButton" destination="bBb-Sj-fZb" id="JAV-YI-M4y"/>
                     </connections>
