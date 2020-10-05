@@ -148,6 +148,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         mapView.focusOnCurrentLevel(padding: 10, over: 1000.0)
         storeDetailsView.isHidden = true
         cancelSearchLocation.isHidden = true
+        viewDirections.isHidden = true
         startButton.setAttributedTitle(NSAttributedString(string: "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
     }
     
