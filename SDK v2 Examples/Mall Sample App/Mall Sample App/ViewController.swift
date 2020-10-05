@@ -122,6 +122,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
     func didTapHideViewDetails() {
         mapView.clearAllPolygonStyles()
         mapView.removeAllPaths()
+        mapView.removeAllOverlays()
         mapView.focusOnCurrentLevel(padding: 10, over: 1000.0)
         storeDetailsView.isHidden = true
         startButton.setAttributedTitle(NSAttributedString(string: "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
@@ -197,6 +198,7 @@ extension ViewController: NavigationDelegate {
     func onLocationUpdate(navigationLocation: NavigationLocation, location: MiLocation?) {
     
         mapView.removeAllPaths()
+        mapView.removeAllOverlays()
         mapView.clearAllPolygonStyles()
         
         if let startSpace = location?.spaces.first {

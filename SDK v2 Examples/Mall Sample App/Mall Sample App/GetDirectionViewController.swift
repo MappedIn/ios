@@ -13,7 +13,6 @@ import Mapbox
 
 class GetDirectionsViewController: UIViewController {
     var mapView: MiMapView!
-    var previousStateMapView: MiMapView!
     var venue:MiVenue!
     var location: MiLocation?
     var startLocation: MiLocation?
@@ -29,7 +28,6 @@ class GetDirectionsViewController: UIViewController {
     @IBOutlet weak var endButton: UIButton!
     
     override func viewDidLoad() {
-        previousStateMapView = mapView
         super.viewDidLoad()
         endButton.setAttributedTitle(NSAttributedString(string: endLocation?.name ?? "Enter your destination", attributes: [NSAttributedString.Key.foregroundColor: endLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
         
@@ -89,6 +87,13 @@ class GetDirectionsViewController: UIViewController {
         }
         highlightPathSpace(navigationLocation: .end, space: endSpaces?.first)
         
+        if let endLocationEntrance = endSpaces?.first?.entrances.first {
+            let image = UIImage(named: "destinationIcon")
+            let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude:  CLLocationDegrees(endLocationEntrance.lat), longitude: CLLocationDegrees(endLocationEntrance.lon))
+            let overlay = MiOverlay(coordinates: coordinates, level: (endLocation?.spaces.first?.level)!, image: image!)
+            mapView.displayOverlays(overlays: [overlay])
+        }
+        
         mapView.focusOnCurrentLevel()
             
         directionsToDestination = directions?.0
@@ -101,7 +106,6 @@ class GetDirectionsViewController: UIViewController {
     }
     
     @IBAction func didTapCancel(_ sender: Any) {
-        self.mapView = self.previousStateMapView
         self.dismiss(animated: true, completion: nil)
     }
 
