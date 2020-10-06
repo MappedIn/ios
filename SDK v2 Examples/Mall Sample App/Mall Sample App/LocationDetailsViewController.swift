@@ -45,8 +45,8 @@ class LocationDetailsViewController: UIViewController {
                     self.view.setNeedsLayout()
                 })
             }
-            locationCategory.text = _location.categories.description
-            locationAddress.text = _location.address
+            locationCategory.text = _location.categories.first?.name
+            locationAddress.text = _location.address ?? "Not Available"
             locationContact.text = _location.phoneNumber
             
         }
