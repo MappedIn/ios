@@ -307,7 +307,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GgL-6u-sU4">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="81"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzN-4D-PyU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzN-4D-PyU">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="40.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -324,7 +324,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LEp-lQ-KZJ">
                                         <rect key="frame" x="0.0" y="101" width="295" height="81"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVj-ty-0lf">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVj-ty-0lf">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="40.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -377,7 +377,9 @@
                     <navigationItem key="navigationItem" id="STz-KV-OMc"/>
                     <connections>
                         <outlet property="generalInfoContainer" destination="j0l-Pk-VL5" id="9Pv-kq-nR2"/>
-                        <outlet property="locationDescription" destination="wyO-md-W4W" id="eB1-0e-xxb"/>
+                        <outlet property="locationAddress" destination="xCg-cS-aI3" id="xyV-F4-7UG"/>
+                        <outlet property="locationCategory" destination="wyO-md-W4W" id="WL4-3G-RC2"/>
+                        <outlet property="locationContact" destination="Jnk-Fa-0Os" id="jNm-jD-mYv"/>
                         <outlet property="locationLogo" destination="g78-pp-DR0" id="ah5-2n-2ds"/>
                         <outlet property="locationTitle" destination="nVO-5J-hpN" id="iNi-RC-E2c"/>
                         <outlet property="logoView" destination="bXR-o0-ODb" id="sVj-q5-0aW"/>

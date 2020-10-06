@@ -19,8 +19,6 @@ class ViewController: UIViewController, StoreDetailsDelegate {
     
     var startLocation: MiLocation?
     var selectedPolygons = Set<String>()
-    var locationDetails: MiLocation?
-    var spaceTapped: MiSpace?
     var directions: MiDirections?
     @IBOutlet weak var venueName: UILabel!
     @IBOutlet weak var startButton: UIButton!
@@ -30,6 +28,8 @@ class ViewController: UIViewController, StoreDetailsDelegate {
     var viewDirections: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Set properties for segue to LocationViewController
         if let destination = segue.destination as? LocationViewController {
             destination.categories = (venue?.categories ?? []).map { category in
                 category.locations = (category as MiCategory).locations.sorted(by: { (location1, location2) in
@@ -51,13 +51,15 @@ class ViewController: UIViewController, StoreDetailsDelegate {
             } 
         }
         
+        // Set properties for segue to LocationDetailsViewController
         if let destination = segue.destination as? LocationDetailsViewController{
-            destination.location = locationDetails
+            destination.location = startLocation
         }
         
+        // Set properties for segue to GetDirectionsViewController
         if let destination = segue.destination as? GetDirectionsViewController {
-            destination.location = locationDetails
-            destination.endLocation = locationDetails
+            destination.location = startLocation
+            destination.endLocation = startLocation
             destination.venue = self.venue
             destination.mapView = mapView
             destination.storeDetailsView = self.storeDetailsView
@@ -65,12 +67,14 @@ class ViewController: UIViewController, StoreDetailsDelegate {
             destination.mainViewController = self
         }
         
+        // Set properties for segue to LevelSelectorViewContoller
         if let destination = segue.destination as? LevelSelectorViewController {
             destination.mapView = mapView
             destination.venue = venue
             destination.venueLevel = venueLevel
         }
         
+        // Set properties for segue to TextDirectionsViewCOntroller
         if let destination = segue.destination as? TextDirectionsViewController {
             destination.directions = directions        }
     }
@@ -88,7 +92,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         mapView.miDelegate = self
         storeDetailsView.delegate = self
         
-        // create view text directions button
+        // Create view text directions button
         createViewTextDirectionsButtion()
         
         mappedin.getVenue(venueSlug: self.venueSlug) { (result, venue) in
@@ -172,11 +176,10 @@ extension ViewController: MiMapViewDelegate {
     
     func didTapSpace(space: MiSpace) -> Bool {
         self.handleNavigationTapping(space: space)
-        spaceTapped = space
         if let location = space.locations.first {
             storeDetailsView.location = location
             storeDetailsView.isHidden = false
-            locationDetails = location
+            startLocation = location
         }
         return true
     }
@@ -218,12 +221,10 @@ extension ViewController: NavigationDelegate {
             }
             
             startLocation = location
-            locationDetails = location
             storeDetailsView.location = location
             viewDirections.isHidden = true
             storeDetailsView.isHidden = false
             cancelSearchLocation.isHidden = false
-            spaceTapped = startSpace
             venueLevel.text = startSpace.level?.name
             
             startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
