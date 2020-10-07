@@ -26,9 +26,12 @@ class GetDirectionsViewController: UIViewController {
     @IBOutlet weak var accessibilityToggle: UISwitch!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var endButton: UIButton!
+    @IBOutlet weak var showDirectionsButton: UIButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        showDirectionsButton.isEnabled = false
         endButton.setAttributedTitle(NSAttributedString(string: endLocation?.name ?? "Enter your destination", attributes: [NSAttributedString.Key.foregroundColor: endLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
         
     }
@@ -60,44 +63,49 @@ class GetDirectionsViewController: UIViewController {
     
     
     @IBAction func didTapShowDirections(_ sender: Any) {
-        var directions: (MiDirections, MiPath)? = nil
+        var navigationPath: MiNavigationPath? = nil
         if let startLocation = startLocation, let endLocation = endLocation {
             if (!accessibilityToggle.isOn) {
-                directions = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: false, pathWidth: 10, pathColor: UIColor.blue)
+                navigationPath = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: false, pathWidth: 10, pathColor: UIColor.blue)
             } else {
-                directions = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: true, pathWidth: 10, pathColor: UIColor.blue)
+                navigationPath = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: true, pathWidth: 10, pathColor: UIColor.blue)
             }
             
-            previousPath = directions?.1
+            previousPath = navigationPath?.path
         }
         
-        let startSpaces = directions?.0.pathNodes.first?.spaces.filter { space in
+        let startSpaces = navigationPath?.directions.pathNodes.first?.spaces.filter { space in
             startLocation?.spaces.contains(space) ?? false
         }
         if let startSpace = startSpaces?.first {
             highlightPathSpace(navigationLocation: .start, space: startSpace)
-            if let currentLevel = directions?.0.pathNodes.first?.level {
+            if let currentLevel = navigationPath?.directions.pathNodes.first?.level {
                 mapView.setLevel(level: currentLevel)
             }
             mapView.focusOn(focusable: startSpace, heading: 0, over: 1000.0)
         }
         
-        let endSpaces = directions?.0.pathNodes.last?.spaces.filter { space in
+        let endSpaces = navigationPath?.directions.pathNodes.last?.spaces.filter { space in
             endLocation?.spaces.contains(space) ?? false
         }
         highlightPathSpace(navigationLocation: .end, space: endSpaces?.first)
         
+        var overlay: MiOverlay?
         if let endLocationEntrance = endSpaces?.first?.entrances.first {
             let image = UIImage(named: "destinationIcon")
             let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude:  CLLocationDegrees(endLocationEntrance.lat), longitude: CLLocationDegrees(endLocationEntrance.lon))
-            let overlay = MiOverlay(coordinates: coordinates, level: (endLocation?.spaces.first?.level)!, image: image!)
-            mapView.displayOverlays(overlays: [overlay])
+            overlay = MiOverlay(coordinates: coordinates, level: (endLocation?.spaces.first?.level)!, image: image!)
         }
-        
         mainViewController.venueLevel.text = mapView.currentLevel?.name
         mapView.focusOnCurrentLevel()
-            
-        directionsToDestination = directions?.0
+        
+        var overlays = addConnectionOverlays(navigationPath: navigationPath)
+        if let overlay = overlay {
+            overlays.append(overlay)
+        }
+        mapView.displayOverlays(overlays: overlays)
+        
+        directionsToDestination = navigationPath?.directions
         self.dismiss(animated: true, completion: nil)
         self.storeDetailsView.isHidden = true
         self.showTextDirections.isHidden = false
@@ -108,6 +116,62 @@ class GetDirectionsViewController: UIViewController {
     
     @IBAction func didTapCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func addConnectionOverlays (navigationPath: MiNavigationPath?) -> [MiOverlay] {
+        
+        var connectionOverlays: [MiOverlay] = []
+        var connectionOverlaysMap: [String: MiInstruction] = [:]
+        
+        if let navPath = navigationPath {
+            for instruction in navPath.directions.instructions {
+                var image: UIImage? = nil
+                if let action = instruction.action as? TakeConnection {
+                    if action.fromLevel.elevation < action.toLevel.elevation {
+                        switch action.connection.type {
+                            case .stairs:
+                                image = UIImage(named: "StairsUp")
+                            case .escalator:
+                                image = UIImage(named: "EscalatorUp")
+                            case .elevator:
+                                image = UIImage(named: "ElevatorUp")
+                            case .ramp:
+                                image = UIImage(named: "RampUp")
+                            default:
+                                image = nil
+                        }
+                    } else {
+                        switch action.connection.type {
+                            case .stairs:
+                                image = UIImage(named: "StairsDown")
+                            case .escalator:
+                                image = UIImage(named: "EscalatorDown")
+                            case .elevator:
+                                image = UIImage(named: "ElevatorDown")
+                            case .ramp:
+                                image = UIImage(named: "RampDown")
+                            default:
+                                image = nil
+                        }
+                    }
+    
+                    if let image = image {
+                        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
+                        backgroundView.backgroundColor = .black
+                        backgroundView.layer.cornerRadius = 5
+                        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+                        imageView.image = image
+                        imageView.center = backgroundView.convert(backgroundView.center, from:backgroundView.superview)
+                        backgroundView.addSubview(imageView)
+                        let overlay = MiOverlay(latitude: instruction.node.lat, longitude: instruction.node.lon, level: action.fromLevel, view: backgroundView)
+                        connectionOverlays.append(overlay)
+                        connectionOverlaysMap[overlay.id] = instruction
+                    }
+                }
+            }
+        }
+        mainViewController.connectionOverlaysMap = connectionOverlaysMap
+        return connectionOverlays
     }
 
 }
@@ -159,6 +223,8 @@ extension GetDirectionsViewController: NavigationDelegate {
         }
         
         startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
+        
+        showDirectionsButton.isEnabled = true
         
     
     }
