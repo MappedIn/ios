@@ -29,8 +29,8 @@ class LocationDetailsViewController: UIViewController {
     func updateDetails() {
         
         // Add border styles to view containing store name and logo
-        generalInfoContainer.layer.borderWidth = 1
-        generalInfoContainer.layer.borderColor = UIColor.systemGroupedBackground.cgColor
+//        generalInfoContainer.layer.borderWidth = 1
+//        generalInfoContainer.layer.borderColor = UIColor.systemGroupedBackground.cgColor
         
         if let _location = location {
             
@@ -38,14 +38,28 @@ class LocationDetailsViewController: UIViewController {
             // Store Address and Store Phone Number
             locationTitle.text = _location.name
             logoView.layer.borderWidth = 1
-            logoView.layer.borderColor = UIColor.systemGroupedBackground.cgColor
+            logoView.layer.borderColor = UIColor.lightGray.cgColor
             if let logoUrl = _location.logo?.medium {
                 let url = URL(string: logoUrl)
                 locationLogo.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, URL) in
                     self.view.setNeedsLayout()
                 })
             }
-            locationCategory.text = _location.categories.first?.name
+            
+            var locationCategoryText = ""
+            
+            if (_location.categories.isEmpty) {
+                locationCategoryText = "No Categories"
+            }
+            
+            for i in 0..<_location.categories.count {
+                locationCategoryText = locationCategoryText + (location?.categories[i].name ?? " ")
+                if ( i != _location.categories.count - 1 ) {
+                    locationCategoryText = locationCategoryText + ", "
+                }
+            }
+            
+            locationCategory.text = locationCategoryText
             locationAddress.text = _location.address ?? "Not Available"
             locationContact.text = _location.phoneNumber
             
