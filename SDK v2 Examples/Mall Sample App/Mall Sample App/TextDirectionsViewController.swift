@@ -26,14 +26,17 @@ class TextDirectionsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InstructionTableViewCell", for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: "InstructionTableViewCell", for: indexPath)
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: "InstructionTableViewCell")
         
         let instruction = directions.instructions[indexPath.row]
-//        let distance = directions.distance
+        if ( indexPath.row > 0 ) {
+            cell.detailTextLabel?.text = "In about " + String(format: "%.1f", instruction.distance) + "m"
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 12, weight: .thin)
+        }
         
         cell.textLabel?.text = instruction.description
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-//        cell.detailTextLabel?.text
         
         switch instruction.action {
             case is Departure:
