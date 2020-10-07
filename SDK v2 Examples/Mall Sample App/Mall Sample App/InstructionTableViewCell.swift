@@ -26,7 +26,7 @@ class InstructionTableViewCell: UITableViewCell {
         self.imageView?.frame = CGRect(x: 320, y: 30, width: viewHeight-50, height: viewHeight-50)
         self.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         self.textLabel?.frame = CGRect(x: 28, y: 5, width: viewWidth-100, height: viewHeight-10)
-        self.detailTextLabel?.frame = CGRect(x: 28, y: 10, width: viewWidth-100, height: 20)
+        self.detailTextLabel?.frame = CGRect(x: 28, y: 40, width: viewWidth-100, height: viewHeight-10)
     }
     
     override func prepareForReuse() {

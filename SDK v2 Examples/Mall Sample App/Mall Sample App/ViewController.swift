@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var venueSlug: String = "mappedin-demo-mall"
     var venue: MiVenue!
-    
+    var connectionOverlaysMap: [String: MiInstruction] = [:]
     var startLocation: MiLocation?
     var selectedPolygons = Set<String>()
     var directions: MiDirections?
@@ -112,12 +112,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    func didTapHideViewDetails() {
-        resetMap()
-    }
-    
     func onGetTextDirections(directions: MiDirections) {
         self.directions = directions
     }
@@ -149,9 +143,9 @@ class ViewController: UIViewController {
     func createViewTextDirectionsButtion() {
         viewDirections = UIButton(frame: CGRect(x: 0, y: 570, width: 380, height: 50))
         viewDirections.setTitle("View Text Directions", for: .normal)
-        viewDirections.setTitleColor(.black, for: .normal)
+        viewDirections.setTitleColor( .white, for: .normal)
         viewDirections.addTarget(self, action: #selector(didTapViewDirections), for: .touchUpInside)
-        viewDirections.backgroundColor = .white
+        viewDirections.backgroundColor = .darkGray
         viewDirections.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         view.addSubview(viewDirections)
         viewDirections.isHidden = true
@@ -196,11 +190,15 @@ extension ViewController: MiMapViewDelegate {
         // Called when an overlay is tapped and provides which overlay was tapped
         // Return true to stop the tap
         // Return false to allow the tap to fall through and trigger other events
-        return false
+        if let instruction = connectionOverlaysMap[overlay.id], let action = instruction.action as? TakeConnection {
+            mapView.setLevel(level: action.toLevel)
+        }
+        return true
     }
     
     func onLevelChange(level: MiLevel) {
         // Called when the level is changed and provides the new level
+        venueLevel.text = level.name
     }
     
     func onManipulateCamera(gesture: MiGestureType) {
@@ -231,7 +229,7 @@ extension ViewController: NavigationDelegate {
             cancelSearchLocation.isHidden = false
             venueLevel.text = startSpace.level?.name
             
-            startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.black : UIColor.lightGray]), for: .normal)
+            startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
             
             for space in startLocation?.spaces ?? [] {
                 
