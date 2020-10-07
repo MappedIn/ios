@@ -10,7 +10,7 @@ import UIKit
 import Mappedin
 import Mapbox
 
-class ViewController: UIViewController, StoreDetailsDelegate {
+class ViewController: UIViewController {
 
     var mapView: MiMapView!
     
@@ -112,17 +112,7 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         }
     }
     
-    func didTapViewDetails() {
-        performSegue(withIdentifier: "LocationDetailsSegue", sender: nil)
-    }
     
-    func didTapGetDirections() {
-        performSegue(withIdentifier: "GetDirectionsSegue", sender: nil)
-    }
-    
-    @objc func didTapViewDirections() {
-        performSegue(withIdentifier: "viewTextDirections", sender: nil)
-    }
     
     func didTapHideViewDetails() {
         resetMap()
@@ -167,6 +157,20 @@ class ViewController: UIViewController, StoreDetailsDelegate {
         viewDirections.isHidden = true
     }
     
+}
+
+extension ViewController: StoreDetailsDelegate {
+    func didTapViewDetails() {
+        performSegue(withIdentifier: "LocationDetailsSegue", sender: nil)
+    }
+    
+    func didTapGetDirections() {
+        performSegue(withIdentifier: "GetDirectionsSegue", sender: nil)
+    }
+    
+    @objc func didTapViewDirections() {
+        performSegue(withIdentifier: "viewTextDirections", sender: nil)
+    }
 }
 
 extension ViewController: MiMapViewDelegate {
