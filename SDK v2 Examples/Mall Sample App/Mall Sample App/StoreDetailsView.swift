@@ -12,7 +12,6 @@ import Mappedin
 @objc protocol StoreDetailsDelegate: class {
     func didTapGetDirections()
     func didTapViewDetails()
-    func didTapHideViewDetails()
 }
 
 class StoreDetailsView : UIView {
@@ -31,10 +30,6 @@ class StoreDetailsView : UIView {
     
     @IBAction func ViewDetails(_ sender: Any) {
          self.delegate.didTapViewDetails()
-    }
-    
-    @IBAction func hideViewDetails(_ sender: Any) {
-        self.delegate.didTapHideViewDetails()
     }
     
     
