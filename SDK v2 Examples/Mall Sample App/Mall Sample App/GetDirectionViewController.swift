@@ -55,9 +55,7 @@ class GetDirectionsViewController: UIViewController {
             destination.navDelegate = self
             if segue.identifier == "startLocation" {
                 destination.navLocation = .start
-            } else if segue.identifier == "endLocation" {
-                destination.navLocation = .end
-            }
+            } 
         }
     }
     

@@ -479,9 +479,6 @@
                                         <state key="normal" title="Enter your destination">
                                             <color key="titleColor" systemColor="systemGray2Color"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="2oc-hO-3HN" kind="show" identifier="endLocation" id="Gok-ki-Tyu"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
