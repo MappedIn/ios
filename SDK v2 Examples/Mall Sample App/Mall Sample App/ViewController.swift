@@ -93,6 +93,19 @@ class ViewController: UIViewController {
         mapView.miDelegate = self
         storeDetailsView.delegate = self
         
+        if let navigationBar = self.navigationController?.navigationBar {
+            let image = UIImage(named: "MappedinLogo")
+            let imageView = UIImageView(frame: CGRect(x: navigationBar.frame.width/2 - 40, y:0, width: 15, height: 25))
+            imageView.image = image
+            navigationBar.addSubview(imageView)
+            let label = UILabel(frame: CGRect(x: navigationBar.frame.width/2 - 30 + imageView.frame.width, y: 3, width: 200, height: 25))
+            label.text = "mobile"
+            label.textColor = .white
+            label.font = UIFont.systemFont(ofSize: 22, weight: .thin)
+            navigationBar.addSubview(label)
+            
+        }
+        
         // Create view text directions button
         createViewTextDirectionsButtion()
         
