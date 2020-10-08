@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var venueLevel: UILabel!
     @IBOutlet weak var cancelSearchLocation: UIButton!
     var viewDirections: UIButton!
+    @IBOutlet weak var tabBar: UITabBarItem!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -141,13 +142,19 @@ class ViewController: UIViewController {
     }
     
     func createViewTextDirectionsButtion() {
-        viewDirections = UIButton(frame: CGRect(x: 0, y: 570, width: 380, height: 50))
+        viewDirections = UIButton()
+        viewDirections.translatesAutoresizingMaskIntoConstraints = false
         viewDirections.setTitle("View Text Directions", for: .normal)
         viewDirections.setTitleColor( .white, for: .normal)
         viewDirections.addTarget(self, action: #selector(didTapViewDirections), for: .touchUpInside)
         viewDirections.backgroundColor = .darkGray
         viewDirections.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        
         view.addSubview(viewDirections)
+        viewDirections.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        viewDirections.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        viewDirections.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        viewDirections.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         viewDirections.isHidden = true
     }
     
@@ -190,8 +197,12 @@ extension ViewController: MiMapViewDelegate {
         // Called when an overlay is tapped and provides which overlay was tapped
         // Return true to stop the tap
         // Return false to allow the tap to fall through and trigger other events
-        if let instruction = connectionOverlaysMap[overlay.id], let action = instruction.action as? TakeConnection {
-            mapView.setLevel(level: action.toLevel)
+        if let instruction = connectionOverlaysMap[overlay.id] {
+            if let action = instruction.action as? TakeConnection {
+                mapView.setLevel(level: action.toLevel)
+            } else if let action = instruction.action as? ExitConnection {
+                mapView.setLevel(level: action.fromLevel)
+            }
         }
         return true
     }

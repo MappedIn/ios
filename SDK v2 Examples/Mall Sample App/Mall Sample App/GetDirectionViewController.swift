@@ -66,7 +66,7 @@ class GetDirectionsViewController: UIViewController {
         var navigationPath: MiNavigationPath? = nil
         if let startLocation = startLocation, let endLocation = endLocation {
             if (!accessibilityToggle.isOn) {
-                navigationPath = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: false, pathWidth: 10, pathColor: UIColor.blue)
+                navigationPath = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: false, pathWidth: 10, pathColor: UIColor(red: 0.75, green: 0.26, blue: 0.13, alpha: 1.00))
             } else {
                 navigationPath = mapView.createNavigationPath(from: startLocation, to: endLocation, accessible: true, pathWidth: 10, pathColor: UIColor.blue)
             }
@@ -164,6 +164,47 @@ class GetDirectionsViewController: UIViewController {
                         imageView.center = backgroundView.convert(backgroundView.center, from:backgroundView.superview)
                         backgroundView.addSubview(imageView)
                         let overlay = MiOverlay(latitude: instruction.node.lat, longitude: instruction.node.lon, level: action.fromLevel, view: backgroundView)
+                        connectionOverlays.append(overlay)
+                        connectionOverlaysMap[overlay.id] = instruction
+                    }
+                } else if let action = instruction.action as? ExitConnection {
+                    if action.fromLevel.elevation < action.toLevel.elevation {
+                        switch action.connection.type {
+                            case .stairs:
+                                image = UIImage(named: "StairsDwn")
+                            case .escalator:
+                                image = UIImage(named: "EscalatorDown")
+                            case .elevator:
+                                image = UIImage(named: "ElevatorDown")
+                            case .ramp:
+                                image = UIImage(named: "RampDown")
+                            default:
+                                image = nil
+                        }
+                    } else {
+                        switch action.connection.type {
+                            case .stairs:
+                                image = UIImage(named: "StairsUp")
+                            case .escalator:
+                                image = UIImage(named: "EscalatorUp")
+                            case .elevator:
+                                image = UIImage(named: "ElevatorUp")
+                            case .ramp:
+                                image = UIImage(named: "RampUp")
+                            default:
+                                image = nil
+                        }
+                    }
+
+                    if let image = image {
+                        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
+                        backgroundView.backgroundColor = .black
+                        backgroundView.layer.cornerRadius = 5
+                        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+                        imageView.image = image
+                        imageView.center = backgroundView.convert(backgroundView.center, from:backgroundView.superview)
+                        backgroundView.addSubview(imageView)
+                        let overlay = MiOverlay(latitude: instruction.node.lat, longitude: instruction.node.lon, level: action.toLevel, view: backgroundView)
                         connectionOverlays.append(overlay)
                         connectionOverlaysMap[overlay.id] = instruction
                     }

@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="2oc-hO-3HN" customClass="LocationViewController" customModule="Mall_Sample_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nCD-7i-GTH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="Rui-yp-dki">
@@ -218,6 +218,7 @@
                         <outlet property="cancelSearchLocation" destination="LeW-fV-864" id="Scm-BD-R5h"/>
                         <outlet property="startButton" destination="JYy-aE-bpG" id="ZUJ-ZH-YvE"/>
                         <outlet property="storeDetailsView" destination="ewa-3J-nEn" id="dGd-0B-NTD"/>
+                        <outlet property="tabBar" destination="11J-1M-dke" id="bgA-1T-C5Y"/>
                         <outlet property="venueLevel" destination="uMG-kM-Mib" id="UTP-QI-Nn4"/>
                         <outlet property="venueName" destination="UTl-3e-i9n" id="BPx-WM-WDt"/>
                         <segue destination="2oc-hO-3HN" kind="show" identifier="startSegue" id="dFo-Br-WbY"/>
@@ -790,7 +791,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Gok-ki-Tyu"/>
+        <segue reference="dFo-Br-WbY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
