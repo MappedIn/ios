@@ -161,7 +161,7 @@ class ViewController: UIViewController {
         viewDirections.setTitleColor( .white, for: .normal)
         viewDirections.addTarget(self, action: #selector(didTapViewDirections), for: .touchUpInside)
         viewDirections.backgroundColor = .darkGray
-        viewDirections.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        viewDirections.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .thin)
         
         view.addSubview(viewDirections)
         viewDirections.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -276,12 +276,12 @@ extension ViewController: NavigationDelegate {
             let outline: MiOutlineProperties
             switch navigationLocation {
             case .start:
-                highlight = MiColorProperties(color: UIColor.init(red: 0.0, green: 1.0, blue: 50.0/255.0, alpha: 1.0), opacity: 1.0)
-                outline = MiOutlineProperties(color: UIColor.init(red: 0.0, green: 140.0/255.0, blue: 20.0/255.0, alpha: 1.0), width: 5.0, opacity: 1.0)
+                highlight = MiColorProperties(color: UIColor.init(red: 0.02, green: 0.70, blue: 0.86, alpha: 1.00), opacity: 1.0)
+                outline = MiOutlineProperties(color: UIColor.init(red: 0.02, green: 0.70, blue: 0.86, alpha: 1.00), width: 5.0, opacity: 1.0)
                 break
             case .end:
-                highlight = MiColorProperties(color: UIColor.init(red: 1.0, green: 218.0/255.0, blue: 185.0/255.0, alpha: 1.0), opacity: 1.0)
-                outline = MiOutlineProperties(color: UIColor.init(red: 220.0/255.0, green: 20.0/255.0, blue: 60.0/255.0, alpha: 1.0), width: 5.0, opacity: 1.0)
+                highlight = MiColorProperties(color: UIColor.init(red: 0.69, green: 0.66, blue: 0.56, alpha: 1.00), opacity: 1.0)
+                outline = MiOutlineProperties(color: UIColor.init(red: 0.69, green: 0.66, blue: 0.56, alpha: 1.00), width: 5.0, opacity: 1.0)
             }
             selectSpace(space: space, highlightProperty: highlight, outlineProperty: outline)
         }
