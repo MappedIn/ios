@@ -94,8 +94,11 @@ class GetDirectionsViewController: UIViewController {
             let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude:  CLLocationDegrees(endLocationEntrance.lat), longitude: CLLocationDegrees(endLocationEntrance.lon))
             overlay = MiOverlay(coordinates: coordinates, level: (endLocation?.spaces.first?.level)!, image: image!)
         }
-        mainViewController.venueLevel.text = mapView.currentLevel?.name
-        mapView.focusOnCurrentLevel()
+        
+        if let endSpace: MiFocusable = endSpaces?.first, let startSpace: MiFocusable = startSpaces?.first, let path: MiFocusable = navigationPath?.path {
+            mapView.focusOn(focusables: [startSpace, endSpace, path], heading: 0, padding: 30, over: 1000.0)
+        }
+        
         
         var overlays = addConnectionOverlays(navigationPath: navigationPath)
         if let overlay = overlay {

@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         if let destination = segue.destination as? LevelSelectorViewController {
             destination.mapView = mapView
             destination.venue = venue
-            destination.venueLevel = venueLevel
+//            destination.venueLevel = venueLevel
         }
         
         // Set properties for segue to TextDirectionsViewCOntroller
@@ -134,7 +134,6 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "startSegue", sender: nil)
     }
     
-// TODO : Place this view in a separate xib file
     @IBAction func didTapPickerView(_ sender: Any) {
         performSegue(withIdentifier: "LocationSelectorSegue", sender: nil)
     }
@@ -151,7 +150,7 @@ class ViewController: UIViewController {
         storeDetailsView.isHidden = true
         cancelSearchLocation.isHidden = true
         viewDirections.isHidden = true
-        startButton.setAttributedTitle(NSAttributedString(string: "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
+        startButton.setAttributedTitle(NSAttributedString(string: "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]), for: .normal)
     }
     
     func createViewTextDirectionsButtion() {
@@ -251,7 +250,6 @@ extension ViewController: NavigationDelegate {
             viewDirections.isHidden = true
             storeDetailsView.isHidden = false
             cancelSearchLocation.isHidden = false
-            venueLevel.text = startSpace.level?.name
             
             startButton.setAttributedTitle(NSAttributedString(string: startLocation?.name ?? "Choose a location", attributes: [NSAttributedString.Key.foregroundColor: startLocation != nil ? UIColor.lightGray : UIColor.lightGray]), for: .normal)
             
@@ -265,8 +263,7 @@ extension ViewController: NavigationDelegate {
                 }
             }
             
-            mapView.focusOn(focusable: startSpace, heading: 0, over: 1000.0)
-        
+            mapView.focusOn(focusable: startSpace, heading: 0, padding: 30, over: 1000.0)
         }
     }
     
