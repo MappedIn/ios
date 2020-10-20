@@ -31,7 +31,8 @@ class TextDirectionsViewController: UITableViewController {
         
         let instruction = directions.instructions[indexPath.row]
         if ( indexPath.row > 0 ) {
-            cell.detailTextLabel?.text = "In about " + String(format: "%.1f", instruction.distance) + "m"
+        
+            cell.detailTextLabel?.text = "In about " + String(format: "%.1f", instruction.distance ?? 0.0) + "m"
             cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 12, weight: .thin)
         }
         
