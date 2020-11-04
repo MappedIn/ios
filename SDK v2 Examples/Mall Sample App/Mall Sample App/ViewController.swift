@@ -230,6 +230,8 @@ extension ViewController: MiMapViewDelegate {
     
     func onMapLoaded(status: MiMapStatus) {
         // Called when the `MiMapView` has finished loading both the view and the venue data
+        mapView.displayLocationLabels()
+        mapView.setLabelProperties(properties: MiLabelsStyle(iconColor: UIColor(red: 0.75, green: 0.26, blue: 0.13, alpha: 1.00)))
     }
 }
 

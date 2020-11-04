@@ -6,7 +6,7 @@ target 'Mall Sample App' do
   use_frameworks!
 
   # Pods for Mall Sample App
-  pod 'MappedIn', '2.1.0'
+  pod 'MappedIn', '2.1.1'
   pod 'Kingfisher', '4.10.1'
 
   target 'Mall Sample AppTests' do
