@@ -4,5 +4,5 @@ project "Walkthrough.xcodeproj"
 target "Walkthrough" do
 	workspace "iOS.xcworkspace"
 	project "Walkthrough.xcodeproj"
-	pod "MappedIn", "1.11.0"
+	pod "MappedIn", "1.13.0"
 end

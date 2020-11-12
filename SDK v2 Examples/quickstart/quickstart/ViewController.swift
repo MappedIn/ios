@@ -8,9 +8,9 @@
 
 import UIKit
 import Mappedin
+import CoreLocation
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, MiMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +36,29 @@ class ViewController: UIViewController {
                 mapView.loadMap(venue: venue)
             }
         }
+    }
+
+    func onTapNothing() {
+    }
+
+    func didTapSpace(space: MiSpace) -> Bool {
+        return true
+    }
+
+    func onTapCoordinates(point: CLLocationCoordinate2D) {
+    }
+
+    func didTapOverlay(overlay: MiOverlay) -> Bool {
+        return true
+    }
+
+    func onLevelChange(level: MiLevel) {
+    }
+
+    func onManipulateCamera(gesture: MiGestureType) {
+    }
+
+    func onMapLoaded(status: MiMapStatus) {
     }
 }
 
