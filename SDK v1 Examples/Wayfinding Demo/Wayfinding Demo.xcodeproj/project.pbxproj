@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02DC8A3A6D9E0C21DCC59FB8 /* libPods-Wayfinding Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB179388C9DC82FC7536396C /* libPods-Wayfinding Demo.a */; };
 		362606581FB524D3008445AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362606571FB524D3008445AA /* AppDelegate.swift */; };
 		3626065D1FB524D3008445AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3626065B1FB524D3008445AA /* Main.storyboard */; };
 		362606621FB524D3008445AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362606601FB524D3008445AA /* LaunchScreen.storyboard */; };
@@ -45,6 +44,7 @@
 		87EAEF72202BFB6A001332B7 /* DirectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EAEF71202BFB6A001332B7 /* DirectionStatusView.swift */; };
 		87EAEF76202C0AFD001332B7 /* StoreInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87EAEF75202C0AFD001332B7 /* StoreInfoView.xib */; };
 		87EAEF78202CE982001332B7 /* StoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EAEF77202CE982001332B7 /* StoreInfoView.swift */; };
+		C7BFC6F304A4F2DDE0FC5C85 /* libPods-Wayfinding Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 620D3451C490E93D5E95BC1A /* libPods-Wayfinding Demo.a */; };
 		FA196102207E61D400FB0F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA196101207E61D400FB0F2C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +71,7 @@
 		3BDA42FE22C1D35D0059FB9F /* VenueSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueSelectorView.xib; sourceTree = "<group>"; };
 		3BDA42FF22C1D35D0059FB9F /* VenueSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueSelectorView.swift; sourceTree = "<group>"; };
 		3BFE1D41229C3D4000A9FF38 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
-		40C283D6601F13A5AC6633E2 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		72AC78082643CC05845E8FF7 /* Pods-Wayfinding Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wayfinding Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo.release.xcconfig"; sourceTree = "<group>"; };
+		620D3451C490E93D5E95BC1A /* libPods-Wayfinding Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wayfinding Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		870A5553203F6263007F7DCA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		872499E720316E71007B45B8 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		872499E920316F8D007B45B8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -91,10 +90,8 @@
 		87EAEF71202BFB6A001332B7 /* DirectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionStatusView.swift; sourceTree = "<group>"; };
 		87EAEF75202C0AFD001332B7 /* StoreInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreInfoView.xib; sourceTree = "<group>"; };
 		87EAEF77202CE982001332B7 /* StoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoView.swift; sourceTree = "<group>"; };
-		8BAAD34CA8A79511A5BB6A04 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		A5B704B7DD2B8C82CFA0A451 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2D2958139946EAF7E1395C8 /* Pods-Wayfinding Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wayfinding Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		BB179388C9DC82FC7536396C /* libPods-Wayfinding Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wayfinding Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64986AA96B69F1407DCCEA7 /* Pods-Wayfinding Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wayfinding Demo.release.xcconfig"; path = "Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo.release.xcconfig"; sourceTree = "<group>"; };
+		F9ABE363BABAC7A542806AD6 /* Pods-Wayfinding Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wayfinding Demo.debug.xcconfig"; path = "Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		FA196101207E61D400FB0F2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Source/Supporting Files/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -103,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02DC8A3A6D9E0C21DCC59FB8 /* libPods-Wayfinding Demo.a in Frameworks */,
+				C7BFC6F304A4F2DDE0FC5C85 /* libPods-Wayfinding Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +113,8 @@
 				3BFE1D41229C3D4000A9FF38 /* Location.gpx */,
 				362606561FB524D3008445AA /* Source */,
 				362606551FB524D3008445AA /* Products */,
-				901B24EAE185DBEF83209703 /* Pods */,
-				E70EE8D075D1771A54DC5F94 /* Frameworks */,
+				E28DEBF35B50F4DEF600DC90 /* Pods */,
+				853B70F2CE1DC4B0DE95B9EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,24 +196,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		901B24EAE185DBEF83209703 /* Pods */ = {
+		853B70F2CE1DC4B0DE95B9EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				40C283D6601F13A5AC6633E2 /* Pods-Example.debug.xcconfig */,
-				8BAAD34CA8A79511A5BB6A04 /* Pods-Example.release.xcconfig */,
-				B2D2958139946EAF7E1395C8 /* Pods-Wayfinding Demo.debug.xcconfig */,
-				72AC78082643CC05845E8FF7 /* Pods-Wayfinding Demo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E70EE8D075D1771A54DC5F94 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A5B704B7DD2B8C82CFA0A451 /* libPods-Example.a */,
-				BB179388C9DC82FC7536396C /* libPods-Wayfinding Demo.a */,
+				620D3451C490E93D5E95BC1A /* libPods-Wayfinding Demo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E28DEBF35B50F4DEF600DC90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9ABE363BABAC7A542806AD6 /* Pods-Wayfinding Demo.debug.xcconfig */,
+				A64986AA96B69F1407DCCEA7 /* Pods-Wayfinding Demo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,11 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 362606661FB524D3008445AA /* Build configuration list for PBXNativeTarget "Wayfinding Demo" */;
 			buildPhases = (
-				445B3D995D9101BAAAC60E59 /* [CP] Check Pods Manifest.lock */,
+				6A074BF0B20F8F5276380BB9 /* [CP] Check Pods Manifest.lock */,
+				3D2F3D5EA06C4AE1EDC72E0E /* [CP] Prepare Artifacts */,
 				362606501FB524D3008445AA /* Sources */,
 				362606511FB524D3008445AA /* Frameworks */,
 				362606521FB524D3008445AA /* Resources */,
-				3C5F56776A5D75A8E53827D5 /* [CP] Embed Pods Frameworks */,
+				648C68E29BD74392BF796BDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,40 +300,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C5F56776A5D75A8E53827D5 /* [CP] Embed Pods Frameworks */ = {
+		3D2F3D5EA06C4AE1EDC72E0E /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo-artifacts.sh",
+				"${PODS_ROOT}/MappedIn/Mappedin.xcframework",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		648C68E29BD74392BF796BDE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo-frameworks.sh",
-				"${PODS_ROOT}/MappedIn/Mappedin.framework",
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mappedin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		445B3D995D9101BAAAC60E59 /* [CP] Check Pods Manifest.lock */ = {
+		6A074BF0B20F8F5276380BB9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Wayfinding Demo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -505,7 +523,7 @@
 		};
 		362606671FB524D3008445AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2D2958139946EAF7E1395C8 /* Pods-Wayfinding Demo.debug.xcconfig */;
+			baseConfigurationReference = F9ABE363BABAC7A542806AD6 /* Pods-Wayfinding Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,7 +540,7 @@
 		};
 		362606681FB524D3008445AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72AC78082643CC05845E8FF7 /* Pods-Wayfinding Demo.release.xcconfig */;
+			baseConfigurationReference = A64986AA96B69F1407DCCEA7 /* Pods-Wayfinding Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

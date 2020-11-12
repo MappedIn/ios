@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4330E6B50B6E3641A32A7E12 /* libPods-Walkthrough.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2FC2202B772BBB93D2B6F7 /* libPods-Walkthrough.a */; };
+		1D18277EA4C7E3E1B0808A10 /* libPods-Walkthrough.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 777916A7EFDBDE7DE654EEBC /* libPods-Walkthrough.a */; };
 		87AFAE831FAD03BF00990BCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87AFAE811FAD03BF00990BCE /* Main.storyboard */; };
 		87AFAE851FAD03BF00990BCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87AFAE841FAD03BF00990BCE /* Assets.xcassets */; };
 		87AFAE881FAD03BF00990BCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87AFAE861FAD03BF00990BCE /* LaunchScreen.storyboard */; };
@@ -15,15 +15,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		777916A7EFDBDE7DE654EEBC /* libPods-Walkthrough.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Walkthrough.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F48CF642D033F898D603DA2 /* Pods-Walkthrough.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walkthrough.debug.xcconfig"; path = "Target Support Files/Pods-Walkthrough/Pods-Walkthrough.debug.xcconfig"; sourceTree = "<group>"; };
 		87AFAE7A1FAD03BF00990BCE /* Walkthrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkthrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AFAE821FAD03BF00990BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87AFAE841FAD03BF00990BCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87AFAE871FAD03BF00990BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87AFAE891FAD03BF00990BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87AFAE8F1FAD03FA00990BCE /* Walkthrough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = SOURCE_ROOT; };
-		9D99B40DF08AB98FABA96E23 /* Pods-Walkthrough.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walkthrough.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walkthrough/Pods-Walkthrough.release.xcconfig"; sourceTree = "<group>"; };
-		D14D982158424AE1A0D76967 /* Pods-Walkthrough.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walkthrough.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walkthrough/Pods-Walkthrough.debug.xcconfig"; sourceTree = "<group>"; };
-		DE2FC2202B772BBB93D2B6F7 /* libPods-Walkthrough.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Walkthrough.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5CD3229EBDEA72B3714EBD6 /* Pods-Walkthrough.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walkthrough.release.xcconfig"; path = "Target Support Files/Pods-Walkthrough/Pods-Walkthrough.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +31,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4330E6B50B6E3641A32A7E12 /* libPods-Walkthrough.a in Frameworks */,
+				1D18277EA4C7E3E1B0808A10 /* libPods-Walkthrough.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F05F8CDE614E2C6563B0A8D /* Frameworks */ = {
+		4E67A5FA2BB6CC7C4CA4CB84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE2FC2202B772BBB93D2B6F7 /* libPods-Walkthrough.a */,
+				777916A7EFDBDE7DE654EEBC /* libPods-Walkthrough.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -51,8 +51,8 @@
 			children = (
 				87AFAE7C1FAD03BF00990BCE /* Walkthrough */,
 				87AFAE7B1FAD03BF00990BCE /* Products */,
-				DA8B962DA25449A56FFD3112 /* Pods */,
-				0F05F8CDE614E2C6563B0A8D /* Frameworks */,
+				AC885B07CDB5E8BAF438657F /* Pods */,
+				4E67A5FA2BB6CC7C4CA4CB84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,13 +76,14 @@
 			path = Walkthrough;
 			sourceTree = "<group>";
 		};
-		DA8B962DA25449A56FFD3112 /* Pods */ = {
+		AC885B07CDB5E8BAF438657F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D14D982158424AE1A0D76967 /* Pods-Walkthrough.debug.xcconfig */,
-				9D99B40DF08AB98FABA96E23 /* Pods-Walkthrough.release.xcconfig */,
+				7F48CF642D033F898D603DA2 /* Pods-Walkthrough.debug.xcconfig */,
+				F5CD3229EBDEA72B3714EBD6 /* Pods-Walkthrough.release.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,11 +93,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87AFAE8C1FAD03BF00990BCE /* Build configuration list for PBXNativeTarget "Walkthrough" */;
 			buildPhases = (
-				A9855498AD452D964CC604D6 /* [CP] Check Pods Manifest.lock */,
+				D870528D104D8DB1CFFC96D2 /* [CP] Check Pods Manifest.lock */,
+				76471617876FDD5C00D28A26 /* [CP] Prepare Artifacts */,
 				87AFAE761FAD03BF00990BCE /* Sources */,
 				87AFAE771FAD03BF00990BCE /* Frameworks */,
 				87AFAE781FAD03BF00990BCE /* Resources */,
-				866721E9315BDD144C252667 /* [CP] Embed Pods Frameworks */,
+				7DAD5244C7BDD613C60D9884 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,34 +158,55 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		866721E9315BDD144C252667 /* [CP] Embed Pods Frameworks */ = {
+		76471617876FDD5C00D28A26 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Walkthrough/Pods-Walkthrough-artifacts.sh",
+				"${PODS_ROOT}/MappedIn/Mappedin.xcframework",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Walkthrough/Pods-Walkthrough-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DAD5244C7BDD613C60D9884 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Walkthrough/Pods-Walkthrough-frameworks.sh",
-				"${PODS_ROOT}/MappedIn/Mappedin.framework",
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mappedin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Walkthrough/Pods-Walkthrough-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A9855498AD452D964CC604D6 /* [CP] Check Pods Manifest.lock */ = {
+		D870528D104D8DB1CFFC96D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Walkthrough-checkManifestLockResult.txt",
 			);
@@ -340,7 +363,7 @@
 		};
 		87AFAE8D1FAD03BF00990BCE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D14D982158424AE1A0D76967 /* Pods-Walkthrough.debug.xcconfig */;
+			baseConfigurationReference = 7F48CF642D033F898D603DA2 /* Pods-Walkthrough.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -359,7 +382,7 @@
 		};
 		87AFAE8E1FAD03BF00990BCE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D99B40DF08AB98FABA96E23 /* Pods-Walkthrough.release.xcconfig */;
+			baseConfigurationReference = F5CD3229EBDEA72B3714EBD6 /* Pods-Walkthrough.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -4,5 +4,5 @@ use_frameworks!
 target 'quickstart' do
     project "quickstart"
     workspace 'quickstart'
-        pod 'MappedIn', '2.0.0'
+        pod 'MappedIn', '2.1.1'
 end
