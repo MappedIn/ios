@@ -14,8 +14,8 @@
 		ECC936202576D17C00035E1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC9361E2576D17C00035E1A /* Main.storyboard */; };
 		ECC936222576D17E00035E1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC936212576D17E00035E1A /* Assets.xcassets */; };
 		ECC936252576D17E00035E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC936232576D17E00035E1A /* LaunchScreen.storyboard */; };
-		F7DE92F525C47D9B00A5CA44 /* mappedin-sdk-v3.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DE92F325C47D9400A5CA44 /* mappedin-sdk-v3.xcframework */; };
-		F7DE92F625C47D9B00A5CA44 /* mappedin-sdk-v3.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7DE92F325C47D9400A5CA44 /* mappedin-sdk-v3.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7DE92FB25C480E300A5CA44 /* mappedin-sdk-v3.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DE92F925C480D900A5CA44 /* mappedin-sdk-v3.xcframework */; };
+		F7DE92FC25C480E300A5CA44 /* mappedin-sdk-v3.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7DE92F925C480D900A5CA44 /* mappedin-sdk-v3.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F7DE92F625C47D9B00A5CA44 /* mappedin-sdk-v3.xcframework in Embed Frameworks */,
+				F7DE92FC25C480E300A5CA44 /* mappedin-sdk-v3.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +42,7 @@
 		ECC936212576D17E00035E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC936242576D17E00035E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECC936262576D17E00035E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7DE92F325C47D9400A5CA44 /* mappedin-sdk-v3.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "mappedin-sdk-v3.xcframework"; path = "../../../ios-sdk-v3/mappedin-sdk-v3.xcframework"; sourceTree = "<group>"; };
+		F7DE92F925C480D900A5CA44 /* mappedin-sdk-v3.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "mappedin-sdk-v3.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7DE92F525C47D9B00A5CA44 /* mappedin-sdk-v3.xcframework in Frameworks */,
+				F7DE92FB25C480E300A5CA44 /* mappedin-sdk-v3.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,6 @@
 				ECC936172576D17C00035E1A /* ios-sdk-app */,
 				ECC936162576D17C00035E1A /* Products */,
 				ECC9362E2576D19B00035E1A /* Frameworks */,
-				F7DE92F325C47D9400A5CA44 /* mappedin-sdk-v3.xcframework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +92,7 @@
 		ECC9362E2576D19B00035E1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7DE92F925C480D900A5CA44 /* mappedin-sdk-v3.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

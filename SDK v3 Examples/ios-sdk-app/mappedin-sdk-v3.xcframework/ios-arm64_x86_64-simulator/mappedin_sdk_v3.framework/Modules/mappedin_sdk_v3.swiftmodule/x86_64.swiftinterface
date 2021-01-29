@@ -1,0 +1,347 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-module-flags: -target x86_64-apple-ios14.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name mappedin_sdk_v3
+import Foundation
+import Swift
+import UIKit
+import WebKit
+@_exported import mappedin_sdk_v3
+public struct MPIData : Swift.Codable {
+  public let maps: [mappedin_sdk_v3.MPIMap]
+  public let locations: [mappedin_sdk_v3.MPILocation]
+  public var polygons: [mappedin_sdk_v3.MPIPolygon] {
+    get
+  }
+  public let nodes: [mappedin_sdk_v3.MPINode]
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPISiblingGroup : Swift.Codable {
+  public let label: Swift.String
+  public let siblings: [Swift.String]
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIBlueDot : Swift.Codable {
+  public let position: mappedin_sdk_v3.MPIPosition
+  public let map: mappedin_sdk_v3.MPIMap
+  public let nearestNode: mappedin_sdk_v3.MPINode
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol MPINavigatable : Swift.Decodable, Swift.Encodable {
+  var id: Swift.String { get }
+  func getType() -> Swift.String
+}
+public struct MPIPhone : Swift.Codable {
+  public let number: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIGalleryImage : Swift.Codable {
+  public let image: mappedin_sdk_v3.MPIImage
+  public let caption: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIMap : Swift.Codable {
+  public let id: Swift.String
+  public let name: Swift.String
+  public let shortName: Swift.String
+  public let elevation: Swift.Double?
+  public let scale: Swift.Double?
+  public let x_scale: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIPolygon : mappedin_sdk_v3.MPINavigatable {
+  public let id: Swift.String
+  public let map: Swift.String?
+  public let layer: Swift.String?
+  public let layerId: Swift.String?
+  public let entrances: [mappedin_sdk_v3.MPINode]?
+  public var locations: [mappedin_sdk_v3.MPILocation]? {
+    get
+  }
+  public func getType() -> Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPINode : mappedin_sdk_v3.MPINavigatable {
+  public var id: Swift.String {
+    get
+  }
+  public let x: Swift.Double?
+  public let y: Swift.Double?
+  public let map: Swift.String?
+  public let externalId: Swift.String?
+  public func getType() -> Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class MPIDirections : Swift.Codable {
+  final public let distance: Swift.Double
+  final public let directions: [mappedin_sdk_v3.MPIInstruction]
+  public var path: [mappedin_sdk_v3.MPINode] {
+    get
+  }
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIInstruction : Swift.Codable {
+  public let action: mappedin_sdk_v3.MPIAction
+  public let instruction: Swift.String?
+  public let node: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIAction : Swift.Codable {
+  public let type: mappedin_sdk_v3.MPIActionType?
+  public let bearingType: mappedin_sdk_v3.MPIBearingType?
+  public let referencePosition: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum MPIActionType : Swift.String, Swift.Codable {
+  case Departure
+  case TakeVortex
+  case Turn
+  case Arrival
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MPIBearingType : Swift.String, Swift.Codable {
+  case Straight
+  case Right
+  case SlightRight
+  case Left
+  case SlightLeft
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct MPIState : Swift.Codable {
+  public let type: Swift.String
+  public let start: Swift.String?
+  public let end: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol MPIMapViewDelegate : AnyObject {
+  func onDataLoaded(data: mappedin_sdk_v3.MPIData)
+  func onFirstMapLoaded()
+  func onMapChanged(map: mappedin_sdk_v3.MPIMap)
+  func onPolygonClicked(polygon: mappedin_sdk_v3.MPIPolygon)
+  func onNothingClicked()
+  func onBlueDotUpdated(blueDot: mappedin_sdk_v3.MPIBlueDot)
+}
+@objc open class MPIMapView : WebKit.WKWebView, WebKit.WKNavigationDelegate {
+  public var venueData: mappedin_sdk_v3.MPIData?
+  public var currentMap: mappedin_sdk_v3.MPIMap?
+  public var delegate: mappedin_sdk_v3.MPIMapViewDelegate?
+  @objc dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  open func loadVenue(options: mappedin_sdk_v3.MPIOptions.Init)
+  open func setMap(map: mappedin_sdk_v3.MPIMap, completionCallback: ((Swift.String?) -> Swift.Void)? = nil)
+  open func setMap(mapId: Swift.String, completionCallback: ((Swift.String?) -> Swift.Void)? = nil)
+  open func setPolygonColor(polygon: mappedin_sdk_v3.MPIPolygon, color: Swift.String, textColor: Swift.String? = nil, opacity: Swift.Double = 1.0)
+  open func setPolygonColor(polygonId: Swift.String, color: Swift.String, textColor: Swift.String? = nil, opacity: Swift.Double = 1.0)
+  open func clearAllPolygonColors(completionCallback: ((Swift.String?) -> Swift.Void)? = nil)
+  open func enableBlueDot(options: mappedin_sdk_v3.MPIOptions.BlueDot? = nil)
+  open func disableBlueDot()
+  open func updatePosition(position: mappedin_sdk_v3.MPIPosition)
+  open func getDirections(to: mappedin_sdk_v3.MPINavigatable, from: mappedin_sdk_v3.MPINavigatable, accessible: Swift.Bool = true, directionsCallback: @escaping (mappedin_sdk_v3.MPIDirections) -> Swift.Void)
+  open func drawPath(path: [mappedin_sdk_v3.MPINode], pathOptions: mappedin_sdk_v3.MPIOptions.Path? = nil)
+  open func removeAllPaths(completionCallback: ((Swift.String?) -> Swift.Void)? = nil)
+  public func focusOn(focusOptions: mappedin_sdk_v3.MPIOptions.Focus)
+  public func addInteractivePolygon(polygon: mappedin_sdk_v3.MPIPolygon)
+  public func addInteractivePolygon(polygonId: Swift.String)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect, configuration: WebKit.WKWebViewConfiguration)
+}
+public struct MPISocial : Swift.Codable {
+  public let website: Swift.String?
+  public let twitter: Swift.String?
+  public let facebook: Swift.String?
+  public let instagram: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIOpeningHours : Swift.Codable {
+  public let type: Swift.String
+  public let opens: Swift.String
+  public let closes: Swift.String
+  public let dayOfWeek: [Swift.String]
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPILocation : mappedin_sdk_v3.MPINavigatable {
+  public let id: Swift.String
+  public let name: Swift.String
+  public let type: Swift.String
+  public let nodes: [mappedin_sdk_v3.MPINode]
+  public let polygons: [mappedin_sdk_v3.MPIPolygon]
+  public let categories: [Swift.String]
+  public let description: Swift.String?
+  public let sortOrder: Swift.Double?
+  public let logo: mappedin_sdk_v3.MPIImage?
+  public let phone: mappedin_sdk_v3.MPIPhone?
+  public let social: mappedin_sdk_v3.MPISocial?
+  public let color: mappedin_sdk_v3.MPIColor?
+  public let shortName: Swift.String?
+  public let detailsUrl: Swift.String?
+  public let parent: Swift.String?
+  public let tags: [Swift.String]?
+  public let externalId: Swift.String?
+  public let picture: mappedin_sdk_v3.MPIPicture?
+  public let states: [mappedin_sdk_v3.MPIState]?
+  public let operationalHours: [mappedin_sdk_v3.MPIOpeningHours]?
+  public let siblingGroups: [mappedin_sdk_v3.MPISiblingGroup]?
+  public let gallery: [mappedin_sdk_v3.MPIGalleryImage]?
+  public func getType() -> Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIColor : Swift.Codable {
+  public let hex: Swift.String
+  public let opacity: Swift.Double
+  public let rgba: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIPosition : Swift.Codable {
+  public let timestamp: Swift.Double?
+  public let coords: mappedin_sdk_v3.MPICoordinates?
+  public let type: Swift.String
+  public let annotation: Swift.String?
+  public var description: Swift.String {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPICoordinates : Swift.Codable {
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public let accuracy: Swift.Double
+  public let floorLevel: Swift.Int?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension MPIMapView {
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didCommit navigation: WebKit.WKNavigation!)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+}
+public struct MPIOptions : Swift.Codable {
+  public struct Init : Swift.Codable {
+    public var clientId: Swift.String?
+    public var clientSecret: Swift.String?
+    public var venue: Swift.String
+    public var perspective: Swift.String?
+    public var backgroundColor: Swift.Int?
+    public var backgroundAlpha: Swift.Int?
+    public var baseUrl: Swift.String?
+    public var noAuth: Swift.Bool
+    public init(clientId: Swift.String? = nil, clientSecret: Swift.String? = nil, venue: Swift.String, perspective: Swift.String = "Website", backgroundColor: Swift.Int? = nil, backgroundAlpha: Swift.Int? = nil, baseUrl: Swift.String? = nil, noAuth: Swift.Bool = false)
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct BlueDot : Swift.Codable {
+    public var allowImplicitFloorLevel: Swift.Bool
+    public init(allowImplicitFloorLevel: Swift.Bool = true)
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct Focus : Swift.Codable {
+    public var nodes: [mappedin_sdk_v3.MPINode]?
+    public var polygons: [mappedin_sdk_v3.MPIPolygon]?
+    public var duration: Swift.Double?
+    public var changeZoom: Swift.Bool?
+    public var minZoom: Swift.Double?
+    public var tilt: Swift.Double?
+    public var padding: mappedin_sdk_v3.MPIOptions.FocusPadding?
+    public var focusZoomFactor: Swift.Double?
+    public init(nodes: [mappedin_sdk_v3.MPINode]? = nil, polygons: [mappedin_sdk_v3.MPIPolygon]? = nil, duration: Swift.Double? = nil, changeZoom: Swift.Bool? = nil, minZoom: Swift.Double? = nil, tilt: Swift.Double? = nil, padding: mappedin_sdk_v3.MPIOptions.FocusPadding? = nil, focusZoomFactor: Swift.Double? = nil)
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct FocusPadding : Swift.Codable {
+    public var top: Swift.Double
+    public var bottom: Swift.Double
+    public var left: Swift.Double
+    public var right: Swift.Double
+    public init(top: Swift.Double, bottom: Swift.Double, left: Swift.Double, right: Swift.Double)
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct Path : Swift.Codable {
+    public var color: Swift.String?
+    public var pulseColor: Swift.String?
+    public var nearRadius: Swift.Double?
+    public var farRadius: Swift.Double?
+    public var drawDuration: Swift.Double?
+    public var drawConnectionSegments: Swift.Bool?
+    public var pulseIterations: Swift.Double?
+    public var connectionPathOptions: mappedin_sdk_v3.MPIOptions.ConnectionPath?
+    public init(color: Swift.String? = nil, pulseColor: Swift.String? = nil, nearRadius: Swift.Double? = nil, farRadius: Swift.Double? = nil, drawDuration: Swift.Double? = nil, drawConnectionSegments: Swift.Bool? = nil, pulseIterations: Swift.Double? = nil, connectionPathOptions: mappedin_sdk_v3.MPIOptions.ConnectionPath? = nil)
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct ConnectionPath : Swift.Codable {
+    public var drawDuration: Swift.Double
+    public var nearRadius: Swift.Double?
+    public var farRadius: Swift.Double?
+    public var color: Swift.String?
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct Label : Swift.Codable {
+    public var text: Swift.String?
+    public var shortText: Swift.String?
+    public var textSize: Swift.Double?
+    public var maxTextDivWidth: Swift.Double?
+    public var minTextDivWidth: Swift.Double?
+    public var textLines: Swift.Double?
+    public var color: Swift.String?
+    public var activeColor: Swift.String?
+    public var inactiveColor: Swift.String?
+    public var markerSize: Swift.Double?
+    public init(text: Swift.String? = nil, shortText: Swift.String? = nil, textSize: Swift.Double? = nil, maxTextDivWidth: Swift.Double? = nil, minTextDivWidth: Swift.Double? = nil, textLines: Swift.Double? = nil, color: Swift.String? = nil, activeColor: Swift.String? = nil, inactiveColor: Swift.String? = nil, markerSize: Swift.Double? = nil)
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIPicture : Swift.Codable {
+  public let original: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MPIImage : Swift.Codable {
+  public let original: Swift.String?
+  public let large: Swift.String?
+  public let dimension140x140: Swift.String?
+  public let dimension66x66: Swift.String?
+  public let xxlarge: Swift.String?
+  public let xsmall: Swift.String?
+  public let xlarge: Swift.String?
+  public let medium: Swift.String?
+  public let xxsmall: Swift.String?
+  public let small: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension mappedin_sdk_v3.MPIActionType : Swift.Equatable {}
+extension mappedin_sdk_v3.MPIActionType : Swift.Hashable {}
+extension mappedin_sdk_v3.MPIActionType : Swift.RawRepresentable {}
+extension mappedin_sdk_v3.MPIBearingType : Swift.Equatable {}
+extension mappedin_sdk_v3.MPIBearingType : Swift.Hashable {}
+extension mappedin_sdk_v3.MPIBearingType : Swift.RawRepresentable {}
