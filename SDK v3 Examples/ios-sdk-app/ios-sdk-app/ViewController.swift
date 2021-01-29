@@ -30,10 +30,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let screenWidth = screenRect.size.width
         let screenHeight = screenRect.size.height
         
+        //Set up MPIMapView and add to view
         mapView = MPIMapView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+        //Set up MPIMapView delegate to listen to MPIMapView events
         mapView?.delegate = self
         if let mapView = mapView {
             self.view.insertSubview(mapView, belowSubview: mapListView)
+            //Provide credentials, if using proxy use MPIOptions.Init(venue: "", baseUrl: "", noAuth: false)
             mapView.loadVenue(options: MPIOptions.Init(clientId: "5eab30aa91b055001a68e996", clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1", venue: "mappedin-demo-mall"))
             
         }
@@ -56,7 +59,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func onDirectionsButtonClick(_ sender: UIButton) {
         if let _nearestNode = nearestNode,
            let _selectedPolygon = selectedPolygon {
+            //Get directions to selected polygon from users nearest node
             mapView?.getDirections(to: _selectedPolygon, from: _nearestNode, accessible: true) { directions in
+                
+                //Remove all paths before drawing a path
                 self.mapView?.removeAllPaths() { error in
                     self.mapView?.drawPath(path: directions.path)
                 }
@@ -65,7 +71,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     func onMapLoaded () -> Void {
-        
+        //Enable blue dot (need to call updatePosition with correct coordinates to display on map)
         mapView?.enableBlueDot()
         if let filepath = Bundle.main.path(forResource: "positions", ofType: "json") {
             let contents = try? String(contentsOfFile: filepath)
@@ -73,7 +79,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             if let positionData = positionData {
                 if let positions = try? JSONDecoder().decode([MPIPosition].self, from: positionData) {
                     for (index, position) in positions.enumerated() {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + (0.4*Double(index)) ) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + (3*Double(index)) ) {
                             self.mapView?.updatePosition(position: position)
                         }
                     }
@@ -138,7 +144,11 @@ extension ViewController: MPIMapViewDelegate {
     func onPolygonClicked(polygon: MPIPolygon) {
         if let location = polygon.locations?.first {
             selectedPolygon = polygon
+            
+            //Focus on polygon when clicked
             mapView?.focusOn(focusOptions: MPIOptions.Focus(polygons: [polygon]))
+            
+            //Clear all polygon colors before setting polygon color to blue
             mapView?.clearAllPolygonColors() { error in
                 self.mapView?.setPolygonColor(polygon: polygon, color: "blue")
             }
@@ -164,6 +174,7 @@ extension ViewController: MPIMapViewDelegate {
     }
     
     func onBlueDotUpdated(blueDot: MPIBlueDot) {
+        //Store a reference of the nearest node to use later when getting directions
         nearestNode = blueDot.nearestNode
         updateBlueDotBanner(blueDot: blueDot)
     }
