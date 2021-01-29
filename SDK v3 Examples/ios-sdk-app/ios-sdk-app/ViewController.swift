@@ -36,7 +36,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         mapView?.delegate = self
         if let mapView = mapView {
             self.view.insertSubview(mapView, belowSubview: mapListView)
-            //Provide credentials, if using proxy use MPIOptions.Init(venue: "", baseUrl: "", noAuth: false)
+            //Provide credentials, if using proxy use MPIOptions.Init(venue: "venue_slug", baseUrl: "proxy_url", noAuth: true)
             mapView.loadVenue(options: MPIOptions.Init(clientId: "5eab30aa91b055001a68e996", clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1", venue: "mappedin-demo-mall"))
             
         }
