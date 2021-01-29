@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25ACE2EF25C45CD4002D4A2C /* mappedin_sdk_v3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25ACE2E125C4599F002D4A2C /* mappedin_sdk_v3.framework */; };
-		25ACE2F025C45CD4002D4A2C /* mappedin_sdk_v3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 25ACE2E125C4599F002D4A2C /* mappedin_sdk_v3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EC23C2AF2577F2EC0067C3F3 /* positions.json in Resources */ = {isa = PBXBuildFile; fileRef = EC23C2AE2577F2EC0067C3F3 /* positions.json */; };
 		ECC936192576D17C00035E1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC936182576D17C00035E1A /* AppDelegate.swift */; };
 		ECC9361B2576D17C00035E1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC9361A2576D17C00035E1A /* SceneDelegate.swift */; };
@@ -16,6 +14,8 @@
 		ECC936202576D17C00035E1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC9361E2576D17C00035E1A /* Main.storyboard */; };
 		ECC936222576D17E00035E1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC936212576D17E00035E1A /* Assets.xcassets */; };
 		ECC936252576D17E00035E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC936232576D17E00035E1A /* LaunchScreen.storyboard */; };
+		F7DE92F525C47D9B00A5CA44 /* mappedin-sdk-v3.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DE92F325C47D9400A5CA44 /* mappedin-sdk-v3.xcframework */; };
+		F7DE92F625C47D9B00A5CA44 /* mappedin-sdk-v3.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7DE92F325C47D9400A5CA44 /* mappedin-sdk-v3.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				25ACE2F025C45CD4002D4A2C /* mappedin_sdk_v3.framework in Embed Frameworks */,
+				F7DE92F625C47D9B00A5CA44 /* mappedin-sdk-v3.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,7 +33,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		25ACE2E125C4599F002D4A2C /* mappedin_sdk_v3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mappedin_sdk_v3.framework; sourceTree = "<group>"; };
 		EC23C2AE2577F2EC0067C3F3 /* positions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = positions.json; sourceTree = "<group>"; };
 		ECC936152576D17C00035E1A /* ios-sdk-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC936182576D17C00035E1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		ECC936212576D17E00035E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC936242576D17E00035E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECC936262576D17E00035E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7DE92F325C47D9400A5CA44 /* mappedin-sdk-v3.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "mappedin-sdk-v3.xcframework"; path = "../../../ios-sdk-v3/mappedin-sdk-v3.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25ACE2EF25C45CD4002D4A2C /* mappedin_sdk_v3.framework in Frameworks */,
+				F7DE92F525C47D9B00A5CA44 /* mappedin-sdk-v3.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +63,7 @@
 				ECC936172576D17C00035E1A /* ios-sdk-app */,
 				ECC936162576D17C00035E1A /* Products */,
 				ECC9362E2576D19B00035E1A /* Frameworks */,
+				F7DE92F325C47D9400A5CA44 /* mappedin-sdk-v3.xcframework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,7 +93,6 @@
 		ECC9362E2576D19B00035E1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				25ACE2E125C4599F002D4A2C /* mappedin_sdk_v3.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
