@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import mappedin_sdk_v3
+import Mappedin
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate  {
 
