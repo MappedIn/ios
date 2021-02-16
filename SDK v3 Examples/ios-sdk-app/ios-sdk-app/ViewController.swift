@@ -61,7 +61,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
            let _selectedPolygon = selectedPolygon {
             //Get directions to selected polygon from users nearest node
             mapView?.getDirections(to: _selectedPolygon, from: _nearestNode, accessible: true) { directions in
-                
+                self.mapView?.drawJourney(directions: direc)
                 //Remove all paths before drawing a path
                 self.mapView?.removeAllPaths() { error in
                     self.mapView?.drawPath(path: directions.path)

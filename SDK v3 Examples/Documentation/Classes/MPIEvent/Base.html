@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Base Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+    <script src="../../js/lunr.min.js" defer></script>
+    <script src="../../js/typeahead.jquery.js" defer></script>
+    <script src="../../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/Base" class="dashAnchor"></a>
+    <a title="Base Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html"> Docs</a> (14% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html"> Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        Base Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Classes/MPIDirections.html">MPIDirections</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/MPIEvent.html">MPIEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/MPIEvent/Group.html">– Group</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/MPIEvent/Base.html">– Base</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/MPIEvent/Bridge.html">– Bridge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/MPIEvent/WAYFINDING.html">– WAYFINDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/MPIMapView.html">MPIMapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/MPIPayload.html">MPIPayload</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/MPIActionType.html">MPIActionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/MPIBearingType.html">MPIBearingType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Protocols/MPIMapViewDelegate.html">MPIMapViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/MPINavigatable.html">MPINavigatable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIAction.html">MPIAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIBlueDot.html">MPIBlueDot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIColor.html">MPIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPICoordinates.html">MPICoordinates</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIData.html">MPIData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIGalleryImage.html">MPIGalleryImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIHeader.html">MPIHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIImage.html">MPIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIInstruction.html">MPIInstruction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPILocation.html">MPILocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIMap.html">MPIMap</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPINode.html">MPINode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOpeningHours.html">MPIOpeningHours</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions.html">MPIOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/Init.html">– Init</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/ShowVenue.html">– ShowVenue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/BlueDot.html">– BlueDot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/Focus.html">– Focus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/FocusPadding.html">– FocusPadding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/Path.html">– Path</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/ConnectionPath.html">– ConnectionPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/Label.html">– Label</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIOptions/Journey.html">– Journey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIPathNode.html">MPIPathNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIPhone.html">MPIPhone</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIPicture.html">MPIPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIPolygon.html">MPIPolygon</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIPosition.html">MPIPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPISiblingGroup.html">MPISiblingGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPISocial.html">MPISocial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIState.html">MPIState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MPIVortex.html">MPIVortex</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Base</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Base</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                </div>
+              </div>
+            <p>This enum holds the values of various events that can be sent to the event bus</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO5READYyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/READY" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO5READYyA2EmF">READY</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">READY</span> <span class="o">=</span> <span class="s">"READY"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO4INITyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/INIT" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO4INITyA2EmF">INIT</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">INIT</span> <span class="o">=</span> <span class="s">"INIT"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO15POLYGON_CLICKEDyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/POLYGON_CLICKED" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO15POLYGON_CLICKEDyA2EmF">POLYGON_CLICKED</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">POLYGON_CLICKED</span> <span class="o">=</span> <span class="s">"POLYGON_CLICKED"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO7SET_MAPyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/SET_MAP" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO7SET_MAPyA2EmF">SET_MAP</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SET_MAP</span> <span class="o">=</span> <span class="s">"SET_MAP"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO11MAP_CHANGEDyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/MAP_CHANGED" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO11MAP_CHANGEDyA2EmF">MAP_CHANGED</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MAP_CHANGED</span> <span class="o">=</span> <span class="s">"MAP_CHANGED"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO18UPDATE_GEOLOCATIONyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/UPDATE_GEOLOCATION" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO18UPDATE_GEOLOCATIONyA2EmF">UPDATE_GEOLOCATION</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">UPDATE_GEOLOCATION</span> <span class="o">=</span> <span class="s">"UPDATE_GEOLOCATION"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO8FOCUS_ONyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/FOCUS_ON" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO8FOCUS_ONyA2EmF">FOCUS_ON</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">FOCUS_ON</span> <span class="o">=</span> <span class="s">"FOCUS_ON"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO17SET_POLYGON_COLORyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/SET_POLYGON_COLOR" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO17SET_POLYGON_COLORyA2EmF">SET_POLYGON_COLOR</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SET_POLYGON_COLOR</span> <span class="o">=</span> <span class="s">"SET_POLYGON_COLOR"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO20SET_BACKGROUND_COLORyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/SET_BACKGROUND_COLOR" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO20SET_BACKGROUND_COLORyA2EmF">SET_BACKGROUND_COLOR</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SET_BACKGROUND_COLOR</span> <span class="o">=</span> <span class="s">"SET_BACKGROUND_COLOR"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO15GET_CURRENT_MAPyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/GET_CURRENT_MAP" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO15GET_CURRENT_MAPyA2EmF">GET_CURRENT_MAP</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">GET_CURRENT_MAP</span> <span class="o">=</span> <span class="s">"GET_CURRENT_MAP"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO19CLEAR_POLYGON_COLORyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/CLEAR_POLYGON_COLOR" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO19CLEAR_POLYGON_COLORyA2EmF">CLEAR_POLYGON_COLOR</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">CLEAR_POLYGON_COLOR</span> <span class="o">=</span> <span class="s">"CLEAR_POYGON_COLOR"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO24CLEAR_ALL_POLYGON_COLORSyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/CLEAR_ALL_POLYGON_COLORS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO24CLEAR_ALL_POLYGON_COLORSyA2EmF">CLEAR_ALL_POLYGON_COLORS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">CLEAR_ALL_POLYGON_COLORS</span> <span class="o">=</span> <span class="s">"CLEAR_ALL_POLYGON_COLORS"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO23ADD_INTERACTIVE_POLYGONyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/ADD_INTERACTIVE_POLYGON" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO23ADD_INTERACTIVE_POLYGONyA2EmF">ADD_INTERACTIVE_POLYGON</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">ADD_INTERACTIVE_POLYGON</span> <span class="o">=</span> <span class="s">"ADD_INTERACTIVE_POLYGON"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO26REMOVE_INTERACTIVE_POLYGONyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/REMOVE_INTERACTIVE_POLYGON" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO26REMOVE_INTERACTIVE_POLYGONyA2EmF">REMOVE_INTERACTIVE_POLYGON</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">REMOVE_INTERACTIVE_POLYGON</span> <span class="o">=</span> <span class="s">"REMOVE_INTERACTIVE_POLYGON"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO13SET_SAFE_AREAyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/SET_SAFE_AREA" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO13SET_SAFE_AREAyA2EmF">SET_SAFE_AREA</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SET_SAFE_AREA</span> <span class="o">=</span> <span class="s">"SET_SAFE_AREA"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO19LABEL_ALL_LOCATIONSyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/LABEL_ALL_LOCATIONS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO19LABEL_ALL_LOCATIONSyA2EmF">LABEL_ALL_LOCATIONS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LABEL_ALL_LOCATIONS</span> <span class="o">=</span> <span class="s">"LABEL_ALL_LOCATIONS"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO13LABEL_POLYGONyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/LABEL_POLYGON" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO13LABEL_POLYGONyA2EmF">LABEL_POLYGON</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LABEL_POLYGON</span> <span class="o">=</span> <span class="s">"LABEL_POLYGON"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO15ENABLE_BLUE_DOTyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/ENABLE_BLUE_DOT" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO15ENABLE_BLUE_DOTyA2EmF">ENABLE_BLUE_DOT</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">ENABLE_BLUE_DOT</span> <span class="o">=</span> <span class="s">"ENABLE_BLUE_DOT"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO16DISABLE_BLUE_DOTyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/DISABLE_BLUE_DOT" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO16DISABLE_BLUE_DOTyA2EmF">DISABLE_BLUE_DOT</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DISABLE_BLUE_DOT</span> <span class="o">=</span> <span class="s">"DISABLE_BLUE_DOT"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO16GET_NEAREST_NODEyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/GET_NEAREST_NODE" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO16GET_NEAREST_NODEyA2EmF">GET_NEAREST_NODE</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">GET_NEAREST_NODE</span> <span class="o">=</span> <span class="s">"GET_NEAREST_NODE"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO25GET_BLUE_DOT_IS_FOLLOWINGyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/GET_BLUE_DOT_IS_FOLLOWING" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO25GET_BLUE_DOT_IS_FOLLOWINGyA2EmF">GET_BLUE_DOT_IS_FOLLOWING</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">GET_BLUE_DOT_IS_FOLLOWING</span> <span class="o">=</span> <span class="s">"GET_BLUE_DOT_IS_FOLLOWING"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO25SET_BLUE_DOT_IS_FOLLOWINGyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/SET_BLUE_DOT_IS_FOLLOWING" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO25SET_BLUE_DOT_IS_FOLLOWINGyA2EmF">SET_BLUE_DOT_IS_FOLLOWING</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SET_BLUE_DOT_IS_FOLLOWING</span> <span class="o">=</span> <span class="s">"SET_BLUE_DOT_IS_FOLLOWING"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO14GET_DIRECTIONSyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/GET_DIRECTIONS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO14GET_DIRECTIONSyA2EmF">GET_DIRECTIONS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">GET_DIRECTIONS</span> <span class="o">=</span> <span class="s">"GET_DIRECTIONS"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO7DESTROYyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/DESTROY" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO7DESTROYyA2EmF">DESTROY</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DESTROY</span> <span class="o">=</span> <span class="s">"DESTROY"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO9GET_VENUEyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/GET_VENUE" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO9GET_VENUEyA2EmF">GET_VENUE</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">GET_VENUE</span> <span class="o">=</span> <span class="s">"GET_VENUE"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO11DATA_LOADEDyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/DATA_LOADED" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO11DATA_LOADEDyA2EmF">DATA_LOADED</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DATA_LOADED</span> <span class="o">=</span> <span class="s">"DATA_LOADED"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO16FIRST_MAP_LOADEDyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/FIRST_MAP_LOADED" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO16FIRST_MAP_LOADEDyA2EmF">FIRST_MAP_LOADED</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">FIRST_MAP_LOADED</span> <span class="o">=</span> <span class="s">"FIRST_MAP_LOADED"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO13CREATE_MARKERyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/CREATE_MARKER" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO13CREATE_MARKERyA2EmF">CREATE_MARKER</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">CREATE_MARKER</span> <span class="o">=</span> <span class="s">"CREATE_MARKER"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO11MARKER_MOVEyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/MARKER_MOVE" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO11MARKER_MOVEyA2EmF">MARKER_MOVE</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MARKER_MOVE</span> <span class="o">=</span> <span class="s">"MARKER_MOVE"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO17OVERRIDE_LOCATIONyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/OVERRIDE_LOCATION" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO17OVERRIDE_LOCATIONyA2EmF">OVERRIDE_LOCATION</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">OVERRIDE_LOCATION</span> <span class="o">=</span> <span class="s">"OVERRIDE_LOCATION"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO16BLUE_DOT_UPDATEDyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/BLUE_DOT_UPDATED" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO16BLUE_DOT_UPDATEDyA2EmF">BLUE_DOT_UPDATED</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">BLUE_DOT_UPDATED</span> <span class="o">=</span> <span class="s">"BLUE_DOT_UPDATED"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO15NOTHING_CLICKEDyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/NOTHING_CLICKED" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO15NOTHING_CLICKEDyA2EmF">NOTHING_CLICKED</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">NOTHING_CLICKED</span> <span class="o">=</span> <span class="s">"NOTHING_CLICKED"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO9DRAW_PATHyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/DRAW_PATH" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO9DRAW_PATHyA2EmF">DRAW_PATH</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DRAW_PATH</span> <span class="o">=</span> <span class="s">"DRAW_PATH"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO12DRAW_JOURNEYyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/DRAW_JOURNEY" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO12DRAW_JOURNEYyA2EmF">DRAW_JOURNEY</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DRAW_JOURNEY</span> <span class="o">=</span> <span class="s">"DRAW_JOURNEY"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO16REMOVE_ALL_PATHSyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/REMOVE_ALL_PATHS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO16REMOVE_ALL_PATHSyA2EmF">REMOVE_ALL_PATHS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">REMOVE_ALL_PATHS</span> <span class="o">=</span> <span class="s">"REMOVE_ALL_PATHS"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO13CLEAR_JOURNEYyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/CLEAR_JOURNEY" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO13CLEAR_JOURNEYyA2EmF">CLEAR_JOURNEY</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">CLEAR_JOURNEY</span> <span class="o">=</span> <span class="s">"CLEAR_JOURNEY"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIEventC4BaseO17REMOVE_ALL_LABELSyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/REMOVE_ALL_LABELS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIEventC4BaseO17REMOVE_ALL_LABELSyA2EmF">REMOVE_ALL_LABELS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">REMOVE_ALL_LABELS</span> <span class="o">=</span> <span class="s">"REMOVE_ALL_LABELS"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-02-16)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
