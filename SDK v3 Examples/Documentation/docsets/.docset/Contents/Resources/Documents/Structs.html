@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Structures  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Structures" class="dashAnchor"></a>
+    <a title="Structures  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (14% documented)</p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Structures  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/MPIDirections.html">MPIDirections</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MPIEvent.html">MPIEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MPIEvent/Group.html">– Group</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MPIEvent/Base.html">– Base</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MPIEvent/Bridge.html">– Bridge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MPIEvent/WAYFINDING.html">– WAYFINDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MPIMapView.html">MPIMapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MPIPayload.html">MPIPayload</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/MPIActionType.html">MPIActionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/MPIBearingType.html">MPIBearingType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/MPIMapViewDelegate.html">MPIMapViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/MPINavigatable.html">MPINavigatable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/MPIAction.html">MPIAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIBlueDot.html">MPIBlueDot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIColor.html">MPIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPICoordinates.html">MPICoordinates</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIData.html">MPIData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIGalleryImage.html">MPIGalleryImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIHeader.html">MPIHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIImage.html">MPIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIInstruction.html">MPIInstruction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPILocation.html">MPILocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIMap.html">MPIMap</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPINode.html">MPINode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOpeningHours.html">MPIOpeningHours</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions.html">MPIOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/Init.html">– Init</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/ShowVenue.html">– ShowVenue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/BlueDot.html">– BlueDot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/Focus.html">– Focus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/FocusPadding.html">– FocusPadding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/Path.html">– Path</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/ConnectionPath.html">– ConnectionPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/Label.html">– Label</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIOptions/Journey.html">– Journey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIPathNode.html">MPIPathNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIPhone.html">MPIPhone</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIPicture.html">MPIPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIPolygon.html">MPIPolygon</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIPosition.html">MPIPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPISiblingGroup.html">MPISiblingGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPISocial.html">MPISocial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIState.html">MPIState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MPIVortex.html">MPIVortex</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Structures</h1>
+            <p>The following structures are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin11MPIPositionV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIPosition" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11MPIPositionV">MPIPosition</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the geolocation of an object at a specific point in time</p>
+
+                        <a href="Structs/MPIPosition.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIPosition</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin14MPICoordinatesV"></a>
+                    <a name="//apple_ref/swift/Struct/MPICoordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin14MPICoordinatesV">MPICoordinates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents specfic coordinates/location of an object</p>
+
+                        <a href="Structs/MPICoordinates.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPICoordinates</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin10MPIBlueDotV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIBlueDot" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10MPIBlueDotV">MPIBlueDot</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPIBlueDot.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIBlueDot</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIColorV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIColorV">MPIColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the geographical area covered by a <code><a href="Structs/MPILocation.html">MPILocation</a></code> in a venue</p>
+
+                        <a href="Structs/MPIColor.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIColor</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin7MPIDataV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin7MPIDataV">MPIData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPIData.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIData</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin14MPIInstructionV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIInstruction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin14MPIInstructionV">MPIInstruction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents a singular step or instruction of a <code>MPIDirection</code></p>
+
+                        <a href="Structs/MPIInstruction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIInstruction</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9MPIActionV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIAction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9MPIActionV">MPIAction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the type of action to be taken in a specific <code><a href="Structs/MPIInstruction.html">MPIInstruction</a></code></p>
+
+                        <a href="Structs/MPIAction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIAction</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin15MPIGalleryImageV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIGalleryImage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin15MPIGalleryImageV">MPIGalleryImage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the geographical area covered by a <code><a href="Structs/MPILocation.html">MPILocation</a></code> in a venue</p>
+
+                        <a href="Structs/MPIGalleryImage.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIGalleryImage</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9MPIHeaderV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIHeader" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9MPIHeaderV">MPIHeader</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the geographical area covered by a <code><a href="Structs/MPILocation.html">MPILocation</a></code> in a venue</p>
+
+                        <a href="Structs/MPIHeader.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIHeader</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIImageV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIImage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIImageV">MPIImage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPIImage.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIImage</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin11MPILocationV"></a>
+                    <a name="//apple_ref/swift/Struct/MPILocation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11MPILocationV">MPILocation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents a specific area of interest such as a store location</p>
+
+                        <a href="Structs/MPILocation.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPILocation</span> <span class="p">:</span> <span class="kt"><a href="Protocols/MPINavigatable.html">MPINavigatable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin6MPIMapV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIMap" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin6MPIMapV">MPIMap</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents one of the maps associated with an <code>MPIVenue</code>. This is normally associated with a floor level at the given venue</p>
+
+                        <a href="Structs/MPIMap.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIMap</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin7MPINodeV"></a>
+                    <a name="//apple_ref/swift/Struct/MPINode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin7MPINodeV">MPINode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPINode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPINode</span> <span class="p">:</span> <span class="kt"><a href="Protocols/MPINavigatable.html">MPINavigatable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin11MPIPathNodeV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIPathNode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin11MPIPathNodeV">MPIPathNode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPIPathNode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIPathNode</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin15MPIOpeningHoursV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIOpeningHours" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin15MPIOpeningHoursV">MPIOpeningHours</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPIOpeningHours.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIOpeningHours</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIPhoneV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIPhone" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIPhoneV">MPIPhone</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPIPhone.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIPhone</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin10MPIPictureV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIPicture" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10MPIPictureV">MPIPicture</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the images that depict a specific <code><a href="Structs/MPILocation.html">MPILocation</a></code></p>
+
+                        <a href="Structs/MPIPicture.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIPicture</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin10MPIPolygonV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIPolygon" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10MPIPolygonV">MPIPolygon</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the geographical area covered by a <code><a href="Structs/MPILocation.html">MPILocation</a></code> in a venue</p>
+
+                        <a href="Structs/MPIPolygon.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIPolygon</span> <span class="p">:</span> <span class="kt"><a href="Protocols/MPINavigatable.html">MPINavigatable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin15MPISiblingGroupV"></a>
+                    <a name="//apple_ref/swift/Struct/MPISiblingGroup" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin15MPISiblingGroupV">MPISiblingGroup</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the geographical area covered by a <code><a href="Structs/MPILocation.html">MPILocation</a></code> in a venue</p>
+
+                        <a href="Structs/MPISiblingGroup.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPISiblingGroup</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9MPISocialV"></a>
+                    <a name="//apple_ref/swift/Struct/MPISocial" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9MPISocialV">MPISocial</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct represents the geographical area covered by a <code><a href="Structs/MPILocation.html">MPILocation</a></code> in a venue</p>
+
+                        <a href="Structs/MPISocial.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPISocial</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin8MPIStateV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin8MPIStateV">MPIState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPIState.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIState</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin9MPIVortexV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIVortex" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin9MPIVortexV">MPIVortex</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/MPIVortex.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIVortex</span> <span class="p">:</span> <span class="kt"><a href="Protocols/MPINavigatable.html">MPINavigatable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Mappedin10MPIOptionsV"></a>
+                    <a name="//apple_ref/swift/Struct/MPIOptions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Mappedin10MPIOptionsV">MPIOptions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This struct holds the options to be set when initializing a map</p>
+
+                        <a href="Structs/MPIOptions.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MPIOptions</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-02-16)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
