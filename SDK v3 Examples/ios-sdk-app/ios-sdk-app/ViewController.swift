@@ -37,8 +37,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if let mapView = mapView {
             self.view.insertSubview(mapView, belowSubview: mapListView)
             //Provide credentials, if using proxy use MPIOptions.Init(venue: "venue_slug", baseUrl: "proxy_url", noAuth: true)
-            mapView.loadVenue(options: MPIOptions.Init(clientId: "5eab30aa91b055001a68e996", clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1", venue: "mappedin-demo-mall"))
-            
+            //mapView.loadVenue(options: MPIOptions.Init(clientId: "5eab30aa91b055001a68e996", clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1", venue: "mappedin-demo-mall"))
+            mapView.loadVenue(options: MPIOptions.Init(clientId: "597f83ed17c5ba4b59000000", clientSecret: "7fde2284cf0b19030865977666233276", venue: "mappedin-demo-mall", headers: [MPIHeader(name: "customheader", value: "test")]), showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD"))
         }
         
         storeName.font = UIFont.boldSystemFont(ofSize: 15)
@@ -64,7 +64,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 //Remove all paths before drawing a path
                 self.mapView?.removeAllPaths() { error in
-                    self.mapView?.drawPath(path: directions.path)
+                    self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(connectionTemplateString: #"<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>"#, pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
                 }
             }
         }
@@ -93,6 +93,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.locationDetailView.isHidden = true
         selectedPolygon = nil
         mapView?.clearAllPolygonColors()
+        mapView?.clearJourney()
+        mapView?.removeAllPaths()
     }
     
     
