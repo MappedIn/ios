@@ -76,6 +76,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func getDirectionToCenterCoordinates(_ sender: Any) {
         mapView?.getNearestNodeByScreenCoordinates(x: Int(mapView!.bounds.width/2), y: Int(mapView!.bounds.height/2)) { nearestNode in
+            if let _nearestNode = nearestNode,
+               let _selectedPolygon = self.selectedPolygon {
+                //Get directions to selected polygon from users nearest node
+                self.mapView?.getDirections(to: _selectedPolygon, from: _nearestNode, accessible: true) { directions in
+                    self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(connectionTemplateString: #"<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>"#, pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
+                }
+            }
         }
     }
     
