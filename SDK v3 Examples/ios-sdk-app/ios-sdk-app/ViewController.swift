@@ -210,7 +210,6 @@ extension ViewController: MPIMapViewDelegate {
     }
     
     func onStateChanged (state: MPIState) {
-        print(state)
         if (state.rawValue == "EXPLORE") {
             followStateButton.isHidden = false
         } else if (state.rawValue == "FOLLOW") {
