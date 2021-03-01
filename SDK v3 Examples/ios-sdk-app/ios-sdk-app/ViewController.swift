@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var mapView: MPIMapView?
     @IBOutlet weak var locationImageView: UIImageView!
     
+    @IBOutlet weak var followStateButton: UIButton!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var storeDetail: UITextView!
     @IBOutlet weak var mapListView: UITextField!
@@ -50,6 +51,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         createPickerView()
         dismissPickerView()
         locationDetailView.isHidden = true
+        followStateButton.layer.cornerRadius = 5
+        followStateButton.clipsToBounds = true
     }
     
     @IBAction func closeDetailView(_ sender: UIButton) {
@@ -66,9 +69,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
 
+    
+    @IBAction func followStateButtonClick(_ sender: Any) {
+        mapView?.blueDotManager.setState(state: MPIState.FOLLOW)
+    }
+    
+    @IBAction func getDirectionToCenterCoordinates(_ sender: Any) {
+        mapView?.getNearestNodeByScreenCoordinates(x: Int(mapView!.bounds.width/2), y: Int(mapView!.bounds.height/2)) { nearestNode in
+            if let _nearestNode = nearestNode,
+               let _selectedPolygon = self.selectedPolygon {
+                //Get directions to selected polygon from users nearest node
+                self.mapView?.getDirections(to: _selectedPolygon, from: _nearestNode, accessible: true) { directions in
+                    self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
+                }
+            }
+        }
+    }
+    
     func onMapLoaded () -> Void {
         //Enable blue dot (need to call updatePosition with correct coordinates to display on map)
-        mapView?.enableBlueDot()
+        mapView?.enableBlueDot(options: MPIOptions.BlueDot(allowImplicitFloorLevel: true, smoothing: false, showBearing: true))
         if let filepath = Bundle.main.path(forResource: "positions", ofType: "json") {
             let contents = try? String(contentsOfFile: filepath)
             let positionData = contents?.data(using: .utf8)!
@@ -143,7 +163,8 @@ extension ViewController: MPIMapViewDelegate {
             selectedPolygon = polygon
             
             //Focus on polygon when clicked
-            mapView?.focusOn(focusOptions: MPIOptions.Focus(polygons: [polygon]))
+//            mapView?.focusOn(focusOptions: MPIOptions.Focus(polygons: [polygon]))
+            mapView?.focusOn(focusOptions: MPIOptions.Focus(nodes: location.nodes))
             
             //Clear all polygon colors before setting polygon color to blue
             mapView?.clearAllPolygonColors() { error in
@@ -187,5 +208,12 @@ extension ViewController: MPIMapViewDelegate {
     func updateBlueDotBanner(blueDot: MPIBlueDot? = nil) {
         blueDotBanner.text = "BlueDot Nearest Node: " + (blueDot?.nearestNode.id ?? "N/A")
     }
+    
+    func onStateChanged (state: MPIState) {
+        if (state.rawValue == "EXPLORE") {
+            followStateButton.isHidden = false
+        } else if (state.rawValue == "FOLLOW") {
+            followStateButton.isHidden = true
+        }
+    }
 }
-
