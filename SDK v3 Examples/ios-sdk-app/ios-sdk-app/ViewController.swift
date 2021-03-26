@@ -9,7 +9,7 @@ import UIKit
 import Mappedin
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate  {
-
+    
     @IBOutlet weak var locationDetailView: UIView!
     var mapView: MPIMapView?
     @IBOutlet weak var locationImageView: UIImageView!
@@ -23,10 +23,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var selectedPolygon: MPIPolygon? = nil
     var nearestNode: MPINode? = nil
+    public var venueDataString: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let screenRect = UIScreen.main.bounds
         let screenWidth = screenRect.size.width
         let screenHeight = screenRect.size.height
@@ -35,12 +36,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         mapView = MPIMapView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         //Set up MPIMapView delegate to listen to MPIMapView events
         mapView?.delegate = self
+        
+        //use showVenue to load map from legacy data
         if let mapView = mapView {
             self.view.insertSubview(mapView, belowSubview: mapListView)
-            //Provide credentials, if using proxy use MPIOptions.Init(venue: "venue_slug", baseUrl: "proxy_url", noAuth: true)
-            //mapView.loadVenue(options: MPIOptions.Init(clientId: "5eab30aa91b055001a68e996", clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1", venue: "mappedin-demo-mall"))
-            mapView.loadVenue(options: MPIOptions.Init(clientId: "597f83ed17c5ba4b59000000", clientSecret: "7fde2284cf0b19030865977666233276", venue: "mappedin-demo-mall", headers: [MPIHeader(name: "customheader", value: "test")]), showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD"))
+            if let path = Bundle.main.path(forResource: "mappedin-demo-mall", ofType: "json") {
+                venueDataString = try? String(contentsOfFile: path)
+            }
+            if let venueDataString = venueDataString {
+                mapView.showVenue(venueResponse: venueDataString, showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD"))
+            }
         }
+        
+//use loadVenue to load map
+//        if let mapView = mapView {
+//            self.view.insertSubview(mapView, belowSubview: mapListView)
+//            //Provide credentials, if using proxy use MPIOptions.Init(venue: "venue_slug", baseUrl: "proxy_url", noAuth: true)
+//            //mapView.loadVenue(options: MPIOptions.Init(clientId: "5eab30aa91b055001a68e996", clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1", venue: "mappedin-demo-mall"))
+//            mapView.loadVenue(options: MPIOptions.Init(clientId: "597f83ed17c5ba4b59000000", clientSecret: "7fde2284cf0b19030865977666233276", venue: "mappedin-demo-mall", headers: [MPIHeader(name: "customheader", value: "test")]), showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD"))
+//        }
         
         storeName.font = UIFont.boldSystemFont(ofSize: 15)
         storeName.numberOfLines = 0
@@ -64,11 +78,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
            let _selectedPolygon = selectedPolygon {
             //Get directions to selected polygon from users nearest node
             mapView?.getDirections(to: _selectedPolygon, from: _nearestNode, accessible: true) { directions in
-                self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(connectionTemplateString: #"<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>"#, pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
+                self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>", pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
             }
         }
     }
-
     
     @IBAction func followStateButtonClick(_ sender: Any) {
         mapView?.blueDotManager.setState(state: MPIState.FOLLOW)
@@ -99,7 +112,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                             self.mapView?.updatePosition(position: position)
                         }
                     }
-               
+                    
                 }
             }
         }
@@ -133,6 +146,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let pickerView = UIPickerView()
         pickerView.delegate = self
         mapListView.inputView = pickerView
+        mapListView.tintColor = UIColor.clear
     }
     
     func dismissPickerView() {
@@ -153,7 +167,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
 
 extension ViewController: MPIMapViewDelegate {
-
+    
     func onMapChanged(map: MPIMap) {
         mapListView.text = map.name
     }
@@ -163,7 +177,7 @@ extension ViewController: MPIMapViewDelegate {
             selectedPolygon = polygon
             
             //Focus on polygon when clicked
-//            mapView?.focusOn(focusOptions: MPIOptions.Focus(polygons: [polygon]))
+            //            mapView?.focusOn(focusOptions: MPIOptions.Focus(polygons: [polygon]))
             mapView?.focusOn(focusOptions: MPIOptions.Focus(nodes: location.nodes))
             
             //Clear all polygon colors before setting polygon color to blue
