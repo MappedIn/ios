@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		259B3DDB260E51530006DB7F /* mappedin-demo-mall.json in Resources */ = {isa = PBXBuildFile; fileRef = 259B3DDA260E51520006DB7F /* mappedin-demo-mall.json */; };
 		A44D821725B04C4A173DA3B2 /* Pods_ios_sdk_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF64FCFD468B2A45D7B557F /* Pods_ios_sdk_app.framework */; };
 		EC23C2AF2577F2EC0067C3F3 /* positions.json in Resources */ = {isa = PBXBuildFile; fileRef = EC23C2AE2577F2EC0067C3F3 /* positions.json */; };
 		ECC936192576D17C00035E1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC936182576D17C00035E1A /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		259B3DDA260E51520006DB7F /* mappedin-demo-mall.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "mappedin-demo-mall.json"; path = "../../../mappedin-demo-mall.json"; sourceTree = "<group>"; };
 		6E3D1505A24FB09026D39C6D /* Pods-ios-sdk-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk-app.release.xcconfig"; path = "Target Support Files/Pods-ios-sdk-app/Pods-ios-sdk-app.release.xcconfig"; sourceTree = "<group>"; };
 		AFD1E42C1EAE263D4C6AE8A6 /* Pods-ios-sdk-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk-app.debug.xcconfig"; path = "Target Support Files/Pods-ios-sdk-app/Pods-ios-sdk-app.debug.xcconfig"; sourceTree = "<group>"; };
 		EC23C2AE2577F2EC0067C3F3 /* positions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = positions.json; sourceTree = "<group>"; };
@@ -63,13 +65,13 @@
 				AFD1E42C1EAE263D4C6AE8A6 /* Pods-ios-sdk-app.debug.xcconfig */,
 				6E3D1505A24FB09026D39C6D /* Pods-ios-sdk-app.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		ECC9360C2576D17C00035E1A = {
 			isa = PBXGroup;
 			children = (
+				259B3DDA260E51520006DB7F /* mappedin-demo-mall.json */,
 				ECC936172576D17C00035E1A /* ios-sdk-app */,
 				ECC936162576D17C00035E1A /* Products */,
 				ECC9362E2576D19B00035E1A /* Frameworks */,
@@ -170,6 +172,7 @@
 			files = (
 				ECC936252576D17E00035E1A /* LaunchScreen.storyboard in Resources */,
 				ECC936222576D17E00035E1A /* Assets.xcassets in Resources */,
+				259B3DDB260E51530006DB7F /* mappedin-demo-mall.json in Resources */,
 				EC23C2AF2577F2EC0067C3F3 /* positions.json in Resources */,
 				ECC936202576D17C00035E1A /* Main.storyboard in Resources */,
 			);
