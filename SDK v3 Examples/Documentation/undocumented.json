@@ -2,35 +2,49 @@
   "warnings": [
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/MPIMapView.swift",
-      "line": 25,
+      "line": 26,
       "symbol": "MPIMapView.venueData",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/MPIMapView.swift",
-      "line": 26,
+      "line": 27,
       "symbol": "MPIMapView.currentMap",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/MPIMapView.swift",
-      "line": 27,
+      "line": 28,
       "symbol": "MPIMapView.delegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/MPIMapView.swift",
-      "line": 30,
+      "line": 29,
+      "symbol": "MPIMapView.tempVenueData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/MPIMapView.swift",
+      "line": 31,
+      "symbol": "MPIMapView.blueDotManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/MPIMapView.swift",
+      "line": 35,
       "symbol": "MPIMapView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/MPIMapView.swift",
-      "line": 45,
+      "line": 53,
       "symbol": "MPIMapView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -148,6 +162,20 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIBlueDotManager.swift",
+      "line": 10,
+      "symbol": "MPIBlueDotManager",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIBlueDotManager.swift",
+      "line": 14,
+      "symbol": "MPIBlueDotManager.init(mapView:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIColor.swift",
       "line": 14,
       "symbol": "MPIColor.hex",
@@ -170,37 +198,65 @@
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
-      "line": 12,
+      "line": 13,
       "symbol": "MPIData",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
-      "line": 13,
+      "line": 14,
       "symbol": "MPIData.maps",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
-      "line": 14,
+      "line": 15,
       "symbol": "MPIData.locations",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
-      "line": 15,
+      "line": 16,
       "symbol": "MPIData.polygons",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
-      "line": 16,
+      "line": 17,
       "symbol": "MPIData.nodes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
+      "line": 18,
+      "symbol": "MPIData.vortexes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
+      "line": 19,
+      "symbol": "MPIData.mapGroups",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
+      "line": 45,
+      "symbol": "MPIData.fromVenueResponse(response:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIData.swift",
+      "line": 53,
+      "symbol": "MPIData.fromVenueResponse(response:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
@@ -214,6 +270,13 @@
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
       "line": 10,
       "symbol": "MPIDirections.distance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
+      "line": 11,
+      "symbol": "MPIDirections.path",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -247,126 +310,133 @@
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 25,
+      "line": 24,
+      "symbol": "MPIInstruction.distance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
+      "line": 26,
       "symbol": "MPIInstruction.atVortex",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 35,
+      "line": 37,
       "symbol": "MPIAction.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 36,
+      "line": 38,
       "symbol": "MPIAction.bearing",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 37,
+      "line": 39,
       "symbol": "MPIAction.referencePosition",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 38,
+      "line": 40,
       "symbol": "MPIAction.fromMap",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 39,
+      "line": 41,
       "symbol": "MPIAction.toMap",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 42,
+      "line": 44,
       "symbol": "MPIActionType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 43,
+      "line": 45,
       "symbol": "MPIActionType.Departure",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 44,
+      "line": 46,
       "symbol": "MPIActionType.TakeVortex",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 45,
+      "line": 47,
       "symbol": "MPIActionType.ExitVortex",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 46,
+      "line": 48,
       "symbol": "MPIActionType.Turn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 47,
+      "line": 49,
       "symbol": "MPIActionType.Arrival",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 50,
+      "line": 52,
       "symbol": "MPIBearingType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 51,
+      "line": 53,
       "symbol": "MPIBearingType.Straight",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 52,
+      "line": 54,
       "symbol": "MPIBearingType.Right",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 53,
+      "line": 55,
       "symbol": "MPIBearingType.SlightRight",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 54,
+      "line": 56,
       "symbol": "MPIBearingType.Left",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIDirections.swift",
-      "line": 55,
+      "line": 57,
       "symbol": "MPIBearingType.SlightLeft",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
@@ -507,182 +577,308 @@
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
       "line": 17,
-      "symbol": "MPILocation.nodes",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 18,
-      "symbol": "MPILocation.polygons",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 19,
       "symbol": "MPILocation.categories",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 20,
+      "line": 18,
       "symbol": "MPILocation.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 21,
+      "line": 19,
       "symbol": "MPILocation.sortOrder",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 22,
+      "line": 20,
       "symbol": "MPILocation.logo",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 23,
+      "line": 21,
       "symbol": "MPILocation.phone",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 24,
+      "line": 22,
       "symbol": "MPILocation.social",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 25,
+      "line": 23,
       "symbol": "MPILocation.color",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 26,
+      "line": 24,
       "symbol": "MPILocation.shortName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 27,
+      "line": 25,
       "symbol": "MPILocation.detailsUrl",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 28,
+      "line": 26,
       "symbol": "MPILocation.parent",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 29,
+      "line": 27,
       "symbol": "MPILocation.tags",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 30,
+      "line": 28,
       "symbol": "MPILocation.externalId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 31,
+      "line": 29,
       "symbol": "MPILocation.picture",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 32,
+      "line": 30,
       "symbol": "MPILocation.states",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 33,
+      "line": 31,
       "symbol": "MPILocation.operationalHours",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 34,
+      "line": 32,
       "symbol": "MPILocation.siblingGroups",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
-      "line": 35,
+      "line": 33,
       "symbol": "MPILocation.gallery",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
+      "line": 36,
+      "symbol": "MPILocation.nodes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
       "line": 37,
-      "symbol": "MPILocation.getType()",
+      "symbol": "MPILocation.polygons",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
+      "line": 42,
+      "symbol": "MPILocation.MPITinyNode",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocation.swift",
+      "line": 47,
+      "symbol": "MPILocation.getNavigatableType()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocationState.swift",
+      "line": 10,
+      "symbol": "MPILocationState",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocationState.swift",
+      "line": 12,
+      "symbol": "MPILocationState.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocationState.swift",
       "line": 13,
-      "symbol": "MPIMap.id",
+      "symbol": "MPILocationState.start",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPILocationState.swift",
+      "line": 14,
+      "symbol": "MPILocationState.end",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
       "line": 14,
-      "symbol": "MPIMap.name",
+      "symbol": "MPIMap.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
       "line": 15,
-      "symbol": "MPIMap.shortName",
+      "symbol": "MPIMap.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
       "line": 16,
-      "symbol": "MPIMap.elevation",
+      "symbol": "MPIMap.shortName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
       "line": 17,
-      "symbol": "MPIMap.scale",
+      "symbol": "MPIMap.elevation",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
       "line": 18,
+      "symbol": "MPIMap.scale",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 19,
       "symbol": "MPIMap.x_scale",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 20,
+      "symbol": "MPIMap._group",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 21,
+      "symbol": "MPIMap.group",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 46,
+      "symbol": "MPIMap.MPICoordinate",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 47,
+      "symbol": "MPIMap.MPICoordinate.x",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 48,
+      "symbol": "MPIMap.MPICoordinate.y",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 49,
+      "symbol": "MPIMap.MPICoordinate.latitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 50,
+      "symbol": "MPIMap.MPICoordinate.longitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 51,
+      "symbol": "MPIMap.MPICoordinate.map",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMap.swift",
+      "line": 72,
+      "symbol": "MPIMap.createCoordinate(latitude:longitude:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMapGroup.swift",
+      "line": 10,
+      "symbol": "MPIMapGroup",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMapGroup.swift",
+      "line": 11,
+      "symbol": "MPIMapGroup.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMapGroup.swift",
+      "line": 12,
+      "symbol": "MPIMapGroup.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIMapGroup.swift",
+      "line": 13,
+      "symbol": "MPIMapGroup.maps",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -703,7 +899,7 @@
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPINavigatable.swift",
       "line": 11,
-      "symbol": "MPINavigatable.getType()",
+      "symbol": "MPINavigatable.getNavigatableType()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -711,7 +907,7 @@
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPINode.swift",
       "line": 11,
       "symbol": "MPINode",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
@@ -766,7 +962,7 @@
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPINode.swift",
       "line": 23,
-      "symbol": "MPINode.getType()",
+      "symbol": "MPINode.getNavigatableType()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -878,21 +1074,35 @@
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIPolygon.swift",
       "line": 18,
-      "symbol": "MPIPolygon.entrances",
+      "symbol": "MPIPolygon.externalId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIPolygon.swift",
       "line": 19,
-      "symbol": "MPIPolygon.locations",
+      "symbol": "MPIPolygon.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIPolygon.swift",
+      "line": 20,
+      "symbol": "MPIPolygon.entrances",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIPolygon.swift",
       "line": 21,
-      "symbol": "MPIPolygon.getType()",
+      "symbol": "MPIPolygon.locations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIPolygon.swift",
+      "line": 26,
+      "symbol": "MPIPolygon.getNavigatableType()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -942,27 +1152,34 @@
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIState.swift",
       "line": 11,
       "symbol": "MPIState",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIState.swift",
+      "line": 12,
+      "symbol": "MPIState.FOLLOW",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIState.swift",
       "line": 13,
-      "symbol": "MPIState.type",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "symbol": "MPIState.EXPLORE",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIState.swift",
-      "line": 14,
-      "symbol": "MPIState.start",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVenueResponse.swift",
+      "line": 8,
+      "symbol": "MPIVenueResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIState.swift",
-      "line": 15,
-      "symbol": "MPIState.end",
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVenueResponse.swift",
+      "line": 9,
+      "symbol": "MPIVenueResponse.data",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -970,7 +1187,7 @@
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
       "line": 8,
       "symbol": "MPIVortex",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
@@ -997,8 +1214,71 @@
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
       "line": 14,
-      "symbol": "MPIVortex.getType()",
+      "symbol": "MPIVortex.getNavigatableType()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 19,
+      "symbol": "MPIVortexType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 21,
+      "symbol": "MPIVortexType.Stairs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 22,
+      "symbol": "MPIVortexType.Elevator",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 23,
+      "symbol": "MPIVortexType.Escalator",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 24,
+      "symbol": "MPIVortexType.Door",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 25,
+      "symbol": "MPIVortexType.Slide",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 26,
+      "symbol": "MPIVortexType.Portal",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 27,
+      "symbol": "MPIVortexType.Ramp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Models/MPIVortex.swift",
+      "line": 28,
+      "symbol": "MPIVortexType.Other",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
@@ -1228,146 +1508,188 @@
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
       "line": 61,
-      "symbol": "MPIEvent.Base.CREATE_MARKER",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 62,
       "symbol": "MPIEvent.Base.MARKER_MOVE",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 63,
+      "line": 62,
       "symbol": "MPIEvent.Base.OVERRIDE_LOCATION",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 64,
+      "line": 63,
       "symbol": "MPIEvent.Base.BLUE_DOT_UPDATED",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 65,
+      "line": 64,
       "symbol": "MPIEvent.Base.NOTHING_CLICKED",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 66,
+      "line": 65,
       "symbol": "MPIEvent.Base.DRAW_PATH",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 67,
+      "line": 66,
       "symbol": "MPIEvent.Base.DRAW_JOURNEY",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 68,
+      "line": 67,
       "symbol": "MPIEvent.Base.REMOVE_ALL_PATHS",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 69,
+      "line": 68,
       "symbol": "MPIEvent.Base.CLEAR_JOURNEY",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 70,
+      "line": 69,
       "symbol": "MPIEvent.Base.REMOVE_ALL_LABELS",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 70,
+      "symbol": "MPIEvent.Base.SET_STATE",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 71,
+      "symbol": "MPIEvent.Base.STATE_CHANGED",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 72,
+      "symbol": "MPIEvent.Base.GET_NEAREST_NODE_BY_SCREEN_COORDINATES",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
       "line": 73,
-      "symbol": "MPIEvent.Bridge",
-      "symbol_kind": "source.lang.swift.decl.enum",
+      "symbol": "MPIEvent.Base.SHOW_VENUE",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
       "line": 74,
-      "symbol": "MPIEvent.Bridge.READY",
+      "symbol": "MPIEvent.Base.LOAD_VENUE",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
       "line": 75,
-      "symbol": "MPIEvent.Bridge.RESOLVE",
+      "symbol": "MPIEvent.Base.CREATE_MARKER",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
       "line": 76,
-      "symbol": "MPIEvent.Bridge.REJECT",
+      "symbol": "MPIEvent.Base.REMOVE_MARKER",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 79,
+      "symbol": "MPIEvent.Bridge",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 80,
+      "symbol": "MPIEvent.Bridge.READY",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
       "line": 81,
-      "symbol": "MPIEvent.WAYFINDING.GET_MAPS_IN_NAVIGATION",
+      "symbol": "MPIEvent.Bridge.RESOLVE",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
       "line": 82,
-      "symbol": "MPIEvent.WAYFINDING.SHOW_JOURNEY",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 83,
-      "symbol": "MPIEvent.WAYFINDING.START_NAVIGATION",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 84,
-      "symbol": "MPIEvent.WAYFINDING.STOP_NAVIGATION",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 85,
-      "symbol": "MPIEvent.WAYFINDING.SEEK",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
-      "line": 86,
-      "symbol": "MPIEvent.WAYFINDING.GET_MODE",
+      "symbol": "MPIEvent.Bridge.REJECT",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
       "line": 87,
+      "symbol": "MPIEvent.WAYFINDING.GET_MAPS_IN_NAVIGATION",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 88,
+      "symbol": "MPIEvent.WAYFINDING.SHOW_JOURNEY",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 89,
+      "symbol": "MPIEvent.WAYFINDING.START_NAVIGATION",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 90,
+      "symbol": "MPIEvent.WAYFINDING.STOP_NAVIGATION",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 91,
+      "symbol": "MPIEvent.WAYFINDING.SEEK",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 92,
+      "symbol": "MPIEvent.WAYFINDING.GET_MODE",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIEvent.swift",
+      "line": 93,
       "symbol": "MPIEvent.WAYFINDING.EXIT_NAVIGATION",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
@@ -1486,344 +1808,449 @@
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 54,
+      "symbol": "MPIOptions.BlueDot.smoothing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
       "line": 55,
-      "symbol": "MPIOptions.BlueDot.init(allowImplicitFloorLevel:)",
+      "symbol": "MPIOptions.BlueDot.showBearing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 57,
+      "symbol": "MPIOptions.BlueDot.init(allowImplicitFloorLevel:smoothing:showBearing:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 60,
+      "line": 64,
       "symbol": "MPIOptions.Focus",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 61,
+      "line": 65,
       "symbol": "MPIOptions.Focus.nodes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 62,
+      "line": 66,
       "symbol": "MPIOptions.Focus.polygons",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 63,
+      "line": 67,
       "symbol": "MPIOptions.Focus.duration",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 64,
+      "line": 68,
       "symbol": "MPIOptions.Focus.changeZoom",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 65,
+      "line": 69,
       "symbol": "MPIOptions.Focus.minZoom",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 66,
+      "line": 70,
       "symbol": "MPIOptions.Focus.tilt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 67,
+      "line": 71,
       "symbol": "MPIOptions.Focus.padding",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 68,
+      "line": 72,
       "symbol": "MPIOptions.Focus.focusZoomFactor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 70,
+      "line": 74,
       "symbol": "MPIOptions.Focus.init(nodes:polygons:duration:changeZoom:minZoom:tilt:padding:focusZoomFactor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 97,
+      "line": 101,
       "symbol": "MPIOptions.FocusPadding",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 98,
+      "line": 102,
       "symbol": "MPIOptions.FocusPadding.top",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 99,
+      "line": 103,
       "symbol": "MPIOptions.FocusPadding.bottom",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 100,
+      "line": 104,
       "symbol": "MPIOptions.FocusPadding.left",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 101,
+      "line": 105,
       "symbol": "MPIOptions.FocusPadding.right",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 103,
+      "line": 107,
       "symbol": "MPIOptions.FocusPadding.init(top:bottom:left:right:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 111,
+      "line": 115,
       "symbol": "MPIOptions.Path",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 112,
+      "line": 116,
       "symbol": "MPIOptions.Path.color",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 113,
+      "line": 117,
       "symbol": "MPIOptions.Path.pulseColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 114,
+      "line": 118,
       "symbol": "MPIOptions.Path.nearRadius",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 115,
+      "line": 119,
       "symbol": "MPIOptions.Path.farRadius",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 116,
+      "line": 120,
       "symbol": "MPIOptions.Path.drawDuration",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 117,
+      "line": 121,
       "symbol": "MPIOptions.Path.drawConnectionSegments",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 118,
+      "line": 122,
       "symbol": "MPIOptions.Path.pulseIterations",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 119,
+      "line": 123,
       "symbol": "MPIOptions.Path.connectionPathOptions",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 120,
+      "line": 124,
       "symbol": "MPIOptions.Path.displayArrowsOnPath",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 122,
+      "line": 126,
       "symbol": "MPIOptions.Path.init(color:pulseColor:nearRadius:farRadius:drawDuration:drawConnectionSegments:pulseIterations:connectionPathOptions:displayArrowsOnPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 135,
+      "line": 139,
       "symbol": "MPIOptions.ConnectionPath",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 136,
+      "line": 140,
       "symbol": "MPIOptions.ConnectionPath.drawDuration",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 137,
+      "line": 141,
       "symbol": "MPIOptions.ConnectionPath.nearRadius",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 138,
+      "line": 142,
       "symbol": "MPIOptions.ConnectionPath.farRadius",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 139,
+      "line": 143,
       "symbol": "MPIOptions.ConnectionPath.color",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 142,
+      "line": 146,
       "symbol": "MPIOptions.Label",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 143,
+      "line": 147,
       "symbol": "MPIOptions.Label.text",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 144,
+      "line": 148,
       "symbol": "MPIOptions.Label.shortText",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 145,
+      "line": 149,
       "symbol": "MPIOptions.Label.textSize",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 146,
+      "line": 150,
       "symbol": "MPIOptions.Label.maxTextDivWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 147,
+      "line": 151,
       "symbol": "MPIOptions.Label.minTextDivWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 148,
+      "line": 152,
       "symbol": "MPIOptions.Label.textLines",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 149,
+      "line": 153,
       "symbol": "MPIOptions.Label.color",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 150,
+      "line": 154,
       "symbol": "MPIOptions.Label.activeColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 151,
+      "line": 155,
       "symbol": "MPIOptions.Label.inactiveColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 152,
+      "line": 156,
       "symbol": "MPIOptions.Label.markerSize",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 154,
+      "line": 158,
       "symbol": "MPIOptions.Label.init(text:shortText:textSize:maxTextDivWidth:minTextDivWidth:textLines:color:activeColor:inactiveColor:markerSize:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 168,
+      "line": 172,
       "symbol": "MPIOptions.Journey",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 169,
+      "line": 173,
       "symbol": "MPIOptions.Journey.connectionTemplateString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 170,
+      "line": 174,
+      "symbol": "MPIOptions.Journey.destinationMarkerTemplateString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 175,
+      "symbol": "MPIOptions.Journey.departureMarkerTemplateString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 176,
       "symbol": "MPIOptions.Journey.pathOptions",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
-      "line": 172,
-      "symbol": "MPIOptions.Journey.init(connectionTemplateString:pathOptions:)",
+      "line": 177,
+      "symbol": "MPIOptions.Journey.polygonHighlightColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 179,
+      "symbol": "MPIOptions.Journey.init(connectionTemplateString:destinationMarkerTemplateString:departureMarkerTemplateString:pathOptions:polygonHighlightColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 188,
+      "symbol": "MPIOptions.MARKER_ANCHOR",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 189,
+      "symbol": "MPIOptions.MARKER_ANCHOR.CENTER",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 190,
+      "symbol": "MPIOptions.MARKER_ANCHOR.TOP",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 191,
+      "symbol": "MPIOptions.MARKER_ANCHOR.BOTTOM",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 192,
+      "symbol": "MPIOptions.MARKER_ANCHOR.LEFT",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 193,
+      "symbol": "MPIOptions.MARKER_ANCHOR.RIGHT",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 197,
+      "symbol": "MPIOptions.Marker",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 198,
+      "symbol": "MPIOptions.Marker.rank",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 199,
+      "symbol": "MPIOptions.Marker.anchor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wenyihu/ios-sdk-v3/ios-sdk-v3/ios-sdk/mappedin-sdk-v3/Web/Bridge/MPIOptions.swift",
+      "line": 203,
+      "symbol": "MPIOptions.Marker.init(rank:anchor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
