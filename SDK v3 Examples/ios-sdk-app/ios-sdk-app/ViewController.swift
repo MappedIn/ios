@@ -24,6 +24,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var selectedPolygon: MPIPolygon? = nil
     var nearestNode: MPINode? = nil
     public var venueDataString: String? = nil
+    public var presentMarkerId: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +49,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
         
-//use loadVenue to load map
-//        if let mapView = mapView {
-//            self.view.insertSubview(mapView, belowSubview: mapListView)
-//            //Provide credentials, if using proxy use MPIOptions.Init(venue: "venue_slug", baseUrl: "proxy_url", noAuth: true)
-//            //mapView.loadVenue(options: MPIOptions.Init(clientId: "5eab30aa91b055001a68e996", clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1", venue: "mappedin-demo-mall"))
-//            mapView.loadVenue(options: MPIOptions.Init(clientId: "597f83ed17c5ba4b59000000", clientSecret: "7fde2284cf0b19030865977666233276", venue: "mappedin-demo-mall", headers: [MPIHeader(name: "customheader", value: "test")]), showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD"))
-//        }
+        //use loadVenue to load map
+        //        if let mapView = mapView {
+        //            self.view.insertSubview(mapView, belowSubview: mapListView)
+        //            //Provide credentials, if using proxy use MPIOptions.Init(venue: "venue_slug", baseUrl: "proxy_url", noAuth: true)
+        //            //mapView.loadVenue(options: MPIOptions.Init(clientId: "5eab30aa91b055001a68e996", clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1", venue: "mappedin-demo-mall"))
+        //            mapView.loadVenue(options: MPIOptions.Init(clientId: "597f83ed17c5ba4b59000000", clientSecret: "7fde2284cf0b19030865977666233276", venue: "mappedin-demo-mall", headers: [MPIHeader(name: "customheader", value: "test")]), showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD"))
+        //        }
         
         storeName.font = UIFont.boldSystemFont(ofSize: 15)
         storeName.numberOfLines = 0
@@ -78,7 +79,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
            let _selectedPolygon = selectedPolygon {
             //Get directions to selected polygon from users nearest node
             mapView?.getDirections(to: _selectedPolygon, from: _nearestNode, accessible: true) { directions in
-                self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>", pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
+                //remover custom markers before calling drawJourney
+                if let markerId = self.presentMarkerId {
+                    self.mapView?.removeMarker(id: markerId)
+                }
+                self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>", destinationMarkerTemplateString: nil, departureMarkerTemplateString: "", pathOptions: MPIOptions.Path(color: "#CDCDCD", pulseColor: "#000000", displayArrowsOnPath: true), polygonHighlightColor: "orange"))
             }
         }
     }
@@ -93,6 +98,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                let _selectedPolygon = self.selectedPolygon {
                 //Get directions to selected polygon from users nearest node
                 self.mapView?.getDirections(to: _selectedPolygon, from: _nearestNode, accessible: true) { directions in
+                    if let markerId = self.presentMarkerId {
+                        self.mapView?.removeMarker(id: markerId)
+                    }
                     self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
                 }
             }
@@ -170,6 +178,13 @@ extension ViewController: MPIMapViewDelegate {
     
     func onMapChanged(map: MPIMap) {
         mapListView.text = map.name
+        
+        // Create an MPICoordinate from Latitude and Longitude
+        let coord = map.createCoordinate(latitude: 43.5214, longitude: -80.5369)
+//        if let coordX = coord?.x, let coordY = coord?.y {
+//            print(coordX)
+//            print(coordY)
+//        }
     }
     
     func onPolygonClicked(polygon: MPIPolygon) {
@@ -179,6 +194,19 @@ extension ViewController: MPIMapViewDelegate {
             //Focus on polygon when clicked
             //            mapView?.focusOn(focusOptions: MPIOptions.Focus(polygons: [polygon]))
             mapView?.focusOn(focusOptions: MPIOptions.Focus(nodes: location.nodes))
+            
+            //Clear the present marker
+            if let markerId = presentMarkerId {
+                mapView?.removeMarker(id: markerId)
+            }
+            //Add a marker on the polygon being clicked
+            if let node = (polygon.entrances?[0]) {
+                let markerId = mapView?.createMarker(node: node,
+                                                     contentHtml: "<div style=\"width: 32px; height: 32px;\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 293.334 293.334\"><g fill=\"#010002\"><path d=\"M146.667 0C94.903 0 52.946 41.957 52.946 93.721c0 22.322 7.849 42.789 20.891 58.878 4.204 5.178 11.237 13.331 14.903 18.906 21.109 32.069 48.19 78.643 56.082 116.864 1.354 6.527 2.986 6.641 4.743.212 5.629-20.609 20.228-65.639 50.377-112.757 3.595-5.619 10.884-13.483 15.409-18.379a94.561 94.561 0 0016.154-24.084c5.651-12.086 8.882-25.466 8.882-39.629C240.387 41.962 198.43 0 146.667 0zm0 144.358c-28.892 0-52.313-23.421-52.313-52.313 0-28.887 23.421-52.307 52.313-52.307s52.313 23.421 52.313 52.307c0 28.893-23.421 52.313-52.313 52.313z\"/><circle cx=\"146.667\" cy=\"90.196\" r=\"21.756\"/></g></svg></div>", markerOptions: MPIOptions.Marker(anchor: MPIOptions.MARKER_ANCHOR.TOP))
+                if let markerId = markerId {
+                    presentMarkerId = markerId
+                }
+            }
             
             //Clear all polygon colors before setting polygon color to blue
             mapView?.clearAllPolygonColors() { error in
