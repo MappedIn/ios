@@ -168,7 +168,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         mapListView.inputAccessoryView = toolBar
     }
     
-    func distanceLocationToNode(map: MPIMap, latitude: Double, longitude: Double) {
+    func distanceLocationToNode(map: MPIMap, latitude: Double, longitude: Double) -> Double {
         // Create an MPICoordinate from Latitude and Longitude
         let coord = map.createCoordinate(latitude: latitude, longitude: longitude)
         
@@ -181,10 +181,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 //Convert the distance from Mappedin units to meters
                 if let scale = map.x_scale {
                     let worldDistance = mappedinDistance*scale
-                    print(worldDistance)
+                    return worldDistance
                 }
             }
         }
+        
+        return 0.0
     }
     
     @objc func action() {
@@ -202,7 +204,8 @@ extension ViewController: MPIMapViewDelegate {
         mapListView.text = map.name
         
         //Calculate distance between a lat/lon location to the nearestNode
-        distanceLocationToNode(map: map, latitude: 43.5214, longitude: -80.5369)
+        let distance = distanceLocationToNode(map: map, latitude: 43.5214, longitude: -80.5369)
+        print(distance)
     }
     
     func onPolygonClicked(polygon: MPIPolygon) {
