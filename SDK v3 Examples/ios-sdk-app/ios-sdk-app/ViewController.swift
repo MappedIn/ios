@@ -168,6 +168,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         mapListView.inputAccessoryView = toolBar
     }
     
+    func distanceLocationToNode(map: MPIMap, latitude: Double, longitude: Double) {
+        // Create an MPICoordinate from Latitude and Longitude
+        let coord = map.createCoordinate(latitude: latitude, longitude: longitude)
+        
+        if let p1_x = coord?.x, let p1_y = coord?.y {
+            //Calculate Distance Between coord and the nearest node
+            if let p2_x = nearestNode?.x, let p2_y = nearestNode?.y {
+                let xDist = (p2_x - p1_x)
+                let yDist = (p2_y - p1_y)
+                let mappedinDistance = sqrt(xDist * xDist + yDist * yDist);
+                //Convert the distance from Mappedin units to meters
+                if let scale = map.x_scale {
+                    let worldDistance = mappedinDistance*scale
+                    print(worldDistance)
+                }
+            }
+        }
+    }
+    
     @objc func action() {
         view.endEditing(true)
     }
@@ -175,17 +194,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 }
 
 
+
+
 extension ViewController: MPIMapViewDelegate {
     
     func onMapChanged(map: MPIMap) {
         mapListView.text = map.name
         
-        // Create an MPICoordinate from Latitude and Longitude
-        let coord = map.createCoordinate(latitude: 43.5214, longitude: -80.5369)
-//        if let coordX = coord?.x, let coordY = coord?.y {
-//            print(coordX)
-//            print(coordY)
-//        }
+        //Calculate distance between a lat/lon location to the nearestNode
+        distanceLocationToNode(map: map, latitude: 43.5214, longitude: -80.5369)
     }
     
     func onPolygonClicked(polygon: MPIPolygon) {
