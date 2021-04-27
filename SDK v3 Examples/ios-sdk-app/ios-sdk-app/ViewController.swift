@@ -45,9 +45,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 venueDataString = try? String(contentsOfFile: path)
             }
             if let venueDataString = venueDataString {
-                mapView.showVenue(venueResponse: venueDataString, showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD"))
+                mapView.showVenue(venueResponse: venueDataString, showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD")) { error in
+                    print(error?.rawValue)
+                }
             }
         }
+        
         
         //use loadVenue to load map
         //        if let mapView = mapView {
@@ -83,8 +86,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 if let markerId = self.presentMarkerId {
                     self.mapView?.removeMarker(id: markerId)
                 }
-                self.mapView?.drawJourney(directions: directions,
-                                          options: MPIOptions.Journey(connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>", destinationMarkerTemplateString: nil, departureMarkerTemplateString: "", pathOptions: MPIOptions.Path(color: "#CDCDCD", pulseColor: "#000000", displayArrowsOnPath: true), polygonHighlightColor: "orange"))
+                if let directions = directions {
+                    self.mapView?.drawJourney(directions: directions,
+                                              options: MPIOptions.Journey(connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>", destinationMarkerTemplateString: nil, departureMarkerTemplateString: "", pathOptions: MPIOptions.Path(color: "#CDCDCD", pulseColor: "#000000", displayArrowsOnPath: true), polygonHighlightColor: "orange"))
+                }
             }
         }
     }
@@ -102,7 +107,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     if let markerId = self.presentMarkerId {
                         self.mapView?.removeMarker(id: markerId)
                     }
-                    self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
+                    if let directions = directions {
+                        self.mapView?.drawJourney(directions: directions, options: MPIOptions.Journey(pathOptions: MPIOptions.Path(color: "#cdcdcd", pulseColor: "#000000", displayArrowsOnPath: true)))
+                    }
                 }
             }
         }
@@ -110,7 +117,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func onMapLoaded () -> Void {
         //Enable blue dot (need to call updatePosition with correct coordinates to display on map)
-        mapView?.enableBlueDot(options: MPIOptions.BlueDot(allowImplicitFloorLevel: true, smoothing: false, showBearing: true))
+        mapView?.enableBlueDot(options: MPIOptions.BlueDot(allowImplicitFloorLevel: true, smoothing: false, showBearing: true, baseColor: "#2266ff"))
         if let filepath = Bundle.main.path(forResource: "positions", ofType: "json") {
             let contents = try? String(contentsOfFile: filepath)
             let positionData = contents?.data(using: .utf8)!
@@ -199,6 +206,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
 
 extension ViewController: MPIMapViewDelegate {
+    func onBlueDotPositionUpdate(update: MPIBlueDotPositionUpdate) {
+        //Store a reference of the nearest node to use later when getting directions
+        print("update: ")
+        nearestNode = update.nearestNode
+        updateBlueDotBanner(blueDotPosition: update)
+        print(update.bearing)
+    }
+
+    func onBlueDotStateChange(stateChange: MPIBlueDotStateChange) {
+        print("stateChange: ")
+//        print(stateChange.name)
+        print(stateChange.markerVisibility)
+//        print(stateChange.reason)
+    }
+    
     
     func onMapChanged(map: MPIMap) {
         mapListView.text = map.name
@@ -255,10 +277,11 @@ extension ViewController: MPIMapViewDelegate {
         hideLocationView()
     }
     
+    @available(*, deprecated, message: "use onBlueDotPositionUpdate and onBlueDotStateChange")
     func onBlueDotUpdated(blueDot: MPIBlueDot) {
-        //Store a reference of the nearest node to use later when getting directions
-        nearestNode = blueDot.nearestNode
-        updateBlueDotBanner(blueDot: blueDot)
+//        //Store a reference of the nearest node to use later when getting directions
+//        nearestNode = blueDot.nearestNode
+//        updateBlueDotBanner(blueDot: blueDot)
     }
     
     func onDataLoaded(data: MPIData) {
@@ -269,8 +292,8 @@ extension ViewController: MPIMapViewDelegate {
         self.onMapLoaded()
     }
     
-    func updateBlueDotBanner(blueDot: MPIBlueDot? = nil) {
-        blueDotBanner.text = "BlueDot Nearest Node: " + (blueDot?.nearestNode.id ?? "N/A")
+    func updateBlueDotBanner(blueDotPosition: MPIBlueDotPositionUpdate? = nil) {
+        blueDotBanner.text = "BlueDot Nearest Node: " + (blueDotPosition?.nearestNode?.id ?? "N/A")
     }
     
     func onStateChanged (state: MPIState) {
