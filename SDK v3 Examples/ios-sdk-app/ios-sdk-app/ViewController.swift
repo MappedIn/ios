@@ -113,7 +113,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 }
             }
         }
-    }//change directions
+    }
     
     func onMapLoaded () -> Void {
         //Enable blue dot (need to call updatePosition with correct coordinates to display on map)
