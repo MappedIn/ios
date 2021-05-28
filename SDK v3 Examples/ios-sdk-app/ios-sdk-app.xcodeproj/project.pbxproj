@@ -16,6 +16,9 @@
 		ECC936202576D17C00035E1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC9361E2576D17C00035E1A /* Main.storyboard */; };
 		ECC936222576D17E00035E1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC936212576D17E00035E1A /* Assets.xcassets */; };
 		ECC936252576D17E00035E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC936232576D17E00035E1A /* LaunchScreen.storyboard */; };
+		ED9E061F2661582400842DD8 /* ViewController+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E061E2661582400842DD8 /* ViewController+UIPickerViewDataSource.swift */; };
+		ED9E06212661587A00842DD8 /* ViewController+UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E06202661587A00842DD8 /* ViewController+UIPickerViewDelegate.swift */; };
+		ED9E0623266159DD00842DD8 /* ViewController+MPIMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E0622266159DD00842DD8 /* ViewController+MPIMapViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +47,9 @@
 		ECC936212576D17E00035E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC936242576D17E00035E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECC936262576D17E00035E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED9E061E2661582400842DD8 /* ViewController+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
+		ED9E06202661587A00842DD8 /* ViewController+UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
+		ED9E0622266159DD00842DD8 /* ViewController+MPIMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+MPIMapViewDelegate.swift"; sourceTree = "<group>"; };
 		EFF64FCFD468B2A45D7B557F /* Pods_ios_sdk_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_sdk_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +99,9 @@
 				ECC936182576D17C00035E1A /* AppDelegate.swift */,
 				ECC9361A2576D17C00035E1A /* SceneDelegate.swift */,
 				ECC9361C2576D17C00035E1A /* ViewController.swift */,
+				ED9E061E2661582400842DD8 /* ViewController+UIPickerViewDataSource.swift */,
+				ED9E06202661587A00842DD8 /* ViewController+UIPickerViewDelegate.swift */,
+				ED9E0622266159DD00842DD8 /* ViewController+MPIMapViewDelegate.swift */,
 				ECC9361E2576D17C00035E1A /* Main.storyboard */,
 				ECC936212576D17E00035E1A /* Assets.xcassets */,
 				ECC936232576D17E00035E1A /* LaunchScreen.storyboard */,
@@ -122,7 +131,7 @@
 				ECC936122576D17C00035E1A /* Frameworks */,
 				ECC936132576D17C00035E1A /* Resources */,
 				25ACE2F125C45CD4002D4A2C /* Embed Frameworks */,
-				4E14DD1AE8A24A0A10DFB1B2 /* [CP] Embed Pods Frameworks */,
+				602270E90826501C1090748D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,7 +190,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4E14DD1AE8A24A0A10DFB1B2 /* [CP] Embed Pods Frameworks */ = {
+		602270E90826501C1090748D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,8 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9E0623266159DD00842DD8 /* ViewController+MPIMapViewDelegate.swift in Sources */,
 				ECC9361D2576D17C00035E1A /* ViewController.swift in Sources */,
 				ECC936192576D17C00035E1A /* AppDelegate.swift in Sources */,
+				ED9E061F2661582400842DD8 /* ViewController+UIPickerViewDataSource.swift in Sources */,
+				ED9E06212661587A00842DD8 /* ViewController+UIPickerViewDelegate.swift in Sources */,
 				ECC9361B2576D17C00035E1A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
