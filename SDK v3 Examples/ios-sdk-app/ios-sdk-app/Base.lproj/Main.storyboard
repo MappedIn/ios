@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -152,11 +152,17 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9li-Jw-4IO">
-                                <rect key="frame" x="16" y="54" width="61" height="30"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <state key="normal" title="FOLLOW"/>
+                                <rect key="frame" x="16" y="54" width="44" height="30"/>
+                                <state key="normal" title="Follow"/>
                                 <connections>
                                     <action selector="followStateButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AHn-yg-ZFn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLz-GJ-HtZ">
+                                <rect key="frame" x="16" y="92" width="97" height="30"/>
+                                <state key="normal" title="Reset Camera"/>
+                                <connections>
+                                    <action selector="resetCameraClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEK-h5-X8o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -169,6 +175,8 @@
                             <constraint firstItem="vdd-FY-CA0" firstAttribute="top" secondItem="9Xm-rd-1DX" secondAttribute="bottomMargin" constant="20" id="7DG-xL-Dud"/>
                             <constraint firstItem="9li-Jw-4IO" firstAttribute="centerY" secondItem="vdd-FY-CA0" secondAttribute="centerY" id="83u-zF-GF4"/>
                             <constraint firstItem="vdd-FY-CA0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="I9b-aP-mUh"/>
+                            <constraint firstItem="iLz-GJ-HtZ" firstAttribute="top" secondItem="9li-Jw-4IO" secondAttribute="bottom" constant="8" id="Vrj-Qz-1po"/>
+                            <constraint firstItem="iLz-GJ-HtZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eyK-yN-ElB"/>
                             <constraint firstItem="9li-Jw-4IO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fHe-Oi-TJg"/>
                             <constraint firstItem="9Xm-rd-1DX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="htu-S3-qhU"/>
                             <constraint firstItem="CfL-18-PzP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lgn-r7-17W"/>
