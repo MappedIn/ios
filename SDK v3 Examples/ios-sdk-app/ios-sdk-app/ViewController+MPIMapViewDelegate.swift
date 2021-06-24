@@ -87,10 +87,7 @@ extension ViewController: MPIMapViewDelegate {
 //        updateBlueDotBanner(blueDot: blueDot)
     }
 
-    func onDataLoaded(data: MPIData) {
-        let rankings: MPIRankings? = data.rankings
-        let polygonRank = data.polygons[0].rank
-    }
+    func onDataLoaded(data: MPIData) {}
 
     func onFirstMapLoaded() {
         self.onMapLoaded()
@@ -125,14 +122,14 @@ extension ViewController: MPIMapViewDelegate {
                 options: MPIOptions.Journey(connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: blue;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>")
             )
 
-            let MAX_STEPS = 3
-            let START_DELAY = 15.0
-            let STEP_DELAY = 5
+            let maxSteps = 3
+            let startDelay = 15.0
+            let stepDelay = 5
 
-            for step in 0...MAX_STEPS {
+            for step in 0...maxSteps {
                 // manipulate journey after a delay
-                DispatchQueue.main.asyncAfter(deadline: .now() + START_DELAY + Double(STEP_DELAY * step)) {
-                    if step == MAX_STEPS {
+                DispatchQueue.main.asyncAfter(deadline: .now() + startDelay + Double(stepDelay * step)) {
+                    if step == maxSteps {
                         // change the journey step
                         self.mapView?.journeyManager.clear()
                     } else {
