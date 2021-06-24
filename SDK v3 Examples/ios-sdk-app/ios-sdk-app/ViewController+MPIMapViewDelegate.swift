@@ -124,15 +124,22 @@ extension ViewController: MPIMapViewDelegate {
                 directions: directions,
                 options: MPIOptions.Journey(connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: blue;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>")
             )
-            // change the journey step
-            for i in 0...2 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 15 + Double(5*i)) {
-                    self.mapView?.journeyManager.setStep(step: i)
+
+            let MAX_STEPS = 3
+            let START_DELAY = 15.0
+            let STEP_DELAY = 5
+
+            for step in 0...MAX_STEPS {
+                // manipulate journey after a delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + START_DELAY + Double(STEP_DELAY * step)) {
+                    if step == MAX_STEPS {
+                        // change the journey step
+                        self.mapView?.journeyManager.clear()
+                    } else {
+                        // clear journey
+                        self.mapView?.journeyManager.setStep(step: step)
+                    }
                 }
-            }
-            // clear journey
-            DispatchQueue.main.asyncAfter(deadline: .now() + 50) {
-                self.mapView?.journeyManager.clear()
             }
         }
     }
