@@ -21,10 +21,11 @@ class ViewController: UIViewController {
     var mapView: MPIMapView?
     var selectedPolygon: MPIPolygon?
     var nearestNode: MPINode?
-    var venueDataString: String?
     var presentMarkerId: String?
     var defaultRotation: Double?
     var defaultTilt: Double?
+    lazy var venueDataString: String? = getFileContentFromBundle(forResource: "mappedin-demo-mall", ofType: "json")
+    lazy var connectionTemplateString: String? = getFileContentFromBundle(forResource: "marker", ofType: "html")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +42,6 @@ class ViewController: UIViewController {
         // use showVenue to load map from legacy data
         if let mapView = mapView {
             self.view.insertSubview(mapView, belowSubview: mapListView)
-            if let path = Bundle.main.path(forResource: "mappedin-demo-mall", ofType: "json") {
-                venueDataString = try? String(contentsOfFile: path)
-            }
             if let venueDataString = venueDataString {
                 mapView.showVenue(
                     venueResponse: venueDataString,
@@ -107,7 +105,7 @@ class ViewController: UIViewController {
                 self.mapView?.drawJourney(
                     directions: directions,
                     options: MPIOptions.Journey(
-                        connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: green;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>",
+                        connectionTemplateString: self.connectionTemplateString,
                         destinationMarkerTemplateString: nil,
                         departureMarkerTemplateString: "",
                         pathOptions: MPIOptions.Path(color: "#CDCDCD", pulseColor: "#000000", displayArrowsOnPath: true),
@@ -167,7 +165,7 @@ class ViewController: UIViewController {
     
     func onMapLoaded () {
         // Enable blue dot (need to call updatePosition with correct coordinates to display on map)
-        mapView?.enableBlueDot(
+        mapView?.blueDotManager.enable(
             options: MPIOptions.BlueDot(
                 allowImplicitFloorLevel: true,
                 smoothing: false,
@@ -181,7 +179,7 @@ class ViewController: UIViewController {
         guard let positions = try? JSONDecoder().decode([MPIPosition].self, from: positionData) else { return }
         for (index, position) in positions.enumerated() {
             DispatchQueue.main.asyncAfter(deadline: .now() + (3 * Double(index))) {
-                self.mapView?.updatePosition(position: position)
+                self.mapView?.blueDotManager.updatePosition(position: position)
             }
         }
     }
@@ -228,6 +226,11 @@ class ViewController: UIViewController {
     
     @objc func action() {
         view.endEditing(true)
+    }
+
+    private func getFileContentFromBundle(forResource: String, ofType: String) -> String? {
+        guard let path = Bundle.main.path(forResource: forResource, ofType: ofType) else { return nil }
+        return try? String(contentsOfFile: path)
     }
     
 }
