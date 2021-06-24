@@ -111,7 +111,7 @@ extension ViewController: MPIMapViewDelegate {
         )
 
         // create a multi-destination journey between 4 sample locations
-        guard let locations = mapView?.venueData?.locations else { return }
+        guard let locations = mapView?.venueData?.locations, locations.count >= 8 else { return }
         mapView?.getDirections(
             to: MPIDestinationSet(destinations: [locations[4], locations[5], locations[6]]),
             from: locations[7],
