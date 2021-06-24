@@ -87,16 +87,54 @@ extension ViewController: MPIMapViewDelegate {
 //        updateBlueDotBanner(blueDot: blueDot)
     }
 
-    func onDataLoaded(data: MPIData) {}
+    func onDataLoaded(data: MPIData) {
+        let rankings: MPIRankings? = data.rankings
+        let polygonRank = data.polygons[0].rank
+    }
 
     func onFirstMapLoaded() {
         self.onMapLoaded()
 
+        // get default camera state
         defaultRotation = mapView?.cameraControlsManager.rotation
         defaultTilt = mapView?.cameraControlsManager.tilt
 
+        // set camera state
         mapView?.cameraControlsManager.setRotation(rotation: 180)
         mapView?.cameraControlsManager.setTilt(tilt: 0)
+
+        // label all locations to be light on dark
+        mapView?.labelAllLocations(
+            options: MPIOptions.LabelAllLocations(
+                appearance: MPIOptions.LabelAppearance.lightOnDark
+            )
+        )
+
+        // create a multi-destination journey between 4 sample locations
+        guard let locations = mapView?.venueData?.locations else { return }
+        mapView?.getDirections(
+            to: MPIDestinationSet(destinations: [locations[4], locations[5], locations[6]]),
+            from: locations[7],
+            accessible: false
+        ) { directions in
+            guard let directions = directions else { return }
+
+            // draw the journey
+            self.mapView?.journeyManager.draw(
+                directions: directions,
+                options: MPIOptions.Journey(connectionTemplateString: "<div style=\"font-size: 13px;display: flex; align-items: center; justify-content: center;\"><div style=\"margin: 10px;\">{{capitalize type}} {{#if isEntering}}to{{else}}from{{/if}} {{toMapName}}</div><div style=\"width: 40px; height: 40px; border-radius: 50%;background: blue;display: flex;align-items: center;margin: 5px;margin-left: 0px;justify-content: center;\"><svg height=\"16\" viewBox=\"0 0 36 36\" width=\"16\"><g fill=\"white\">{{{icon}}}</g></svg></div></div>")
+            )
+            // change the journey step
+            for i in 0...2 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 15 + Double(5*i)) {
+                    self.mapView?.journeyManager.setStep(step: i)
+                }
+            }
+            // clear journey
+            DispatchQueue.main.asyncAfter(deadline: .now() + 50) {
+                self.mapView?.journeyManager.clear()
+            }
+        }
     }
 
     func updateBlueDotBanner(blueDotPosition: MPIBlueDotPositionUpdate? = nil) {
