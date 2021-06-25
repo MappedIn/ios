@@ -92,11 +92,53 @@ extension ViewController: MPIMapViewDelegate {
     func onFirstMapLoaded() {
         self.onMapLoaded()
 
+        // get default camera state
         defaultRotation = mapView?.cameraControlsManager.rotation
         defaultTilt = mapView?.cameraControlsManager.tilt
 
+        // set camera state
         mapView?.cameraControlsManager.setRotation(rotation: 180)
         mapView?.cameraControlsManager.setTilt(tilt: 0)
+
+        // label all locations to be light on dark
+        mapView?.labelAllLocations(
+            options: MPIOptions.LabelAllLocations(
+                appearance: MPIOptions.LabelAppearance.lightOnDark
+            )
+        )
+
+        // create a multi-destination journey between 4 sample locations
+        guard let locations = mapView?.venueData?.locations, locations.count >= 8 else { return }
+        mapView?.getDirections(
+            to: MPIDestinationSet(destinations: [locations[4], locations[5], locations[6]]),
+            from: locations[7],
+            accessible: false
+        ) { directions in
+            guard let directions = directions else { return }
+
+            // draw the journey
+            self.mapView?.journeyManager.draw(
+                directions: directions,
+                options: MPIOptions.Journey(connectionTemplateString: self.connectionTemplateString)
+            )
+
+            let maxSteps = 3
+            let startDelay = 15.0
+            let stepDelay = 5
+
+            for step in 0...maxSteps {
+                // manipulate journey after a delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + startDelay + Double(stepDelay * step)) {
+                    if step == maxSteps {
+                        // change the journey step
+                        self.mapView?.journeyManager.clear()
+                    } else {
+                        // clear journey
+                        self.mapView?.journeyManager.setStep(step: step)
+                    }
+                }
+            }
+        }
     }
 
     func updateBlueDotBanner(blueDotPosition: MPIBlueDotPositionUpdate? = nil) {
