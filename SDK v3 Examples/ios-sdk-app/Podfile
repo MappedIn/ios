@@ -4,5 +4,5 @@ use_frameworks!
 target 'ios-sdk-app' do
     project "ios-sdk-app"
     workspace 'ios-sdk-app'
-        pod 'MappedIn', '3.0.2'
+        pod 'MappedIn', '3.0.3'
 end
