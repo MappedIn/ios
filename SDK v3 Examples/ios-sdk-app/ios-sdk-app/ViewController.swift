@@ -24,8 +24,9 @@ class ViewController: UIViewController {
     var presentMarkerId: String?
     var defaultRotation: Double?
     var defaultTilt: Double?
-    lazy var venueDataString: String? = getFileContentFromBundle(forResource: "mappedin-demo-mall", ofType: "json")
-    lazy var connectionTemplateString: String? = getFileContentFromBundle(forResource: "marker", ofType: "html")
+    lazy var venueDataString = getFileContentFromBundle(forResource: "mappedin-demo-mall", ofType: "json")
+    lazy var connectionTemplateString = getFileContentFromBundle(forResource: "connectionTemplate", ofType: "html")
+    lazy var markerString = getFileContentFromBundle(forResource: "marker", ofType: "html")
     
     override func viewDidLoad() {
         super.viewDidLoad()

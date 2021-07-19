@@ -19,7 +19,8 @@
 		ED9E061F2661582400842DD8 /* ViewController+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E061E2661582400842DD8 /* ViewController+UIPickerViewDataSource.swift */; };
 		ED9E06212661587A00842DD8 /* ViewController+UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E06202661587A00842DD8 /* ViewController+UIPickerViewDelegate.swift */; };
 		ED9E0623266159DD00842DD8 /* ViewController+MPIMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E0622266159DD00842DD8 /* ViewController+MPIMapViewDelegate.swift */; };
-		EDF031A626852B4400E82ED0 /* marker.html in Resources */ = {isa = PBXBuildFile; fileRef = EDF031A526852B4400E82ED0 /* marker.html */; };
+		EDF031A626852B4400E82ED0 /* connectionTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = EDF031A526852B4400E82ED0 /* connectionTemplate.html */; };
+		EDF031AC2686604300E82ED0 /* marker.html in Resources */ = {isa = PBXBuildFile; fileRef = EDF031AB2686604300E82ED0 /* marker.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +52,8 @@
 		ED9E061E2661582400842DD8 /* ViewController+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
 		ED9E06202661587A00842DD8 /* ViewController+UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		ED9E0622266159DD00842DD8 /* ViewController+MPIMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+MPIMapViewDelegate.swift"; sourceTree = "<group>"; };
-		EDF031A526852B4400E82ED0 /* marker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = marker.html; sourceTree = "<group>"; };
+		EDF031A526852B4400E82ED0 /* connectionTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = connectionTemplate.html; sourceTree = "<group>"; };
+		EDF031AB2686604300E82ED0 /* marker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = marker.html; sourceTree = "<group>"; };
 		EFF64FCFD468B2A45D7B557F /* Pods_ios_sdk_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_sdk_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,7 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				259B3DE1260E64750006DB7F /* mappedin-demo-mall.json */,
-				EDF031A526852B4400E82ED0 /* marker.html */,
+				EDF031A526852B4400E82ED0 /* connectionTemplate.html */,
+				EDF031AB2686604300E82ED0 /* marker.html */,
 				ECC936172576D17C00035E1A /* ios-sdk-app */,
 				ECC936162576D17C00035E1A /* Products */,
 				ECC9362E2576D19B00035E1A /* Frameworks */,
@@ -185,8 +188,9 @@
 				ECC936252576D17E00035E1A /* LaunchScreen.storyboard in Resources */,
 				ECC936222576D17E00035E1A /* Assets.xcassets in Resources */,
 				259B3DE2260E64750006DB7F /* mappedin-demo-mall.json in Resources */,
+				EDF031AC2686604300E82ED0 /* marker.html in Resources */,
 				EC23C2AF2577F2EC0067C3F3 /* positions.json in Resources */,
-				EDF031A626852B4400E82ED0 /* marker.html in Resources */,
+				EDF031A626852B4400E82ED0 /* connectionTemplate.html in Resources */,
 				ECC936202576D17C00035E1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
