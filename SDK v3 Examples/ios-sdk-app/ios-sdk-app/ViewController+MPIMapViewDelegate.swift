@@ -17,7 +17,7 @@ extension ViewController: MPIMapViewDelegate {
     }
 
     func onBlueDotStateChange(stateChange: MPIBlueDotStateChange) {
-        print("Blue Dot State Change: \(stateChange.name) \(String(describing: stateChange.reason))")
+        print("Blue Dot State Change: \(stateChange.name) \(String(describing: stateChange.markerVisibility))")
     }
 
     func onMapChanged(map: MPIMap) {
