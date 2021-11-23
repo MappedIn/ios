@@ -1,0 +1,8 @@
+# Uncomment the next line to define a global platform for your project
+use_frameworks!
+
+target 'ios-sdk-app' do
+    project "ios-sdk-app"
+    workspace 'ios-sdk-app'
+        pod 'MappedIn', '4.0.0'
+end
