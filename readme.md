@@ -1,15 +1,25 @@
 # Mappedin iOS Integrations
 
-In this repo you can find a number of sample applications demonstrating different ways to integrate with Mappedin to render your maps and begin building your own custom indoor mapping experiences on iOS. To learn more about ways to integrate with Mappedin, checkout [developer.mappedin.com](https://developer.mappedin.com/).
+In this repo you can find a number of sample applications demonstrating different ways to integrate with Mappedin to render your maps and begin building your own custom indoor mapping experiences on iOS. To learn more about ways to integrate with Mappedin, check out [our developer portal](https://developer.mappedin.com/).
 
-The Mappedin SDK for iOS enables you to build powerful, highly flexible, unique, indoor mapping experiences natively inside your iOS apps. This repo contains projects showcasing versions 1, 2 of our fully native SDK, with more projects coming soon to get you started on more advanced projects. 
+The Mappedin SDK for iOS enables you to build powerful, highly flexible, unique, indoor mapping experiences natively inside your iOS apps. This repo contains projects showcasing each version of our native SDK. 
 
 This repo also contains a project demonstrating how to integrate with our our out of the box web product, [Mappedin Web](https://www.mappedin.com/wayfinding/web-app/), within a webview on a mobile app. 
 
 
+## Mappedin iOS SDK v4 Examples
+
+Version 4 of the iOS SDK is the current version. This is a minimal sample app that you can use to get started. [API documentation](https://developer.mappedin.com/docs/ios/latest/) and [a walkthrough guide](https://developer.mappedin.com/guides/ios/) are available via [our developer portal](https://developer.mappedin.com/).
+
+
+## Mappedin iOS SDK v3 Examples
+
+Version 4 of the iOS SDK is now in LTS (long term support). This is a minimal sample app that you can use to get started. [API documentation](https://developer.mappedin.com/docs/ios/latest/) is available via [our developer portal](https://developer.mappedin.com/).
+
+
 ## Mappedin iOS SDK v2 Examples
 
-We're very excited to launch version 2 of The Mappedin SDK for iOS! Version 2 is a completely new SDK built from the ground up to enable us to take indoor mapping experiences further than ever before. The SDK supports much of the sample functionality as version 1 and more, but in version 2, rendering is powered by the [Mapbox Maps SDK](https://docs.mapbox.com/ios/maps/examples/). This means that you'll be able to use some features of the Mapbox Maps SDK as well as Mappedin features.
+Version 2 is a completely new SDK built from the ground up to enable us to take indoor mapping experiences further than ever before. The SDK supports much of the sample functionality as version 1 and more, but in version 2, rendering is powered by the [Mapbox Maps SDK](https://docs.mapbox.com/ios/maps/examples/). This means that you'll be able to use some features of the Mapbox Maps SDK as well as Mappedin features.
 
 You can view all the [documentation](https://developer.mappedin.com/docs/ios/) for the SDK along with informative [guides](https://developer.mappedin.com/guides/ios/) at [developer.mappedin.com](https://developer.mappedin.com/).
 
