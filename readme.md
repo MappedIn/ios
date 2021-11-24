@@ -14,7 +14,7 @@ Version 4 of the iOS SDK is the current version. This is a minimal sample app th
 
 ## Mappedin iOS SDK v3 Examples
 
-Version 4 of the iOS SDK is now in LTS (long term support). This is a minimal sample app that you can use to get started. [API documentation](https://developer.mappedin.com/docs/ios/latest/) is available via [our developer portal](https://developer.mappedin.com/).
+Version 4 of the iOS SDK is now in LTS (long term support). This is a minimal sample app that you can use to get started. [API documentation](https://developer.mappedin.com/docs/ios/v3/) is available via [our developer portal](https://developer.mappedin.com/).
 
 
 ## Mappedin iOS SDK v2 Examples
