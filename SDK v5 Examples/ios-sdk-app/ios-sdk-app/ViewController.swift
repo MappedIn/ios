@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     var presentMarkerId: String?
     var defaultRotation: Double?
     var defaultTilt: Double?
-    lazy var venueDataString = getFileContentFromBundle(forResource: "mappedin-demo-mall", ofType: "json")
     lazy var connectionTemplateString = getFileContentFromBundle(forResource: "connectionTemplate", ofType: "html")
     lazy var markerString = getFileContentFromBundle(forResource: "marker", ofType: "html")
     
@@ -41,38 +40,22 @@ class ViewController: UIViewController {
         // use showVenue to load map from legacy data
         if let mapView = mapView {
             self.view.insertSubview(mapView, belowSubview: mapListView)
-            if let venueDataString = venueDataString {
-                mapView.showVenue(
-                    venueResponse: venueDataString,
-                    showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD")
-                ) { error in
-                    print(error.debugDescription)
-                }
-            }
+            
+            mapView.loadVenue(
+                options: MPIOptions.Init(
+                    clientId: "5eab30aa91b055001a68e996",
+                    clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
+                    venue: "mappedin-demo-mall",
+                    headers: [MPIHeader(name: "language", value: "en-US")]
+                ),
+                // Locations are labeled separately onFirstMapLoaded where their style can be customized
+                showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: false, backgroundColor: "#CDCDCD")
+            )
+
         }
         
         
-        // use loadVenue to load map
-        //        if let mapView = mapView {
-        //            self.view.insertSubview(mapView, belowSubview: mapListView)
-        //            // Provide credentials, if using proxy use MPIOptions.Init(venue: "venue_slug", baseUrl: "proxy_url", noAuth: true)
-        //            mapView.loadVenue(
-        //                options: MPIOptions.Init(
-        //                    clientId: "5eab30aa91b055001a68e996",
-        //                    clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
-        //                    venue: "mappedin-demo-mall"
-        //                )
-        //            )
-        //            mapView.loadVenue(
-        //                options: MPIOptions.Init(
-        //                    clientId: "597f83ed17c5ba4b59000000",
-        //                    clientSecret: "7fde2284cf0b19030865977666233276",
-        //                    venue: "mappedin-demo-mall",
-        //                    headers: [MPIHeader(name: "customheader", value: "test")]
-        //                ),
-        //                showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, backgroundColor: "#CDCDCD")
-        //            )
-        //        }
+
         
         storeName.font = UIFont.boldSystemFont(ofSize: 15)
         storeName.numberOfLines = 0
@@ -174,7 +157,11 @@ class ViewController: UIViewController {
         guard let filepath = Bundle.main.path(forResource: "positions", ofType: "json") else { return }
         let contents = try? String(contentsOfFile: filepath)
         guard let positionData = contents?.data(using: .utf8) else { return }
-        guard let positions = try? JSONDecoder().decode([MPIPosition].self, from: positionData) else { return }
+        guard let positions = try? JSONDecoder().decode([MPIPosition].self, from: positionData) else {
+            print("FAILED TO PARSE POSITIONS")
+            return
+            
+        }
         for (index, position) in positions.enumerated() {
             DispatchQueue.main.asyncAfter(deadline: .now() + (3 * Double(index))) {
                 self.mapView?.blueDotManager.updatePosition(position: position)

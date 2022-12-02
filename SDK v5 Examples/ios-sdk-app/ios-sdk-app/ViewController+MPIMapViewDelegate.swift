@@ -20,10 +20,6 @@ extension ViewController: MPIMapViewDelegate {
     
     func onMapChanged(map: MPIMap) {
         mapListView.text = map.name
-        
-        // Calculate distance between a lat/lon location to the nearestNode
-        let distance = distanceLocationToNode(map: map, latitude: 43.5214, longitude: -80.5369)
-        print(distance ?? "")
     }
     
     func onPolygonClicked(polygon: MPIPolygon) {
@@ -71,6 +67,9 @@ extension ViewController: MPIMapViewDelegate {
     
     func onNothingClicked() {
         hideLocationView()
+        if let markerId = presentMarkerId {
+            mapView?.removeMarker(id: markerId)
+        }
     }
     
     
@@ -90,7 +89,7 @@ extension ViewController: MPIMapViewDelegate {
         // label all locations to be light on dark
         mapView?.labelAllLocations(
             options: MPIOptions.FloatingLabelAllLocations(
-                appearance: MPIOptions.FloatingLabelAppearance.lightOnDark
+                appearance: MPIOptions.FloatingLabelAppearance.darkOnLight
             )
         )
         

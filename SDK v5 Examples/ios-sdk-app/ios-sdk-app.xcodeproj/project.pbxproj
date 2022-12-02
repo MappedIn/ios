@@ -16,7 +16,6 @@
 		92EC60542939041E003113B5 /* ViewController+MPIMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC60532939041E003113B5 /* ViewController+MPIMapViewDelegate.swift */; };
 		92EC605629390461003113B5 /* ViewController+UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC605529390461003113B5 /* ViewController+UIPickerViewDelegate.swift */; };
 		92EC605829390487003113B5 /* ViewController+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC605729390487003113B5 /* ViewController+UIPickerViewDataSource.swift */; };
-		92EC605C293905DA003113B5 /* mappedin-demo-mall.json in Resources */ = {isa = PBXBuildFile; fileRef = 92EC6059293905D9003113B5 /* mappedin-demo-mall.json */; };
 		92EC605D293905DA003113B5 /* marker.html in Resources */ = {isa = PBXBuildFile; fileRef = 92EC605A293905DA003113B5 /* marker.html */; };
 		92EC605E293905DA003113B5 /* connectionTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 92EC605B293905DA003113B5 /* connectionTemplate.html */; };
 		92EC606029390D83003113B5 /* positions.json in Resources */ = {isa = PBXBuildFile; fileRef = 92EC605F29390D83003113B5 /* positions.json */; };
@@ -38,7 +37,6 @@
 		92EC60532939041E003113B5 /* ViewController+MPIMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+MPIMapViewDelegate.swift"; sourceTree = "<group>"; };
 		92EC605529390461003113B5 /* ViewController+UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		92EC605729390487003113B5 /* ViewController+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
-		92EC6059293905D9003113B5 /* mappedin-demo-mall.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mappedin-demo-mall.json"; sourceTree = "<group>"; };
 		92EC605A293905DA003113B5 /* marker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = marker.html; sourceTree = "<group>"; };
 		92EC605B293905DA003113B5 /* connectionTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = connectionTemplate.html; sourceTree = "<group>"; };
 		92EC605F29390D83003113B5 /* positions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = positions.json; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				92EC605B293905DA003113B5 /* connectionTemplate.html */,
-				92EC6059293905D9003113B5 /* mappedin-demo-mall.json */,
 				92EC605A293905DA003113B5 /* marker.html */,
 				92315FDD2938F10400975E35 /* ios-sdk-app */,
 				92315FDC2938F10400975E35 /* Products */,
@@ -176,7 +173,6 @@
 				92EC606029390D83003113B5 /* positions.json in Resources */,
 				92315FE82938F10400975E35 /* Assets.xcassets in Resources */,
 				92EC605D293905DA003113B5 /* marker.html in Resources */,
-				92EC605C293905DA003113B5 /* mappedin-demo-mall.json in Resources */,
 				92EC605E293905DA003113B5 /* connectionTemplate.html in Resources */,
 				92315FE62938F10400975E35 /* Main.storyboard in Resources */,
 			);
