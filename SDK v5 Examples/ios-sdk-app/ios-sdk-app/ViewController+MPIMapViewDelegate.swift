@@ -8,6 +8,11 @@ import Mappedin
 
 extension ViewController: MPIMapViewDelegate {
     
+    func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {
+        // Called when Camera tilt, zoom, rotation or position changes
+    }
+    
+    
     func onBlueDotPositionUpdate(update: MPIBlueDotPositionUpdate) {
         // Store a reference of the nearest node to use later when getting directions
         nearestNode = update.nearestNode
@@ -27,9 +32,8 @@ extension ViewController: MPIMapViewDelegate {
         selectedPolygon = polygon
         
         // Focus on polygon when clicked
-        //        mapView?.focusOn(focusOptions: MPIOptions.Focus(polygons: [polygon]))
-        mapView?.focusOn(focusOptions: MPIOptions.Focus(nodes: location.nodes))
-        
+        mapView?.cameraManager.focusOn(targets: MPIOptions.CameraTargets(nodes: location.nodes))
+                                       
         // Clear the present marker
         if let markerId = presentMarkerId {
             mapView?.removeMarker(id: markerId)
@@ -79,15 +83,14 @@ extension ViewController: MPIMapViewDelegate {
         self.onMapLoaded()
         
         // get default camera state
-        defaultRotation = mapView?.cameraControlsManager.rotation
-        defaultTilt = mapView?.cameraControlsManager.tilt
+        defaultRotation = mapView?.cameraManager.rotation
+        defaultTilt = mapView?.cameraManager.tilt
         
         // set camera state
-        mapView?.cameraControlsManager.setRotation(rotation: 180)
-        mapView?.cameraControlsManager.setTilt(tilt: 0)
+        mapView?.cameraManager.set(cameraTransform: MPIOptions.CameraConfiguration(tilt: 0, rotation: 180))
         
         // label all locations to be light on dark
-        mapView?.labelAllLocations(
+        mapView?.floatingLabelManager.labelAllLocations(
             options: MPIOptions.FloatingLabelAllLocations(
                 appearance: MPIOptions.FloatingLabelAppearance.darkOnLight
             )

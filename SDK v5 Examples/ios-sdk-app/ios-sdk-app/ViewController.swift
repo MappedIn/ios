@@ -106,15 +106,12 @@ class ViewController: UIViewController {
               let tilt = defaultTilt
         else { return }
         
-        mapView?.cameraControlsManager.setRotation(rotation: rotation) { _, error in
+        mapView?.cameraManager.set(cameraTransform: MPIOptions.CameraConfiguration(tilt: tilt, rotation: rotation)){_, error in
             guard error == nil else { return }
             // access rotation here
-            print(self.mapView?.cameraControlsManager.rotation ?? "")
-        }
-        mapView?.cameraControlsManager.setTilt(tilt: tilt) { _, error in
-            guard error == nil else { return }
+            print(self.mapView?.cameraManager.rotation ?? "")
             // access tilt here
-            print(self.mapView?.cameraControlsManager.tilt ?? "")
+            print(self.mapView?.cameraManager.tilt ?? "")
         }
     }
     
