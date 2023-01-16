@@ -13,6 +13,14 @@
 		924B55132971F9DD00DDA0F5 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B55122971F9DD00DDA0F5 /* ExampleCell.swift */; };
 		924B55152971F9F700DDA0F5 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B55142971F9F700DDA0F5 /* Example.swift */; };
 		924B55192972041D00DDA0F5 /* MarkersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B55182972041D00DDA0F5 /* MarkersVC.swift */; };
+		9250FA8F2975ADD0007117CA /* ABWayfindingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA8E2975ADD0007117CA /* ABWayfindingVC.swift */; };
+		9250FA912975AE0C007117CA /* BlueDotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA902975AE0C007117CA /* BlueDotVC.swift */; };
+		9250FA932975AE3B007117CA /* CameraControlsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA922975AE3B007117CA /* CameraControlsVC.swift */; };
+		9250FA952975AE4C007117CA /* ListLocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA942975AE4C007117CA /* ListLocationsVC.swift */; };
+		9250FA972975AE56007117CA /* ListCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA962975AE56007117CA /* ListCategoriesVC.swift */; };
+		9250FA992975AE60007117CA /* LevelSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA982975AE60007117CA /* LevelSelectorVC.swift */; };
+		9250FA9B2975AE7C007117CA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA9A2975AE7C007117CA /* SearchVC.swift */; };
+		9250FA9D2975AE88007117CA /* TurnByTurnDirectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA9C2975AE88007117CA /* TurnByTurnDirectionsVC.swift */; };
 		92D3EDD82971D65A007FF548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3EDD72971D65A007FF548 /* AppDelegate.swift */; };
 		92D3EDDA2971D65A007FF548 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3EDD92971D65A007FF548 /* SceneDelegate.swift */; };
 		92D3EDDC2971D65B007FF548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3EDDB2971D65B007FF548 /* ViewController.swift */; };
@@ -27,6 +35,14 @@
 		924B55122971F9DD00DDA0F5 /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
 		924B55142971F9F700DDA0F5 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		924B55182972041D00DDA0F5 /* MarkersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkersVC.swift; sourceTree = "<group>"; };
+		9250FA8E2975ADD0007117CA /* ABWayfindingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABWayfindingVC.swift; sourceTree = "<group>"; };
+		9250FA902975AE0C007117CA /* BlueDotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueDotVC.swift; sourceTree = "<group>"; };
+		9250FA922975AE3B007117CA /* CameraControlsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlsVC.swift; sourceTree = "<group>"; };
+		9250FA942975AE4C007117CA /* ListLocationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocationsVC.swift; sourceTree = "<group>"; };
+		9250FA962975AE56007117CA /* ListCategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesVC.swift; sourceTree = "<group>"; };
+		9250FA982975AE60007117CA /* LevelSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorVC.swift; sourceTree = "<group>"; };
+		9250FA9A2975AE7C007117CA /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		9250FA9C2975AE88007117CA /* TurnByTurnDirectionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnDirectionsVC.swift; sourceTree = "<group>"; };
 		92D3EDD42971D65A007FF548 /* PlaygroundSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaygroundSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D3EDD72971D65A007FF548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D3EDD92971D65A007FF548 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +72,14 @@
 				924B550E2971EDA200DDA0F5 /* RenderMapVC.swift */,
 				924B55102971F5E300DDA0F5 /* AddingInteractivityVC.swift */,
 				924B55182972041D00DDA0F5 /* MarkersVC.swift */,
+				9250FA8E2975ADD0007117CA /* ABWayfindingVC.swift */,
+				9250FA902975AE0C007117CA /* BlueDotVC.swift */,
+				9250FA922975AE3B007117CA /* CameraControlsVC.swift */,
+				9250FA942975AE4C007117CA /* ListLocationsVC.swift */,
+				9250FA962975AE56007117CA /* ListCategoriesVC.swift */,
+				9250FA982975AE60007117CA /* LevelSelectorVC.swift */,
+				9250FA9A2975AE7C007117CA /* SearchVC.swift */,
+				9250FA9C2975AE88007117CA /* TurnByTurnDirectionsVC.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -225,14 +249,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9250FA912975AE0C007117CA /* BlueDotVC.swift in Sources */,
 				924B55132971F9DD00DDA0F5 /* ExampleCell.swift in Sources */,
 				924B55152971F9F700DDA0F5 /* Example.swift in Sources */,
 				924B550F2971EDA200DDA0F5 /* RenderMapVC.swift in Sources */,
+				9250FA932975AE3B007117CA /* CameraControlsVC.swift in Sources */,
+				9250FA8F2975ADD0007117CA /* ABWayfindingVC.swift in Sources */,
+				9250FA952975AE4C007117CA /* ListLocationsVC.swift in Sources */,
 				92D3EDDC2971D65B007FF548 /* ViewController.swift in Sources */,
+				9250FA9D2975AE88007117CA /* TurnByTurnDirectionsVC.swift in Sources */,
+				9250FA9B2975AE7C007117CA /* SearchVC.swift in Sources */,
 				92D3EDD82971D65A007FF548 /* AppDelegate.swift in Sources */,
 				924B55192972041D00DDA0F5 /* MarkersVC.swift in Sources */,
 				924B55112971F5E300DDA0F5 /* AddingInteractivityVC.swift in Sources */,
 				92D3EDDA2971D65A007FF548 /* SceneDelegate.swift in Sources */,
+				9250FA992975AE60007117CA /* LevelSelectorVC.swift in Sources */,
+				9250FA972975AE56007117CA /* ListCategoriesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

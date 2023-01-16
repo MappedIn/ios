@@ -1,15 +1,13 @@
 //
-//  MarkersVC.swift
+//  ABWayfindingVC.swift
 //  PlaygroundSamples
 //
 
 import Mappedin
 import UIKit
 
-class MarkersVC: UIViewController {
+class ABWayfindingVC: UIViewController {
     var mapView: MPIMapView?
-    var markerIds: [String] = .init()
-    var markerId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,28 +23,29 @@ class MarkersVC: UIViewController {
                     clientId: "5eab30aa91b055001a68e996",
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
-                ),
-                showVenueOptions: MPIOptions.ShowVenue(
-                    labelAllLocationsOnInit: false
                 ))
         }
     }
 }
 
-extension MarkersVC: MPIMapViewDelegate {
+extension ABWayfindingVC: MPIMapViewDelegate {
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
-        mapView?.flatLabelManager.labelAllLocations(options: MPIOptions.FlatLabelAllLocations())
+        let departure = mapView?.venueData?.locations.first(where: { $0.name == "Pet World" })
+        let destination = mapView?.venueData?.locations.first(where: { $0.name == "Microsoft" })
+        
+        guard departure != nil && destination != nil else { return }
+        
+        mapView?.getDirections(to: departure!, from: destination!) {
+            directions in
+            self.mapView?.journeyManager.draw(directions: directions!)
+        }
     }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
     
-    func onNothingClicked() {
-        for markerId in markerIds {
-            mapView?.removeMarker(id: markerId)
-        }
-    }
+    func onNothingClicked() {}
     
     func onBlueDotPositionUpdate(update: Mappedin.MPIBlueDotPositionUpdate) {}
     
@@ -56,14 +55,5 @@ extension MarkersVC: MPIMapViewDelegate {
     
     func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {}
     
-    func onPolygonClicked(polygon: MPIPolygon) {
-        guard let location = polygon.locations?.first else { return }
-        guard let entrance = polygon.entrances?.first else { return }
-        
-        if let markerId = mapView?.createMarker(node: entrance, contentHtml: "<div style=\"background-color:white; border: 2px solid black; padding: 0.4rem; border-radius: 0.4rem;\">\(location.name)</div>",
-                                                markerOptions: MPIOptions.Marker(rank: 4.0, anchor: MPIOptions.MARKER_ANCHOR.CENTER))
-        {
-            markerIds.append(markerId)
-        }
-    }
+    func onPolygonClicked(polygon: MPIPolygon) {}
 }

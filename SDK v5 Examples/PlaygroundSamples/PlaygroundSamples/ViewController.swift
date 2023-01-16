@@ -7,7 +7,7 @@ import UIKit
 
 class ViewController: UIViewController {
     private let tableView = UITableView()
-    private var examples: [Example] = [Example]()
+    private var examples: [Example] = .init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,14 @@ class ViewController: UIViewController {
         )
         examples.append(Example(title: "Adding Interactivity", description: "Make locations tappable", viewController: AddingInteractivityVC()))
         examples.append(Example(title: "Markers", description: "Adding HTML markers to the map view", viewController: MarkersVC()))
+        examples.append(Example(title: "A-B Wayfinding", description: "Get directions from A to B displayed on the map", viewController: ABWayfindingVC()))
+        examples.append(Example(title: "Blue Dot", description: "Display the Blue Dot on the map", viewController: BlueDotVC()))
+        examples.append(Example(title: "Camera Controls", description: "Set, animate or focus the camera on a set of map objects", viewController: CameraControlsVC()))
+        examples.append(Example(title: "List Locations", description: "List locations of a venue without rendering the map", viewController: ListLocationsVC()))
+        examples.append(Example(title: "List Categories", description: "List locations in sectioned by category", viewController: ListCategoriesVC()))
+        examples.append(Example(title: "Level Selector", description: "Add a level selector", viewController: LevelSelectorVC()))
+        examples.append(Example(title: "Turn-by-Turn Directions", description: "Display text-based turn-by-turn directions", viewController: TurnByTurnDirectionsVC()))
+        examples.append(Example(title: "Search", description: "Search locations within a venue", viewController: SearchVC()))
     }
 
     func setupTableView() {
@@ -51,7 +59,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(examples[indexPath.row].viewController, animated: true)
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         64
     }

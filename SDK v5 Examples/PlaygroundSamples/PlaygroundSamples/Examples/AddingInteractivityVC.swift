@@ -14,56 +14,39 @@ class AddingInteractivityVC: UIViewController {
         mapView = MPIMapView(frame: view.frame)
         mapView?.delegate = self
         if let mapView = mapView {
-            self.view.addSubview(mapView)
+            view.addSubview(mapView)
             
+            // See Trial API key Terms and Conditions
+            // https://developer.mappedin.com/api-keys/
             mapView.loadVenue(options:
-                                MPIOptions.Init(
-                                    clientId: "5eab30aa91b055001a68e996",
-                                    clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
-                                    venue: "mappedin-demo-mall"
-                                ),
-                              showVenueOptions: MPIOptions.ShowVenue(
-                                backgroundColor: "#ffffff"
-                              ))
+                MPIOptions.Init(
+                    clientId: "5eab30aa91b055001a68e996",
+                    clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
+                    venue: "mappedin-demo-mall"
+                ))
         }
     }
 }
 
 extension AddingInteractivityVC: MPIMapViewDelegate {
-    func onDataLoaded(data: Mappedin.MPIData) {
-        
-    }
+    func onDataLoaded(data: Mappedin.MPIData) {}
     
-    func onFirstMapLoaded() {
-        
-    }
+    func onFirstMapLoaded() {}
     
-    func onMapChanged(map: Mappedin.MPIMap) {
-        
-    }
+    func onMapChanged(map: Mappedin.MPIMap) {}
     
-    func onNothingClicked() {
-        
-    }
+    func onNothingClicked() {}
     
-    func onBlueDotPositionUpdate(update: Mappedin.MPIBlueDotPositionUpdate) {
-        
-    }
+    func onBlueDotPositionUpdate(update: Mappedin.MPIBlueDotPositionUpdate) {}
     
-    func onBlueDotStateChange(stateChange: Mappedin.MPIBlueDotStateChange) {
-        
-    }
+    func onBlueDotStateChange(stateChange: Mappedin.MPIBlueDotStateChange) {}
     
-    func onStateChanged(state: Mappedin.MPIState) {
-        
-    }
+    func onStateChanged(state: Mappedin.MPIState) {}
     
-    func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {
-        
-    }
+    func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {}
     
     func onPolygonClicked(polygon: MPIPolygon) {
-        mapView?.clearAllPolygonColors() { error in
+        mapView?.clearAllPolygonColors { _ in
             self.mapView?.setPolygonColor(polygon: polygon, color: "#BF4320")
         }
     }
