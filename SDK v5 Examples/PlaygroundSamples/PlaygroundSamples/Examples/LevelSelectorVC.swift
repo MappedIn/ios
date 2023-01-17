@@ -6,12 +6,14 @@
 import Mappedin
 import UIKit
 
-class LevelSelectorVC: UIViewController {
+class LevelSelectorVC: UIViewController, MPIMapViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     var mapView: MPIMapView?
+    let pickerView = UIPickerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView = MPIMapView(frame: view.frame)
+        view.backgroundColor = .systemBackground
+        mapView = MPIMapView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: (view.frame.height / 4) * 3))
         mapView?.delegate = self
         if let mapView = mapView {
             view.addSubview(mapView)
@@ -26,10 +28,38 @@ class LevelSelectorVC: UIViewController {
                 ))
         }
     }
-}
+    
+    func setupControlsView() {
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pickerView)
+        pickerView.delegate = self
 
-extension LevelSelectorVC: MPIMapViewDelegate {
-    func onDataLoaded(data: Mappedin.MPIData) {}
+        pickerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        pickerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        pickerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return mapView?.venueData?.maps.count ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return mapView?.venueData?.maps[row].name ?? ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if let selectedMap = mapView?.venueData?.maps[row] {
+            mapView?.setMap(map: selectedMap)
+        }
+    }
+    
+    func onDataLoaded(data: Mappedin.MPIData) {
+        setupControlsView()
+    }
     
     func onFirstMapLoaded() {}
     
@@ -47,4 +77,3 @@ extension LevelSelectorVC: MPIMapViewDelegate {
     
     func onPolygonClicked(polygon: MPIPolygon) {}
 }
-
