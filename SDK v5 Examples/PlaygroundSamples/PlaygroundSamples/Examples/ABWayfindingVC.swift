@@ -34,10 +34,10 @@ extension ABWayfindingVC: MPIMapViewDelegate {
     func onFirstMapLoaded() {
         let departure = mapView?.venueData?.locations.first(where: { $0.name == "Pet World" })
         let destination = mapView?.venueData?.locations.first(where: { $0.name == "Microsoft" })
-        
+
         guard departure != nil && destination != nil else { return }
-        
-        mapView?.getDirections(to: departure!, from: destination!) {
+
+        mapView?.getDirections(to: destination!, from: departure!) {
             directions in
             self.mapView?.journeyManager.draw(directions: directions!)
         }

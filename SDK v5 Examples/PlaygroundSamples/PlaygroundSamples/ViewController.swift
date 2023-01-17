@@ -58,6 +58,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(examples[indexPath.row].viewController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

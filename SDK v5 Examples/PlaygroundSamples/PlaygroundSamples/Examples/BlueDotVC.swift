@@ -33,9 +33,20 @@ extension BlueDotVC: MPIMapViewDelegate {
     
     func onFirstMapLoaded() {
         mapView?.blueDotManager.enable(options: MPIOptions.BlueDot(smoothing: false, showBearing: true))
-        let coords = MPICoordinates(latitude: 43.52012478635707, longitude: -80.53951744629536, accuracy: 2.0, floorLevel: 0)
-        let position = MPIPosition(timestamp: 1.0, coords: coords)
-        mapView?.blueDotManager.updatePosition(position: position)
+        
+        // Load positions from blue-dot-positions.json
+        guard let filepath = Bundle.main.path(forResource: "blue-dot-positions", ofType: "json") else { return }
+        let contents = try? String(contentsOfFile: filepath)
+        guard let positionData = contents?.data(using: .utf8) else { return }
+        guard let positions = try? JSONDecoder().decode([MPIPosition].self, from: positionData) else {
+            print("FAILED TO PARSE POSITIONS")
+            return
+        }
+        for (index, position) in positions.enumerated() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + (3 * Double(index))) {
+                self.mapView?.blueDotManager.updatePosition(position: position)
+            }
+        }
     }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
