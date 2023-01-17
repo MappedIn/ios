@@ -9,6 +9,7 @@ import UIKit
 class ListLocationsVC: UIViewController {
     let tableView = UITableView()
     var mapView: MPIMapView?
+    var sortedLocations: [MPILocation] = .init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,20 @@ class ListLocationsVC: UIViewController {
 }
 
 extension ListLocationsVC: UITableViewDataSource, UITableViewDelegate, MPIMapViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        mapView?.venueData?.locations.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.identifier, for: indexPath) as! LocationCell
+        cell.nameLabel.text = sortedLocations[indexPath.row].name
+        cell.descLabel.text = sortedLocations[indexPath.row].description
+        return cell
+    }
+    
     func onDataLoaded(data: Mappedin.MPIData) {
+        sortedLocations = mapView?.venueData?.locations.filter{ $0.type == "tenant" } ?? .init()
+        sortedLocations.sort{$0.name < $1.name}
         setupTableView()
     }
     
@@ -60,17 +74,6 @@ extension ListLocationsVC: UITableViewDataSource, UITableViewDelegate, MPIMapVie
     func onStateChanged(state: Mappedin.MPIState) {}
     
     func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {}
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        mapView?.venueData?.locations.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.identifier, for: indexPath) as! LocationCell
-        cell.nameLabel.text = mapView?.venueData?.locations[indexPath.row].name
-        cell.descLabel.text = mapView?.venueData?.locations[indexPath.row].description
-        return cell
-    }
 }
 
 class LocationCell: UITableViewCell {

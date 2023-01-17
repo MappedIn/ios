@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         examples.append(Example(title: "Blue Dot", description: "Display the Blue Dot on the map", viewController: BlueDotVC()))
         examples.append(Example(title: "Camera Controls", description: "Set, animate or focus the camera on a set of map objects", viewController: CameraControlsVC()))
         examples.append(Example(title: "List Locations", description: "List locations of a venue without rendering the map", viewController: ListLocationsVC()))
-        examples.append(Example(title: "List Categories", description: "List locations in sectioned by category", viewController: ListCategoriesVC()))
         examples.append(Example(title: "Level Selector", description: "Add a level selector", viewController: LevelSelectorVC()))
         examples.append(Example(title: "Turn-by-Turn Directions", description: "Display text-based turn-by-turn directions", viewController: TurnByTurnDirectionsVC()))
         examples.append(Example(title: "Search", description: "Search locations within a venue", viewController: SearchVC()))
