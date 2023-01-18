@@ -7,6 +7,7 @@ import Mappedin
 import UIKit
 
 class TurnByTurnDirectionsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, MPIMapViewDelegate {
+    let mainStackView = UIStackView()
     let tableView = UITableView()
     let cellIdentifier: String = "instructionCell"
     var instructions: [MPIInstruction] = .init()
@@ -15,11 +16,29 @@ class TurnByTurnDirectionsVC: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        mapView = MPIMapView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 2))
+        setupMainStackView()
+        setupMapView()
+        setupTableView()
+    }
+    
+    func setupMainStackView() {
+        view.addSubview(mainStackView)
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .fill
+        mainStackView.alignment = .fill
+    }
+    
+    func setupMapView() {
+        mapView = MPIMapView(frame: view.frame)
         mapView?.delegate = self
         if let mapView = mapView {
-            view.addSubview(mapView)
-
+            mainStackView.addArrangedSubview(mapView)
+            
             // See Trial API key Terms and Conditions
             // https://developer.mappedin.com/api-keys/
             mapView.loadVenue(options:
@@ -29,16 +48,11 @@ class TurnByTurnDirectionsVC: UIViewController, UITableViewDataSource, UITableVi
                     venue: "mappedin-demo-mall"
                 ))
         }
-        
-        setupTableView()
     }
     
     func setupTableView() {
-        view.addSubview(tableView)
+        mainStackView.addArrangedSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableView.heightAnchor.constraint(equalToConstant: view.frame.height / 2).isActive = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.dataSource = self

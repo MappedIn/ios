@@ -6,7 +6,7 @@
 import Mappedin
 import UIKit
 
-class BlueDotVC: UIViewController {
+class BlueDotVC: UIViewController, MPIMapViewDelegate {
     var mapView: MPIMapView?
 
     override func viewDidLoad() {
@@ -26,9 +26,7 @@ class BlueDotVC: UIViewController {
                 ))
         }
     }
-}
-
-extension BlueDotVC: MPIMapViewDelegate {
+    
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {

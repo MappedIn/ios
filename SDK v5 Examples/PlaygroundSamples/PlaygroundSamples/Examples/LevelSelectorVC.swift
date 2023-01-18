@@ -7,16 +7,35 @@ import Mappedin
 import UIKit
 
 class LevelSelectorVC: UIViewController, MPIMapViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-    var mapView: MPIMapView?
+    let mainStackView = UIStackView()
     let pickerView = UIPickerView()
-
+    var mapView: MPIMapView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        mapView = MPIMapView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: (view.frame.height / 4) * 3))
+        setupMainStackView()
+        setupMapView()
+        setupPickerView()
+    }
+    
+    func setupMainStackView() {
+        view.addSubview(mainStackView)
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .fill
+        mainStackView.alignment = .fill
+    }
+    
+    func setupMapView() {
+        mapView = MPIMapView(frame: view.frame)
         mapView?.delegate = self
         if let mapView = mapView {
-            view.addSubview(mapView)
+            mainStackView.addArrangedSubview(mapView)
             
             // See Trial API key Terms and Conditions
             // https://developer.mappedin.com/api-keys/
@@ -29,14 +48,9 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate, UIPickerViewDelegat
         }
     }
     
-    func setupControlsView() {
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(pickerView)
+    func setupPickerView() {
+        mainStackView.addArrangedSubview(pickerView)
         pickerView.delegate = self
-
-        pickerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        pickerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        pickerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -58,7 +72,7 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate, UIPickerViewDelegat
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {
-        setupControlsView()
+        setupPickerView()
     }
     
     func onFirstMapLoaded() {}

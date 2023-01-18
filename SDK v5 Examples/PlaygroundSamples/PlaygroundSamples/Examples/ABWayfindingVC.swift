@@ -6,7 +6,7 @@
 import Mappedin
 import UIKit
 
-class ABWayfindingVC: UIViewController {
+class ABWayfindingVC: UIViewController, MPIMapViewDelegate {
     var mapView: MPIMapView?
 
     override func viewDidLoad() {
@@ -26,9 +26,7 @@ class ABWayfindingVC: UIViewController {
                 ))
         }
     }
-}
-
-extension ABWayfindingVC: MPIMapViewDelegate {
+    
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {

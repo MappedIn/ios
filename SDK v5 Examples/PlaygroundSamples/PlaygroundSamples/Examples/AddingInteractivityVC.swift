@@ -6,7 +6,7 @@
 import Mappedin
 import UIKit
 
-class AddingInteractivityVC: UIViewController {
+class AddingInteractivityVC: UIViewController, MPIMapViewDelegate {
     var mapView: MPIMapView?
 
     override func viewDidLoad() {
@@ -26,9 +26,7 @@ class AddingInteractivityVC: UIViewController {
                 ))
         }
     }
-}
-
-extension AddingInteractivityVC: MPIMapViewDelegate {
+    
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {}
@@ -46,8 +44,6 @@ extension AddingInteractivityVC: MPIMapViewDelegate {
     func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {}
     
     func onPolygonClicked(polygon: MPIPolygon) {
-        mapView?.clearAllPolygonColors { _ in
-            self.mapView?.setPolygonColor(polygon: polygon, color: "#BF4320")
-        }
+        mapView?.cameraManager.focusOn(targets: MPIOptions.CameraTargets(polygons: [polygon]))
     }
 }

@@ -11,7 +11,6 @@
 		924B550F2971EDA200DDA0F5 /* RenderMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B550E2971EDA200DDA0F5 /* RenderMapVC.swift */; };
 		924B55112971F5E300DDA0F5 /* AddingInteractivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B55102971F5E300DDA0F5 /* AddingInteractivityVC.swift */; };
 		924B55132971F9DD00DDA0F5 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B55122971F9DD00DDA0F5 /* ExampleCell.swift */; };
-		924B55152971F9F700DDA0F5 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B55142971F9F700DDA0F5 /* Example.swift */; };
 		924B55192972041D00DDA0F5 /* MarkersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B55182972041D00DDA0F5 /* MarkersVC.swift */; };
 		9250FA8F2975ADD0007117CA /* ABWayfindingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA8E2975ADD0007117CA /* ABWayfindingVC.swift */; };
 		9250FA912975AE0C007117CA /* BlueDotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA902975AE0C007117CA /* BlueDotVC.swift */; };
@@ -21,6 +20,7 @@
 		9250FA9B2975AE7C007117CA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA9A2975AE7C007117CA /* SearchVC.swift */; };
 		9250FA9D2975AE88007117CA /* TurnByTurnDirectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FA9C2975AE88007117CA /* TurnByTurnDirectionsVC.swift */; };
 		9250FAA12976E565007117CA /* blue-dot-positions.json in Resources */ = {isa = PBXBuildFile; fileRef = 9250FAA02976E564007117CA /* blue-dot-positions.json */; };
+		9250FAA529789045007117CA /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250FAA429789045007117CA /* LocationCell.swift */; };
 		92D3EDD82971D65A007FF548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3EDD72971D65A007FF548 /* AppDelegate.swift */; };
 		92D3EDDA2971D65A007FF548 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3EDD92971D65A007FF548 /* SceneDelegate.swift */; };
 		92D3EDDC2971D65B007FF548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3EDDB2971D65B007FF548 /* ViewController.swift */; };
@@ -33,7 +33,6 @@
 		924B550E2971EDA200DDA0F5 /* RenderMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderMapVC.swift; sourceTree = "<group>"; };
 		924B55102971F5E300DDA0F5 /* AddingInteractivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingInteractivityVC.swift; sourceTree = "<group>"; };
 		924B55122971F9DD00DDA0F5 /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
-		924B55142971F9F700DDA0F5 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		924B55182972041D00DDA0F5 /* MarkersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkersVC.swift; sourceTree = "<group>"; };
 		9250FA8E2975ADD0007117CA /* ABWayfindingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABWayfindingVC.swift; sourceTree = "<group>"; };
 		9250FA902975AE0C007117CA /* BlueDotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueDotVC.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		9250FA9A2975AE7C007117CA /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		9250FA9C2975AE88007117CA /* TurnByTurnDirectionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnDirectionsVC.swift; sourceTree = "<group>"; };
 		9250FAA02976E564007117CA /* blue-dot-positions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "blue-dot-positions.json"; sourceTree = "<group>"; };
+		9250FAA429789045007117CA /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		92D3EDD42971D65A007FF548 /* PlaygroundSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaygroundSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D3EDD72971D65A007FF548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D3EDD92971D65A007FF548 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +69,6 @@
 		924B55172971FA1800DDA0F5 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				9250FAA02976E564007117CA /* blue-dot-positions.json */,
 				924B550E2971EDA200DDA0F5 /* RenderMapVC.swift */,
 				924B55102971F5E300DDA0F5 /* AddingInteractivityVC.swift */,
 				924B55182972041D00DDA0F5 /* MarkersVC.swift */,
@@ -113,7 +112,8 @@
 				92D3EDE22971D65B007FF548 /* LaunchScreen.storyboard */,
 				92D3EDE52971D65B007FF548 /* Info.plist */,
 				924B55122971F9DD00DDA0F5 /* ExampleCell.swift */,
-				924B55142971F9F700DDA0F5 /* Example.swift */,
+				9250FAA02976E564007117CA /* blue-dot-positions.json */,
+				9250FAA429789045007117CA /* LocationCell.swift */,
 			);
 			path = PlaygroundSamples;
 			sourceTree = "<group>";
@@ -252,11 +252,11 @@
 			files = (
 				9250FA912975AE0C007117CA /* BlueDotVC.swift in Sources */,
 				924B55132971F9DD00DDA0F5 /* ExampleCell.swift in Sources */,
-				924B55152971F9F700DDA0F5 /* Example.swift in Sources */,
 				924B550F2971EDA200DDA0F5 /* RenderMapVC.swift in Sources */,
 				9250FA932975AE3B007117CA /* CameraControlsVC.swift in Sources */,
 				9250FA8F2975ADD0007117CA /* ABWayfindingVC.swift in Sources */,
 				9250FA952975AE4C007117CA /* ListLocationsVC.swift in Sources */,
+				9250FAA529789045007117CA /* LocationCell.swift in Sources */,
 				92D3EDDC2971D65B007FF548 /* ViewController.swift in Sources */,
 				9250FA9D2975AE88007117CA /* TurnByTurnDirectionsVC.swift in Sources */,
 				9250FA9B2975AE7C007117CA /* SearchVC.swift in Sources */,

@@ -6,8 +6,10 @@
 import Mappedin
 import UIKit
 
-class CameraControlsVC: UIViewController {
+class CameraControlsVC: UIViewController, MPIMapViewDelegate {
     // Views
+    let mainStackView = UIStackView()
+    let controlsStackView = UIStackView()
     var mapView: MPIMapView?
     var plusTiltBtn: UIButton?
     var minusTiltBtn: UIButton?
@@ -24,10 +26,28 @@ class CameraControlsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        mapView = MPIMapView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: (view.frame.height / 3) * 2))
+        setupMainStackView()
+        setupMapView()
+        setupControlsStackView()
+    }
+    
+    func setupMainStackView() {
+        view.addSubview(mainStackView)
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .fill
+        mainStackView.alignment = .fill
+    }
+    
+    func setupMapView() {
+        mapView = MPIMapView(frame: view.frame)
         mapView?.delegate = self
         if let mapView = mapView {
-            view.addSubview(mapView)
+            mainStackView.addArrangedSubview(mapView)
             
             // See Trial API key Terms and Conditions
             // https://developer.mappedin.com/api-keys/
@@ -38,20 +58,12 @@ class CameraControlsVC: UIViewController {
                     venue: "mappedin-demo-mall"
                 ))
         }
-        
-        setupControlsView()
     }
     
-    func setupControlsView() {
-        let controlsStackView = UIStackView()
-        view.addSubview(controlsStackView)
+    func setupControlsStackView() {
+        mainStackView.addArrangedSubview(controlsStackView)
         controlsStackView.axis = .vertical
         controlsStackView.distribution = .fillEqually
-        controlsStackView.translatesAutoresizingMaskIntoConstraints = false
-        controlsStackView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        controlsStackView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        controlsStackView.heightAnchor.constraint(equalToConstant: view.frame.height / 3).isActive = true
-        controlsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         // Tilt Buttons
         let tiltStackView = UIStackView()
@@ -105,9 +117,7 @@ class CameraControlsVC: UIViewController {
         resetBtn?.setTitle("Reset", for: .normal)
         controlsStackView.addArrangedSubview(resetBtn!)
     }
-}
-
-extension CameraControlsVC: MPIMapViewDelegate {
+    
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {

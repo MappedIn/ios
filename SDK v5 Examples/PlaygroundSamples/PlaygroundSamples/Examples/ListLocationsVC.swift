@@ -6,7 +6,7 @@
 import Mappedin
 import UIKit
 
-class ListLocationsVC: UIViewController {
+class ListLocationsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, MPIMapViewDelegate {
     let tableView = UITableView()
     var mapView: MPIMapView?
     var sortedLocations: [MPILocation] = .init()
@@ -31,31 +31,35 @@ class ListLocationsVC: UIViewController {
     func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(LocationCell.self, forCellReuseIdentifier: LocationCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
     }
-}
-
-extension ListLocationsVC: UITableViewDataSource, UITableViewDelegate, MPIMapViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mapView?.venueData?.locations.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.identifier, for: indexPath) as! LocationCell
+        if let url = URL(string: (sortedLocations[indexPath.row].logo?.small) ?? "") {
+            cell.logoImage.load(url: url)
+        }
         cell.nameLabel.text = sortedLocations[indexPath.row].name
         cell.descLabel.text = sortedLocations[indexPath.row].description
         return cell
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {
-        sortedLocations = mapView?.venueData?.locations.filter{ $0.type == "tenant" } ?? .init()
-        sortedLocations.sort{$0.name < $1.name}
+        sortedLocations = mapView?.venueData?.locations.filter { $0.type == "tenant" && $0.description != nil && $0.logo?.small != nil } ?? .init()
+        sortedLocations.sort { $0.name < $1.name }
         setupTableView()
     }
     
@@ -74,30 +78,4 @@ extension ListLocationsVC: UITableViewDataSource, UITableViewDelegate, MPIMapVie
     func onStateChanged(state: Mappedin.MPIState) {}
     
     func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {}
-}
-
-class LocationCell: UITableViewCell {
-    public static let identifier = "LocationCell"
-    let nameLabel = UILabel()
-    let descLabel = UILabel()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
-        descLabel.font = .systemFont(ofSize: 18)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(descLabel)
-    }
-
-    @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        nameLabel.frame = CGRect(x: 4, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height / 2)
-        descLabel.frame = CGRect(x: 4, y: nameLabel.frame.size.height, width: contentView.frame.size.width, height: contentView.frame.size.height / 2)
-    }
 }
