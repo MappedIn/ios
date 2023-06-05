@@ -1,52 +1,40 @@
-# Mappedin iOS Integrations
+# Mappedin iOS Samples
 
-In this repo you can find a number of sample applications demonstrating different ways to integrate with Mappedin to render your maps and begin building your own custom indoor mapping experiences on iOS. To learn more about ways to integrate with Mappedin, checkout [developer.mappedin.com](https://developer.mappedin.com/).
+This repo contains sample applications demonstrating different ways to integrate with the Mappedin SDK for iOS to render maps and build a custom indoor mapping experience. To learn more about ways to integrate with Mappedin, refer to [developer.mappedin.com](https://developer.mappedin.com/).
 
-The Mappedin SDK for iOS enables you to build powerful, highly flexible, unique, indoor mapping experiences natively inside your iOS apps. This repo contains projects showcasing versions 1, 2 of our fully native SDK, with more projects coming soon to get you started on more advanced projects. 
+The Mappedin SDK for iOS enables you to build powerful and highly flexible indoor mapping experiences natively on iOS.
 
-This repo also contains a project demonstrating how to integrate with our our out of the box web product, [Mappedin Web](https://www.mappedin.com/wayfinding/web-app/), within a webview on a mobile app. 
+This repo also contains a project demonstrating how to use an iOS WKWebView to integrate with our out of the box web product, [Mappedin Web](https://www.mappedin.com/wayfinding/web-app/). 
 
+------
 
-## Mappedin iOS SDK v2 Examples
+## Mappedin iOS SDK Examples
 
-We're very excited to launch version 2 of The Mappedin SDK for iOS! Version 2 is a completely new SDK built from the ground up to enable us to take indoor mapping experiences further than ever before. The SDK supports much of the sample functionality as version 1 and more, but in version 2, rendering is powered by the [Mapbox Maps SDK](https://docs.mapbox.com/ios/maps/examples/). This means that you'll be able to use some features of the Mapbox Maps SDK as well as Mappedin features.
+To read more about the Mappedin SDK for iOS, refer to [Getting Started with Mappedin SDK for iOS](https://developer.mappedin.com/ios-sdk/latest/getting-started/) and additional guides in the Mappedin developer docs.
 
-You can view all the [documentation](https://developer.mappedin.com/docs/ios/) for the SDK along with informative [guides](https://developer.mappedin.com/guides/ios/) at [developer.mappedin.com](https://developer.mappedin.com/).
+The sample projects in this repo provide a client Id and client secret to access demo venues. Production apps will need their own unique client ID and client secret. Contact your Mappedin representative in order to obtain identifiers for your venues.
 
-In this repo we've provided some sample code to get you started on the SDK, and we've also provided a key and secret for the SDK that has access to some demo venues. When you're ready to start using your own venues with the SDK you will need to contact a Mappedin representative to get your own unique key and secret.
+The following table list the sample applications that pertain to the latest version of the Mappedin SDK for iOS. PlaygroundSamples lists the activity name after the sample name.
 
-### Quickstart
+| **Sample Name** | **Description** | **Guide** |
+| --------------- | --------------- | --------- |
+| PlaygroundSamples - ABWayfinding | Demonstrates drawing directions on the map from one location to another. | [A-B Wayfinding](https://developer.mappedin.com/ios-sdk/v5/wayfinding) |
+| PlaygroundSamples - AddInteractivity | Demonstrates capturing when a user touches a polygon and changes the polygon color. | [Adding Interactivity](https://developer.mappedin.com/ios-sdk/v5/add-interactivity) |
+| PlaygroundSamples - BlueDot | Demonstrates showing the user's location on the map as a blue dot. Uses scripted location coordinates to simulate movement. | [Blue Dot](https://developer.mappedin.com/ios-sdk/v5/blue-dot) |
+| PlaygroundSamples - CameraControls | Demonstrates moving the camera to change the way the map is viewed. | [Camera Controls](https://developer.mappedin.com/ios-sdk/v5/camera-controls) |
+| Playground Samples - Level Selector | Demonstrates switching between maps for venues with multiple floors and or multiple buildings. |           |
+| PlaygroundSamples - List Locations | Demonstrates getting the name, description and icon for all locations and displaying them in a list. |           |
+| PlaygroundSamples - Markers | Demonstrates placing markers on the map where a user touches. | [Markers](https://developer.mappedin.com/ios-sdk/v5/markers) |
+| PlaygroundSamples - Render Map | Demonstrates displaying a map. | [Getting Started with Mappedin SDK for iOS](https://developer.mappedin.com/ios-sdk/v5/getting-started) |
+| PlaygroundSamples - Search | Demonstrates a text search for a location name. |           |
+| PlaygroundSamples - Turn By Turn Directions | Demonstrates retrieving and showing turn by turn directions between two points on the map. |           |
+| Web Examples | Demonstrates displaying the Mappedin Web v2 web app in an iOS WKWebView. It also shows how to open external links in a separate browser. | [Mappedin Web v2 App Guide](https://developer.mappedin.com/pre-built-applications/responsive-web-app-guide) |
 
-This is simple walkthrough to get you started with the Mappedin iOS SDK as quickly as possible, with minimal code. What you'll see is a map rendered on the screen for you to manipulate with familiar guestures, but no other interactions are enabled. The Mappedin iOS SDK provides many ways to interact with the MapView and map data, but as this sample demonstrates, there is no built-in UI or default map interactions. You have complete flexibility over the behaviour, look and feel of applications built using the SDK.
+------
 
-Use this sample to start off if you want to integrate with the Mappedin iOS SDK from scratch. More samples will be coming soon to demonstrate how to interact with the map in differnet ways to build sophisticated experiences. 
+## Additional Resources
 
-## Mappedin iOS SDK v1 Examples
-
-You can view all the up to date documentation in this project's [GitHub Page](http://mappedin.github.io/ios/).
-
-We've provided a key and secret in this repo that has access to some demo venues.
-
-When you're ready to start using your own venues with the SDK you will need to contact a Mappedin representative to get your own unique key and secret.
-
-### Walkthrough
-
-This is simple walkthrough to get you started with the MappedIn iOS SDK, with minimal code, and lots of helpful comments. The Mappedin iOS SDK provides many ways to interact with the MapView and map data, but as this sample demonstrates, there is no built-in UI or default map interactions. You have complete flexibility over the behaviour, look and feel of applications built using the SDK.
-
-Use this sample to start off if you want to integrate with the Mappedin iOS SDK from scratch. Take a look at the next sample in this repo for sample code on how to use a few of the key features the SDK provides.
-
-### Wayfinding Demo
-
-This is a fully featured sample app. It is integrated with Apple's location service. We've provided keys with access to a few venues including a fake mall called "Mappedin Demo Mall." We've also included a GPX file called Location.gpx that simulates a user moving around this venue.
-
-If you want to try out the blue dot functionality, you will need to **Edit Scheme**, **Allow Location Simulation**, and select this **Location** as **Default Location**. Right now it is set up to simulate user walking around mappedin-demo-mall. Modify the coordinates in this file if you wish to simulate a different location
-
-## Web Examples
-
-### Mappedin Web Example
-
-This is a short demonstration of creating a Web View in an iOS application, and displaying Mappedin Web. It also contains an example of setting up external links to open in a separate browser.
-
-To get you started we've provided a Mappedin Web API key and secret that has access to some demo venues.
-
-When you're ready to start using your own venues you will need to contact a Mappedin representative to get your own unique key and secret. Add your Mappedin API keys, search keys, and the venue's slug to this file.
+- [Mappedin Developer Site](https://developer.mappedin.com/)
+- [Mappedin SDK for iOS API Docs](https://developer.mappedin.com/ios-sdk-api/latest/)
+- [Mappedin Developer Blog](https://www.mappedin.com/blog/developers/)
+------
