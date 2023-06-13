@@ -67,7 +67,7 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
         buildingButton.showsMenuAsPrimaryAction = true
         buildingButton.translatesAutoresizingMaskIntoConstraints = false
         buildingStackView.addArrangedSubview(buildingButton)
-
+        buildingStackView.addArrangedSubview(UIView())
         mainStackView.addArrangedSubview(buildingStackView)
 
         let levelStackView = UIStackView()
@@ -88,7 +88,7 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
         levelButton.showsMenuAsPrimaryAction = true
         levelButton.translatesAutoresizingMaskIntoConstraints = false
         levelStackView.addArrangedSubview(levelButton)
-
+        levelStackView.addArrangedSubview(UIView())
         mainStackView.addArrangedSubview(levelStackView)
     }
     
