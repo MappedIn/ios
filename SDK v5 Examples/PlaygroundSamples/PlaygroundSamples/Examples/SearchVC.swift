@@ -81,7 +81,19 @@ class SearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mapView?.cameraManager.focusOn(targets: MPIOptions.CameraTargets(polygons: searchResults[indexPath.row].polygons))
+        
+        if let targetPolygons = searchResults[indexPath.row].polygons,
+           let floor = targetPolygons[0].map {
+            // Ensure that the correct floor is displayed and map loaded before calling focusOn.
+            if (floor.id != mapView?.currentMap?.id) {
+                mapView?.setMap(map: floor) { (action) in
+                    self.mapView?.cameraManager.focusOn(targets: MPIOptions.CameraTargets(polygons: targetPolygons))
+                }
+            }
+            else {
+                mapView?.cameraManager.focusOn(targets: MPIOptions.CameraTargets(polygons: targetPolygons))
+            }
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
