@@ -24,15 +24,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func setupExamples() {
-        examples.append(Example(title: "Render a Map", description: "Basic venue loading and map rendering", viewController: RenderMapVC())
-        )
+        examples.append(Example(title: "Render a Map", description: "Basic venue loading and map rendering", viewController: RenderMapVC()))
         examples.append(Example(title: "Adding Interactivity", description: "React to location tapped", viewController: AddingInteractivityVC()))
         examples.append(Example(title: "Markers", description: "Adding HTML markers to the map view", viewController: MarkersVC()))
         examples.append(Example(title: "A-B Wayfinding", description: "Get directions from A to B displayed on the map", viewController: ABWayfindingVC()))
         examples.append(Example(title: "Blue Dot", description: "Display the Blue Dot on the map", viewController: BlueDotVC()))
         examples.append(Example(title: "Camera Controls", description: "Set, animate or focus the camera on a set of map objects", viewController: CameraControlsVC()))
         examples.append(Example(title: "List Locations", description: "List locations of a venue without rendering the map", viewController: ListLocationsVC()))
-        examples.append(Example(title: "Level Selector", description: "Add a level selector", viewController: LevelSelectorVC()))
+        examples.append(Example(title: "Building & Level Selection", description: "Add a building & level selector", viewController: LevelSelectorVC()))
         examples.append(Example(title: "Turn-by-Turn Directions", description: "Display text-based turn-by-turn directions", viewController: TurnByTurnDirectionsVC()))
         examples.append(Example(title: "Search", description: "Search locations within a venue", viewController: SearchVC()))
     }
