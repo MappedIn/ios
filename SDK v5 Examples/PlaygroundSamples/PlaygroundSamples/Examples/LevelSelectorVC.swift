@@ -6,17 +6,17 @@
 import Mappedin
 import UIKit
 
-class LevelSelectorVC: UIViewController, MPIMapViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
     let mainStackView = UIStackView()
-    let pickerView = UIPickerView()
     var mapView: MPIMapView?
+    let buildingButton = UIButton(type: .system)
+    let levelButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupMainStackView()
         setupMapView()
-        setupPickerView()
     }
     
     func setupMainStackView() {
@@ -43,36 +43,96 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate, UIPickerViewDelegat
                 MPIOptions.Init(
                     clientId: "5eab30aa91b055001a68e996",
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
-                    venue: "mappedin-demo-mall"
+                    venue: "mappedin-demo-campus"
                 ))
         }
     }
     
-    func setupPickerView() {
-        mainStackView.addArrangedSubview(pickerView)
-        pickerView.delegate = self
+    func setupButtons() {
+        let buildingStackView = UIStackView()
+        buildingStackView.axis = .horizontal
+        buildingStackView.alignment = .center
+        buildingStackView.spacing = 8
+        buildingStackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        buildingStackView.isLayoutMarginsRelativeArrangement = true
+
+        let buildingLabel = UILabel()
+        buildingLabel.text = "Building: "
+        buildingLabel.translatesAutoresizingMaskIntoConstraints = false
+        buildingStackView.addArrangedSubview(buildingLabel)
+
+        // Set the button title to the name of the first map group (building).
+        buildingButton.setTitle(mapView?.venueData?.mapGroups[0].name, for: .normal)
+        buildingButton.menu = populateBuildingMenu()
+        buildingButton.showsMenuAsPrimaryAction = true
+        buildingButton.translatesAutoresizingMaskIntoConstraints = false
+        buildingStackView.addArrangedSubview(buildingButton)
+        buildingStackView.addArrangedSubview(UIView())
+        mainStackView.addArrangedSubview(buildingStackView)
+
+        let levelStackView = UIStackView()
+        levelStackView.axis = .horizontal
+        levelStackView.alignment = .center
+        levelStackView.spacing = 8
+        levelStackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        levelStackView.isLayoutMarginsRelativeArrangement = true
+
+        let levelLabel = UILabel()
+        levelLabel.text = "Level: "
+        levelStackView.addArrangedSubview(levelLabel)
+
+        // Set the button title to the name of the first map (level) in the first map group (building).
+        levelButton.setTitle(mapView?.venueData?.mapGroups[0].maps[0].name, for: .normal)
+        // Populate all maps (levels) in the first map group.
+        levelButton.menu = populateLevelMenu(selectedBuilding: mapView?.venueData?.mapGroups[0].name ?? "Default")
+        levelButton.showsMenuAsPrimaryAction = true
+        levelButton.translatesAutoresizingMaskIntoConstraints = false
+        levelStackView.addArrangedSubview(levelButton)
+        levelStackView.addArrangedSubview(UIView())
+        mainStackView.addArrangedSubview(levelStackView)
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return mapView?.venueData?.maps.count ?? 0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return mapView?.venueData?.maps[row].name ?? ""
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if let selectedMap = mapView?.venueData?.maps[row] {
-            mapView?.setMap(map: selectedMap)
+    // Populates the Building Selection menu with all Map Groups.
+    func populateBuildingMenu() -> UIMenu {
+        var menuActions: [UIAction] = []
+        
+        // Loop through all map groups and add their name to the building selection menu.
+        mapView?.venueData?.mapGroups.forEach{mapGroup in
+            let buildingAction = UIAction(title: mapGroup.name ?? "Unknown") { (action) in
+                // When a building is selected from the menu, change the button title and trigger loading of all
+                // map names (levels) in the map group into the level selection menu.
+                print(mapGroup.name ?? "Unknown" + " was clicked")
+                self.buildingButton.setTitle(mapGroup.name, for: .normal)
+                self.levelButton.menu = self.populateLevelMenu(selectedBuilding: mapGroup.name ?? "Default")
+                self.mapView?.setMap(map: mapGroup.maps[0])
+                self.levelButton.setTitle(mapGroup.maps[0].name, for: .normal)
+           }
+            menuActions.append(buildingAction)
         }
+        
+        return UIMenu(title: "Choose a Building", options: .displayInline, children: menuActions);
     }
-    
+  
+    // Populates the Level Selection menu with all Map names in the selected building (Map Group).
+    func populateLevelMenu (selectedBuilding:String) -> UIMenu {
+        var menuActions: [UIAction] = []
+        
+        //  Loop through all maps and add their name to the level selection menu.
+        mapView?.venueData?.mapGroups.first(where: {$0.name == selectedBuilding})?.maps.forEach{map in
+            let levelAction = UIAction(title: map.name) { (action) in
+                // When a new level is selected, change the button title and display the chosen map.
+                print(map.name + " was clicked")
+                self.levelButton.setTitle(map.name, for: .normal)
+                self.mapView?.setMap(map: map)
+            }
+            menuActions.append(levelAction)
+        }
+        return UIMenu(title: "Choose a Level", options: .displayInline, children: menuActions);
+    }
+
+    // Populate the buttons once the venue data has loaded.
     func onDataLoaded(data: Mappedin.MPIData) {
-        setupPickerView()
+        setupButtons()
     }
     
     func onFirstMapLoaded() {}
