@@ -84,7 +84,7 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
         // Set the button title to the name of the first map (level) in the first map group (building).
         levelButton.setTitle(mapView?.venueData?.mapGroups[0].maps[0].name, for: .normal)
         // Populate all maps (levels) in the first map group.
-        levelButton.menu = populateLevelMenu(selectedBuilding: mapView?.venueData?.mapGroups[0].maps[0].name ?? "Default")
+        levelButton.menu = populateLevelMenu(selectedBuilding: mapView?.venueData?.mapGroups[0].name ?? "Default")
         levelButton.showsMenuAsPrimaryAction = true
         levelButton.translatesAutoresizingMaskIntoConstraints = false
         levelStackView.addArrangedSubview(levelButton)
