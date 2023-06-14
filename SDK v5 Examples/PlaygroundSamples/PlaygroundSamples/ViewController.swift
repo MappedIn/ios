@@ -30,6 +30,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         examples.append(Example(title: "A-B Wayfinding", description: "Get directions from A to B displayed on the map", viewController: ABWayfindingVC()))
         examples.append(Example(title: "Blue Dot", description: "Display the Blue Dot on the map", viewController: BlueDotVC()))
         examples.append(Example(title: "Camera Controls", description: "Set, animate or focus the camera on a set of map objects", viewController: CameraControlsVC()))
+        examples.append(Example(title: "Floating Labels", description: "Display and modify floating labels", viewController: FloatingLabelsVC()))
+        examples.append(Example(title: "Flat Labels", description: "Display and modify flat labels", viewController: FlatLabelsVC()))
         examples.append(Example(title: "List Locations", description: "List locations of a venue without rendering the map", viewController: ListLocationsVC()))
         examples.append(Example(title: "Building & Level Selection", description: "Add a building & level selector", viewController: LevelSelectorVC()))
         examples.append(Example(title: "Turn-by-Turn Directions", description: "Display text-based turn-by-turn directions", viewController: TurnByTurnDirectionsVC()))

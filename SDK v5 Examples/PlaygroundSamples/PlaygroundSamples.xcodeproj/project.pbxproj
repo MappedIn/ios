@@ -26,6 +26,8 @@
 		92D3EDDC2971D65B007FF548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3EDDB2971D65B007FF548 /* ViewController.swift */; };
 		92D3EDE12971D65B007FF548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D3EDE02971D65B007FF548 /* Assets.xcassets */; };
 		92D3EDE42971D65B007FF548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D3EDE22971D65B007FF548 /* LaunchScreen.storyboard */; };
+		D1A0E2DE2A3A3435009559A6 /* FlatLabelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E2DD2A3A3435009559A6 /* FlatLabelsVC.swift */; };
+		D1A0E2E02A3A4B46009559A6 /* FloatingLabelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E2DF2A3A4B46009559A6 /* FloatingLabelsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		92D3EDE52971D65B007FF548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8EF676FF9535CBE0B5E8219 /* Pods-PlaygroundSamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaygroundSamples.debug.xcconfig"; path = "Target Support Files/Pods-PlaygroundSamples/Pods-PlaygroundSamples.debug.xcconfig"; sourceTree = "<group>"; };
 		C44CEF8F44FBBB8EE69224DA /* Pods-PlaygroundSamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaygroundSamples.release.xcconfig"; path = "Target Support Files/Pods-PlaygroundSamples/Pods-PlaygroundSamples.release.xcconfig"; sourceTree = "<group>"; };
+		D1A0E2DD2A3A3435009559A6 /* FlatLabelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatLabelsVC.swift; sourceTree = "<group>"; };
+		D1A0E2DF2A3A4B46009559A6 /* FloatingLabelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabelsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				9250FA982975AE60007117CA /* LevelSelectorVC.swift */,
 				9250FA9A2975AE7C007117CA /* SearchVC.swift */,
 				9250FA9C2975AE88007117CA /* TurnByTurnDirectionsVC.swift */,
+				D1A0E2DD2A3A3435009559A6 /* FlatLabelsVC.swift */,
+				D1A0E2DF2A3A4B46009559A6 /* FloatingLabelsVC.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -250,8 +256,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A0E2DE2A3A3435009559A6 /* FlatLabelsVC.swift in Sources */,
 				9250FA912975AE0C007117CA /* BlueDotVC.swift in Sources */,
 				924B55132971F9DD00DDA0F5 /* ExampleCell.swift in Sources */,
+				D1A0E2E02A3A4B46009559A6 /* FloatingLabelsVC.swift in Sources */,
 				924B550F2971EDA200DDA0F5 /* RenderMapVC.swift in Sources */,
 				9250FA932975AE3B007117CA /* CameraControlsVC.swift in Sources */,
 				9250FA8F2975ADD0007117CA /* ABWayfindingVC.swift in Sources */,
