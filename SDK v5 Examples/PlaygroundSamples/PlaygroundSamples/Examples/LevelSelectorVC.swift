@@ -62,7 +62,7 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
         buildingStackView.addArrangedSubview(buildingLabel)
 
         // Set the button title to the name of the first map group (building).
-        buildingButton.setTitle(mapView?.venueData?.mapGroups[0].name, for: .normal)
+        buildingButton.setTitle(mapView?.venueData?.mapGroups.first?.name, for: .normal)
         buildingButton.menu = populateBuildingMenu()
         buildingButton.showsMenuAsPrimaryAction = true
         buildingButton.translatesAutoresizingMaskIntoConstraints = false
@@ -82,9 +82,9 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
         levelStackView.addArrangedSubview(levelLabel)
 
         // Set the button title to the name of the first map (level) in the first map group (building).
-        levelButton.setTitle(mapView?.venueData?.mapGroups[0].maps[0].name, for: .normal)
+        levelButton.setTitle(mapView?.venueData?.mapGroups.first?.maps.first?.name, for: .normal)
         // Populate all maps (levels) in the first map group.
-        levelButton.menu = populateLevelMenu(selectedBuilding: mapView?.venueData?.mapGroups[0].name ?? "Default")
+        levelButton.menu = populateLevelMenu(selectedBuilding: mapView?.venueData?.mapGroups.first?.name ?? "Default")
         levelButton.showsMenuAsPrimaryAction = true
         levelButton.translatesAutoresizingMaskIntoConstraints = false
         levelStackView.addArrangedSubview(levelButton)
@@ -104,8 +104,12 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
                 print(mapGroup.name ?? "Unknown" + " was clicked")
                 self.buildingButton.setTitle(mapGroup.name, for: .normal)
                 self.levelButton.menu = self.populateLevelMenu(selectedBuilding: mapGroup.name ?? "Default")
-                self.mapView?.setMap(map: mapGroup.maps[0])
-                self.levelButton.setTitle(mapGroup.maps[0].name, for: .normal)
+                
+                //Ensure there is a map in the group to display.
+                if let theMap = mapGroup.maps.first {
+                    self.mapView?.setMap(map: theMap)
+                    self.levelButton.setTitle(theMap.name, for: .normal)
+                }
            }
             menuActions.append(buildingAction)
         }
