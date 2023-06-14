@@ -125,7 +125,7 @@ class FlatLabelsVC: UIViewController, MPIMapViewDelegate {
         // Zoom in when the map loads to better show the Flat Labels.
         mapView?.cameraManager.set(cameraTransform: MPIOptions.CameraConfiguration(zoom: 800.0,  position: mapView?.currentMap?.createCoordinate(latitude: 43.519881426957596, longitude: -80.53906704663625)))
         
-        // Enable all flat labels with the default style.
+        // Enable all Flat Labels with the default style.
         mapView?.flatLabelManager.labelAllLocations()
     }
     
