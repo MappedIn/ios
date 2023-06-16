@@ -79,6 +79,8 @@ class FloatingLabelsVC: UIViewController, MPIMapViewDelegate {
             
             self.mapView?.floatingLabelManager.removeAll()
             self.mapView?.floatingLabelManager.labelAllLocations(options: styleOptions)
+            
+            self.floatingLabelStyleButton.setTitle("Dark on Light", for: .normal)
         }
         menuActions.append(darkOnLightStyle)
         
@@ -88,6 +90,8 @@ class FloatingLabelsVC: UIViewController, MPIMapViewDelegate {
             
             self.mapView?.floatingLabelManager.removeAll()
             self.mapView?.floatingLabelManager.labelAllLocations(options: styleOptions)
+            
+            self.floatingLabelStyleButton.setTitle("Light on Dark", for: .normal)
         }
         menuActions.append(lightOnDarkStyle)
         
@@ -121,6 +125,8 @@ class FloatingLabelsVC: UIViewController, MPIMapViewDelegate {
 
             self.mapView?.floatingLabelManager.removeAll()
             self.mapView?.floatingLabelManager.labelAllLocations(options: styleOptions)
+            
+            self.floatingLabelStyleButton.setTitle("SVG Icons", for: .normal)
         }
         menuActions.append(svgIconsStyle)
         
