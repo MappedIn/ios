@@ -72,7 +72,7 @@ class TurnByTurnDirectionsVC: UIViewController, UITableViewDataSource, UITableVi
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
-        let departure = mapView?.venueData?.locations.first(where: { $0.name == "Pet World" })
+        let departure = mapView?.venueData?.locations.first(where: { $0.name == "Apple" })
         let destination = mapView?.venueData?.locations.first(where: { $0.name == "Microsoft" })
 
         guard departure != nil && destination != nil else { return }
