@@ -1,5 +1,5 @@
 platform :ios, '11.0'
 
 target 'PlaygroundSamples' do
-  pod 'MappedIn', '5.1.5'
+  pod 'MappedIn', '5.1.6'
 end
