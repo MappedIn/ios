@@ -6,13 +6,14 @@
 import Mappedin
 import UIKit
 
-class AddingInteractivityVC: UIViewController, MPIMapViewDelegate {
+class AddingInteractivityVC: UIViewController, MPIMapClickDelegate {
+
     var mapView: MPIMapView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView = MPIMapView(frame: view.frame)
-        mapView?.delegate = self
+        mapView?.mapClickDelegate = self
         if let mapView = mapView {
             view.addSubview(mapView)
             
@@ -27,23 +28,8 @@ class AddingInteractivityVC: UIViewController, MPIMapViewDelegate {
         }
     }
     
-    func onDataLoaded(data: Mappedin.MPIData) {}
-    
-    func onFirstMapLoaded() {}
-    
-    func onMapChanged(map: Mappedin.MPIMap) {}
-    
-    func onNothingClicked() {}
-    
-    func onBlueDotPositionUpdate(update: Mappedin.MPIBlueDotPositionUpdate) {}
-    
-    func onBlueDotStateChange(stateChange: Mappedin.MPIBlueDotStateChange) {}
-    
-    func onStateChanged(state: Mappedin.MPIState) {}
-    
-    func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {}
-    
-    func onPolygonClicked(polygon: MPIPolygon) {
-        mapView?.cameraManager.focusOn(targets: MPIOptions.CameraTargets(polygons: [polygon]))
+    func onClick(mapClickEvent: Mappedin.MPIMapClickEvent) {
+        mapView?.cameraManager.focusOn(targets: MPIOptions.CameraTargets(polygons: mapClickEvent.polygons))
     }
+    
 }

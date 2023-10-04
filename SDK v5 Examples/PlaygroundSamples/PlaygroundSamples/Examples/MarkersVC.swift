@@ -6,7 +6,8 @@
 import Mappedin
 import UIKit
 
-class MarkersVC: UIViewController, MPIMapViewDelegate {
+class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
+    
     var mapView: MPIMapView?
     var markerIds: [String] = .init()
     var markerId: String?
@@ -15,6 +16,7 @@ class MarkersVC: UIViewController, MPIMapViewDelegate {
         super.viewDidLoad()
         mapView = MPIMapView(frame: view.frame)
         mapView?.delegate = self
+        mapView?.mapClickDelegate = self
         if let mapView = mapView {
             view.addSubview(mapView)
             
@@ -40,11 +42,7 @@ class MarkersVC: UIViewController, MPIMapViewDelegate {
     
     func onMapChanged(map: Mappedin.MPIMap) {}
     
-    func onNothingClicked() {
-        for markerId in markerIds {
-            mapView?.removeMarker(id: markerId)
-        }
-    }
+    func onNothingClicked() {}
     
     func onBlueDotPositionUpdate(update: Mappedin.MPIBlueDotPositionUpdate) {}
     
@@ -54,20 +52,34 @@ class MarkersVC: UIViewController, MPIMapViewDelegate {
     
     func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {}
     
-    func onPolygonClicked(polygon: MPIPolygon) {
-        guard let location = polygon.locations?.first else { return }
-        guard let entrance = polygon.entrances?.first else { return }
+    func onPolygonClicked(polygon: MPIPolygon) {}
+    
+    func onClick(mapClickEvent: Mappedin.MPIMapClickEvent) {
         
-        if let markerId = mapView?.createMarker(
-            node: entrance,
-            contentHtml: """
-            <div style=\"background-color:white; border: 2px solid black; padding: 0.4rem; border-radius: 0.4rem;\">
-            \(location.name)
-            </div>
-            """,
-            markerOptions: MPIOptions.Marker(rank: 4.0, anchor: MPIOptions.MARKER_ANCHOR.CENTER)
-        ) {
-            markerIds.append(markerId)
+        if (mapClickEvent.polygons.isEmpty) {
+            //Remove all markers.
+            for markerId in markerIds {
+                mapView?.removeMarker(id: markerId)
+            }
+            
+        } else {
+            //Add a marker to the polygon clicked on.
+            guard let location = mapClickEvent.polygons.first?.locations?.first else { return }
+            guard let entrance = mapClickEvent.polygons.first?.entrances?.first else { return }
+            
+            if let markerId = mapView?.createMarker(
+                node: entrance,
+                contentHtml: """
+                <div style=\"background-color:white; border: 2px solid black; padding: 0.4rem; border-radius: 0.4rem;\">
+                \(location.name)
+                </div>
+                """,
+                markerOptions: MPIOptions.Marker(rank: 4.0, anchor: MPIOptions.MARKER_ANCHOR.CENTER)
+            ) {
+                markerIds.append(markerId)
+            }
         }
+        
+
     }
 }
