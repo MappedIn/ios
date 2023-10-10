@@ -31,14 +31,26 @@ class ABWayfindingVC: UIViewController, MPIMapViewDelegate {
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
-        let departure = mapView?.venueData?.locations.first(where: { $0.name == "Apple" })
-        let destination = mapView?.venueData?.locations.first(where: { $0.name == "Microsoft" })
+        var departure = mapView?.venueData?.locations.first(where: { $0.name == "Apple" })
+        var destination = mapView?.venueData?.locations.first(where: { $0.name == "Microsoft" })
 
         guard departure != nil && destination != nil else { return }
 
+        // Draw a path using Journey Manager.
         mapView?.getDirections(to: destination!, from: departure!) {
             directions in
             self.mapView?.journeyManager.draw(directions: directions!)
+        }
+        
+        departure = mapView?.venueData?.locations.first { $0.name == "Uniqlo" }
+        destination = mapView?.venueData?.locations.first { $0.name == "Nespresso" }
+
+        guard departure != nil && destination != nil else { return }
+        
+        // Draw a path using Path Manager.
+        mapView?.getDirections(to: destination!, from: departure!) {
+            directions in
+            self.mapView?.pathManager.add(nodes: directions!.path, options: MPIOptions.Path(drawDuration: 2000.0))
         }
     }
     
