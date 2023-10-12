@@ -156,7 +156,7 @@ class FloatingLabelsVC: UIViewController, MPIMapViewDelegate {
     
     func onFirstMapLoaded() {
         // Zoom in when the map loads to better show the Floating Labels.
-        mapView?.cameraManager.set(cameraTransform: MPIOptions.CameraConfiguration(zoom: 800.0,  position: mapView?.currentMap?.createCoordinate(latitude: 43.519881426957596, longitude: -80.53906704663625)))
+        mapView?.cameraManager.set(cameraTransform: MPIOptions.CameraConfiguration(zoom: 800.0,  position: mapView?.currentMap?.createCoordinate(latitude: 43.86181934825464, longitude: -78.94672121994297)))
     }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
