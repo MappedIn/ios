@@ -11,10 +11,18 @@ class AddingInteractivityVC: UIViewController, MPIMapClickDelegate, MPIMapViewDe
     
 
     var mapView: MPIMapView?
+    var mapView2: MPIMapView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView = MPIMapView(frame: view.frame)
+        
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
+
+        mapView = MPIMapView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight / 2))
+        mapView2 = MPIMapView(frame: CGRect(x: 0, y: screenHeight / 2, width: screenWidth, height: screenHeight / 2))
+        
         mapView?.mapClickDelegate = self
         mapView?.delegate = self
         if let mapView = mapView {
@@ -27,74 +35,64 @@ class AddingInteractivityVC: UIViewController, MPIMapClickDelegate, MPIMapViewDe
                     clientId: "5eab30aa91b055001a68e996",
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
-                ))
+                )){ error in
+                    print(error.debugDescription)
+                }
+        }
+        
+        if let mapView2 = mapView2 {
+            view.addSubview(mapView2)
+            
+            // See Trial API key Terms and Conditions
+            // https://developer.mappedin.com/api-keys/
+            mapView2.loadVenue(options:
+                MPIOptions.Init(
+                    clientId: "5eab30aa91b055001a68e996",
+                    clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
+                    venue: "mappedin-demo-mall"
+                )){ error in
+                    print(error.debugDescription)
+                }
         }
     }
     
     func onClick(mapClickEvent: Mappedin.MPIMapClickEvent) {
-        var message = ""
-        
-        // Use the map name as the title.
-        let title = mapClickEvent.maps.first?.name ?? ""
-        
-        // If a floating label was clicked, add its text to the message.
-        if (!mapClickEvent.floatingLabels.isEmpty)  {
-            message.append("Floating Label Clicked: ")
-            message.append(mapClickEvent.floatingLabels.first?.text ?? "")
-            message.append("\n")
+        if let mapView = mapView {
+            view.addSubview(mapView)
+            
+            // See Trial API key Terms and Conditions
+            // https://developer.mappedin.com/api-keys/
+            mapView.loadVenue(options:
+                MPIOptions.Init(
+                    clientId: "5eab30aa91b055001a68e996",
+                    clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
+                    venue: "mappedin-demo-stadium"
+                )){ error in
+                    print(error.debugDescription)
+                }
         }
         
-        // If a polygon was clicked, add it's location name to the message.
-        if (!mapClickEvent.polygons.isEmpty) {
-            message.append("Polygon clicked: ")
-            message.append(mapClickEvent.polygons.first?.locations?.first?.name ?? "")
-            message.append("\n")
+        if let mapView2 = mapView2 {
+            view.addSubview(mapView2)
+            
+            // See Trial API key Terms and Conditions
+            // https://developer.mappedin.com/api-keys/
+            mapView2.loadVenue(options:
+                MPIOptions.Init(
+                    clientId: "5eab30aa91b055001a68e996",
+                    clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
+                    venue: "mappedin-demo-stadium"
+                )){ error in
+                    print(error.debugDescription)
+                }
         }
-
-        // If a path was clicked, add it to the message.
-        if (!mapClickEvent.paths.isEmpty) {
-            message.append("You clicked a path.\n")
-        }
-        
-        // Add the coordinates clicked to the message.
-        message.append("Coordinate Clicked: \nLatitude: ")
-        message.append(mapClickEvent.position?.latitude.description ?? "")
-        message.append("\nLongitude: ")
-        message.append(mapClickEvent.position?.longitude.description ?? "")
-        
-        showMessage(title: title, message: message)
         
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
-        // Make floating labels interactive.
-        mapView?.floatingLabelManager.labelAllLocations(options: MPIOptions.FloatingLabelAllLocations(interactive: true))
-        
-        // Draw an interactive journey.
-        var departure = mapView?.venueData?.locations.first(where: {$0.name == "Microsoft"} )
-        var destination = mapView?.venueData?.locations.first(where: {$0.name == "Apple"} )
-        
-        if (departure == nil || destination == nil ) {return}
-        
-        let journeyOpt = MPIOptions.Journey(pathOptions: MPIOptions.Path(interactive: true))
-        
-        mapView?.getDirections(to: destination!, from: departure!) {
-            directions in
-            self.mapView?.journeyManager.draw(directions: directions!, options: journeyOpt)
-        }
-        
-        //Draw an interactive path.
-        departure = mapView?.venueData?.locations.first(where: {$0.name == "Uniqlo"} )
-        destination = mapView?.venueData?.locations.first(where: {$0.name == "Nespresso"} )
-        
-        if (departure == nil || destination == nil ) {return}
-        
-        mapView?.getDirections(to: destination!, from: departure!) {
-            directions in
-            self.mapView?.pathManager.add(nodes: directions!.path, options: MPIOptions.Path(interactive: true))
-        }
+
     }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
