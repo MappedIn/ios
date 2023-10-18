@@ -8,21 +8,13 @@ import UIKit
 
 class AddingInteractivityVC: UIViewController, MPIMapClickDelegate, MPIMapViewDelegate {
 
-    
+    let venues = ["mappedin-demo-mall", "mappedin-demo-office", "mappedin-demo-stadium"]
 
     var mapView: MPIMapView?
-    var mapView2: MPIMapView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let screenRect = UIScreen.main.bounds
-        let screenWidth = screenRect.size.width
-        let screenHeight = screenRect.size.height
-
-        mapView = MPIMapView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight / 2))
-        mapView2 = MPIMapView(frame: CGRect(x: 0, y: screenHeight / 2, width: screenWidth, height: screenHeight / 2))
-        
+        mapView = MPIMapView(frame: view.frame)
         mapView?.mapClickDelegate = self
         mapView?.delegate = self
         if let mapView = mapView {
@@ -34,29 +26,13 @@ class AddingInteractivityVC: UIViewController, MPIMapClickDelegate, MPIMapViewDe
                 MPIOptions.Init(
                     clientId: "5eab30aa91b055001a68e996",
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
-                    venue: "mappedin-demo-mall"
+                    venue: venues[0]
                 )){ error in
+                    print("Load #1")
                     print(error.debugDescription)
                 }
         }
         
-        if let mapView2 = mapView2 {
-            view.addSubview(mapView2)
-            
-            // See Trial API key Terms and Conditions
-            // https://developer.mappedin.com/api-keys/
-            mapView2.loadVenue(options:
-                MPIOptions.Init(
-                    clientId: "5eab30aa91b055001a68e996",
-                    clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
-                    venue: "mappedin-demo-mall"
-                )){ error in
-                    print(error.debugDescription)
-                }
-        }
-    }
-    
-    func onClick(mapClickEvent: Mappedin.MPIMapClickEvent) {
         if let mapView = mapView {
             view.addSubview(mapView)
             
@@ -66,27 +42,32 @@ class AddingInteractivityVC: UIViewController, MPIMapClickDelegate, MPIMapViewDe
                 MPIOptions.Init(
                     clientId: "5eab30aa91b055001a68e996",
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
-                    venue: "mappedin-demo-stadium"
+                    venue: venues[1]
                 )){ error in
+                    print("Load #2")
                     print(error.debugDescription)
                 }
         }
         
-        if let mapView2 = mapView2 {
-            view.addSubview(mapView2)
+        if let mapView = mapView {
+            view.addSubview(mapView)
             
             // See Trial API key Terms and Conditions
             // https://developer.mappedin.com/api-keys/
-            mapView2.loadVenue(options:
+            mapView.loadVenue(options:
                 MPIOptions.Init(
                     clientId: "5eab30aa91b055001a68e996",
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
-                    venue: "mappedin-demo-stadium"
+                    venue: venues[2]
                 )){ error in
+                    print("Load #3")
                     print(error.debugDescription)
                 }
         }
-        
+    }
+    
+    func onClick(mapClickEvent: Mappedin.MPIMapClickEvent) {
+                
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {}

@@ -6,17 +6,16 @@
 import Mappedin
 import UIKit
 
-class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
+class MarkersVC: UIViewController, MPIMapViewDelegate {
     
     var mapView: MPIMapView?
-    var markerIds: [String] = .init()
-    var markerId: String?
+    let venues = ["mappedin-demo-mall", "mappedin-demo-office", "mappedin-demo-stadium"]
+    var venueCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView = MPIMapView(frame: view.frame)
         mapView?.delegate = self
-        mapView?.mapClickDelegate = self
         if let mapView = mapView {
             view.addSubview(mapView)
             
@@ -27,17 +26,35 @@ class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
                     clientId: "5eab30aa91b055001a68e996",
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
-                ),
-                showVenueOptions: MPIOptions.ShowVenue(
-                    labelAllLocationsOnInit: false
-                ))
+                )){ error in
+                    print("Load \(self.venueCount)")
+                    print(error.debugDescription)
+                }
         }
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
-        mapView?.flatLabelManager.labelAllLocations(options: MPIOptions.FlatLabelAllLocations())
+        venueCount = venueCount + 1
+        
+        if (venueCount < 3) {
+            if let mapView = mapView {
+                view.addSubview(mapView)
+                
+                // See Trial API key Terms and Conditions
+                // https://developer.mappedin.com/api-keys/
+                mapView.loadVenue(options:
+                    MPIOptions.Init(
+                        clientId: "5eab30aa91b055001a68e996",
+                        clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
+                        venue: venues[venueCount]
+                    )){ error in
+                        print("Load \(self.venueCount)")
+                        print(error.debugDescription)
+                    }
+            }
+        }
     }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
@@ -54,32 +71,4 @@ class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
     
     func onPolygonClicked(polygon: MPIPolygon) {}
     
-    func onClick(mapClickEvent: Mappedin.MPIMapClickEvent) {
-        
-        if (mapClickEvent.polygons.isEmpty) {
-            //Remove all markers.
-            for markerId in markerIds {
-                mapView?.removeMarker(id: markerId)
-            }
-            
-        } else {
-            //Add a marker to the polygon clicked on.
-            guard let location = mapClickEvent.polygons.first?.locations?.first else { return }
-            guard let entrance = mapClickEvent.polygons.first?.entrances?.first else { return }
-            
-            if let markerId = mapView?.createMarker(
-                node: entrance,
-                contentHtml: """
-                <div style=\"background-color:white; border: 2px solid black; padding: 0.4rem; border-radius: 0.4rem;\">
-                \(location.name)
-                </div>
-                """,
-                markerOptions: MPIOptions.Marker(rank: 4.0, anchor: MPIOptions.MARKER_ANCHOR.CENTER)
-            ) {
-                markerIds.append(markerId)
-            }
-        }
-        
-
-    }
 }
