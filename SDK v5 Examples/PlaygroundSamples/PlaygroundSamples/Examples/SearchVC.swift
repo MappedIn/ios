@@ -74,6 +74,9 @@ class SearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.identifier, for: indexPath) as! LocationCell
         if let url = URL(string: (searchResults[indexPath.row].logo?.small) ?? "") {
             cell.logoImage.load(url: url)
+        } else {
+            // No image for this location. clear out previous image.
+            cell.logoImage.image = nil
         }
         cell.nameLabel.text = searchResults[indexPath.row].name
         cell.descLabel.text = searchResults[indexPath.row].description
@@ -98,20 +101,24 @@ class SearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // This sample only shows locations of type tenant.
+        // The filters below filter results that are MPIearchResultLocation (removing categories MPISearchResultCategory)
+        // and where the location type is tenant (removing amenities $0.object.type = "amenities"). Location types can be unique
+        // to each venue.  The list is then sorted, with the highest score first.
         mapView?.searchManager.search(query: searchText) {
             results in
-            var filteredSearchResults: [MPILocation] = .init()
-            let matches = results.flatMap { $0.matches.filter { $0.matchesOn == "name" } }
-            for match in matches {
-                if let location = self.mapView?.venueData?.locations.first(where: { $0.name == match.value }) {
-                    // Check for duplicates
-                    guard !filteredSearchResults.contains(where: { $0.name == location.name }) else {
-                        continue
-                    }
-                    filteredSearchResults.append(location)
-                }
-            }
-            self.searchResults = filteredSearchResults
+            let searchLocations = results
+                .compactMap { $0 as? MPISearchResultLocation }
+                .filter({$0.object.type == "tenant"})
+                .sorted(by: {$0.score > $1.score})
+            
+            self.searchResults.removeAll()
+            
+            searchLocations.forEach({ searchResultLocation in
+                self.searchResults.append(searchResultLocation.object)
+                // Print out the MPISearchMatch to logcat to show search match justification.
+                print("Search Matches on: \(searchResultLocation.matches)")
+            })
             self.tableView.reloadData()
         }
     }
