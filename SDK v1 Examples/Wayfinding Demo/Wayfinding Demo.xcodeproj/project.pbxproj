@@ -222,7 +222,6 @@
 			buildConfigurationList = 362606661FB524D3008445AA /* Build configuration list for PBXNativeTarget "Wayfinding Demo" */;
 			buildPhases = (
 				6A074BF0B20F8F5276380BB9 /* [CP] Check Pods Manifest.lock */,
-				3D2F3D5EA06C4AE1EDC72E0E /* [CP] Prepare Artifacts */,
 				362606501FB524D3008445AA /* Sources */,
 				362606511FB524D3008445AA /* Frameworks */,
 				362606521FB524D3008445AA /* Resources */,
@@ -300,24 +299,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D2F3D5EA06C4AE1EDC72E0E /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo-artifacts.sh",
-				"${PODS_ROOT}/MappedIn/Mappedin.xcframework",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo-artifacts.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		648C68E29BD74392BF796BDE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,10 +306,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Wayfinding Demo/Pods-Wayfinding Demo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MappedIn/Mappedin.framework/Mappedin",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mappedin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
