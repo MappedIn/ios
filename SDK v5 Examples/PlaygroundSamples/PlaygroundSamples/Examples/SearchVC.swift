@@ -7,13 +7,15 @@ import Mappedin
 import UIKit
 
 class SearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, MPIMapViewDelegate {
+
     let mainStackView = UIStackView()
     let searchStackView = UIStackView()
     let tableView = UITableView()
     let searchBar = UISearchBar()
     var searchResults: [MPILocation] = .init()
     var mapView: MPIMapView?
-
+    var loadingIndicator: UIActivityIndicatorView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -48,6 +50,13 @@ class SearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
                 ))
+        }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
         }
     }
     
@@ -128,7 +137,9 @@ class SearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
         tableView.reloadData()
     }
     
-    func onFirstMapLoaded() {}
+    func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+    }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
     

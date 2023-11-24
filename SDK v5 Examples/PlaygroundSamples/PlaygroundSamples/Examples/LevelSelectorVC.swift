@@ -7,10 +7,12 @@ import Mappedin
 import UIKit
 
 class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
+
     let mainStackView = UIStackView()
     var mapView: MPIMapView?
     let buildingButton = UIButton(type: .system)
     let levelButton = UIButton(type: .system)
+    var loadingIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,13 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-campus"
                 ))
+        }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
         }
     }
     
@@ -139,7 +148,9 @@ class LevelSelectorVC: UIViewController, MPIMapViewDelegate {
         setupButtons()
     }
     
-    func onFirstMapLoaded() {}
+    func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+    }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
     

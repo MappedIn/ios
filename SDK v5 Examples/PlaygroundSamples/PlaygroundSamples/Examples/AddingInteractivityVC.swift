@@ -8,9 +8,8 @@ import UIKit
 
 class AddingInteractivityVC: UIViewController, MPIMapClickDelegate, MPIMapViewDelegate {
 
-    
-
     var mapView: MPIMapView?
+    var loadingIndicator: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +27,13 @@ class AddingInteractivityVC: UIViewController, MPIMapClickDelegate, MPIMapViewDe
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
                 ))
+        }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
         }
     }
     
@@ -69,6 +75,8 @@ class AddingInteractivityVC: UIViewController, MPIMapClickDelegate, MPIMapViewDe
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+        
         // Make floating labels interactive.
         mapView?.floatingLabelManager.labelAllLocations(options: MPIOptions.FloatingLabelAllLocations(interactive: true))
         

@@ -11,6 +11,7 @@ class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
     var mapView: MPIMapView?
     var markerIds: [String] = .init()
     var markerId: String?
+    var loadingIndicator: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,20 @@ class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
                     labelAllLocationsOnInit: false
                 ))
         }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
+        }
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+        
         mapView?.flatLabelManager.labelAllLocations(options: MPIOptions.FlatLabelAllLocations())
     }
     

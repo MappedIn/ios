@@ -6,12 +6,15 @@
 import Mappedin
 import UIKit
 
-class RenderMapVC: UIViewController {
-    var mapView: MPIMapView?
+class RenderMapVC: UIViewController, MPIMapViewDelegate {
 
+    var mapView: MPIMapView?
+    var loadingIndicator: UIActivityIndicatorView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView = MPIMapView(frame: view.frame)
+        mapView?.delegate = self
         if let mapView = mapView {
             view.addSubview(mapView)
             
@@ -24,5 +27,36 @@ class RenderMapVC: UIViewController {
                     venue: "mappedin-demo-mall"
                 ))
         }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
+        }
     }
+    
+    func onDataLoaded(data: Mappedin.MPIData) {}
+    
+    func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+        
+        mapView?.flatLabelManager.labelAllLocations(options: MPIOptions.FlatLabelAllLocations())
+    }
+    
+    func onMapChanged(map: Mappedin.MPIMap) {}
+    
+    func onNothingClicked() {}
+    
+    func onBlueDotPositionUpdate(update: Mappedin.MPIBlueDotPositionUpdate) {}
+    
+    func onBlueDotStateChange(stateChange: Mappedin.MPIBlueDotStateChange) {}
+    
+    func onStateChanged(state: Mappedin.MPIState) {}
+    
+    func onCameraChanged(cameraChange: Mappedin.MPICameraTransform) {}
+    
+    func onPolygonClicked(polygon: MPIPolygon) {}
+    
+    func onClick(mapClickEvent: Mappedin.MPIMapClickEvent) {}
 }
