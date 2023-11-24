@@ -6,10 +6,12 @@ import Mappedin
 import UIKit
 
 class FloatingLabelsVC: UIViewController, MPIMapViewDelegate {
+
     let mainStackView = UIStackView()
     var mapView: MPIMapView?
     let floatingLabelStyleButton = UIButton(type: .system)
-
+    var loadingIndicator: UIActivityIndicatorView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -44,6 +46,13 @@ class FloatingLabelsVC: UIViewController, MPIMapViewDelegate {
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
                 ))
+        }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
         }
     }
     
@@ -155,6 +164,8 @@ class FloatingLabelsVC: UIViewController, MPIMapViewDelegate {
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+        
         // Zoom in when the map loads to better show the Floating Labels.
         mapView?.cameraManager.set(cameraTransform: MPIOptions.CameraConfiguration(zoom: 800.0,  position: mapView?.currentMap?.createCoordinate(latitude: 43.86181934825464, longitude: -78.94672121994297)))
     }

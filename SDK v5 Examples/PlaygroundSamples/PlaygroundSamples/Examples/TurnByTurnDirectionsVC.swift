@@ -7,11 +7,13 @@ import Mappedin
 import UIKit
 
 class TurnByTurnDirectionsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, MPIMapViewDelegate {
+
     let mainStackView = UIStackView()
     let tableView = UITableView()
     let cellIdentifier: String = "instructionCell"
     var instructions: [MPIInstruction] = .init()
     var mapView: MPIMapView?
+    var loadingIndicator: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,13 @@ class TurnByTurnDirectionsVC: UIViewController, UITableViewDataSource, UITableVi
                     venue: "mappedin-demo-mall"
                 ))
         }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
+        }
     }
     
     func setupTableView() {
@@ -72,6 +81,8 @@ class TurnByTurnDirectionsVC: UIViewController, UITableViewDataSource, UITableVi
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+        
         let departure = mapView?.venueData?.locations.first(where: { $0.name == "Apple" })
         let destination = mapView?.venueData?.locations.first(where: { $0.name == "Microsoft" })
 

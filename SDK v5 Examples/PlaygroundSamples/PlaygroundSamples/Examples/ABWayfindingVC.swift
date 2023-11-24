@@ -7,7 +7,9 @@ import Mappedin
 import UIKit
 
 class ABWayfindingVC: UIViewController, MPIMapViewDelegate {
+
     var mapView: MPIMapView?
+    var loadingIndicator: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +28,20 @@ class ABWayfindingVC: UIViewController, MPIMapViewDelegate {
                 ),
               showVenueOptions: MPIOptions.ShowVenue(multiBufferRendering: true, xRayPath: true))
         }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
+        }
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+        
         var departure = mapView?.venueData?.locations.first(where: { $0.name == "Apple" })
         var destination = mapView?.venueData?.locations.first(where: { $0.name == "Microsoft" })
 

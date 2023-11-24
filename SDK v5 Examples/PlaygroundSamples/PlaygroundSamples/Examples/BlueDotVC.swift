@@ -7,7 +7,9 @@ import Mappedin
 import UIKit
 
 class BlueDotVC: UIViewController, MPIMapViewDelegate {
+
     var mapView: MPIMapView?
+    var loadingIndicator: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +27,20 @@ class BlueDotVC: UIViewController, MPIMapViewDelegate {
                     venue: "mappedin-demo-mall"
                 ))
         }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
+        }
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+        
         mapView?.blueDotManager.enable(options: MPIOptions.BlueDot(smoothing: false, showBearing: true))
         
         // Load positions from blue-dot-positions.json
@@ -40,6 +51,10 @@ class BlueDotVC: UIViewController, MPIMapViewDelegate {
             print("FAILED TO PARSE POSITIONS")
             return
         }
+        
+        mapView?.blueDotManager.setState(state: MPIState.FOLLOW)
+        mapView?.cameraManager.set(cameraTransform: MPIOptions.CameraConfiguration(zoom: 700))
+        
         for (index, position) in positions.enumerated() {
             DispatchQueue.main.asyncAfter(deadline: .now() + (3 * Double(index))) {
                 self.mapView?.blueDotManager.updatePosition(position: position)

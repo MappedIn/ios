@@ -16,6 +16,7 @@ class CameraControlsVC: UIViewController, MPIMapViewDelegate {
     var plusZoomBtn: UIButton?
     var minusZoomBtn: UIButton?
     var resetBtn: UIButton?
+    var loadingIndicator: UIActivityIndicatorView?
     
     // Defaults
     var defaultTilt: Double?
@@ -57,6 +58,13 @@ class CameraControlsVC: UIViewController, MPIMapViewDelegate {
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
                 ))
+        }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
         }
     }
     
@@ -121,6 +129,8 @@ class CameraControlsVC: UIViewController, MPIMapViewDelegate {
     func onDataLoaded(data: Mappedin.MPIData) {}
     
     func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+        
         defaultTilt = mapView?.cameraManager.tilt
         defaultZoom = mapView?.cameraManager.zoom
         defaultRotation = mapView?.cameraManager.rotation

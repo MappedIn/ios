@@ -7,9 +7,11 @@ import Mappedin
 import UIKit
 
 class ListLocationsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, MPIMapViewDelegate {
+
     let tableView = UITableView()
     var mapView: MPIMapView?
     var sortedLocations: [MPILocation] = .init()
+    var loadingIndicator: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,13 @@ class ListLocationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
                 ))
+        }
+        
+        loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        if let loadingIndicator = loadingIndicator {
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            view.addSubview(loadingIndicator)
         }
     }
     
@@ -63,7 +72,9 @@ class ListLocationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         setupTableView()
     }
     
-    func onFirstMapLoaded() {}
+    func onFirstMapLoaded() {
+        loadingIndicator?.stopAnimating()
+    }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
     
