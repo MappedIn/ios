@@ -15,6 +15,7 @@ class CameraControlsVC: UIViewController, MPIMapViewDelegate {
     var minusTiltBtn: UIButton?
     var plusZoomBtn: UIButton?
     var minusZoomBtn: UIButton?
+    var animateBtn: UIButton?
     var resetBtn: UIButton?
     var loadingIndicator: UIActivityIndicatorView?
     
@@ -117,13 +118,28 @@ class CameraControlsVC: UIViewController, MPIMapViewDelegate {
         minusZoomBtn?.setTitle("Zoom Out", for: .normal)
         zoomStackView.addArrangedSubview(minusZoomBtn!)
         
+        let animateResetStackView = UIStackView()
+        animateResetStackView.distribution = .fillEqually
+        controlsStackView.addArrangedSubview(animateResetStackView)
+        
+        // Animate Button
+        animateBtn = UIButton(type: .system, primaryAction: UIAction { _ in
+            let zoomCoordinate = self.mapView?.currentMap?.createCoordinate(latitude: 43.86147923972817, longitude: -78.94671703394187)
+            let cameraTransform = MPIOptions.CameraConfiguration(zoom: 50.0, tilt: 2.0, rotation: 180.0, position: zoomCoordinate)
+            let cameraAnimation = MPIOptions.CameraAnimation(duration: 3000.0, easing: MPIOptions.EASING_MODE.EASE_IN)
+            self.mapView?.cameraManager.animate(cameraTransform: cameraTransform, options: cameraAnimation)
+            
+        })
+        animateBtn?.setTitle("Animate", for: .normal)
+        animateResetStackView.addArrangedSubview(animateBtn!)
+        
         // Reset Button
         resetBtn = UIButton(type: .system, primaryAction: UIAction { _ in
             self.mapView?.cameraManager.set(cameraTransform: MPIOptions.CameraConfiguration(zoom: self.defaultZoom, tilt: self.defaultTilt, rotation: self.defaultRotation, position: self.defaultPosition))
             
         })
         resetBtn?.setTitle("Reset", for: .normal)
-        controlsStackView.addArrangedSubview(resetBtn!)
+        animateResetStackView.addArrangedSubview(resetBtn!)
     }
     
     func onDataLoaded(data: Mappedin.MPIData) {}
