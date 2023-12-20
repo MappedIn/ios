@@ -33,6 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         examples.append(Example(title: "Floating Labels", description: "Display and modify floating labels", viewController: FloatingLabelsVC()))
         examples.append(Example(title: "Flat Labels", description: "Display and modify flat labels", viewController: FlatLabelsVC()))
         examples.append(Example(title: "List Locations", description: "List locations of a venue without rendering the map", viewController: ListLocationsVC()))
+        examples.append(Example(title: "Tooltips", description: "Adding HTML tooltips to the map view", viewController: TooltipsVC()))
         examples.append(Example(title: "Building & Level Selection", description: "Add a building & level selector", viewController: LevelSelectorVC()))
         examples.append(Example(title: "Turn-by-Turn Directions", description: "Display text-based turn-by-turn directions", viewController: TurnByTurnDirectionsVC()))
         examples.append(Example(title: "Search", description: "Search locations within a venue", viewController: SearchVC()))
