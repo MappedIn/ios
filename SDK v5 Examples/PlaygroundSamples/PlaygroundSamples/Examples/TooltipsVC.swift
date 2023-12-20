@@ -1,15 +1,15 @@
 //
-//  MarkersVC.swift
+//  TooltipsVC.swift
 //  PlaygroundSamples
 //
 
 import Mappedin
 import UIKit
 
-class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
+class TooltipsVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
     
     var mapView: MPIMapView?
-    var markerIds: [String] = .init()
+    var tooltipIds: [String] = .init()
     var loadingIndicator: UIActivityIndicatorView?
 
     override func viewDidLoad() {
@@ -46,7 +46,35 @@ class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
     func onFirstMapLoaded() {
         loadingIndicator?.stopAnimating()
         
-        mapView?.flatLabelManager.labelAllLocations(options: MPIOptions.FlatLabelAllLocations())
+        let departure = mapView?.venueData?.locations.first(where: { $0.name == "Cleo" })
+        let destination = mapView?.venueData?.locations.first(where: { $0.name == "Pandora" })
+
+        guard departure != nil && destination != nil else { return }
+
+        mapView?.getDirections(to: destination!, from: departure!) {
+            directions in
+            // Draw a path using Path Manager.
+            self.mapView?.pathManager.add(nodes: directions!.path)
+            directions?.instructions.forEach{instruction in
+                if (instruction.node != nil)
+                {
+                    self.mapView?.createTooltip(
+                        node: instruction.node!,
+                        contentHtml: """
+                    <span style="background-color: azure; padding:0.2rem; font-size:0.7rem">
+                    \(instruction.instruction ?? "")
+                    </span>
+                    """,
+                        tooltipOptions: MPIOptions.Tooltip(collisionRank: MPIOptions.CollisionRankingTiers.medium)) {
+                            id in
+                            print ("Tooltip added with id: " + (id ?? ""));
+                        }
+                }
+            }
+            // Focus the camera on the path.
+            let targets = MPIOptions.CameraTargets(nodes: directions?.path)
+            self.mapView?.cameraManager.focusOn(targets: targets, options: MPIOptions.FocusOnOptions(minZoom: 1800.0))
+        }
     }
     
     func onMapChanged(map: Mappedin.MPIMap) {}
@@ -65,27 +93,28 @@ class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
     
     func onClick(mapClickEvent: Mappedin.MPIMapClickEvent) {
         if (mapClickEvent.polygons.isEmpty) {
-            //Remove all markers.
-            for markerId in markerIds {
-                mapView?.removeMarker(id: markerId)
+            //Remove all tooltips.
+            for tooltipId in tooltipIds {
+                mapView?.removeTooltip(tooltipId: tooltipId)
             }
-            
         } else {
-            //Add a marker to the polygon clicked on.
+            //Add a tooltip to the polygon clicked on.
             guard let location = mapClickEvent.polygons.first?.locations?.first else { return }
             guard let entrance = mapClickEvent.polygons.first?.entrances?.first else { return }
             
-            if let markerId = mapView?.createMarker(
+            mapView?.createTooltip(
                 node: entrance,
                 contentHtml: """
                 <div style=\"background-color:white; border: 2px solid black; padding: 0.4rem; border-radius: 0.4rem;\">
                 \(location.name)
                 </div>
                 """,
-                markerOptions: MPIOptions.Marker(rank: MPIOptions.CollisionRankingTiers.medium, anchor: MPIOptions.MARKER_ANCHOR.CENTER)
-            ) {
-                markerIds.append(markerId)
-            }
+                tooltipOptions: MPIOptions.Tooltip(collisionRank: MPIOptions.CollisionRankingTiers.medium)) {
+                    id in
+                    if (id != nil) {
+                        self.tooltipIds.append(id!)
+                    }
+                }
         }
     }
 }

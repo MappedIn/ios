@@ -42,8 +42,8 @@ class ABWayfindingVC: UIViewController, MPIMapViewDelegate {
     func onFirstMapLoaded() {
         loadingIndicator?.stopAnimating()
         
-        var departure = mapView?.venueData?.locations.first(where: { $0.name == "Apple" })
-        var destination = mapView?.venueData?.locations.first(where: { $0.name == "Microsoft" })
+        var departure = mapView?.venueData?.locations.first(where: { $0.name == "Uniqlo" })
+        var destination = mapView?.venueData?.locations.first(where: { $0.name == "Foot Locker" })
 
         guard departure != nil && destination != nil else { return }
 
@@ -53,8 +53,8 @@ class ABWayfindingVC: UIViewController, MPIMapViewDelegate {
             self.mapView?.journeyManager.draw(directions: directions!)
         }
         
-        departure = mapView?.venueData?.locations.first { $0.name == "Uniqlo" }
-        destination = mapView?.venueData?.locations.first { $0.name == "Nespresso" }
+        departure = mapView?.venueData?.locations.first { $0.name == "Apple" }
+        destination = mapView?.venueData?.locations.first { $0.name == "Microsoft" }
 
         guard departure != nil && destination != nil else { return }
         
