@@ -28,9 +28,7 @@ class MarkersVC: UIViewController, MPIMapViewDelegate, MPIMapClickDelegate {
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
                 ),
-                showVenueOptions: MPIOptions.ShowVenue(
-                    labelAllLocationsOnInit: false
-                ))
+                  showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: false, multiBufferRendering: true, outdoorView: MPIOptions.OutdoorView(enabled: true), shadingAndOutlines: true))
         }
         
         loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)

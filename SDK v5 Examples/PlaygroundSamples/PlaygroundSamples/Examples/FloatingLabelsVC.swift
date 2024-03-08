@@ -45,7 +45,8 @@ class FloatingLabelsVC: UIViewController, MPIMapViewDelegate {
                     clientId: "5eab30aa91b055001a68e996",
                     clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1",
                     venue: "mappedin-demo-mall"
-                ))
+                ),
+                  showVenueOptions: MPIOptions.ShowVenue(labelAllLocationsOnInit: true, multiBufferRendering: true, xRayPath: true, outdoorView: MPIOptions.OutdoorView(enabled: true), shadingAndOutlines: true))
         }
         
         loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
