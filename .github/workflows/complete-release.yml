@@ -5,13 +5,10 @@
 # IMPORTANT: This file should be moved to the public repository (MappedIn/ios)
 # Place it at: .github/workflows/complete-release.yml
 #
-# Permissions:
-#   - Uses the default MAPPEDIN_READONLY_PAT with contents and pull-requests write permissions
-#
-# Required branch protection configuration:
-#   - The workflow must be exempted from required pull request reviews
-#   - Add "github-actions[bot]" to bypass required reviews
-#   - See README in MappedIn/sdk-for-ios for setup instructions
+# Required secrets:
+#   - MAPPEDIN_READONLY_PAT: A PAT with contents and pull-requests write permissions
+#                            The PAT owner must be added to bypass branch protection rules
+#                            See README in MappedIn/sdk-for-ios for setup instructions
 #
 # Security:
 #   - The repository_dispatch event requires a PAT, so only authorized sources can trigger it
@@ -133,7 +130,7 @@ jobs:
             echo "Warning: No PR found for branch $BRANCH after waiting"
           fi
 
-      - name: Find and merge PR
+      - name: Merge release branch
         if: ${{ steps.params.outputs.auto_merge == 'true' }}
         env:
           GH_TOKEN: ${{ secrets.MAPPEDIN_READONLY_PAT }}
@@ -141,29 +138,30 @@ jobs:
           BRANCH="${{ steps.params.outputs.branch }}"
           VERSION="${{ steps.params.outputs.version }}"
 
-          # Find the PR for this branch
-          PR_NUMBER=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
-
-          if [ -z "$PR_NUMBER" ]; then
-            echo "Warning: No PR found for branch $BRANCH"
-            echo "Attempting direct merge..."
-
-            # Fetch the branch and merge directly
-            git fetch origin "$BRANCH"
-            git checkout "${{ env.DEFAULT_BRANCH }}"
-            git merge "origin/$BRANCH" --no-ff -m "Merge release v$VERSION"
-            git push origin "${{ env.DEFAULT_BRANCH }}"
-          else
+          # Find the PR for this branch (for logging purposes)
+          PR_NUMBER=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -n "$PR_NUMBER" ]; then
             echo "Found PR #$PR_NUMBER for branch $BRANCH"
-
-            # Merge the PR
-            gh pr merge "$PR_NUMBER" \
-              --merge \
-              --delete-branch \
-              --body "Automated merge for release v$VERSION"
-
-            echo "Merged PR #$PR_NUMBER"
           fi
+
+          # Use direct git merge to bypass PR merge API restrictions
+          # This works when the PAT owner has push access to the protected branch
+          echo "Merging branch $BRANCH into ${{ env.DEFAULT_BRANCH }}..."
+          git fetch origin "$BRANCH"
+          git checkout "${{ env.DEFAULT_BRANCH }}"
+          git pull origin "${{ env.DEFAULT_BRANCH }}"
+          git merge "origin/$BRANCH" --no-ff -m "Merge release v$VERSION (#$PR_NUMBER)"
+          git push origin "${{ env.DEFAULT_BRANCH }}"
+
+          echo "Merged $BRANCH into ${{ env.DEFAULT_BRANCH }}"
+
+          # Close the PR (it will be marked as merged since the commits are now in master)
+          if [ -n "$PR_NUMBER" ]; then
+            echo "PR #$PR_NUMBER will be automatically closed by GitHub"
+          fi
+
+          # Delete the release branch
+          git push origin --delete "$BRANCH" || echo "Branch $BRANCH already deleted or doesn't exist"
 
       - name: Checkout updated main branch
         run: |
