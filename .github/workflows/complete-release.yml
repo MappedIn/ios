@@ -1,0 +1,283 @@
+# Workflow B: Complete Release in Public Repository
+# This workflow runs in the PUBLIC repo (MappedIn/ios)
+# It is triggered by repository_dispatch from the private repo or manually via workflow_dispatch
+#
+# IMPORTANT: This file should be moved to the public repository (MappedIn/ios)
+# Place it at: .github/workflows/complete-release.yml
+#
+# Required secrets:
+#   - RELEASE_TOKEN: A PAT or fine-grained token with contents:write permissions
+#                    (GITHUB_TOKEN can be used if actions have sufficient permissions)
+#
+# Security:
+#   - The repository_dispatch event requires a PAT, so only authorized sources can trigger it
+#   - The workflow_dispatch allows manual triggering by users with write access
+
+name: Complete SDK Release
+
+on:
+    repository_dispatch:
+        types: [release-sdk]
+    workflow_dispatch:
+        inputs:
+            version:
+                description: "Version to release (e.g., 1.0.0)"
+                required: true
+                type: string
+            branch:
+                description: "Release branch name (e.g., release/1.0.0)"
+                required: true
+                type: string
+            auto_merge:
+                description: "Automatically merge the PR"
+                required: false
+                type: boolean
+                default: true
+            publish_release:
+                description: "Publish the draft release after merge"
+                required: false
+                type: boolean
+                default: true
+
+env:
+    DEFAULT_BRANCH: main
+
+jobs:
+    complete-release:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            pull-requests: write
+
+        steps:
+            - name: Extract version and branch from event
+              id: params
+              run: |
+                  if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+                    VERSION="${{ github.event.client_payload.version }}"
+                    BRANCH="${{ github.event.client_payload.branch }}"
+                    CHECKSUM="${{ github.event.client_payload.checksum }}"
+                    ZIP_NAME="${{ github.event.client_payload.zip_name }}"
+                    TRIGGERED_BY="${{ github.event.client_payload.triggered_by }}"
+                    AUTO_MERGE="true"
+                    PUBLISH_RELEASE="true"
+                  else
+                    VERSION="${{ github.event.inputs.version }}"
+                    BRANCH="${{ github.event.inputs.branch }}"
+                    CHECKSUM=""
+                    ZIP_NAME="Mappedin.xcframework.zip"
+                    TRIGGERED_BY="manual"
+                    AUTO_MERGE="${{ github.event.inputs.auto_merge }}"
+                    PUBLISH_RELEASE="${{ github.event.inputs.publish_release }}"
+                  fi
+
+                  echo "version=$VERSION" >> $GITHUB_OUTPUT
+                  echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+                  echo "checksum=$CHECKSUM" >> $GITHUB_OUTPUT
+                  echo "zip_name=$ZIP_NAME" >> $GITHUB_OUTPUT
+                  echo "triggered_by=$TRIGGERED_BY" >> $GITHUB_OUTPUT
+                  echo "auto_merge=$AUTO_MERGE" >> $GITHUB_OUTPUT
+                  echo "publish_release=$PUBLISH_RELEASE" >> $GITHUB_OUTPUT
+                  echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+
+                  echo "Processing release:"
+                  echo "  Version: $VERSION"
+                  echo "  Branch: $BRANCH"
+                  echo "  Triggered by: $TRIGGERED_BY"
+                  echo "  Auto merge: $AUTO_MERGE"
+                  echo "  Publish release: $PUBLISH_RELEASE"
+
+            - name: Validate version format
+              run: |
+                  VERSION="${{ steps.params.outputs.version }}"
+                  if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?$ ]]; then
+                    echo "Error: Invalid version format '$VERSION'"
+                    echo "Expected format: X.Y.Z or X.Y.Z-prerelease"
+                    exit 1
+                  fi
+
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+                  token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+
+            - name: Configure Git
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+            - name: Wait for PR to be ready
+              if: ${{ steps.params.outputs.auto_merge == 'true' }}
+              env:
+                  GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+              run: |
+                  BRANCH="${{ steps.params.outputs.branch }}"
+
+                  echo "Waiting for PR to be available..."
+                  for i in {1..30}; do
+                    PR_NUMBER=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number' 2>/dev/null || echo "")
+                    if [ -n "$PR_NUMBER" ]; then
+                      echo "Found PR #$PR_NUMBER"
+                      break
+                    fi
+                    echo "Attempt $i: PR not found yet, waiting..."
+                    sleep 10
+                  done
+
+                  if [ -z "$PR_NUMBER" ]; then
+                    echo "Warning: No PR found for branch $BRANCH after waiting"
+                  fi
+
+            - name: Find and merge PR
+              if: ${{ steps.params.outputs.auto_merge == 'true' }}
+              env:
+                  GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+              run: |
+                  BRANCH="${{ steps.params.outputs.branch }}"
+                  VERSION="${{ steps.params.outputs.version }}"
+
+                  # Find the PR for this branch
+                  PR_NUMBER=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
+
+                  if [ -z "$PR_NUMBER" ]; then
+                    echo "Warning: No PR found for branch $BRANCH"
+                    echo "Attempting direct merge..."
+
+                    # Fetch the branch and merge directly
+                    git fetch origin "$BRANCH"
+                    git checkout "${{ env.DEFAULT_BRANCH }}"
+                    git merge "origin/$BRANCH" --no-ff -m "Merge release v$VERSION"
+                    git push origin "${{ env.DEFAULT_BRANCH }}"
+                  else
+                    echo "Found PR #$PR_NUMBER for branch $BRANCH"
+
+                    # Merge the PR
+                    gh pr merge "$PR_NUMBER" \
+                      --merge \
+                      --delete-branch \
+                      --body "Automated merge for release v$VERSION"
+
+                    echo "Merged PR #$PR_NUMBER"
+                  fi
+
+            - name: Checkout updated main branch
+              run: |
+                  git fetch origin
+                  git checkout "${{ env.DEFAULT_BRANCH }}"
+                  git pull origin "${{ env.DEFAULT_BRANCH }}"
+
+            - name: Create and push version tag
+              env:
+                  GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+              run: |
+                  TAG="${{ steps.params.outputs.tag }}"
+                  VERSION="${{ steps.params.outputs.version }}"
+
+                  # Check if tag already exists
+                  if git rev-parse "$TAG" >/dev/null 2>&1; then
+                    echo "Warning: Tag $TAG already exists"
+                    echo "Deleting existing tag..."
+                    git tag -d "$TAG"
+                    git push origin ":refs/tags/$TAG" || true
+                  fi
+
+                  # Create the tag
+                  git tag -a "$TAG" -m "Release $VERSION"
+                  git push origin "$TAG"
+
+                  echo "Created and pushed tag: $TAG"
+
+            - name: Check for existing draft release
+              if: ${{ steps.params.outputs.publish_release == 'true' }}
+              id: check_release
+              env:
+                  GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+              run: |
+                  TAG="${{ steps.params.outputs.tag }}"
+
+                  # Check if a draft release exists for this tag
+                  RELEASE_ID=$(gh release view "$TAG" --json id --jq '.id' 2>/dev/null || echo "")
+
+                  if [ -n "$RELEASE_ID" ]; then
+                    echo "Found existing release for $TAG"
+                    echo "release_exists=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "No existing release found for $TAG"
+                    echo "release_exists=false" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Publish draft release
+              if: ${{ steps.params.outputs.publish_release == 'true' && steps.check_release.outputs.release_exists == 'true' }}
+              env:
+                  GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+              run: |
+                  TAG="${{ steps.params.outputs.tag }}"
+                  VERSION="${{ steps.params.outputs.version }}"
+
+                  # Edit the release to make it non-draft
+                  gh release edit "$TAG" --draft=false
+
+                  echo "Published release $TAG"
+
+            - name: Create new release (if no draft exists)
+              if: ${{ steps.params.outputs.publish_release == 'true' && steps.check_release.outputs.release_exists == 'false' }}
+              env:
+                  GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+              run: |
+                  TAG="${{ steps.params.outputs.tag }}"
+                  VERSION="${{ steps.params.outputs.version }}"
+
+                  # Determine if this is a prerelease
+                  PRERELEASE_FLAG=""
+                  if [[ "$VERSION" == *"-"* ]]; then
+                    PRERELEASE_FLAG="--prerelease"
+                  fi
+
+                  # Create the GitHub release
+                  gh release create "$TAG" \
+                    --title "Mappedin iOS SDK $TAG" \
+                    --notes "## Mappedin iOS SDK $VERSION
+
+                  ### Installation
+
+                  Add the following to your \`Package.swift\` dependencies:
+
+                  \`\`\`swift
+                  .package(url: \"https://github.com/${{ github.repository }}.git\", from: \"$VERSION\")
+                  \`\`\`
+
+                  Or in Xcode:
+                  1. Go to **File > Add Package Dependencies**
+                  2. Enter: \`https://github.com/${{ github.repository }}.git\`
+                  3. Select version \`$VERSION\`
+
+                  ### Documentation
+
+                  For full documentation, visit [developer.mappedin.com](https://developer.mappedin.com/ios-sdk/getting-started)
+
+                  ---
+                  *This release was created automatically.*" \
+                    --generate-notes \
+                    $PRERELEASE_FLAG
+
+                  echo "Created GitHub release for $TAG"
+                  echo "WARNING: No binary was uploaded. The XCFramework needs to be uploaded manually."
+
+            - name: Summary
+              run: |
+                  VERSION="${{ steps.params.outputs.version }}"
+                  TAG="${{ steps.params.outputs.tag }}"
+                  TRIGGERED_BY="${{ steps.params.outputs.triggered_by }}"
+
+                  echo "## Release Complete" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Version:** $VERSION" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Tag:** $TAG" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Triggered by:** $TRIGGERED_BY" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "### Swift Package Manager" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "\`\`\`swift" >> $GITHUB_STEP_SUMMARY
+                  echo ".package(url: \"https://github.com/${{ github.repository }}.git\", from: \"$VERSION\")" >> $GITHUB_STEP_SUMMARY
+                  echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
