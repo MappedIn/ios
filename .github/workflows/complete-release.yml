@@ -6,8 +6,12 @@
 # Place it at: .github/workflows/complete-release.yml
 #
 # Required secrets:
-#   - RELEASE_TOKEN: A fine-grained PAT with admin permissions to bypass branch protection
+#   - RELEASE_TOKEN: A fine-grained PAT with contents and pull-requests write permissions
 #                    See README in MappedIn/sdk-for-ios for setup instructions
+#
+# Required branch protection configuration:
+#   - The workflow must be exempted from required pull request reviews
+#   - See README in MappedIn/sdk-for-ios for setup instructions
 #
 # Security:
 #   - The repository_dispatch event requires a PAT, so only authorized sources can trigger it
@@ -152,14 +156,10 @@ jobs:
           else
             echo "Found PR #$PR_NUMBER for branch $BRANCH"
 
-            # Merge the PR using admin privileges to bypass branch protection
-            # This is safe because this workflow can only be triggered by:
-            # 1. repository_dispatch from the private repo (requires PAT)
-            # 2. workflow_dispatch by users with write access
+            # Merge the PR
             gh pr merge "$PR_NUMBER" \
               --merge \
               --delete-branch \
-              --admin \
               --body "Automated merge for release v$VERSION"
 
             echo "Merged PR #$PR_NUMBER"
