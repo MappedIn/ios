@@ -6,8 +6,8 @@
 # Place it at: .github/workflows/complete-release.yml
 #
 # Required secrets:
-#   - RELEASE_TOKEN: A PAT or fine-grained token with contents:write permissions
-#                    (GITHUB_TOKEN can be used if actions have sufficient permissions)
+#   - RELEASE_TOKEN: A fine-grained PAT with admin permissions to bypass branch protection
+#                    See README in MappedIn/sdk-for-ios for setup instructions
 #
 # Security:
 #   - The repository_dispatch event requires a PAT, so only authorized sources can trigger it
@@ -100,7 +100,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.RELEASE_TOKEN }}
 
       - name: Configure Git
         run: |
@@ -110,7 +110,7 @@ jobs:
       - name: Wait for PR to be ready
         if: ${{ steps.params.outputs.auto_merge == 'true' }}
         env:
-          GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
           BRANCH="${{ steps.params.outputs.branch }}"
 
@@ -132,7 +132,7 @@ jobs:
       - name: Find and merge PR
         if: ${{ steps.params.outputs.auto_merge == 'true' }}
         env:
-          GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
           BRANCH="${{ steps.params.outputs.branch }}"
           VERSION="${{ steps.params.outputs.version }}"
@@ -152,10 +152,14 @@ jobs:
           else
             echo "Found PR #$PR_NUMBER for branch $BRANCH"
 
-            # Merge the PR
+            # Merge the PR using admin privileges to bypass branch protection
+            # This is safe because this workflow can only be triggered by:
+            # 1. repository_dispatch from the private repo (requires PAT)
+            # 2. workflow_dispatch by users with write access
             gh pr merge "$PR_NUMBER" \
               --merge \
               --delete-branch \
+              --admin \
               --body "Automated merge for release v$VERSION"
 
             echo "Merged PR #$PR_NUMBER"
@@ -169,7 +173,7 @@ jobs:
 
       - name: Create and push version tag
         env:
-          GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
           TAG="${{ steps.params.outputs.tag }}"
           VERSION="${{ steps.params.outputs.version }}"
@@ -192,7 +196,7 @@ jobs:
         if: ${{ steps.params.outputs.publish_release == 'true' }}
         id: check_release
         env:
-          GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
           TAG="${{ steps.params.outputs.tag }}"
 
@@ -210,7 +214,7 @@ jobs:
       - name: Publish draft release
         if: ${{ steps.params.outputs.publish_release == 'true' && steps.check_release.outputs.release_exists == 'true' }}
         env:
-          GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
           TAG="${{ steps.params.outputs.tag }}"
           VERSION="${{ steps.params.outputs.version }}"
@@ -223,7 +227,7 @@ jobs:
       - name: Create new release (if no draft exists)
         if: ${{ steps.params.outputs.publish_release == 'true' && steps.check_release.outputs.release_exists == 'false' }}
         env:
-          GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
           TAG="${{ steps.params.outputs.tag }}"
           VERSION="${{ steps.params.outputs.version }}"
