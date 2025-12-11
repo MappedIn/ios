@@ -79,7 +79,7 @@ jobs:
           echo "triggered_by=$TRIGGERED_BY" >> $GITHUB_OUTPUT
           echo "auto_merge=$AUTO_MERGE" >> $GITHUB_OUTPUT
           echo "publish_release=$PUBLISH_RELEASE" >> $GITHUB_OUTPUT
-          echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=$VERSION" >> $GITHUB_OUTPUT
 
           echo "Processing release:"
           echo "  Version: $VERSION"
@@ -238,7 +238,7 @@ jobs:
 
           # Create the GitHub release
           gh release create "$TAG" \
-            --title "Mappedin iOS SDK $TAG" \
+            --title "Mappedin iOS SDK v$VERSION" \
             --notes "## Mappedin iOS SDK $VERSION
 
           ### Installation
