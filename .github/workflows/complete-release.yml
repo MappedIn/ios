@@ -7,7 +7,7 @@
 #
 # Required secrets:
 #   - MAPPEDIN_READONLY_PAT: A PAT with contents and pull-requests write permissions
-#                            The PAT owner must be added to bypass branch protection rules
+#                            The PAT owner must have push access to the master branch
 #                            See README in MappedIn/sdk-for-ios for setup instructions
 #
 # Security:
@@ -257,6 +257,10 @@ jobs:
           ### Documentation
 
           For full documentation, visit [developer.mappedin.com](https://developer.mappedin.com/ios-sdk/getting-started)
+
+          ### Release Notes
+
+          View the [Mappedin SDK for iOS release notes](https://developer.mappedin.com/ios-sdk/release-notes).
 
           ---
           *This release was created automatically.*" \
