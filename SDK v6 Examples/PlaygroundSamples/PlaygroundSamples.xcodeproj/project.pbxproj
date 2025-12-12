@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B0000011111111111111111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000001 /* AppDelegate.swift */; };
+		4B0000011111111111111112 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000002 /* SceneDelegate.swift */; };
+		4B0000011111111111111113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000003 /* ViewController.swift */; };
+		4B0000011111111111111114 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000004 /* Main.storyboard */; };
+		4B0000011111111111111115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000005 /* Assets.xcassets */; };
+		4B0000011111111111111116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000006 /* LaunchScreen.storyboard */; };
+		4B0000011111111111111117 /* DisplayMapDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000007 /* DisplayMapDemoViewController.swift */; };
+		4B0000011111111111111118 /* AreaShapesDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000008 /* AreaShapesDemoViewController.swift */; };
+		4B0000011111111111111119 /* BuildingFloorSelectionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */; };
+		4B000001111111111111111A /* CameraDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B000001000000000000000A /* CameraDemoViewController.swift */; };
+		4B000001111111111111111B /* Image3DDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B000001000000000000000B /* Image3DDemoViewController.swift */; };
+		4B000001111111111111111C /* InteractivityDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B000001000000000000000C /* InteractivityDemoViewController.swift */; };
+		4B000001111111111111111D /* LabelsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B000001000000000000000D /* LabelsDemoViewController.swift */; };
+		4B000001111111111111111E /* MarkersDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B000001000000000000000E /* MarkersDemoViewController.swift */; };
+		4B000001111111111111111F /* ModelsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B000001000000000000000F /* ModelsDemoViewController.swift */; };
+		4B0000011111111111111120 /* NavigationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000010 /* NavigationDemoViewController.swift */; };
+		4B0000011111111111111121 /* PathsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000011 /* PathsDemoViewController.swift */; };
+		4B0000011111111111111122 /* QueryDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000012 /* QueryDemoViewController.swift */; };
+		4B0000011111111111111123 /* SearchDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000013 /* SearchDemoViewController.swift */; };
+		4B0000011111111111111124 /* model_positions.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000014 /* model_positions.json */; };
+		4B0000011111111111111125 /* 3d_assets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000015 /* 3d_assets */; };
+		4B0000011111111111111126 /* arena_hockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000016 /* arena_hockey.png */; };
+		4B0000011111111111111127 /* arena_basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000017 /* arena_basketball.png */; };
+		4B0000011111111111111128 /* arena_concert.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000018 /* arena_concert.png */; };
+		4B0000011111111111111129 /* Mappedin in Frameworks */ = {isa = PBXBuildFile; productRef = 4B0000020000000000000001 /* Mappedin */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B0000010000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4B0000010000000000000002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4B0000010000000000000003 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4B0000010000000000000004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B0000010000000000000005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B0000010000000000000006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B0000010000000000000007 /* DisplayMapDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMapDemoViewController.swift; sourceTree = "<group>"; };
+		4B0000010000000000000008 /* AreaShapesDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaShapesDemoViewController.swift; sourceTree = "<group>"; };
+		4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingFloorSelectionDemoViewController.swift; sourceTree = "<group>"; };
+		4B000001000000000000000A /* CameraDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDemoViewController.swift; sourceTree = "<group>"; };
+		4B000001000000000000000B /* Image3DDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image3DDemoViewController.swift; sourceTree = "<group>"; };
+		4B000001000000000000000C /* InteractivityDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractivityDemoViewController.swift; sourceTree = "<group>"; };
+		4B000001000000000000000D /* LabelsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsDemoViewController.swift; sourceTree = "<group>"; };
+		4B000001000000000000000E /* MarkersDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkersDemoViewController.swift; sourceTree = "<group>"; };
+		4B000001000000000000000F /* ModelsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsDemoViewController.swift; sourceTree = "<group>"; };
+		4B0000010000000000000010 /* NavigationDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDemoViewController.swift; sourceTree = "<group>"; };
+		4B0000010000000000000011 /* PathsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathsDemoViewController.swift; sourceTree = "<group>"; };
+		4B0000010000000000000012 /* QueryDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryDemoViewController.swift; sourceTree = "<group>"; };
+		4B0000010000000000000013 /* SearchDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDemoViewController.swift; sourceTree = "<group>"; };
+		4B0000010000000000000014 /* model_positions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = model_positions.json; sourceTree = "<group>"; };
+		4B0000010000000000000015 /* 3d_assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 3d_assets; sourceTree = "<group>"; };
+		4B0000010000000000000016 /* arena_hockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arena_hockey.png; sourceTree = "<group>"; };
+		4B0000010000000000000017 /* arena_basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arena_basketball.png; sourceTree = "<group>"; };
+		4B0000010000000000000018 /* arena_concert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arena_concert.png; sourceTree = "<group>"; };
+		4B0000010000000000000019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B000001000000000000001A /* PlaygroundSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaygroundSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B0000030000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B0000011111111111111129 /* Mappedin in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B0000040000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				4B0000040000000000000002 /* PlaygroundSamples */,
+				4B0000040000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4B0000040000000000000002 /* PlaygroundSamples */ = {
+			isa = PBXGroup;
+			children = (
+				4B0000010000000000000001 /* AppDelegate.swift */,
+				4B0000010000000000000002 /* SceneDelegate.swift */,
+				4B0000010000000000000003 /* ViewController.swift */,
+				4B0000010000000000000007 /* DisplayMapDemoViewController.swift */,
+				4B0000010000000000000008 /* AreaShapesDemoViewController.swift */,
+				4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */,
+				4B000001000000000000000A /* CameraDemoViewController.swift */,
+				4B000001000000000000000B /* Image3DDemoViewController.swift */,
+				4B000001000000000000000C /* InteractivityDemoViewController.swift */,
+				4B000001000000000000000D /* LabelsDemoViewController.swift */,
+				4B000001000000000000000E /* MarkersDemoViewController.swift */,
+				4B000001000000000000000F /* ModelsDemoViewController.swift */,
+				4B0000010000000000000010 /* NavigationDemoViewController.swift */,
+				4B0000010000000000000011 /* PathsDemoViewController.swift */,
+				4B0000010000000000000012 /* QueryDemoViewController.swift */,
+				4B0000010000000000000013 /* SearchDemoViewController.swift */,
+				4B0000040000000000000004 /* Main.storyboard */,
+				4B0000010000000000000005 /* Assets.xcassets */,
+				4B0000040000000000000005 /* LaunchScreen.storyboard */,
+				4B0000010000000000000019 /* Info.plist */,
+				4B0000010000000000000014 /* model_positions.json */,
+				4B0000010000000000000015 /* 3d_assets */,
+				4B0000010000000000000016 /* arena_hockey.png */,
+				4B0000010000000000000017 /* arena_basketball.png */,
+				4B0000010000000000000018 /* arena_concert.png */,
+			);
+			path = PlaygroundSamples;
+			sourceTree = "<group>";
+		};
+		4B0000040000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B000001000000000000001A /* PlaygroundSamples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B0000040000000000000004 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B0000010000000000000004 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4B0000040000000000000005 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B0000010000000000000006 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B0000050000000000000001 /* PlaygroundSamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B0000070000000000000001 /* Build configuration list for PBXNativeTarget "PlaygroundSamples" */;
+			buildPhases = (
+				4B0000060000000000000001 /* Sources */,
+				4B0000030000000000000001 /* Frameworks */,
+				4B0000060000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlaygroundSamples;
+			packageProductDependencies = (
+				4B0000020000000000000001 /* Mappedin */,
+			);
+			productName = PlaygroundSamples;
+			productReference = 4B000001000000000000001A /* PlaygroundSamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B0000080000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4B0000050000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 4B0000070000000000000002 /* Build configuration list for PBXProject "PlaygroundSamples" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4B0000040000000000000001;
+			packageReferences = (
+				4B0000090000000000000001 /* XCRemoteSwiftPackageReference "ios" */,
+			);
+			productRefGroup = 4B0000040000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B0000050000000000000001 /* PlaygroundSamples */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B0000060000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B0000011111111111111114 /* Main.storyboard in Resources */,
+				4B0000011111111111111115 /* Assets.xcassets in Resources */,
+				4B0000011111111111111116 /* LaunchScreen.storyboard in Resources */,
+				4B0000011111111111111124 /* model_positions.json in Resources */,
+				4B0000011111111111111125 /* 3d_assets in Resources */,
+				4B0000011111111111111126 /* arena_hockey.png in Resources */,
+				4B0000011111111111111127 /* arena_basketball.png in Resources */,
+				4B0000011111111111111128 /* arena_concert.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B0000060000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B0000011111111111111111 /* AppDelegate.swift in Sources */,
+				4B0000011111111111111112 /* SceneDelegate.swift in Sources */,
+				4B0000011111111111111113 /* ViewController.swift in Sources */,
+				4B0000011111111111111117 /* DisplayMapDemoViewController.swift in Sources */,
+				4B0000011111111111111118 /* AreaShapesDemoViewController.swift in Sources */,
+				4B0000011111111111111119 /* BuildingFloorSelectionDemoViewController.swift in Sources */,
+				4B000001111111111111111A /* CameraDemoViewController.swift in Sources */,
+				4B000001111111111111111B /* Image3DDemoViewController.swift in Sources */,
+				4B000001111111111111111C /* InteractivityDemoViewController.swift in Sources */,
+				4B000001111111111111111D /* LabelsDemoViewController.swift in Sources */,
+				4B000001111111111111111E /* MarkersDemoViewController.swift in Sources */,
+				4B000001111111111111111F /* ModelsDemoViewController.swift in Sources */,
+				4B0000011111111111111120 /* NavigationDemoViewController.swift in Sources */,
+				4B0000011111111111111121 /* PathsDemoViewController.swift in Sources */,
+				4B0000011111111111111122 /* QueryDemoViewController.swift in Sources */,
+				4B0000011111111111111123 /* SearchDemoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4B000000A000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4B000000A000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4B000000A000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlaygroundSamples/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mappedin.PlaygroundSamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4B000000A000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlaygroundSamples/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mappedin.PlaygroundSamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B0000070000000000000001 /* Build configuration list for PBXNativeTarget "PlaygroundSamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B000000A000000000000003 /* Debug */,
+				4B000000A000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B0000070000000000000002 /* Build configuration list for PBXProject "PlaygroundSamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B000000A000000000000001 /* Debug */,
+				4B000000A000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B0000090000000000000001 /* XCRemoteSwiftPackageReference "ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MappedIn/ios";
+			requirement = {
+				kind = exactVersion;
+				version = "6.0.0-alpha.0";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B0000020000000000000001 /* Mappedin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B0000090000000000000001 /* XCRemoteSwiftPackageReference "ios" */;
+			productName = Mappedin;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4B0000080000000000000001 /* Project object */;
+}
