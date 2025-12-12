@@ -1,8 +1,0 @@
-# Uncomment the next line to define a global platform for your project
-use_frameworks!
-
-target 'quickstart' do
-    project "quickstart"
-    workspace 'quickstart'
-        pod 'MappedIn', '2.1.1'
-end

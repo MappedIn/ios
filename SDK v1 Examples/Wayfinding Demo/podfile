@@ -1,5 +1,0 @@
-source "https://github.com/MappedIn/podspec.git"
-
-target "Wayfinding Demo" do
-	pod "MappedIn", "1.13.0"
-end
