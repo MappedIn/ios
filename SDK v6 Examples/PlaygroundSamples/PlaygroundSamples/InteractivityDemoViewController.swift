@@ -105,27 +105,16 @@ final class InteractivityDemoViewController: UIViewController {
             }
         }
 
-        // Make labels interactive for all locations
-        mapView.mapData.getByType(.enterpriseLocation) { [weak self] (result: Result<[EnterpriseLocation], Error>) in
-            guard let self = self else { return }
-            if case .success(let locations) = result {
-                print("Adding \(locations.count) interactive labels")
-                // Get all spaces to map location space IDs to actual Space objects
-                self.mapView.mapData.getByType(.space) { (spacesResult: Result<[Space], Error>) in
-                    if case .success(let spaces) = spacesResult {
-                        locations.forEach { location in
-                            guard !location.name.isEmpty, !location.spaces.isEmpty else { return }
-                            // Find the first space for this location
-                            let spaceId = location.spaces.first!
-                            if let space = spaces.first(where: { $0.id == spaceId }) {
-                                self.mapView.labels.add(
-                                    target: space,
-                                    text: location.name,
-                                    options: AddLabelOptions(interactive: true)
-                                )
-                            }
-                        }
-                    }
+        // Add interactive labels to all spaces with names.
+        self.mapView.mapData.getByType(.space) { (spacesResult: Result<[Space], Error>) in
+            if case .success(let spaces) = spacesResult {
+                spaces.forEach { space in
+                    guard !space.name.isEmpty else { return }
+                    self.mapView.labels.add(
+                        target: space,
+                        text: space.name,
+                        options: AddLabelOptions(interactive: true)
+                    )
                 }
             }
         }
