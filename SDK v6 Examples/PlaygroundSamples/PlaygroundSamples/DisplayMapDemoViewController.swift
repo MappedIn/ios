@@ -66,3 +66,4 @@ final class DisplayMapDemoViewController: UIViewController {
 		print("show3dMap success - Map displayed")
 	}
 }
+
