@@ -92,7 +92,7 @@ final class InteractivityDemoViewController: UIViewController {
             guard let self = self else { return }
             if case .success(let spaces) = result {
                 spaces.forEach { space in
-                    self.mapView.updateState(target: space, state: ["interactive": true]) { _ in }
+                    self.mapView.updateState(space: space, state: GeometryUpdateState(interactive: true))
                 }
             }
         }
@@ -105,19 +105,19 @@ final class InteractivityDemoViewController: UIViewController {
             }
         }
 
-        // Add interactive labels to all spaces with names.
-        self.mapView.mapData.getByType(.space) { (spacesResult: Result<[Space], Error>) in
-            if case .success(let spaces) = spacesResult {
-                spaces.forEach { space in
-                    guard !space.name.isEmpty else { return }
-                    self.mapView.labels.add(
-                        target: space,
-                        text: space.name,
-                        options: AddLabelOptions(interactive: true)
-                    )
-                }
-            }
-        }
+		// Add interactive labels to all spaces with names.
+		self.mapView.mapData.getByType(.space) { (spacesResult: Result<[Space], Error>) in
+			if case .success(let spaces) = spacesResult {
+				spaces.forEach { space in
+					guard !space.name.isEmpty else { return }
+					self.mapView.labels.add(
+						target: space,
+						text: space.name,
+						options: AddLabelOptions(interactive: true)
+					)
+				}
+			}
+		}
 
         // Draw an interactive navigation path from Microsoft to Apple
         mapView.mapData.getByType(.enterpriseLocation) { [weak self] (result: Result<[EnterpriseLocation], Error>) in
@@ -203,3 +203,5 @@ final class InteractivityDemoViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+

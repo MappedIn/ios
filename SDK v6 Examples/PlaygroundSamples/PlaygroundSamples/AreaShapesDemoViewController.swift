@@ -347,3 +347,4 @@ final class AreaShapesDemoViewController: UIViewController {
         return "\(formatter.string(from: start)) – \(formatter.string(from: end))"
     }
 }
+

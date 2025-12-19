@@ -185,11 +185,16 @@ final class SearchDemoViewController: UIViewController, UITableViewDataSource, U
                 guard let self = self else { return }
                 if case .success = focusResult {
                     // Highlight all spaces for this location
-                    location.spaces.forEach { space in
-                        self.mapView.updateState(target: space, state: ["color": "#BF4320"]) { _ in }
+                    location.spaces.forEach { spaceId in
+                        self.mapView.mapData.getById(.space, id: spaceId) { (result: Result<Space?, Error>) in
+                            if case .success(let space) = result, let space = space {
+                                self.mapView.updateState(space: space, state: GeometryUpdateState(color: "#BF4320"))
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
+

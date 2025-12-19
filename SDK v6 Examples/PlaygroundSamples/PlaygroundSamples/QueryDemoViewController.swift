@@ -78,7 +78,7 @@ final class QueryDemoViewController: UIViewController {
 
             // Reset previously highlighted space to its original color
             if let space = self.highlightedSpace, let color = self.originalColor {
-                self.mapView.updateState(target: space, state: ["color": color]) { _ in }
+                self.mapView.updateState(space: space, state: GeometryUpdateState(color: color))
             }
 
             // Find the nearest space to the clicked coordinate
@@ -97,12 +97,12 @@ final class QueryDemoViewController: UIViewController {
                         print("Query: Nearest space: \(space.name) at \(nearestResult.distance)m")
 
                         // Get the current color of the space before highlighting
-                        self.mapView.getState(target: space) { stateResult in
+                        self.mapView.getState(space: space) { stateResult in
                             if case .success(let state) = stateResult {
-                                self.originalColor = state?["color"] as? String
+                                self.originalColor = state?.color
 
                                 // Highlight the space with a new color
-                                self.mapView.updateState(target: space, state: ["color": "#FF6B35"]) { _ in }
+                                self.mapView.updateState(space: space, state: GeometryUpdateState(color: "#FF6B35"))
 
                                 // Update the highlighted space reference
                                 self.highlightedSpace = space
@@ -123,3 +123,4 @@ final class QueryDemoViewController: UIViewController {
         }
     }
 }
+
