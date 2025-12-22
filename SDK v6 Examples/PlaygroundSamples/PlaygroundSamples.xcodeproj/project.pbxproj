@@ -32,6 +32,7 @@
 		4B0000011111111111111127 /* arena_basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000017 /* arena_basketball.png */; };
 		4B0000011111111111111128 /* arena_concert.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000018 /* arena_concert.png */; };
 		4B0000011111111111111129 /* Mappedin in Frameworks */ = {isa = PBXBuildFile; productRef = 4B0000020000000000000001 /* Mappedin */; };
+		D175A38A2EF9CE9600F925EF /* LocationsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		4B0000010000000000000018 /* arena_concert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arena_concert.png; sourceTree = "<group>"; };
 		4B0000010000000000000019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B000001000000000000001A /* PlaygroundSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaygroundSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		4B0000040000000000000002 /* PlaygroundSamples */ = {
 			isa = PBXGroup;
 			children = (
+				D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */,
 				4B0000010000000000000001 /* AppDelegate.swift */,
 				4B0000010000000000000002 /* SceneDelegate.swift */,
 				4B0000010000000000000003 /* ViewController.swift */,
@@ -219,6 +222,7 @@
 				4B000001111111111111111F /* ModelsDemoViewController.swift in Sources */,
 				4B0000011111111111111120 /* NavigationDemoViewController.swift in Sources */,
 				4B0000011111111111111121 /* PathsDemoViewController.swift in Sources */,
+				D175A38A2EF9CE9600F925EF /* LocationsDemoViewController.swift in Sources */,
 				4B0000011111111111111122 /* QueryDemoViewController.swift in Sources */,
 				4B0000011111111111111123 /* SearchDemoViewController.swift in Sources */,
 			);
