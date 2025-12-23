@@ -33,6 +33,9 @@
 		4B0000011111111111111128 /* arena_concert.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000018 /* arena_concert.png */; };
 		4B0000011111111111111129 /* Mappedin in Frameworks */ = {isa = PBXBuildFile; productRef = 4B0000020000000000000001 /* Mappedin */; };
 		D175A38A2EF9CE9600F925EF /* LocationsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */; };
+		D175A3962EFB239A00F925EF /* StackedMapsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */; };
+		D175A3972EFB239A00F925EF /* StackedMapsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */; };
+		D175A3982EFB239A00F925EF /* MultiFloorViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		4B0000010000000000000019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B000001000000000000001A /* PlaygroundSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaygroundSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDemoViewController.swift; sourceTree = "<group>"; };
+		D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiFloorViewDemoViewController.swift; sourceTree = "<group>"; };
+		D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedMapsDemoViewController.swift; sourceTree = "<group>"; };
+		D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedMapsUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,32 +94,35 @@
 		4B0000040000000000000002 /* PlaygroundSamples */ = {
 			isa = PBXGroup;
 			children = (
-				D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */,
+				4B0000010000000000000015 /* 3d_assets */,
 				4B0000010000000000000001 /* AppDelegate.swift */,
-				4B0000010000000000000002 /* SceneDelegate.swift */,
-				4B0000010000000000000003 /* ViewController.swift */,
-				4B0000010000000000000007 /* DisplayMapDemoViewController.swift */,
 				4B0000010000000000000008 /* AreaShapesDemoViewController.swift */,
+				4B0000010000000000000017 /* arena_basketball.png */,
+				4B0000010000000000000018 /* arena_concert.png */,
+				4B0000010000000000000016 /* arena_hockey.png */,
+				4B0000010000000000000005 /* Assets.xcassets */,
 				4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */,
 				4B000001000000000000000A /* CameraDemoViewController.swift */,
+				4B0000010000000000000007 /* DisplayMapDemoViewController.swift */,
 				4B000001000000000000000B /* Image3DDemoViewController.swift */,
+				4B0000010000000000000019 /* Info.plist */,
 				4B000001000000000000000C /* InteractivityDemoViewController.swift */,
 				4B000001000000000000000D /* LabelsDemoViewController.swift */,
+				4B0000040000000000000005 /* LaunchScreen.storyboard */,
+				D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */,
+				4B0000040000000000000004 /* Main.storyboard */,
 				4B000001000000000000000E /* MarkersDemoViewController.swift */,
+				4B0000010000000000000014 /* model_positions.json */,
 				4B000001000000000000000F /* ModelsDemoViewController.swift */,
+				D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */,
 				4B0000010000000000000010 /* NavigationDemoViewController.swift */,
 				4B0000010000000000000011 /* PathsDemoViewController.swift */,
 				4B0000010000000000000012 /* QueryDemoViewController.swift */,
+				4B0000010000000000000002 /* SceneDelegate.swift */,
 				4B0000010000000000000013 /* SearchDemoViewController.swift */,
-				4B0000040000000000000004 /* Main.storyboard */,
-				4B0000010000000000000005 /* Assets.xcassets */,
-				4B0000040000000000000005 /* LaunchScreen.storyboard */,
-				4B0000010000000000000019 /* Info.plist */,
-				4B0000010000000000000014 /* model_positions.json */,
-				4B0000010000000000000015 /* 3d_assets */,
-				4B0000010000000000000016 /* arena_hockey.png */,
-				4B0000010000000000000017 /* arena_basketball.png */,
-				4B0000010000000000000018 /* arena_concert.png */,
+				D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */,
+				D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */,
+				4B0000010000000000000003 /* ViewController.swift */,
 			);
 			path = PlaygroundSamples;
 			sourceTree = "<group>";
@@ -215,6 +224,9 @@
 				4B0000011111111111111118 /* AreaShapesDemoViewController.swift in Sources */,
 				4B0000011111111111111119 /* BuildingFloorSelectionDemoViewController.swift in Sources */,
 				4B000001111111111111111A /* CameraDemoViewController.swift in Sources */,
+				D175A3962EFB239A00F925EF /* StackedMapsDemoViewController.swift in Sources */,
+				D175A3972EFB239A00F925EF /* StackedMapsUtils.swift in Sources */,
+				D175A3982EFB239A00F925EF /* MultiFloorViewDemoViewController.swift in Sources */,
 				4B000001111111111111111B /* Image3DDemoViewController.swift in Sources */,
 				4B000001111111111111111C /* InteractivityDemoViewController.swift in Sources */,
 				4B000001111111111111111D /* LabelsDemoViewController.swift in Sources */,
