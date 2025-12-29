@@ -7,7 +7,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    private let demos = ["Areas & Shapes", "Building & Floor Selection", "Camera", "Display a Map", "Image3D", "Interactivity", "Labels", "Locations", "Markers", "Models", "Navigation", "Paths", "Query", "Search"]
+    private let demos = ["Areas & Shapes", "Building & Floor Selection", "Camera", "Display a Map", "Image3D", "Interactivity", "Labels", "Locations", "Markers", "Models", "Multi-Floor View", "Navigation", "Paths", "Query", "Search", "Stacked Maps"]
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
 
     override func viewDidLoad() {
@@ -79,19 +79,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 10:
-            let vc = NavigationDemoViewController()
+            let vc = MultiFloorViewDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 11:
-            let vc = PathsDemoViewController()
+            let vc = NavigationDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 12:
-            let vc = QueryDemoViewController()
+            let vc = PathsDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 13:
+            let vc = QueryDemoViewController()
+            if let nav = navigationController { nav.pushViewController(vc, animated: true) }
+            else { present(UINavigationController(rootViewController: vc), animated: true) }
+        case 14:
             let vc = SearchDemoViewController()
+            if let nav = navigationController { nav.pushViewController(vc, animated: true) }
+            else { present(UINavigationController(rootViewController: vc), animated: true) }
+        case 15:
+            let vc = StackedMapsDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         default:
@@ -99,3 +107,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 }
+
