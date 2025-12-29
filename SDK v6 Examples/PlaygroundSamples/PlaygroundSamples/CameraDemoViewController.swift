@@ -197,6 +197,7 @@ final class CameraDemoViewController: UIViewController {
         }
     }
 
+    // Set the camera to the default position
     private func reset() {
         let transform = CameraTarget(
             bearing: defaultBearing,
