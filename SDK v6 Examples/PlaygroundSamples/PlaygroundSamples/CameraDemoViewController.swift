@@ -237,6 +237,14 @@ final class CameraDemoViewController: UIViewController {
 				self.mapView.camera.focusOn(coordinate: click.coordinate)
 			}
 		}
+        
+        // Log camera change events to the console.
+        mapView.on("camera-change") { [weak self] payload in
+            guard self != nil else { return }
+            if let cameraTransform = payload as? CameraTransform {
+                print("Camera changed to bearing: \(cameraTransform.bearing), pitch: \(cameraTransform.pitch), zoomLevel: \(cameraTransform.zoomLevel), center: Lat: \(cameraTransform.center.latitude), Lon: \(cameraTransform.center.longitude)")
+            }
+        }
     }
 }
 
