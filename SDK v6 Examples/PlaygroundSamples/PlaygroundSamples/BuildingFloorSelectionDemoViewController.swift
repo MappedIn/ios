@@ -179,18 +179,16 @@ final class BuildingFloorSelectionDemoViewController: UIViewController, UIPicker
 
     private func setupListeners() {
         // Act on the floor-change event to update the floor selector.
-        mapView.on(Events.floorChange) { [weak self] data in
-            guard let self = self else { return }
-            if let payload = data as? FloorChangePayload {
-                print("Floor changed to: \(payload.floor.name) in building: \(payload.floor.floorStack?.name ?? "unknown")")
+        mapView.on(Events.floorChange) { [weak self] payload in
+            guard let self = self, let payload = payload else { return }
+            print("Floor changed to: \(payload.floor.name) in building: \(payload.floor.floorStack?.name ?? "unknown")")
 
-                self.isUpdatingFromEvent = true
-                // Find the floor in our current floor selector
-                if let index = self.currentFloors.firstIndex(where: { $0.id == payload.floor.id }) {
-                    self.floorPicker.selectRow(index, inComponent: 0, animated: false)
-                }
-                self.isUpdatingFromEvent = false
+            self.isUpdatingFromEvent = true
+            // Find the floor in our current floor selector
+            if let index = self.currentFloors.firstIndex(where: { $0.id == payload.floor.id }) {
+                self.floorPicker.selectRow(index, inComponent: 0, animated: false)
             }
+            self.isUpdatingFromEvent = false
         }
     }
 

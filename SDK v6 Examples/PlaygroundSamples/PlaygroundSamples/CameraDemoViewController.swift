@@ -197,7 +197,7 @@ final class CameraDemoViewController: UIViewController {
         }
     }
 
-    // Set the camera to the default position
+	// Set the camera to the default position
     private func reset() {
         let transform = CameraTarget(
             bearing: defaultBearing,
@@ -232,20 +232,17 @@ final class CameraDemoViewController: UIViewController {
         }
 
 		// Focus the camera on the click location.
-		mapView.on("click") { [weak self] payload in
-			guard let self = self else { return }
-			if let click = payload as? ClickPayload {
-				self.mapView.camera.focusOn(coordinate: click.coordinate)
-			}
+		mapView.on(Events.click) { [weak self] clickPayload in
+			guard let self = self, let click = clickPayload else { return }
+			self.mapView.camera.focusOn(coordinate: click.coordinate)
 		}
-        
-        // Log camera change events to the console.
-        mapView.on("camera-change") { [weak self] payload in
-            guard self != nil else { return }
-            if let cameraTransform = payload as? CameraTransform {
-                print("Camera changed to bearing: \(cameraTransform.bearing), pitch: \(cameraTransform.pitch), zoomLevel: \(cameraTransform.zoomLevel), center: Lat: \(cameraTransform.center.latitude), Lon: \(cameraTransform.center.longitude)")
-            }
-        }
+
+		// Log camera change events to the console.
+		mapView.on(Events.cameraChange) { [weak self] cameraTransform in
+			guard self != nil, let transform = cameraTransform else { return }
+			print("Camera changed to bearing: \(transform.bearing), pitch: \(transform.pitch), zoomLevel: \(transform.zoomLevel), center: Lat: \(transform.center.latitude), Lon: \(transform.center.longitude)")
+		}
+		
     }
 }
 

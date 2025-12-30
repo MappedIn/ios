@@ -89,10 +89,8 @@ final class LabelsDemoViewController: UIViewController {
                         DispatchQueue.main.async {
                             self?.loadingIndicator.stopAnimating()
                         }
-                        self?.mapView.on("debug") { print("debug: \($0 as Any)") }
-                        self?.mapView.on("error") { print("error: \($0 as Any)") }
-                        self?.mapView.on("click") { payload in
-                            if let click = payload as? ClickPayload, let label = click.labels?.first {
+                        self?.mapView.on(Events.click) { clickPayload in
+                            if let click = clickPayload, let label = click.labels?.first {
 								print("removing label: \(label.text)")
 								self?.mapView.labels.remove(label: label)
                             }

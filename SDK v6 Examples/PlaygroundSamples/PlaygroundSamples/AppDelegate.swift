@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  PlaygroundSamples
+//  MappedinDemoApp
 //
 //
 
@@ -31,3 +31,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+

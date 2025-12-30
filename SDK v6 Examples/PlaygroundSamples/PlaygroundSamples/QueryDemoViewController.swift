@@ -68,9 +68,8 @@ final class QueryDemoViewController: UIViewController {
 
     private func onMapReady() {
         // Handle click events
-        mapView.on(Events.click) { [weak self] event in
-            guard let self = self else { return }
-            guard let clickPayload = event as? ClickPayload else { return }
+        mapView.on(Events.click) { [weak self] clickPayload in
+            guard let self = self, let clickPayload = clickPayload else { return }
 
             let coordinate = clickPayload.coordinate
 

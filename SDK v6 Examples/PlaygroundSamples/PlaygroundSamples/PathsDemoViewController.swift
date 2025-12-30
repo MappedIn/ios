@@ -77,55 +77,54 @@ final class PathsDemoViewController: UIViewController {
                 }
 
                 // Handle click events
-                self.mapView.on(Events.click) { [weak self] event in
-            guard let self = self else { return }
-            guard let clickPayload = event as? ClickPayload else { return }
+                self.mapView.on(Events.click) { [weak self] clickPayload in
+                    guard let self = self, let clickPayload = clickPayload else { return }
 
-            let spaces = clickPayload.spaces
-            if spaces == nil || spaces?.isEmpty == true {
-                // Click on non-space area when path exists - reset
-                if self.path != nil {
-                    self.mapView.paths.removeAll()
-                    self.startSpace = nil
-                    self.path = nil
-                    self.setSpacesInteractive(interactive: true)
-                    self.instructionLabel.text = "1. Click on a space to select it as the starting point."
-                }
-                return
-            }
+                    let spaces = clickPayload.spaces
+                    if spaces == nil || spaces?.isEmpty == true {
+                        // Click on non-space area when path exists - reset
+                        if self.path != nil {
+                            self.mapView.paths.removeAll()
+                            self.startSpace = nil
+                            self.path = nil
+                            self.setSpacesInteractive(interactive: true)
+                            self.instructionLabel.text = "1. Click on a space to select it as the starting point."
+                        }
+                        return
+                    }
 
-            guard let clickedSpace = spaces?.first else { return }
+                    guard let clickedSpace = spaces?.first else { return }
 
-            if self.startSpace == nil {
-                // Step 1: Select starting space
-                self.startSpace = clickedSpace
-                self.instructionLabel.text = "2. Click on another space to select it as the end point."
-            } else if self.path == nil {
-                // Step 2: Select ending space and create path
-                guard let start = self.startSpace else { return }
-                self.mapView.mapData.getDirections(
-                    from: .space(start),
-                    to: .space(clickedSpace)
-                ) { result in
-                    if case .success(let directions) = result, let directions = directions {
-                        let opts = AddPathOptions(color: "#1871fb", width: .value(1.0))
-                        self.mapView.paths.add(coordinates: directions.coordinates, options: opts) { pathResult in
-                            if case .success(let createdPath) = pathResult {
-                                self.path = createdPath
-                                self.setSpacesInteractive(interactive: false)
-                                self.instructionLabel.text = "3. Click anywhere to remove the path."
+                    if self.startSpace == nil {
+                        // Step 1: Select starting space
+                        self.startSpace = clickedSpace
+                        self.instructionLabel.text = "2. Click on another space to select it as the end point."
+                    } else if self.path == nil {
+                        // Step 2: Select ending space and create path
+                        guard let start = self.startSpace else { return }
+                        self.mapView.mapData.getDirections(
+                            from: .space(start),
+                            to: .space(clickedSpace)
+                        ) { result in
+                            if case .success(let directions) = result, let directions = directions {
+                                let opts = AddPathOptions(color: "#1871fb", width: .value(1.0))
+                                self.mapView.paths.add(coordinates: directions.coordinates, options: opts) { pathResult in
+                                    if case .success(let createdPath) = pathResult {
+                                        self.path = createdPath
+                                        self.setSpacesInteractive(interactive: false)
+                                        self.instructionLabel.text = "3. Click anywhere to remove the path."
+                                    }
+                                }
                             }
                         }
+                    } else {
+                        // Step 3: Remove path and reset
+                        self.mapView.paths.removeAll()
+                        self.startSpace = nil
+                        self.path = nil
+                        self.setSpacesInteractive(interactive: true)
+                        self.instructionLabel.text = "1. Click on a space to select it as the starting point."
                     }
-                }
-            } else {
-                // Step 3: Remove path and reset
-                self.mapView.paths.removeAll()
-                self.startSpace = nil
-                self.path = nil
-                self.setSpacesInteractive(interactive: true)
-                self.instructionLabel.text = "1. Click on a space to select it as the starting point."
-            }
                 }
             }
         }

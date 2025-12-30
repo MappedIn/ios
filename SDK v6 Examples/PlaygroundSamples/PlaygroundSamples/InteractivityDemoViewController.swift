@@ -98,11 +98,9 @@ final class InteractivityDemoViewController: UIViewController {
         }
 
         // Set up click listener
-        mapView.on("click") { [weak self] payload in
-            guard let self = self else { return }
-            if let clickPayload = payload as? ClickPayload {
-                self.handleClick(clickPayload)
-            }
+        mapView.on(Events.click) { [weak self] clickPayload in
+            guard let self = self, let click = clickPayload else { return }
+            self.handleClick(click)
         }
 
 		// Add interactive labels to all spaces with names.

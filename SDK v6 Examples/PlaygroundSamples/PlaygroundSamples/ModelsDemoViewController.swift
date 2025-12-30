@@ -101,10 +101,9 @@ final class ModelsDemoViewController: UIViewController {
         }
 
         // Remove models that are clicked on
-        mapView.on("click") { [weak self] payload in
+        mapView.on(Events.click) { [weak self] clickPayload in
             guard let self = self,
-                  let clickPayload = payload as? ClickPayload,
-                  let clickedModel = clickPayload.models?.first else { return }
+                  let clickedModel = clickPayload?.models?.first else { return }
 
             self.mapView.models.remove(model: clickedModel) { _ in }
         }

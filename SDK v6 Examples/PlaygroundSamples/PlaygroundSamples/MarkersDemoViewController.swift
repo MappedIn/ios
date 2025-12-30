@@ -93,10 +93,9 @@ final class MarkersDemoViewController: UIViewController {
                 }
 
                 // Remove markers that are clicked on
-                self.mapView.on(Events.click) { [weak self] payload in
+                self.mapView.on(Events.click) { [weak self] clickPayload in
                     guard let self = self,
-                          let click = payload as? ClickPayload,
-                          let clickedMarker = click.markers?.first else { return }
+                          let clickedMarker = clickPayload?.markers?.first else { return }
                     self.mapView.markers.remove(marker: clickedMarker) { _ in }
                 }
             }

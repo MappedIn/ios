@@ -47,9 +47,8 @@ final class MultiFloorViewDemoViewController: UIViewController {
                 let show3dMapOptions = Show3DMapOptions(
                     multiFloorView: Show3DMapOptions.MultiFloorViewOptions(
                         enabled: true,
-//TODO remove commented code after fix released.
-//                        floorGap: 10.0,
-//                        updateCameraElevationOnFloorChange: true
+                        floorGap: 10.0,
+                        updateCameraElevationOnFloorChange: true
                     )
                 )
 
