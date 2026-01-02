@@ -7,7 +7,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    private let demos = ["Areas & Shapes", "Building & Floor Selection", "Camera", "Display a Map", "Image3D", "Interactivity", "Labels", "Locations", "Markers", "Models", "Multi-Floor View", "Navigation", "Paths", "Query", "Search", "Stacked Maps"]
+    private let demos = ["Areas & Shapes", "Building & Floor Selection", "Camera", "Display a Map", "Image3D", "Interactivity", "Labels", "Locations", "Markers", "Models", "Multi-Floor View", "Navigation", "Paths", "Query", "Search", "Stacked Maps", "Turn by Turn"]
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
 
     override func viewDidLoad() {
@@ -100,6 +100,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 15:
             let vc = StackedMapsDemoViewController()
+            if let nav = navigationController { nav.pushViewController(vc, animated: true) }
+            else { present(UINavigationController(rootViewController: vc), animated: true) }
+        case 16:
+            let vc = TurnByTurnDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         default:

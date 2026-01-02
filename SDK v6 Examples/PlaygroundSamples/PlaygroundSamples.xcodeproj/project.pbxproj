@@ -36,6 +36,7 @@
 		D175A3962EFB239A00F925EF /* StackedMapsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */; };
 		D175A3972EFB239A00F925EF /* StackedMapsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */; };
 		D175A3982EFB239A00F925EF /* MultiFloorViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */; };
+		D18CFC832F08615E00D32BFF /* TurnByTurnDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CFC822F08615E00D32BFF /* TurnByTurnDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiFloorViewDemoViewController.swift; sourceTree = "<group>"; };
 		D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedMapsDemoViewController.swift; sourceTree = "<group>"; };
 		D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedMapsUtils.swift; sourceTree = "<group>"; };
+		D18CFC822F08615E00D32BFF /* TurnByTurnDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				4B0000010000000000000013 /* SearchDemoViewController.swift */,
 				D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */,
 				D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */,
+				D18CFC822F08615E00D32BFF /* TurnByTurnDemoViewController.swift */,
 				4B0000010000000000000003 /* ViewController.swift */,
 			);
 			path = PlaygroundSamples;
@@ -231,6 +234,7 @@
 				4B000001111111111111111C /* InteractivityDemoViewController.swift in Sources */,
 				4B000001111111111111111D /* LabelsDemoViewController.swift in Sources */,
 				4B000001111111111111111E /* MarkersDemoViewController.swift in Sources */,
+				D18CFC832F08615E00D32BFF /* TurnByTurnDemoViewController.swift in Sources */,
 				4B000001111111111111111F /* ModelsDemoViewController.swift in Sources */,
 				4B0000011111111111111120 /* NavigationDemoViewController.swift in Sources */,
 				4B0000011111111111111121 /* PathsDemoViewController.swift in Sources */,
