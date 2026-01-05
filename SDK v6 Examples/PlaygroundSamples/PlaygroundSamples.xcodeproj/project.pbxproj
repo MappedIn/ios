@@ -37,6 +37,11 @@
 		D175A3972EFB239A00F925EF /* StackedMapsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */; };
 		D175A3982EFB239A00F925EF /* MultiFloorViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */; };
 		D18CFC832F08615E00D32BFF /* TurnByTurnDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CFC822F08615E00D32BFF /* TurnByTurnDemoViewController.swift */; };
+		D18CFC912F0C532500D32BFF /* object-side.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D18CFC902F0C532500D32BFF /* object-side.jpg */; };
+		D18CFC922F0C532500D32BFF /* favicon.svg in Resources */ = {isa = PBXBuildFile; fileRef = D18CFC8E2F0C532500D32BFF /* favicon.svg */; };
+		D18CFC932F0C532500D32BFF /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = D18CFC8F2F0C532500D32BFF /* floor.png */; };
+		D18CFC972F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CFC962F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift */; };
+		D18CFC992F0C54B200D32BFF /* exterior-wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D18CFC982F0C54B200D32BFF /* exterior-wall.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +76,11 @@
 		D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedMapsDemoViewController.swift; sourceTree = "<group>"; };
 		D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedMapsUtils.swift; sourceTree = "<group>"; };
 		D18CFC822F08615E00D32BFF /* TurnByTurnDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnDemoViewController.swift; sourceTree = "<group>"; };
+		D18CFC8E2F0C532500D32BFF /* favicon.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = favicon.svg; sourceTree = "<group>"; };
+		D18CFC8F2F0C532500D32BFF /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
+		D18CFC902F0C532500D32BFF /* object-side.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "object-side.jpg"; sourceTree = "<group>"; };
+		D18CFC962F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsAndTexturesDemoViewController.swift; sourceTree = "<group>"; };
+		D18CFC982F0C54B200D32BFF /* exterior-wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "exterior-wall.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +115,11 @@
 				4B0000010000000000000005 /* Assets.xcassets */,
 				4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */,
 				4B000001000000000000000A /* CameraDemoViewController.swift */,
+				D18CFC962F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift */,
 				4B0000010000000000000007 /* DisplayMapDemoViewController.swift */,
+				D18CFC982F0C54B200D32BFF /* exterior-wall.jpg */,
+				D18CFC8E2F0C532500D32BFF /* favicon.svg */,
+				D18CFC8F2F0C532500D32BFF /* floor.png */,
 				4B000001000000000000000B /* Image3DDemoViewController.swift */,
 				4B0000010000000000000019 /* Info.plist */,
 				4B000001000000000000000C /* InteractivityDemoViewController.swift */,
@@ -118,6 +132,7 @@
 				4B000001000000000000000F /* ModelsDemoViewController.swift */,
 				D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */,
 				4B0000010000000000000010 /* NavigationDemoViewController.swift */,
+				D18CFC902F0C532500D32BFF /* object-side.jpg */,
 				4B0000010000000000000011 /* PathsDemoViewController.swift */,
 				4B0000010000000000000012 /* QueryDemoViewController.swift */,
 				4B0000010000000000000002 /* SceneDelegate.swift */,
@@ -205,8 +220,12 @@
 				4B0000011111111111111114 /* Base in Resources */,
 				4B0000011111111111111115 /* Assets.xcassets in Resources */,
 				4B0000011111111111111116 /* Base in Resources */,
+				D18CFC992F0C54B200D32BFF /* exterior-wall.jpg in Resources */,
 				4B0000011111111111111124 /* model_positions.json in Resources */,
 				4B0000011111111111111125 /* 3d_assets in Resources */,
+				D18CFC912F0C532500D32BFF /* object-side.jpg in Resources */,
+				D18CFC922F0C532500D32BFF /* favicon.svg in Resources */,
+				D18CFC932F0C532500D32BFF /* floor.png in Resources */,
 				4B0000011111111111111126 /* arena_hockey.png in Resources */,
 				4B0000011111111111111127 /* arena_basketball.png in Resources */,
 				4B0000011111111111111128 /* arena_concert.png in Resources */,
@@ -233,6 +252,7 @@
 				4B000001111111111111111B /* Image3DDemoViewController.swift in Sources */,
 				4B000001111111111111111C /* InteractivityDemoViewController.swift in Sources */,
 				4B000001111111111111111D /* LabelsDemoViewController.swift in Sources */,
+				D18CFC972F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift in Sources */,
 				4B000001111111111111111E /* MarkersDemoViewController.swift in Sources */,
 				D18CFC832F08615E00D32BFF /* TurnByTurnDemoViewController.swift in Sources */,
 				4B000001111111111111111F /* ModelsDemoViewController.swift in Sources */,
