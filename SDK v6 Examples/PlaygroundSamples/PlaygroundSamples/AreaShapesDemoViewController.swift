@@ -229,32 +229,15 @@ final class AreaShapesDemoViewController: UIViewController {
     }
 
     private func createShapeFromArea(area: Area, labelText: String, color: String, opacity: Double, altitude: Double, height: Double) {
-        // Get the GeoJSON from the area
-        guard let areaGeoJSON = area.geoJSON else { return }
+        // Get the GeoJSON Feature from the area
+        guard let feature = area.geoJSON else { return }
 
-        // Create a FeatureCollection containing the Feature of the Area
-        var shapeFeatureCollection: [String: Any] = [
-            "type": "FeatureCollection",
-            "features": []
-        ]
+        // Create a FeatureCollection containing the single Feature
+        let featureCollection = FeatureCollection(features: [feature])
 
-        var feature: [String: Any] = [
-            "type": areaGeoJSON["type"] as? String ?? "Feature"
-        ]
-
-        if let properties = areaGeoJSON["properties"] as? [String: Any] {
-            feature["properties"] = properties
-        }
-
-        if let geometry = areaGeoJSON["geometry"] as? [String: Any] {
-            feature["geometry"] = geometry
-        }
-
-        shapeFeatureCollection["features"] = [feature]
-
-        // Draw the shape
+        // Draw the shape using the typed API
         mapView.shapes.add(
-            geometry: shapeFeatureCollection,
+            geometry: featureCollection,
             style: PaintStyle(color: color, altitude: altitude, height: height, opacity: opacity)
         ) { _ in }
 
@@ -301,26 +284,13 @@ final class AreaShapesDemoViewController: UIViewController {
 
         // Create zone for avoidance if needed
         var options: GetDirectionsOptions?
-        if avoidZone, let areaGeoJSON = maintenanceArea.geoJSON, let currentFloor = currentFloor {
-            // Extract geometry from the area's GeoJSON and create Feature
-            // Following the TypeScript pattern of manually extracting parts
-            if let geometryDict = areaGeoJSON["geometry"] as? [String: Any],
-               let geometry = Geometry.fromJson(geometryDict) {
-
-                let properties = areaGeoJSON["properties"] as? [String: Any]
-
-                let feature = Feature(
-                    geometry: geometry,
-                    properties: properties
-                )
-
-                let zone = DirectionZone(
-                    cost: Double.greatestFiniteMagnitude,
-                    floor: currentFloor,
-                    geometry: feature
-                )
-                options = GetDirectionsOptions(zones: [zone])
-            }
+        if avoidZone, let feature = maintenanceArea.geoJSON, let currentFloor = currentFloor {
+            let zone = DirectionZone(
+                cost: Double.greatestFiniteMagnitude,
+                floor: currentFloor,
+                geometry: feature
+            )
+            options = GetDirectionsOptions(zones: [zone])
         }
 
         // Get directions
