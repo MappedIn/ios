@@ -10,6 +10,7 @@ final class BuildingFloorSelectionDemoViewController: UIViewController, UIPicker
     private let loadingIndicator = UIActivityIndicatorView(style: .large)
 
     private var floorStacks: [FloorStack] = []
+    private var buildings: [FloorStack] = []
     private var allFloors: [Floor] = []
     private var currentFloors: [Floor] = []
     private var isUpdatingFromEvent = false
@@ -126,6 +127,14 @@ final class BuildingFloorSelectionDemoViewController: UIViewController, UIPicker
             if case .success(let stacks) = result {
                 self.floorStacks = stacks.sorted { $0.name.localizedCompare($1.name) == .orderedAscending }
 
+                // Filter to get only buildings (type == .building)
+                self.buildings = self.floorStacks.filter { $0.type == .building }
+
+                // If no buildings found with type filter, use all floor stacks that have geoJSON
+                if self.buildings.isEmpty {
+                    self.buildings = self.floorStacks.filter { $0.geoJSON != nil }
+                }
+
                 // Get all floors
                 self.mapView.mapData.getByType(.floor) { [weak self] (floorsResult: Result<[Floor], Error>) in
                     guard let self = self else { return }
@@ -178,6 +187,32 @@ final class BuildingFloorSelectionDemoViewController: UIViewController, UIPicker
     }
 
     private func setupListeners() {
+        // Act on the click event to check if the coordinate is within any building.
+        mapView.on(Events.click) { [weak self] payload in
+            guard let self = self, let payload = payload else { return }
+            let coordinate = payload.coordinate
+            var matchingBuildings: [String] = []
+
+            // This demonstrates how to detect if a coordinate is within a building.
+            // For click events, this can be detected by checking the ClickEvent.floors.
+            // Checking the coordinate is for demonstration purposes and useful for non click events.
+            for building in self.buildings {
+                if self.isCoordinateWithinFeature(coordinate: coordinate, feature: building.geoJSON) {
+                    matchingBuildings.append(building.name)
+                }
+            }
+
+            DispatchQueue.main.async {
+                let message: String
+                if !matchingBuildings.isEmpty {
+                    message = "Coordinate is within building: \(matchingBuildings.joined(separator: ", "))"
+                } else {
+                    message = "Coordinate is not within any building"
+                }
+                self.showToast(message: message)
+            }
+        }
+
         // Act on the floor-change event to update the floor selector.
         mapView.on(Events.floorChange) { [weak self] payload in
             guard let self = self, let payload = payload else { return }
@@ -249,5 +284,107 @@ final class BuildingFloorSelectionDemoViewController: UIViewController, UIPicker
             }
         }
     }
+
+    /// Check if a coordinate is within a GeoJSON Feature.
+    /// This implements point-in-polygon checking similar to @turf/boolean-contains.
+    private func isCoordinateWithinFeature(coordinate: Coordinate, feature: Feature?) -> Bool {
+        guard let geometry = feature?.geometry else { return false }
+        let point = [coordinate.longitude, coordinate.latitude]
+
+        switch geometry {
+        case .polygon(let coordinates):
+            return isPointInPolygon(point: point, polygon: coordinates)
+        case .multiPolygon(let coordinates):
+            return coordinates.contains { polygon in
+                isPointInPolygon(point: point, polygon: polygon)
+            }
+        default:
+            return false
+        }
+    }
+
+    /// Check if a point is inside a polygon using the ray-casting algorithm.
+    /// The polygon is represented as a list of linear rings (first is outer, rest are holes).
+    private func isPointInPolygon(point: [Double], polygon: [[[Double]]]) -> Bool {
+        guard !polygon.isEmpty else { return false }
+
+        // Check if point is inside the outer ring
+        let outerRing = polygon[0]
+        guard isPointInRing(point: point, ring: outerRing) else {
+            return false
+        }
+
+        // Check if point is inside any hole (if so, it's not in the polygon)
+        for i in 1..<polygon.count {
+            if isPointInRing(point: point, ring: polygon[i]) {
+                return false
+            }
+        }
+
+        return true
+    }
+
+    /// Check if a point is inside a linear ring using the ray-casting algorithm.
+    /// This counts how many times a ray from the point crosses the polygon boundary.
+    private func isPointInRing(point: [Double], ring: [[Double]]) -> Bool {
+        guard ring.count >= 4 else { return false } // A valid ring needs at least 4 points (3 + closing point)
+
+        let x = point[0]
+        let y = point[1]
+        var inside = false
+
+        var j = ring.count - 1
+        for i in 0..<ring.count {
+            let xi = ring[i][0]
+            let yi = ring[i][1]
+            let xj = ring[j][0]
+            let yj = ring[j][1]
+
+            let intersect = ((yi > y) != (yj > y)) &&
+                (x < (xj - xi) * (y - yi) / (yj - yi) + xi)
+
+            if intersect {
+                inside = !inside
+            }
+            j = i
+        }
+
+        return inside
+    }
+
+    /// Shows a toast-like message at the bottom of the screen.
+    private func showToast(message: String) {
+        let toastLabel = UILabel()
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        toastLabel.textColor = .white
+        toastLabel.textAlignment = .center
+        toastLabel.font = UIFont.systemFont(ofSize: 14)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10
+        toastLabel.clipsToBounds = true
+        toastLabel.numberOfLines = 0
+
+        let maxWidth = view.frame.size.width - 40
+        let expectedSize = toastLabel.sizeThatFits(CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude))
+        let labelWidth = min(expectedSize.width + 20, maxWidth)
+        let labelHeight = expectedSize.height + 16
+
+        toastLabel.frame = CGRect(
+            x: (view.frame.size.width - labelWidth) / 2,
+            y: view.frame.size.height - 150,
+            width: labelWidth,
+            height: labelHeight
+        )
+
+        view.addSubview(toastLabel)
+
+        UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: { _ in
+            toastLabel.removeFromSuperview()
+        })
+    }
 }
+
 
