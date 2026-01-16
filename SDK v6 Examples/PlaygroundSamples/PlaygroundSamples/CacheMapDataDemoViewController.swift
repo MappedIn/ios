@@ -20,6 +20,9 @@ final class CacheMapDataDemoViewController: UIViewController {
     private var currentMapId: String = ""
 
     private static let cacheFilePrefix = "cached-map-"
+    private var loadStartTime: CFAbsoluteTime = 0
+    private var dataLoadDuration: Double = 0
+    private var isCachedLoad: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +104,7 @@ final class CacheMapDataDemoViewController: UIViewController {
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
             secret: "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022",
-            mapId: "660c0c3aae0596d87766f2da"
+            mapId: "67881b4666a208000badecc4"
         )
 
         let mapId = options.mapId
@@ -120,6 +123,8 @@ final class CacheMapDataDemoViewController: UIViewController {
     }
 
     private func loadFromCachedData(_ cachedData: Data, options: GetMapDataWithCredentialsOptions) {
+        loadStartTime = CFAbsoluteTimeGetCurrent()
+
         // Create the backup object in the format expected by hydrateMapData
         let mainArray = [UInt8](cachedData).map { Int($0) }
         let backupObject: [String: Any] = [
@@ -127,16 +132,23 @@ final class CacheMapDataDemoViewController: UIViewController {
             "main": mainArray
         ]
 
+        let hydrateStartTime = CFAbsoluteTimeGetCurrent()
+
         mapView.hydrateMapData(backup: backupObject, options: options) { [weak self] result in
             guard let self = self else { return }
 
+            let hydrateEndTime = CFAbsoluteTimeGetCurrent()
+            let hydrateDuration = (hydrateEndTime - hydrateStartTime) * 1000
+
             switch result {
             case .success:
-                print("CacheMapDataDemo: hydrateMapData success - loaded from cache")
+                print("CacheMapDataDemo: hydrateMapData success - loaded from cache in \(String(format: "%.0f", hydrateDuration))ms")
                 self.updateStatus("Loaded from cache!")
+                self.dataLoadDuration = hydrateDuration
+                self.isCachedLoad = true
                 self.showMap()
             case .failure(let error):
-                print("CacheMapDataDemo: hydrateMapData error: \(error)")
+                print("CacheMapDataDemo: hydrateMapData error: \(error) (after \(String(format: "%.0f", hydrateDuration))ms)")
                 // If cache is corrupted, delete it and fetch fresh data
                 self.deleteFromCache(mapId: options.mapId)
                 self.updateStatus("Cache invalid, fetching from server...")
@@ -149,37 +161,58 @@ final class CacheMapDataDemoViewController: UIViewController {
     }
 
     private func fetchFromServer(options: GetMapDataWithCredentialsOptions) {
+        loadStartTime = CFAbsoluteTimeGetCurrent()
+        let getMapDataStartTime = CFAbsoluteTimeGetCurrent()
+
         mapView.getMapData(options: options) { [weak self] result in
             guard let self = self else { return }
 
+            let getMapDataEndTime = CFAbsoluteTimeGetCurrent()
+            let getMapDataDuration = (getMapDataEndTime - getMapDataStartTime) * 1000
+
             switch result {
             case .success:
-                print("CacheMapDataDemo: getMapData success - fetched from server")
-                self.updateStatus("Fetched from server, caching...")
+                print("CacheMapDataDemo: getMapData success - fetched from server in \(String(format: "%.0f", getMapDataDuration))ms")
+                self.updateStatus("Fetched from server...")
 
-                // Save to cache for next time
-                self.saveToCache(mapId: options.mapId)
-
-                self.showMap()
+                self.dataLoadDuration = getMapDataDuration
+                self.isCachedLoad = false
+                // Cache saving is deferred until after show3dMap to avoid blocking the render
+                self.showMap(mapIdToCache: options.mapId)
             case .failure(let error):
-                print("CacheMapDataDemo: getMapData error: \(error)")
+                print("CacheMapDataDemo: getMapData error: \(error) (after \(String(format: "%.0f", getMapDataDuration))ms)")
                 self.hideLoading()
                 self.updateStatus("Error: \(error.localizedDescription)")
             }
         }
     }
 
-    private func showMap() {
+    private func showMap(mapIdToCache: String? = nil) {
+        let show3dMapStartTime = CFAbsoluteTimeGetCurrent()
+
         mapView.show3dMap(options: Show3DMapOptions()) { [weak self] result in
             guard let self = self else { return }
+
+            let show3dMapEndTime = CFAbsoluteTimeGetCurrent()
+            let show3dMapDuration = (show3dMapEndTime - show3dMapStartTime) * 1000
+            let totalDuration = (show3dMapEndTime - self.loadStartTime) * 1000
+            let source = self.isCachedLoad ? "CACHE" : "NETWORK"
 
             switch result {
             case .success:
                 self.hideLoading()
+                print("CacheMapDataDemo: show3dMap success - took \(String(format: "%.0f", show3dMapDuration))ms")
+                print("CacheMapDataDemo: === TOTAL MAP LOAD TIME (\(source)): \(String(format: "%.0f", totalDuration))ms (data: \(String(format: "%.0f", self.dataLoadDuration))ms, show3dMap: \(String(format: "%.0f", show3dMapDuration))ms) ===")
                 self.onMapReady()
+
+                // Save to cache after map is displayed to avoid blocking the render
+                if let mapId = mapIdToCache {
+                    print("CacheMapDataDemo: Starting background cache save...")
+                    self.saveToCache(mapId: mapId)
+                }
             case .failure(let error):
                 self.hideLoading()
-                print("CacheMapDataDemo: show3dMap error: \(error)")
+                print("CacheMapDataDemo: show3dMap error: \(error) (after \(String(format: "%.0f", show3dMapDuration))ms)")
                 self.updateStatus("Error displaying map: \(error.localizedDescription)")
             }
         }
@@ -295,3 +328,4 @@ final class CacheMapDataDemoViewController: UIViewController {
         }
     }
 }
+
