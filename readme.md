@@ -35,7 +35,7 @@ The following table lists the sample activities that pertain to the latest versi
 | [QueryDemoViewController](./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/QueryDemoViewController.swift)                                   | Demonstrates how to find the nearest room based on a coordinate and click event.                                                             | Coming Soon                                                                                           |
 | [SearchDemoViewController.swift](./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/SearchDemoViewController.swift)                           | Demonstrates how to use the suggest and search feature.                                                                                      | [Search](https://developer.mappedin.com/ios-sdk/enterprise-data#search)                               |
 | [StackedMapsDemoViewController.swift](./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/StackedMapsDemoViewController.swift)                 | Demonstrates how to use the stacked maps.                                                                                                    | [Multi Floor View & Stacked Maps](https://developer.mappedin.com/ios-sdk/stacked-maps)                |
-| [Text3DDemoViewController.swift](./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/Text3DDemoViewController.swift)                           | Demonstrates how to use Text3D labels.                                                         | Coming Soon                                  |
+| [Text3DDemoViewController.swift](./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/Text3DDemoViewController.swift)                           | Demonstrates how to use Text3D labels.                                                                                                       | Coming Soon                                                                                           |
 | [TurnByTurnDemoViewController.swift](./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/TurnByTurnDemoViewController.swift)                   | Demonstrates how to use turn by turn directions.                                                                                             | [Turn-by-Turn Directions](https://developer.mappedin.com/ios-sdk/wayfinding#turn-by-turn-directions)  |
 
 ---
@@ -45,5 +45,6 @@ The following table lists the sample activities that pertain to the latest versi
 - [Mappedin Developer Site](https://developer.mappedin.com/)
 - [Mappedin SDK for iOS Getting Started Guide](https://developer.mappedin.com/ios-sdk/getting-started)
 - [Mappedin SDK for iOS API Docs](https://docs.mappedin.com/ios-sdk-api/v6/latest/documentation/mappedin/)
+- [Release Notes](https://developer.mappedin.com/ios-sdk/release-notes)
 
 ---
