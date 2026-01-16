@@ -6,7 +6,7 @@ final class StackedMapsDemoViewController: UIViewController {
     private let loadingIndicator = UIActivityIndicatorView(style: .large)
 
     private var animate = true
-    private var distanceBetweenFloors: Double = 10.0
+    private var distanceBetweenFloors: Double = 25.0
     private var gapValueLabel: UILabel!
 
     override func viewDidLoad() {
@@ -196,6 +196,15 @@ final class StackedMapsDemoViewController: UIViewController {
 		mapView.camera.setMaxPitch(88.0)
 		mapView.camera.set(
 			target: CameraTarget(pitch: 75.0)
+		)
+		
+		//Expland floors.
+		StackedMapsUtils.expandFloors(
+			mapView: mapView,
+			options: ExpandOptions(
+				distanceBetweenFloors: distanceBetweenFloors,
+				animate: animate
+			)
 		)
 	}
 }

@@ -140,15 +140,15 @@ final class ColorsAndTexturesDemoViewController: UIViewController {
             }
         }
 
-        // Update interior walls with colors
-        mapView.updateState(
-            walls: .interior,
-            state: WallsUpdateState(
-                color: "#526D82",
-                topColor: "#27374D"
-            )
-        )
-        
+		// Update interior walls with colors
+		mapView.updateState(
+			walls: .interior,
+			state: WallsUpdateState(
+				color: "#526D82",
+				topColor: "#27374D"
+			)
+		)
+		
         // Update exterior walls with textures
         mapView.updateState(
             walls: .exterior,
