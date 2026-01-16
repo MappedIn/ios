@@ -45,6 +45,7 @@
 		D1958B612F1A880C005609E5 /* school-demo-multifloor-mvfv3.zip in Resources */ = {isa = PBXBuildFile; fileRef = D1958B602F1A880C005609E5 /* school-demo-multifloor-mvfv3.zip */; };
 		D1958B642F1A8822005609E5 /* OfflineModeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1958B632F1A8822005609E5 /* OfflineModeDemoViewController.swift */; };
 		D1958B652F1A8822005609E5 /* CacheMapDataDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1958B622F1A8822005609E5 /* CacheMapDataDemoViewController.swift */; };
+		D1958B672F1A8ECB005609E5 /* Text3DDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1958B662F1A8ECB005609E5 /* Text3DDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		D1958B602F1A880C005609E5 /* school-demo-multifloor-mvfv3.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "school-demo-multifloor-mvfv3.zip"; sourceTree = "<group>"; };
 		D1958B622F1A8822005609E5 /* CacheMapDataDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMapDataDemoViewController.swift; sourceTree = "<group>"; };
 		D1958B632F1A8822005609E5 /* OfflineModeDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineModeDemoViewController.swift; sourceTree = "<group>"; };
+		D1958B662F1A8ECB005609E5 /* Text3DDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text3DDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				4B0000010000000000000013 /* SearchDemoViewController.swift */,
 				D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */,
 				D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */,
+				D1958B662F1A8ECB005609E5 /* Text3DDemoViewController.swift */,
 				D18CFC822F08615E00D32BFF /* TurnByTurnDemoViewController.swift */,
 				4B0000010000000000000003 /* ViewController.swift */,
 			);
@@ -257,6 +260,7 @@
 				4B0000011111111111111119 /* BuildingFloorSelectionDemoViewController.swift in Sources */,
 				4B000001111111111111111A /* CameraDemoViewController.swift in Sources */,
 				D175A3962EFB239A00F925EF /* StackedMapsDemoViewController.swift in Sources */,
+				D1958B672F1A8ECB005609E5 /* Text3DDemoViewController.swift in Sources */,
 				D175A3972EFB239A00F925EF /* StackedMapsUtils.swift in Sources */,
 				D175A3982EFB239A00F925EF /* MultiFloorViewDemoViewController.swift in Sources */,
 				D1958B642F1A8822005609E5 /* OfflineModeDemoViewController.swift in Sources */,

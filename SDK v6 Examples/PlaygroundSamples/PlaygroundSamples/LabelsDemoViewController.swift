@@ -104,11 +104,10 @@ final class LabelsDemoViewController: UIViewController {
     }
 
     private func onMapLoaded() {
-		mapView.on(Events.click) { clickPayload in
-			if let click = clickPayload, let label = click.labels?.first {
-				print("removing label: \(label.text)")
-				self.mapView.labels.remove(label: label)
-			}
+		mapView.on(Events.click) { [weak self] clickPayload in
+			guard let self = self, let click = clickPayload, let label = click.labels?.first else { return }
+			print("removing label: \(label.text)")
+			self.mapView.labels.remove(label: label)
 		}
 		
         mapView.mapData.getByType(MapDataType.space) { [weak self] (result: Result<[Space], Error>) in
