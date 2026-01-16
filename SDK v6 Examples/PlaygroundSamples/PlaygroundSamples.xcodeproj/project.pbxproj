@@ -42,6 +42,10 @@
 		D18CFC932F0C532500D32BFF /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = D18CFC8F2F0C532500D32BFF /* floor.png */; };
 		D18CFC972F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CFC962F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift */; };
 		D18CFC992F0C54B200D32BFF /* exterior-wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D18CFC982F0C54B200D32BFF /* exterior-wall.jpg */; };
+		D1958B612F1A880C005609E5 /* school-demo-multifloor-mvfv3.zip in Resources */ = {isa = PBXBuildFile; fileRef = D1958B602F1A880C005609E5 /* school-demo-multifloor-mvfv3.zip */; };
+		D1958B642F1A8822005609E5 /* OfflineModeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1958B632F1A8822005609E5 /* OfflineModeDemoViewController.swift */; };
+		D1958B652F1A8822005609E5 /* CacheMapDataDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1958B622F1A8822005609E5 /* CacheMapDataDemoViewController.swift */; };
+		D1958B672F1A8ECB005609E5 /* Text3DDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1958B662F1A8ECB005609E5 /* Text3DDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +85,10 @@
 		D18CFC902F0C532500D32BFF /* object-side.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "object-side.jpg"; sourceTree = "<group>"; };
 		D18CFC962F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsAndTexturesDemoViewController.swift; sourceTree = "<group>"; };
 		D18CFC982F0C54B200D32BFF /* exterior-wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "exterior-wall.jpg"; sourceTree = "<group>"; };
+		D1958B602F1A880C005609E5 /* school-demo-multifloor-mvfv3.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "school-demo-multifloor-mvfv3.zip"; sourceTree = "<group>"; };
+		D1958B622F1A8822005609E5 /* CacheMapDataDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMapDataDemoViewController.swift; sourceTree = "<group>"; };
+		D1958B632F1A8822005609E5 /* OfflineModeDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineModeDemoViewController.swift; sourceTree = "<group>"; };
+		D1958B662F1A8ECB005609E5 /* Text3DDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text3DDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 				4B0000010000000000000005 /* Assets.xcassets */,
 				4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */,
 				4B000001000000000000000A /* CameraDemoViewController.swift */,
+				D1958B622F1A8822005609E5 /* CacheMapDataDemoViewController.swift */,
 				D18CFC962F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift */,
 				4B0000010000000000000007 /* DisplayMapDemoViewController.swift */,
 				D18CFC982F0C54B200D32BFF /* exterior-wall.jpg */,
@@ -133,12 +142,15 @@
 				D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */,
 				4B0000010000000000000010 /* NavigationDemoViewController.swift */,
 				D18CFC902F0C532500D32BFF /* object-side.jpg */,
+				D1958B632F1A8822005609E5 /* OfflineModeDemoViewController.swift */,
 				4B0000010000000000000011 /* PathsDemoViewController.swift */,
 				4B0000010000000000000012 /* QueryDemoViewController.swift */,
 				4B0000010000000000000002 /* SceneDelegate.swift */,
+				D1958B602F1A880C005609E5 /* school-demo-multifloor-mvfv3.zip */,
 				4B0000010000000000000013 /* SearchDemoViewController.swift */,
 				D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */,
 				D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */,
+				D1958B662F1A8ECB005609E5 /* Text3DDemoViewController.swift */,
 				D18CFC822F08615E00D32BFF /* TurnByTurnDemoViewController.swift */,
 				4B0000010000000000000003 /* ViewController.swift */,
 			);
@@ -223,6 +235,7 @@
 				D18CFC992F0C54B200D32BFF /* exterior-wall.jpg in Resources */,
 				4B0000011111111111111124 /* model_positions.json in Resources */,
 				4B0000011111111111111125 /* 3d_assets in Resources */,
+				D1958B612F1A880C005609E5 /* school-demo-multifloor-mvfv3.zip in Resources */,
 				D18CFC912F0C532500D32BFF /* object-side.jpg in Resources */,
 				D18CFC922F0C532500D32BFF /* favicon.svg in Resources */,
 				D18CFC932F0C532500D32BFF /* floor.png in Resources */,
@@ -247,8 +260,11 @@
 				4B0000011111111111111119 /* BuildingFloorSelectionDemoViewController.swift in Sources */,
 				4B000001111111111111111A /* CameraDemoViewController.swift in Sources */,
 				D175A3962EFB239A00F925EF /* StackedMapsDemoViewController.swift in Sources */,
+				D1958B672F1A8ECB005609E5 /* Text3DDemoViewController.swift in Sources */,
 				D175A3972EFB239A00F925EF /* StackedMapsUtils.swift in Sources */,
 				D175A3982EFB239A00F925EF /* MultiFloorViewDemoViewController.swift in Sources */,
+				D1958B642F1A8822005609E5 /* OfflineModeDemoViewController.swift in Sources */,
+				D1958B652F1A8822005609E5 /* CacheMapDataDemoViewController.swift in Sources */,
 				4B000001111111111111111B /* Image3DDemoViewController.swift in Sources */,
 				4B000001111111111111111C /* InteractivityDemoViewController.swift in Sources */,
 				4B000001111111111111111D /* LabelsDemoViewController.swift in Sources */,
@@ -488,7 +504,7 @@
 			repositoryURL = "https://github.com/MappedIn/ios";
 			requirement = {
 				kind = exactVersion;
-				version = "6.2.0-alpha.2";
+				version = "6.2.0-alpha.3";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

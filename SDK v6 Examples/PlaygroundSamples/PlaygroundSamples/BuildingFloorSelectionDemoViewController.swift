@@ -193,9 +193,9 @@ final class BuildingFloorSelectionDemoViewController: UIViewController, UIPicker
             let coordinate = payload.coordinate
             var matchingBuildings: [String] = []
 
-            // This demonstrates how to detect if a coordinate is within a building.
-            // For click events, this can be detected by checking the ClickEvent.floors.
-            // Checking the coordinate is for demonstration purposes and useful for non click events.
+			// This demonstrates how to detect if a coordinate is within a building.
+			// For click events, this can be detected by checking the ClickEvent.floors.
+			// Checking the coordinate is for demonstration purposes and useful for non click events.
             for building in self.buildings {
                 if self.isCoordinateWithinFeature(coordinate: coordinate, feature: building.geoJSON) {
                     matchingBuildings.append(building.name)
@@ -386,5 +386,4 @@ final class BuildingFloorSelectionDemoViewController: UIViewController, UIPicker
         })
     }
 }
-
 
