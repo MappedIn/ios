@@ -49,6 +49,7 @@
 		D1A49EB22F31239000250493 /* CacheMVFDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB12F31239000250493 /* CacheMVFDemoViewController.swift */; };
 		D1A49EB52F3123A300250493 /* DynamicFocusDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB32F3123A300250493 /* DynamicFocusDemoViewController.swift */; };
 		D1A49EB62F3123A300250493 /* DynamicFocusManualDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB42F3123A300250493 /* DynamicFocusManualDemoViewController.swift */; };
+		D1A49EB82F3139B600250493 /* BlueDotDemoViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB72F3139B600250493 /* BlueDotDemoViewController 2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		D1A49EB12F31239000250493 /* CacheMVFDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMVFDemoViewController.swift; sourceTree = "<group>"; };
 		D1A49EB32F3123A300250493 /* DynamicFocusDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFocusDemoViewController.swift; sourceTree = "<group>"; };
 		D1A49EB42F3123A300250493 /* DynamicFocusManualDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFocusManualDemoViewController.swift; sourceTree = "<group>"; };
+		D1A49EB72F3139B600250493 /* BlueDotDemoViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlueDotDemoViewController 2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				4B0000010000000000000018 /* arena_concert.png */,
 				4B0000010000000000000016 /* arena_hockey.png */,
 				4B0000010000000000000005 /* Assets.xcassets */,
+				D1A49EB72F3139B600250493 /* BlueDotDemoViewController 2.swift */,
 				4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */,
 				4B000001000000000000000A /* CameraDemoViewController.swift */,
 				D1958B622F1A8822005609E5 /* CacheMapDataDemoViewController.swift */,
@@ -267,6 +270,7 @@
 				4B0000011111111111111117 /* DisplayMapDemoViewController.swift in Sources */,
 				4B0000011111111111111118 /* AreaShapesDemoViewController.swift in Sources */,
 				4B0000011111111111111119 /* BuildingFloorSelectionDemoViewController.swift in Sources */,
+				D1A49EB82F3139B600250493 /* BlueDotDemoViewController 2.swift in Sources */,
 				4B000001111111111111111A /* CameraDemoViewController.swift in Sources */,
 				D175A3962EFB239A00F925EF /* StackedMapsDemoViewController.swift in Sources */,
 				D1958B672F1A8ECB005609E5 /* Text3DDemoViewController.swift in Sources */,
