@@ -65,6 +65,11 @@ final class TurnByTurnDemoViewController: UIViewController {
                         }
                     }
                 }
+            } else if case .failure(let error) = result {
+                DispatchQueue.main.async {
+                    self.loadingIndicator.stopAnimating()
+                }
+                print("getMapData error: \(error)")
             }
         }
     }

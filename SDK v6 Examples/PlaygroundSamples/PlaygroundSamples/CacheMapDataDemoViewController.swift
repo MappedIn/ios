@@ -1,7 +1,11 @@
 import UIKit
 import Mappedin
 
-/// Demonstrates caching map data for offline use.
+/// Demonstrates caching map data for offline use. This example can work well on small to medium
+/// sized maps or when map data needs to be manually modified. Loading the map from an MVF file
+/// is much more efficient and recommended for larger maps. Refer to the CacheMVFDemoViewController and
+/// OfflineModeDemoViewControler for examples of this. Use the load time stats printed out from these
+/// demos to help make the best choice for your map.
 ///
 /// This demo shows how to:
 /// 1. Check if map data is cached locally
@@ -104,7 +108,7 @@ final class CacheMapDataDemoViewController: UIViewController {
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
             secret: "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022",
-            mapId: "67881b4666a208000badecc4"
+            mapId: "67a6641530e940000bac3c1a"
         )
 
         let mapId = options.mapId
@@ -301,6 +305,9 @@ final class CacheMapDataDemoViewController: UIViewController {
         // Remove old map view
         mapView.view.removeFromSuperview()
 
+        // Destroy the old MapView to release WKWebView resources and prevent memory leaks
+        mapView.destroy()
+
         // Create new map view
         mapView = MapView()
         let mapContainer = mapView.view
@@ -328,4 +335,3 @@ final class CacheMapDataDemoViewController: UIViewController {
         }
     }
 }
-
