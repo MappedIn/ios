@@ -80,8 +80,19 @@ final class SearchDemoViewController: UIViewController, UITableViewDataSource, U
             guard let self = self else { return }
             if case .success = r {
                 self.mapView.show3dMap(options: Show3DMapOptions()) { r2 in
-                    if case .success = r2 { self.onMapReady() }
+                    if case .success = r2 {
+                        self.onMapReady()
+                    } else if case .failure = r2 {
+                        DispatchQueue.main.async {
+                            self.loadingIndicator.stopAnimating()
+                        }
+                    }
                 }
+            } else if case .failure(let error) = r {
+                DispatchQueue.main.async {
+                    self.loadingIndicator.stopAnimating()
+                }
+                print("getMapData error: \(error)")
             }
         }
     }

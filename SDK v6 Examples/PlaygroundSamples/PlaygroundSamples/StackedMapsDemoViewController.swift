@@ -74,6 +74,9 @@ final class StackedMapsDemoViewController: UIViewController {
                     }
                 }
             } else if case .failure(let error) = r {
+                DispatchQueue.main.async {
+                    self.loadingIndicator.stopAnimating()
+                }
                 print("getMapData error: \(error)")
             }
         }
@@ -197,7 +200,7 @@ final class StackedMapsDemoViewController: UIViewController {
 		mapView.camera.set(
 			target: CameraTarget(pitch: 75.0)
 		)
-		
+
 		//Expland floors.
 		StackedMapsUtils.expandFloors(
 			mapView: mapView,

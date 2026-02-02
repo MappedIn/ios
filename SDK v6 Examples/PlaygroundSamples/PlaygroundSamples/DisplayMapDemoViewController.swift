@@ -56,6 +56,9 @@ final class DisplayMapDemoViewController: UIViewController {
                     }
                 }
             } else if case .failure(let error) = r {
+                DispatchQueue.main.async {
+                    self.loadingIndicator.stopAnimating()
+                }
                 print("getMapData error: \(error)")
             }
         }

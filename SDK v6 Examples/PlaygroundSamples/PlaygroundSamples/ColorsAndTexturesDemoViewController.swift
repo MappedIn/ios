@@ -62,6 +62,9 @@ final class ColorsAndTexturesDemoViewController: UIViewController {
                     }
                 }
             } else if case .failure(let error) = r {
+                DispatchQueue.main.async {
+                    self.loadingIndicator.stopAnimating()
+                }
                 print("getMapData error: \(error)")
             }
         }
@@ -148,7 +151,7 @@ final class ColorsAndTexturesDemoViewController: UIViewController {
 				topColor: "#27374D"
 			)
 		)
-		
+
         // Update exterior walls with textures
         mapView.updateState(
             walls: .exterior,

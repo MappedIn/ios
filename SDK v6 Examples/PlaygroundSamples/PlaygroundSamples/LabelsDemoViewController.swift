@@ -98,6 +98,9 @@ final class LabelsDemoViewController: UIViewController {
                     }
                 }
             case .failure(let e):
+                DispatchQueue.main.async {
+                    self?.loadingIndicator.stopAnimating()
+                }
                 print("getMapData error: \(e)")
             }
         }
@@ -109,7 +112,7 @@ final class LabelsDemoViewController: UIViewController {
 			print("removing label: \(label.text)")
 			self.mapView.labels.remove(label: label)
 		}
-		
+
         mapView.mapData.getByType(MapDataType.space) { [weak self] (result: Result<[Space], Error>) in
             switch result {
             case .success(let spaces):

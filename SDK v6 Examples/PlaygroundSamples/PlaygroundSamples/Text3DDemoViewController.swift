@@ -117,9 +117,9 @@ final class Text3DDemoViewController: UIViewController {
                     }
                 }
             case .failure(let e):
-                DispatchQueue.main.async {
-                    self?.loadingIndicator.stopAnimating()
-                }
+				DispatchQueue.main.async {
+					self?.loadingIndicator.stopAnimating()
+				}
                 print("getMapData error: \(e)")
             }
         }

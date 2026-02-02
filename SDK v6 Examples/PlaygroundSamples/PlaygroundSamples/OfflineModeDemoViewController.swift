@@ -29,28 +29,21 @@ final class OfflineModeDemoViewController: UIViewController {
             loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
 
-        // Load the MVFv3 zip file from bundle
-        guard let zipData = loadMvfFromBundle(fileName: "school-demo-multifloor-mvfv3", extension: "zip") else {
-            print("Failed to load MVF file from bundle")
+        // Use Bundle.mappedinAssetURL to generate a URL the WebView can fetch
+        // This is more efficient than reading bytes and passing them through hydrateMapData
+        guard let mvfUrl = Bundle.main.mappedinAssetURL(forResource: "school-demo-multifloor-mvfv3", withExtension: "zip") else {
+            print("MVF file not found in bundle")
             loadingIndicator.stopAnimating()
             return
         }
 
-        // Create the backup object in the format expected by hydrateMapData
-        // { type: "binary", main: <array of bytes> }
-        let mainArray = [UInt8](zipData).map { Int($0) }
-        let backupObject: [String: Any] = [
-            "type": "binary",
-            "main": mainArray
-        ]
-
-        // Hydrate the map data from the local MVF file
-        mapView.hydrateMapData(backup: backupObject) { [weak self] result in
+        // Hydrate the map data from the local MVF file URL
+        mapView.hydrateMapDataFromURL(url: mvfUrl) { [weak self] result in
             guard let self = self else { return }
 
             switch result {
             case .success:
-                print("hydrateMapData success")
+                print("hydrateMapDataFromURL success")
                 // Display the map
                 self.mapView.show3dMap(options: Show3DMapOptions()) { r2 in
                     switch r2 {
@@ -70,7 +63,7 @@ final class OfflineModeDemoViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.loadingIndicator.stopAnimating()
                 }
-                print("hydrateMapData error: \(error)")
+                print("hydrateMapDataFromURL error: \(error)")
             }
         }
     }
@@ -87,20 +80,6 @@ final class OfflineModeDemoViewController: UIViewController {
                     self.mapView.labels.add(target: space, text: space.name, options: AddLabelOptions(interactive: true)) { _ in }
                 }
             }
-        }
-    }
-
-    private func loadMvfFromBundle(fileName: String, extension ext: String) -> Data? {
-        guard let path = Bundle.main.path(forResource: fileName, ofType: ext) else {
-            print("MVF file not found in bundle: \(fileName).\(ext)")
-            return nil
-        }
-
-        do {
-            return try Data(contentsOf: URL(fileURLWithPath: path))
-        } catch {
-            print("Error loading MVF file: \(error)")
-            return nil
         }
     }
 }

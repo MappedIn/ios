@@ -65,6 +65,11 @@ final class CameraDemoViewController: UIViewController {
                         }
                     }
                 }
+            } else if case .failure(let error) = r {
+                DispatchQueue.main.async {
+                    self.loadingIndicator.stopAnimating()
+                }
+                print("getMapData error: \(error)")
             }
         }
     }
@@ -242,7 +247,7 @@ final class CameraDemoViewController: UIViewController {
 			guard self != nil, let transform = cameraTransform else { return }
 			print("Camera changed to bearing: \(transform.bearing), pitch: \(transform.pitch), zoomLevel: \(transform.zoomLevel), center: Lat: \(transform.center.latitude), Lon: \(transform.center.longitude)")
 		}
-		
+
     }
 }
 
