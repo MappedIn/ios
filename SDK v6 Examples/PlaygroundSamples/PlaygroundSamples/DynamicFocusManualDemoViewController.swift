@@ -26,6 +26,9 @@ final class DynamicFocusManualDemoViewController: UIViewController {
     // Track the currently selected building (nil = outdoor/no building selected)
     private var currentSelectedFloorStackId: String?
 
+    // Track which facade is currently open (showing interior). Only one facade can be open at a time.
+    private var currentlyOpenFacadeId: String?
+
     // Flag to prevent picker delegate from firing during programmatic updates
     private var isUpdatingPickers = false
 
@@ -206,7 +209,7 @@ final class DynamicFocusManualDemoViewController: UIViewController {
 
                                 DispatchQueue.main.async {
                                     self.populateFloorStacks()
-                                    self.updateFloorsToShow()
+                                    self.initializeFloorPreferences()
                                     self.setupEventListeners()
                                 }
                             }
@@ -251,13 +254,15 @@ final class DynamicFocusManualDemoViewController: UIViewController {
         let isOutdoor = floorStack.type == .outdoor
 
         if isOutdoor {
-            // Switching to Outdoor - close all facades (show them) and hide all building floors
+            // Switching to Outdoor - close the previously open facade (if any)
             print("[DynamicFocusManual]   Switching to Outdoor view")
 
-            // Close all facades (make them visible)
-            allFacades.forEach { facade in
-                closeFacade(facade)
+            // Only close the facade that was previously opened (not all facades)
+            if let openFacadeId = currentlyOpenFacadeId,
+               let facadeToClose = allFacades.first(where: { $0.id == openFacadeId }) {
+                closeFacade(facadeToClose)
             }
+            currentlyOpenFacadeId = nil
 
             // Set floor to the outdoor floor
             let defaultFloorId = floorStack.defaultFloor
@@ -272,27 +277,57 @@ final class DynamicFocusManualDemoViewController: UIViewController {
             // Switching to a Building - open its facade (hide it) and show its floors
             print("[DynamicFocusManual]   Switching to Building: \(floorStack.name)")
 
-            // Process all facades
-            allFacades.forEach { facade in
-                if facade.floorStack == floorStack.id {
-                    // Open this building's facade (hide it to reveal interior)
-                    openFacade(facade)
-                } else {
-                    // Close other building facades (show them)
-                    closeFacade(facade)
-                }
+            // Find the facade for the new building
+            let newFacade = allFacades.first { $0.floorStack == floorStack.id }
+
+            // Close the previously open facade (if different from the new one)
+            if let openFacadeId = currentlyOpenFacadeId,
+               openFacadeId != newFacade?.id,
+               let facadeToClose = allFacades.first(where: { $0.id == openFacadeId }) {
+                closeFacade(facadeToClose)
+            }
+
+            // Open the new building's facade (if it has one)
+            if let facade = newFacade {
+                openFacade(facade)
+                currentlyOpenFacadeId = facade.id
+            } else {
+                // Building has no facade - clear the tracking variable to avoid
+                // attempting to close an already-closed facade on subsequent transitions
+                currentlyOpenFacadeId = nil
+                // Still need to show floors even without a facade, otherwise
+                // the building interior would be invisible
+                showFloors(building: floorStack)
             }
 
             // Populate floors for this building's floor selector
             populateFloors(floorStackId: floorStack.id)
 
-            // Focus on the default floor WITHOUT calling setFloor
-            // This keeps the outdoor floor as the "current floor" so facades remain rendered
-            // Only focus if explicitly requested (e.g., from picker selection)
-            if focusCamera {
-                let defaultFloorId = floorStack.defaultFloor
-                if let floor = getFloorById(defaultFloorId) {
-                    // Just focus the camera on the building's floor, don't change current floor
+            // Determine which floor to show:
+            // 1. Use stored preference for this building (highest priority)
+            // 2. Try to find a floor matching current elevation
+            // 3. Fall back to default floor
+            let floorsInStack = getFloorsForFloorStack(floorStack)
+            let storedPref = floorToShowByBuilding[floorStack.id]
+            let elevationMatch = floorsInStack.first { $0.elevation == currentElevation }
+            let defaultFloor = getFloorById(floorStack.defaultFloor)
+
+            let floorToShow = storedPref ?? elevationMatch ?? defaultFloor
+
+            if let floor = floorToShow {
+                // Store this as the preference for this building
+                floorToShowByBuilding[floorStack.id] = floor
+                // Update the global elevation tracker
+                currentElevation = floor.elevation
+
+                // NOTE: We do NOT call mapView.setFloor() here!
+                // Calling setFloor causes the SDK to internally manage facades, hiding all
+                // facades except the active building's. Instead, we manually manage visibility
+                // using updateState/animateState while staying on the outdoor floor conceptually.
+                // Floor visibility is handled via showFloors() called above.
+
+                // Only focus camera if explicitly requested (e.g., from picker selection)
+                if focusCamera {
                     mapView.camera.focusOn(floor: floor)
                 }
             }
@@ -352,22 +387,37 @@ final class DynamicFocusManualDemoViewController: UIViewController {
         }
     }
 
-    private func updateFloorsToShow() {
-        floorToShowByBuilding.removeAll()
+    /// Initialize floor preferences for buildings that don't have one yet.
+    /// This does NOT clear existing preferences - it only sets defaults for buildings
+    /// that haven't been visited yet.
+    private func initializeFloorPreferences() {
         allFloorStacks.forEach { floorStack in
-            let floorsInStack = getFloorsForFloorStack(floorStack)
-            if let floor = floorsInStack.first(where: { $0.elevation == currentElevation }) {
-                floorToShowByBuilding[floorStack.id] = floor
+            // Only initialize if we don't already have a preference for this building
+            if floorToShowByBuilding[floorStack.id] == nil {
+                let floorsInStack = getFloorsForFloorStack(floorStack)
+                // Try to find a floor at current elevation, or use default
+                if let floor = floorsInStack.first(where: { $0.elevation == currentElevation }) {
+                    floorToShowByBuilding[floorStack.id] = floor
+                } else if let defaultFloor = getFloorById(floorStack.defaultFloor) {
+                    floorToShowByBuilding[floorStack.id] = defaultFloor
+                }
             }
         }
     }
 
     private func showFloors(building: FloorStack) {
-        let defaultFloor = getFloorById(building.defaultFloor)
-        guard let floorToShow = floorToShowByBuilding[building.id] ?? defaultFloor else { return }
-        let height = 10 * currentElevation
-
         let floorsInBuilding = getFloorsForFloorStack(building)
+
+        // Determine which floor to show using same priority as switchToBuilding:
+        // 1. Stored preference
+        // 2. Elevation match
+        // 3. Default floor
+        let storedPref = floorToShowByBuilding[building.id]
+        let elevationMatch = floorsInBuilding.first { $0.elevation == currentElevation }
+        let defaultFloor = getFloorById(building.defaultFloor)
+        guard let floorToShow = storedPref ?? elevationMatch ?? defaultFloor else { return }
+
+        let height = 10 * floorToShow.elevation
 
         floorsInBuilding.forEach { floor in
             if floor.id == floorToShow.id {
@@ -379,7 +429,7 @@ final class DynamicFocusManualDemoViewController: UIViewController {
                         footprint: FloorUpdateState.Footprint(
                             altitude: -height,
                             height: height,
-                            visible: currentElevation > 0
+                            visible: floorToShow.elevation > 0
                         )
                     )
                 )
@@ -477,12 +527,20 @@ final class DynamicFocusManualDemoViewController: UIViewController {
             guard let self = self, let payload = payload else { return }
 
             let newFloor = payload.floor
-            self.currentElevation = newFloor.elevation
-            self.updateFloorsToShow()
-
             guard let newFloorStack = newFloor.floorStack else { return }
             let newFloorStackId = newFloorStack.id
             print("[DynamicFocusManual] floor-change: \(newFloor.name) (floorStackId=\(newFloorStackId))")
+
+            // Store this floor as the preference for its floor stack
+            // This preserves user selections across building switches
+            self.floorToShowByBuilding[newFloorStackId] = newFloor
+
+            // Only update elevation for non-outdoor floors
+            // Switching to outdoor shouldn't reset the current elevation
+            let isOutdoorFloor = newFloorStack.type == .outdoor
+            if !isOutdoorFloor {
+                self.currentElevation = newFloor.elevation
+            }
 
             // Update UI pickers
             DispatchQueue.main.async {
@@ -560,7 +618,12 @@ extension DynamicFocusManualDemoViewController: UIPickerViewDelegate, UIPickerVi
                 showFloors(building: floorStack)
             }
 
+            // NOTE: We do NOT call mapView.setFloor() here!
+            // Calling setFloor would cause the SDK to hide all other facades.
+            // Instead, we manually manage floor visibility using showFloors().
+
             print("[DynamicFocusManual] Floor selected: \(selectedFloor.name)")
         }
     }
 }
+
