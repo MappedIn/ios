@@ -209,7 +209,6 @@ final class DynamicFocusManualDemoViewController: UIViewController {
 
                                 DispatchQueue.main.async {
                                     self.populateFloorStacks()
-                                    self.initializeFloorPreferences()
                                     self.setupEventListeners()
                                 }
                             }
@@ -374,9 +373,14 @@ final class DynamicFocusManualDemoViewController: UIViewController {
             self.isUpdatingPickers = true
             self.floorPicker.reloadAllComponents()
 
-            // Set initial floor selection based on default floor or previously selected floor
-            let defaultFloorId = floorStack.defaultFloor
-            let floorToSelect = self.floorToShowByBuilding[floorStackId] ?? self.getFloorById(defaultFloorId)
+            // Set initial floor selection using same priority as showFloors:
+            // 1. Stored preference
+            // 2. Elevation match
+            // 3. Default floor
+            let storedPref = self.floorToShowByBuilding[floorStackId]
+            let elevationMatch = self.currentFloorStackFloors.first { $0.elevation == self.currentElevation }
+            let defaultFloor = self.getFloorById(floorStack.defaultFloor)
+            let floorToSelect = storedPref ?? elevationMatch ?? defaultFloor
 
             if let floorToSelect = floorToSelect,
                let index = self.currentFloorStackFloors.firstIndex(where: { $0.id == floorToSelect.id }) {
@@ -384,24 +388,6 @@ final class DynamicFocusManualDemoViewController: UIViewController {
             }
 
             self.isUpdatingPickers = false
-        }
-    }
-
-    /// Initialize floor preferences for buildings that don't have one yet.
-    /// This does NOT clear existing preferences - it only sets defaults for buildings
-    /// that haven't been visited yet.
-    private func initializeFloorPreferences() {
-        allFloorStacks.forEach { floorStack in
-            // Only initialize if we don't already have a preference for this building
-            if floorToShowByBuilding[floorStack.id] == nil {
-                let floorsInStack = getFloorsForFloorStack(floorStack)
-                // Try to find a floor at current elevation, or use default
-                if let floor = floorsInStack.first(where: { $0.elevation == currentElevation }) {
-                    floorToShowByBuilding[floorStack.id] = floor
-                } else if let defaultFloor = getFloorById(floorStack.defaultFloor) {
-                    floorToShowByBuilding[floorStack.id] = defaultFloor
-                }
-            }
         }
     }
 
@@ -626,4 +612,3 @@ extension DynamicFocusManualDemoViewController: UIPickerViewDelegate, UIPickerVi
         }
     }
 }
-
