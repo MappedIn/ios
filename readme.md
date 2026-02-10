@@ -1,5 +1,8 @@
 # Mappedin iOS Samples
 
+[![Swift Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FMappedIn%2Fios%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/MappedIn/ios)
+[![Platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FMappedIn%2Fios%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/MappedIn/ios)
+
 This repo contains sample applications demonstrating different ways to integrate with the Mappedin SDK for iOS to render maps and build a custom indoor mapping experience. To learn more about ways to integrate with Mappedin, refer to [developer.mappedin.com](https://developer.mappedin.com/).
 
 The Mappedin SDK for iOS enables you to build powerful and highly flexible indoor mapping experiences natively on iOS.
