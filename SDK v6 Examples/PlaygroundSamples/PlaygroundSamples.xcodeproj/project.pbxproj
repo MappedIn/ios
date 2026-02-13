@@ -520,7 +520,7 @@
 			repositoryURL = "https://github.com/MappedIn/ios";
 			requirement = {
 				kind = exactVersion;
-				version = "6.2.0-beta.0";
+				version = "6.2.0-beta.1";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
