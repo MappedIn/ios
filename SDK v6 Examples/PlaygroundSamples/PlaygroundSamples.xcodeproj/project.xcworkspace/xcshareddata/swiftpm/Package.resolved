@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/MappedIn/ios",
       "state" : {
-        "revision" : "9eac08cc5cba9ee26ab5f475b155a02b04961d15",
-        "version" : "6.2.0-beta.0"
+        "revision" : "39e72ab51f219752d3a862e4898c68568f9e971d",
+        "version" : "6.2.0-beta.1"
       }
     }
   ],
