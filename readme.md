@@ -95,6 +95,8 @@ The following table lists the sample activities that pertain to the latest versi
 
 ---
 
+A sample that implements Mappedin with SwiftUI is available in the [SwiftUI With Mappedin](./SDK%20v6%20Examples/SwiftUIWithMappedin/) project. Further documentation can be found in the [Mappedin SwiftUI Guide](https://developer.mappedin.com/ios-sdk/swift-ui).
+
 ## Additional Resources
 
 - [Mappedin Developer Site](https://developer.mappedin.com/)
