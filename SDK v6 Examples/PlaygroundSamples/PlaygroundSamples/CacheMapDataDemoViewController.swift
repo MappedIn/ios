@@ -7,9 +7,14 @@ import Mappedin
 /// OfflineModeDemoViewControler for examples of this. Use the load time stats printed out from these
 /// demos to help make the best choice for your map.
 ///
+/// **Enterprise maps:** `hydrateMapData` must receive the same shape as ``BinaryBundle/toJson()`` —
+/// especially `options.enterprise` and any `languagePacks`. This demo saves a small manifest plus
+/// binary files instead of only `bundle.main`, so Enterprise offline load works. If you previously
+/// cached only `.bin`, a fallback sets `enterprise` from your API key (non-`mik_` keys are CMS).
+///
 /// This demo shows how to:
 /// 1. Check if map data is cached locally
-/// 2. Load from cache using hydrateMapData if available
+/// 2. Load from cache using hydrateMapData if available (full bundle shape)
 /// 3. Fetch from server using getMapData if not cached
 /// 4. Save the fetched data to cache using toBinaryBundle
 ///
@@ -24,6 +29,8 @@ final class CacheMapDataDemoViewController: UIViewController {
     private var currentMapId: String = ""
 
     private static let cacheFilePrefix = "cached-map-"
+    private static let manifestSuffix = ".manifest.json"
+
     private var loadStartTime: CFAbsoluteTime = 0
     private var dataLoadDuration: Double = 0
     private var isCachedLoad: Bool = false
@@ -38,7 +45,6 @@ final class CacheMapDataDemoViewController: UIViewController {
     }
 
     private func setupUI() {
-        // Add map view container
         container.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(container)
 
@@ -46,24 +52,20 @@ final class CacheMapDataDemoViewController: UIViewController {
         mapContainer.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(mapContainer)
 
-        // Add loading indicator
         loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
         loadingIndicator.startAnimating()
         view.addSubview(loadingIndicator)
 
-        // Add top bar with status and clear cache button
         topBar.translatesAutoresizingMaskIntoConstraints = false
         topBar.backgroundColor = UIColor.white.withAlphaComponent(0.9)
         view.addSubview(topBar)
 
-        // Add status label
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         statusLabel.textAlignment = .left
         statusLabel.textColor = .black
         statusLabel.numberOfLines = 0
         topBar.addSubview(statusLabel)
 
-        // Add clear cache button
         clearCacheButton.translatesAutoresizingMaskIntoConstraints = false
         clearCacheButton.setTitle("Clear Cache", for: .normal)
         clearCacheButton.addTarget(self, action: #selector(onClearCacheClicked), for: .touchUpInside)
@@ -114,11 +116,10 @@ final class CacheMapDataDemoViewController: UIViewController {
         let mapId = options.mapId
         currentMapId = mapId
 
-        // Check if there is cached data for this map
-        if let cachedData = loadFromCache(mapId: mapId) {
+        if let backup = loadHydrateBackupFromCache(mapId: mapId, options: options) {
             print("CacheMapDataDemo: Using cached map data for \(mapId)")
             updateStatus("Loading from cache...")
-            loadFromCachedData(cachedData, options: options)
+            loadFromCachedBackup(backup, options: options)
         } else {
             print("CacheMapDataDemo: Fetching map data from server for \(mapId)")
             updateStatus("Fetching from server...")
@@ -126,19 +127,11 @@ final class CacheMapDataDemoViewController: UIViewController {
         }
     }
 
-    private func loadFromCachedData(_ cachedData: Data, options: GetMapDataWithCredentialsOptions) {
+    private func loadFromCachedBackup(_ backup: [String: Any], options: GetMapDataWithCredentialsOptions) {
         loadStartTime = CFAbsoluteTimeGetCurrent()
-
-        // Create the backup object in the format expected by hydrateMapData
-        let mainArray = [UInt8](cachedData).map { Int($0) }
-        let backupObject: [String: Any] = [
-            "type": "binary",
-            "main": mainArray
-        ]
-
         let hydrateStartTime = CFAbsoluteTimeGetCurrent()
 
-        mapView.hydrateMapData(backup: backupObject, options: options) { [weak self] result in
+        mapView.hydrateMapData(backup: backup, options: options) { [weak self] result in
             guard let self = self else { return }
 
             let hydrateEndTime = CFAbsoluteTimeGetCurrent()
@@ -153,11 +146,8 @@ final class CacheMapDataDemoViewController: UIViewController {
                 self.showMap()
             case .failure(let error):
                 print("CacheMapDataDemo: hydrateMapData error: \(error) (after \(String(format: "%.0f", hydrateDuration))ms)")
-                // If cache is corrupted, delete it and fetch fresh data
                 self.deleteFromCache(mapId: options.mapId)
                 self.updateStatus("Cache invalid, fetching from server...")
-
-                // Create a new MapView since hydrateMapData can only be called once
                 self.recreateMapView()
                 self.fetchFromServer(options: options)
             }
@@ -178,10 +168,8 @@ final class CacheMapDataDemoViewController: UIViewController {
             case .success:
                 print("CacheMapDataDemo: getMapData success - fetched from server in \(String(format: "%.0f", getMapDataDuration))ms")
                 self.updateStatus("Fetched from server...")
-
                 self.dataLoadDuration = getMapDataDuration
                 self.isCachedLoad = false
-                // Cache saving is deferred until after show3dMap to avoid blocking the render
                 self.showMap(mapIdToCache: options.mapId)
             case .failure(let error):
                 print("CacheMapDataDemo: getMapData error: \(error) (after \(String(format: "%.0f", getMapDataDuration))ms)")
@@ -209,7 +197,6 @@ final class CacheMapDataDemoViewController: UIViewController {
                 print("CacheMapDataDemo: === TOTAL MAP LOAD TIME (\(source)): \(String(format: "%.0f", totalDuration))ms (data: \(String(format: "%.0f", self.dataLoadDuration))ms, show3dMap: \(String(format: "%.0f", show3dMapDuration))ms) ===")
                 self.onMapReady()
 
-                // Save to cache after map is displayed to avoid blocking the render
                 if let mapId = mapIdToCache {
                     print("CacheMapDataDemo: Starting background cache save...")
                     self.saveToCache(mapId: mapId)
@@ -225,7 +212,6 @@ final class CacheMapDataDemoViewController: UIViewController {
     private func onMapReady() {
         print("CacheMapDataDemo: Map displayed successfully")
 
-        // Add labels to all named spaces
         mapView.mapData.getByType(.space) { [weak self] (result: Result<[Space], Error>) in
             guard let self = self else { return }
 
@@ -243,18 +229,16 @@ final class CacheMapDataDemoViewController: UIViewController {
 
             switch result {
             case .success(let bundle):
-                if let bundle = bundle {
-                    do {
-                        let cacheFileURL = self.getCacheFileURL(mapId: mapId)
-                        try bundle.main.write(to: cacheFileURL)
-                        print("CacheMapDataDemo: Map data cached successfully to \(cacheFileURL.path)")
-                        print("CacheMapDataDemo: Cache size: \(bundle.main.count) bytes")
-                        self.updateStatus("Cached for offline use!")
-                    } catch {
-                        print("CacheMapDataDemo: Failed to save cache: \(error)")
-                    }
-                } else {
+                guard let bundle = bundle else {
                     print("CacheMapDataDemo: toBinaryBundle returned nil")
+                    return
+                }
+                do {
+                    try self.writeBinaryCache(bundle: bundle, mapId: mapId)
+                    print("CacheMapDataDemo: Map data cached (enterprise=\(bundle.enterprise), langPacks=\(bundle.languagePacks.count))")
+                    self.updateStatus("Cached for offline use!")
+                } catch {
+                    print("CacheMapDataDemo: Failed to save cache: \(error)")
                 }
             case .failure(let error):
                 print("CacheMapDataDemo: toBinaryBundle error: \(error)")
@@ -262,53 +246,134 @@ final class CacheMapDataDemoViewController: UIViewController {
         }
     }
 
-    private func loadFromCache(mapId: String) -> Data? {
-        let cacheFileURL = getCacheFileURL(mapId: mapId)
+    private func writeBinaryCache(bundle: BinaryBundle, mapId: String) throws {
+        let caches = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let mainName = "\(Self.cacheFilePrefix)\(mapId).bin"
+        let mainURL = caches.appendingPathComponent(mainName)
+        try bundle.main.write(to: mainURL)
 
-        guard FileManager.default.fileExists(atPath: cacheFileURL.path) else {
+        var langRefs: [BinaryCacheManifest.LanguageFileRef] = []
+        for pack in bundle.languagePacks {
+            let safeCode = Self.sanitizedFileComponent(pack.code)
+            let fileName = "\(Self.cacheFilePrefix)\(mapId)-lang-\(safeCode).bin"
+            let fileURL = caches.appendingPathComponent(fileName)
+            try pack.data.write(to: fileURL)
+            langRefs.append(BinaryCacheManifest.LanguageFileRef(code: pack.code, name: pack.name, fileName: fileName))
+        }
+
+        let manifest = BinaryCacheManifest(
+            version: BinaryCacheManifest.currentVersion,
+            enterprise: bundle.enterprise,
+            mainFileName: mainName,
+            languagePacks: langRefs
+        )
+        let manifestURL = caches.appendingPathComponent("\(Self.cacheFilePrefix)\(mapId)\(Self.manifestSuffix)")
+        let data = try JSONEncoder().encode(manifest)
+        try data.write(to: manifestURL)
+        print("CacheMapDataDemo: Wrote cache main=\(mainName) (\(bundle.main.count) bytes), manifest=\(manifestURL.lastPathComponent)")
+    }
+
+    private func loadHydrateBackupFromCache(mapId: String, options: GetMapDataWithCredentialsOptions) -> [String: Any]? {
+        let caches = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let manifestURL = caches.appendingPathComponent("\(Self.cacheFilePrefix)\(mapId)\(Self.manifestSuffix)")
+        let mainURL = getMainCacheFileURL(mapId: mapId)
+
+        if FileManager.default.fileExists(atPath: manifestURL.path) {
+            do {
+                let manifestData = try Data(contentsOf: manifestURL)
+                let manifest = try JSONDecoder().decode(BinaryCacheManifest.self, from: manifestData)
+                guard manifest.version == BinaryCacheManifest.currentVersion else {
+                    print("CacheMapDataDemo: Unknown cache manifest version \(manifest.version)")
+                    return nil
+                }
+                let mainData = try Data(contentsOf: caches.appendingPathComponent(manifest.mainFileName))
+                var languagePacks: [[String: Any]] = []
+                for ref in manifest.languagePacks {
+                    let packURL = caches.appendingPathComponent(ref.fileName)
+                    let packData = try Data(contentsOf: packURL)
+                    languagePacks.append([
+                        "language": ["code": ref.code, "name": ref.name],
+                        "localePack": [UInt8](packData).map { Int($0) },
+                    ])
+                }
+                print("CacheMapDataDemo: Loaded cache from manifest (enterprise=\(manifest.enterprise), langPacks=\(languagePacks.count))")
+                return hydrateBackupBinary(
+                    main: mainData,
+                    enterprise: manifest.enterprise,
+                    languagePacks: languagePacks
+                )
+            } catch {
+                print("CacheMapDataDemo: Failed to load manifest cache: \(error)")
+                return nil
+            }
+        }
+
+        guard FileManager.default.fileExists(atPath: mainURL.path) else {
             print("CacheMapDataDemo: No cached data found for \(mapId)")
             return nil
         }
-
         do {
-            let data = try Data(contentsOf: cacheFileURL)
-            print("CacheMapDataDemo: Found cached data at \(cacheFileURL.path)")
-            print("CacheMapDataDemo: Cache size: \(data.count) bytes")
-            return data
+            let mainData = try Data(contentsOf: mainURL)
+            let enterpriseInferred = !options.key.hasPrefix("mik_")
+            print("CacheMapDataDemo: Legacy .bin only — using enterprise=\(enterpriseInferred) from key prefix")
+            return hydrateBackupBinary(main: mainData, enterprise: enterpriseInferred, languagePacks: [])
         } catch {
             print("CacheMapDataDemo: Failed to load cache: \(error)")
             return nil
         }
     }
 
-    private func deleteFromCache(mapId: String) {
-        let cacheFileURL = getCacheFileURL(mapId: mapId)
+    private func hydrateBackupBinary(main: Data, enterprise: Bool, languagePacks: [[String: Any]]) -> [String: Any] {
+        let mainArray = [UInt8](main).map { Int($0) }
+        var backup: [String: Any] = [
+            "type": "binary",
+            "main": mainArray,
+            "options": [
+                "enterprise": enterprise,
+            ],
+        ]
+        if !languagePacks.isEmpty {
+            backup["languagePacks"] = languagePacks
+        }
+        return backup
+    }
 
-        guard FileManager.default.fileExists(atPath: cacheFileURL.path) else {
+    private func deleteFromCache(mapId: String) {
+        let caches = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let manifestURL = caches.appendingPathComponent("\(Self.cacheFilePrefix)\(mapId)\(Self.manifestSuffix)")
+
+        if FileManager.default.fileExists(atPath: manifestURL.path),
+           let manifestData = try? Data(contentsOf: manifestURL),
+           let manifest = try? JSONDecoder().decode(BinaryCacheManifest.self, from: manifestData) {
+            let urls = [manifestURL, caches.appendingPathComponent(manifest.mainFileName)]
+                + manifest.languagePacks.map { caches.appendingPathComponent($0.fileName) }
+            for url in urls {
+                try? FileManager.default.removeItem(at: url)
+            }
+            print("CacheMapDataDemo: Deleted manifest cache for \(mapId)")
             return
         }
 
-        do {
-            try FileManager.default.removeItem(at: cacheFileURL)
-            print("CacheMapDataDemo: Deleted cached data for \(mapId)")
-        } catch {
-            print("CacheMapDataDemo: Failed to delete cache: \(error)")
-        }
+        let legacyMain = getMainCacheFileURL(mapId: mapId)
+        try? FileManager.default.removeItem(at: legacyMain)
+        try? FileManager.default.removeItem(at: manifestURL)
+        print("CacheMapDataDemo: Deleted cached data for \(mapId)")
     }
 
-    private func getCacheFileURL(mapId: String) -> URL {
+    private func getMainCacheFileURL(mapId: String) -> URL {
         let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
         return cachesDirectory.appendingPathComponent("\(Self.cacheFilePrefix)\(mapId).bin")
     }
 
+    private static func sanitizedFileComponent(_ code: String) -> String {
+        code.map { ch in
+            ch.isLetter || ch.isNumber ? String(ch) : "_"
+        }.joined()
+    }
+
     private func recreateMapView() {
-        // Remove old map view
         mapView.view.removeFromSuperview()
-
-        // Destroy the old MapView to release WKWebView resources and prevent memory leaks
         mapView.destroy()
-
-        // Create new map view
         mapView = MapView()
         let mapContainer = mapView.view
         mapContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -333,5 +398,20 @@ final class CacheMapDataDemoViewController: UIViewController {
         DispatchQueue.main.async {
             self.loadingIndicator.stopAnimating()
         }
+    }
+}
+
+private struct BinaryCacheManifest: Codable {
+    static let currentVersion = 1
+
+    var version: Int
+    var enterprise: Bool
+    var mainFileName: String
+    var languagePacks: [LanguageFileRef]
+
+    struct LanguageFileRef: Codable {
+        var code: String
+        var name: String
+        var fileName: String
     }
 }
