@@ -12,9 +12,6 @@ import Mappedin
 /// binary files instead of only `bundle.main`, so Enterprise offline load works. If you previously
 /// cached only `.bin`, a fallback sets `enterprise` from your API key (non-`mik_` keys are CMS).
 ///
-/// Replace ``demoCredentials`` with your **CMS client id and secret** (not a `mik_` Maker key) and
-/// your venue `mapId` for an Enterprise venue.
-///
 /// This demo shows how to:
 /// 1. Check if map data is cached locally
 /// 2. Load from cache using hydrateMapData if available (full bundle shape)
