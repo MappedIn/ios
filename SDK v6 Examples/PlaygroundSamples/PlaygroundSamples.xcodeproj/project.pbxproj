@@ -32,6 +32,9 @@
 		4B0000011111111111111127 /* arena_basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000017 /* arena_basketball.png */; };
 		4B0000011111111111111128 /* arena_concert.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0000010000000000000018 /* arena_concert.png */; };
 		4B0000011111111111111129 /* Mappedin in Frameworks */ = {isa = PBXBuildFile; productRef = 4B0000020000000000000001 /* Mappedin */; };
+		D123132C2F7EFCDB00B3C5D6 /* EventsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123132B2F7EFCDB00B3C5D6 /* EventsDemoViewController.swift */; };
+		D123132D2F7EFCDB00B3C5D6 /* BlueDotManualPositioningDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123132A2F7EFCDB00B3C5D6 /* BlueDotManualPositioningDemoViewController.swift */; };
+		D123132E2F7EFCDB00B3C5D6 /* BlueDotDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12313292F7EFCDB00B3C5D6 /* BlueDotDemoViewController.swift */; };
 		D175A38A2EF9CE9600F925EF /* LocationsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */; };
 		D175A3962EFB239A00F925EF /* StackedMapsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */; };
 		D175A3972EFB239A00F925EF /* StackedMapsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */; };
@@ -49,7 +52,6 @@
 		D1A49EB22F31239000250493 /* CacheMVFDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB12F31239000250493 /* CacheMVFDemoViewController.swift */; };
 		D1A49EB52F3123A300250493 /* DynamicFocusDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB32F3123A300250493 /* DynamicFocusDemoViewController.swift */; };
 		D1A49EB62F3123A300250493 /* DynamicFocusManualDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB42F3123A300250493 /* DynamicFocusManualDemoViewController.swift */; };
-		D1A49EB82F3139B600250493 /* BlueDotDemoViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB72F3139B600250493 /* BlueDotDemoViewController 2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,9 @@
 		4B0000010000000000000018 /* arena_concert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arena_concert.png; sourceTree = "<group>"; };
 		4B0000010000000000000019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B000001000000000000001A /* PlaygroundSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaygroundSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D12313292F7EFCDB00B3C5D6 /* BlueDotDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueDotDemoViewController.swift; sourceTree = "<group>"; };
+		D123132A2F7EFCDB00B3C5D6 /* BlueDotManualPositioningDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueDotManualPositioningDemoViewController.swift; sourceTree = "<group>"; };
+		D123132B2F7EFCDB00B3C5D6 /* EventsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDemoViewController.swift; sourceTree = "<group>"; };
 		D175A3892EF9CE9300F925EF /* LocationsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDemoViewController.swift; sourceTree = "<group>"; };
 		D175A3932EFB239A00F925EF /* MultiFloorViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiFloorViewDemoViewController.swift; sourceTree = "<group>"; };
 		D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedMapsDemoViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +101,6 @@
 		D1A49EB12F31239000250493 /* CacheMVFDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMVFDemoViewController.swift; sourceTree = "<group>"; };
 		D1A49EB32F3123A300250493 /* DynamicFocusDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFocusDemoViewController.swift; sourceTree = "<group>"; };
 		D1A49EB42F3123A300250493 /* DynamicFocusManualDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFocusManualDemoViewController.swift; sourceTree = "<group>"; };
-		D1A49EB72F3139B600250493 /* BlueDotDemoViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlueDotDemoViewController 2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,15 +133,17 @@
 				4B0000010000000000000018 /* arena_concert.png */,
 				4B0000010000000000000016 /* arena_hockey.png */,
 				4B0000010000000000000005 /* Assets.xcassets */,
-				D1A49EB72F3139B600250493 /* BlueDotDemoViewController 2.swift */,
+				D12313292F7EFCDB00B3C5D6 /* BlueDotDemoViewController.swift */,
+				D123132A2F7EFCDB00B3C5D6 /* BlueDotManualPositioningDemoViewController.swift */,
 				4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */,
-				4B000001000000000000000A /* CameraDemoViewController.swift */,
 				D1958B622F1A8822005609E5 /* CacheMapDataDemoViewController.swift */,
 				D1A49EB12F31239000250493 /* CacheMVFDemoViewController.swift */,
+				4B000001000000000000000A /* CameraDemoViewController.swift */,
 				D18CFC962F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift */,
 				4B0000010000000000000007 /* DisplayMapDemoViewController.swift */,
 				D1A49EB32F3123A300250493 /* DynamicFocusDemoViewController.swift */,
 				D1A49EB42F3123A300250493 /* DynamicFocusManualDemoViewController.swift */,
+				D123132B2F7EFCDB00B3C5D6 /* EventsDemoViewController.swift */,
 				D18CFC982F0C54B200D32BFF /* exterior-wall.jpg */,
 				D18CFC8E2F0C532500D32BFF /* favicon.svg */,
 				D18CFC8F2F0C532500D32BFF /* floor.png */,
@@ -270,7 +276,6 @@
 				4B0000011111111111111117 /* DisplayMapDemoViewController.swift in Sources */,
 				4B0000011111111111111118 /* AreaShapesDemoViewController.swift in Sources */,
 				4B0000011111111111111119 /* BuildingFloorSelectionDemoViewController.swift in Sources */,
-				D1A49EB82F3139B600250493 /* BlueDotDemoViewController 2.swift in Sources */,
 				4B000001111111111111111A /* CameraDemoViewController.swift in Sources */,
 				D175A3962EFB239A00F925EF /* StackedMapsDemoViewController.swift in Sources */,
 				D1958B672F1A8ECB005609E5 /* Text3DDemoViewController.swift in Sources */,
@@ -284,6 +289,9 @@
 				4B000001111111111111111D /* LabelsDemoViewController.swift in Sources */,
 				D1A49EB52F3123A300250493 /* DynamicFocusDemoViewController.swift in Sources */,
 				D1A49EB62F3123A300250493 /* DynamicFocusManualDemoViewController.swift in Sources */,
+				D123132C2F7EFCDB00B3C5D6 /* EventsDemoViewController.swift in Sources */,
+				D123132D2F7EFCDB00B3C5D6 /* BlueDotManualPositioningDemoViewController.swift in Sources */,
+				D123132E2F7EFCDB00B3C5D6 /* BlueDotDemoViewController.swift in Sources */,
 				D18CFC972F0C543F00D32BFF /* ColorsAndTexturesDemoViewController.swift in Sources */,
 				4B000001111111111111111E /* MarkersDemoViewController.swift in Sources */,
 				D18CFC832F08615E00D32BFF /* TurnByTurnDemoViewController.swift in Sources */,
@@ -520,7 +528,7 @@
 			repositoryURL = "https://github.com/MappedIn/ios";
 			requirement = {
 				kind = exactVersion;
-				version = "6.2.0-beta.1";
+				version = 6.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

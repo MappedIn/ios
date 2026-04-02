@@ -143,7 +143,7 @@ final class DynamicFocusManualDemoViewController: UIViewController {
     // MARK: - Map Loading
 
     private func loadMap() {
-        // Trial API key - see https://developer.mappedin.com/docs/demo-keys-and-maps
+        // Demo API Key - see https://developer.mappedin.com/docs/demo-keys-and-maps
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
             secret: "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022",

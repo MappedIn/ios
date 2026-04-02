@@ -24,7 +24,7 @@ final class CacheMVFDemoViewController: UIViewController {
     private static let cacheFilePrefix = "cached-mvf-"
 
     // API credentials (Demo API key)
-    // See Trial API key Terms and Conditions: https://developer.mappedin.com/docs/demo-keys-and-maps
+    // See Demo API Key Terms and Conditions: https://developer.mappedin.com/docs/demo-keys-and-maps
     private static let mappedinKey = "mik_yeBk0Vf0nNJtpesfu560e07e5"
     private static let mappedinSecret = "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022"
 

@@ -54,7 +54,7 @@ final class InteractivityDemoViewController: UIViewController {
             loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
 
-		// See Trial API key Terms and Conditions
+		// See Demo API Key Terms and Conditions
 		// https://developer.mappedin.com/api-keys/
         let options = GetMapDataWithCredentialsOptions(
             key: "5eab30aa91b055001a68e996",

@@ -91,7 +91,7 @@ final class BuildingFloorSelectionDemoViewController: UIViewController, UIPicker
     }
 
     private func loadMap() {
-        // See Trial API key Terms and Conditions
+        // See Demo API Key Terms and Conditions
         // https://developer.mappedin.com/docs/demo-keys-and-maps
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
