@@ -69,7 +69,7 @@ final class SearchDemoViewController: UIViewController, UITableViewDataSource, U
     }
 
     private func loadMap() {
-        // See Trial API key Terms and Conditions
+        // See Demo API Key Terms and Conditions
         // https://developer.mappedin.com/docs/demo-keys-and-maps
         let options = GetMapDataWithCredentialsOptions(
             key: "5eab30aa91b055001a68e996",

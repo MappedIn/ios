@@ -29,7 +29,7 @@ final class MultiFloorViewDemoViewController: UIViewController {
             loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
 
-		// See Trial API key Terms and Conditions
+		// See Demo API Key Terms and Conditions
 		// https://developer.mappedin.com/docs/demo-keys-and-maps
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
@@ -45,9 +45,9 @@ final class MultiFloorViewDemoViewController: UIViewController {
 
 				// Display the map with multi-floor view enabled.
                 let show3dMapOptions = Show3DMapOptions(
-                    multiFloorView: Show3DMapOptions.MultiFloorViewOptions(
+                    multiFloorView: MultiFloorViewOptions(
                         enabled: true,
-                        floorGap: 10.0,
+                        floorGap: .numeric(10.0),
                         updateCameraElevationOnFloorChange: true
                     )
                 )

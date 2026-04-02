@@ -90,7 +90,7 @@ final class Text3DDemoViewController: UIViewController {
             loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
 
-        // See Trial API key Terms and Conditions
+        // See Demo API Key Terms and Conditions
         // https://developer.mappedin.com/web/v6/trial-keys-and-maps/
         let key = "mik_yeBk0Vf0nNJtpesfu560e07e5"
         let secret = "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022"

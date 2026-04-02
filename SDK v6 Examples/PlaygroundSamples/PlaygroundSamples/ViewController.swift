@@ -7,7 +7,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    private let demos = ["Areas & Shapes", "Blue Dot", "Building & Floor Selection", "Cache Map Data", "Cache MVF Data", "Camera", "Colors & Textures", "Display a Map", "Dynamic Focus", "Dynamic Focus (Manual)", "Image3D", "Interactivity", "Labels", "Locations", "Markers", "Models", "Multi-Floor View", "Navigation", "Offline Mode", "Paths", "Query", "Search", "Stacked Maps", "Text3D", "Turn by Turn"]
+    private let demos = ["Areas & Shapes", "Blue Dot", "Blue Dot Manual Positioning", "Building & Floor Selection", "Cache Map Data", "Cache MVF Data", "Camera", "Colors & Textures", "Display a Map", "Dynamic Focus", "Dynamic Focus (Manual)", "Events", "Image3D", "Interactivity", "Labels", "Locations", "Markers", "Models", "Multi-Floor View", "Navigation", "Offline Mode", "Paths", "Query", "Search", "Stacked Maps", "Text3D", "Turn by Turn"]
 
 	private let tableView = UITableView(frame: .zero, style: .insetGrouped)
 
@@ -48,94 +48,102 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 2:
-            let vc = BuildingFloorSelectionDemoViewController()
+            let vc = BlueDotManualPositioningDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 3:
-            let vc = CacheMapDataDemoViewController()
+            let vc = BuildingFloorSelectionDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 4:
-            let vc = CacheMVFDemoViewController()
+            let vc = CacheMapDataDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 5:
-            let vc = CameraDemoViewController()
+            let vc = CacheMVFDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 6:
-            let vc = ColorsAndTexturesDemoViewController()
+            let vc = CameraDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 7:
-            let vc = DisplayMapDemoViewController()
+            let vc = ColorsAndTexturesDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 8:
-            let vc = DynamicFocusDemoViewController()
+            let vc = DisplayMapDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 9:
-            let vc = DynamicFocusManualDemoViewController()
+            let vc = DynamicFocusDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 10:
-            let vc = Image3DDemoViewController()
+            let vc = DynamicFocusManualDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 11:
-            let vc = InteractivityDemoViewController()
+            let vc = EventsDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 12:
-            let vc = LabelsDemoViewController()
+            let vc = Image3DDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 13:
-            let vc = LocationsDemoViewController()
+            let vc = InteractivityDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 14:
-            let vc = MarkersDemoViewController()
+            let vc = LabelsDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 15:
-            let vc = ModelsDemoViewController()
+            let vc = LocationsDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 16:
-            let vc = MultiFloorViewDemoViewController()
+            let vc = MarkersDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 17:
-            let vc = NavigationDemoViewController()
+            let vc = ModelsDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 18:
-            let vc = OfflineModeDemoViewController()
+            let vc = MultiFloorViewDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 19:
-            let vc = PathsDemoViewController()
+            let vc = NavigationDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 20:
-            let vc = QueryDemoViewController()
+            let vc = OfflineModeDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 21:
-            let vc = SearchDemoViewController()
+            let vc = PathsDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 22:
-            let vc = StackedMapsDemoViewController()
+            let vc = QueryDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 23:
-            let vc = Text3DDemoViewController()
+            let vc = SearchDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
         case 24:
+            let vc = StackedMapsDemoViewController()
+            if let nav = navigationController { nav.pushViewController(vc, animated: true) }
+            else { present(UINavigationController(rootViewController: vc), animated: true) }
+        case 25:
+            let vc = Text3DDemoViewController()
+            if let nav = navigationController { nav.pushViewController(vc, animated: true) }
+            else { present(UINavigationController(rootViewController: vc), animated: true) }
+        case 26:
             let vc = TurnByTurnDemoViewController()
             if let nav = navigationController { nav.pushViewController(vc, animated: true) }
             else { present(UINavigationController(rootViewController: vc), animated: true) }
