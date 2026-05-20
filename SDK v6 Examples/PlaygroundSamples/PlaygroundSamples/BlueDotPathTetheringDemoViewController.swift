@@ -1,8 +1,7 @@
 import UIKit
 import Mappedin
 
-/// Mirrors the Mappedin JS `Path_tethering` example. Demonstrates
-/// `Navigation.trackCoordinate` (both tethered and travelled modes) driven by a pre-recorded
+/// Demonstrates `Navigation.trackCoordinate` (both tethered and travelled modes) driven by a pre-recorded
 /// BlueDot walk through the `mappedin-demo-mall` venue. Supports Single Path
 /// (entrance -> Aritzia) and Multi-Destination Path
 /// (entrance -> Mucho Burrito -> Reebok -> Aritzia), with live controls for tether
