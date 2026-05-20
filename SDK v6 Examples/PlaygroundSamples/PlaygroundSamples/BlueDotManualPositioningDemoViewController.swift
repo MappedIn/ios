@@ -109,6 +109,8 @@ final class BlueDotManualPositioningDemoViewController: UIViewController {
 
     // MARK: - Map Loading
 
+    // See Demo API Key Terms and Conditions
+    // https://developer.mappedin.com/docs/demo-keys-and-maps
     private func loadMap() {
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",

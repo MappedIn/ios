@@ -6,6 +6,9 @@ final class BlueDotDemoViewController: UIViewController {
     private let mapView = MapView()
     private var currentHeading: Double = 0.0
     private var currentAccuracy: Double = 5.0
+    private var lastLatitude: Double?
+    private var lastLongitude: Double?
+    private var lastFloorLevel: Int?
     private let loadingIndicator = UIActivityIndicatorView(style: .large)
     private let statusLabel = UILabel()
     private let stateLabel = UILabel()
@@ -217,7 +220,8 @@ final class BlueDotDemoViewController: UIViewController {
     // MARK: - Map Loading
 
     private func loadMap() {
-        // Demo API Key - see https://developer.mappedin.com/docs/demo-keys-and-maps
+        // See Demo API Key Terms and Conditions
+        // https://developer.mappedin.com/docs/demo-keys-and-maps
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
             secret: "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022",
@@ -320,32 +324,42 @@ final class BlueDotDemoViewController: UIViewController {
         mapView.blueDot.enable(options: options) { [weak self] result in
             guard let self = self else { return }
             if case .success = result {
-                DispatchQueue.main.async {
-                    self.statusLabel.text = "BlueDot enabled - tap map to place"
-                }
+                self.placeBlueDotAtCenter()
             }
             self.refreshStateDisplay()
         }
     }
 
-    private func moveBlueDot(to coordinate: Coordinate, floors: [Floor]?) {
-        var floorId: BlueDotPositionUpdate.FloorId?
-
-        if let firstFloor = floors?.first {
-            floorId = .id(firstFloor.id)
-        } else if let coordFloorId = coordinate.floorId {
-            floorId = .id(coordFloorId)
+    private func placeBlueDotAtCenter() {
+        mapView.camera.center { [weak self] result in
+            guard let self = self else { return }
+            if case .success(let coordinate) = result, let coordinate = coordinate {
+                self.mapView.currentFloor { [weak self] floorResult in
+                    guard let self = self else { return }
+                    let floors: [Floor]? = (try? floorResult.get()).flatMap { $0 }.map { [$0] }
+                    self.moveBlueDot(to: coordinate, floors: floors)
+                }
+            }
         }
+    }
 
-        let position = BlueDotPositionUpdate(
-            accuracy: .value(currentAccuracy),
-            floorId: floorId,
-            heading: .value(currentHeading),
-            latitude: .value(coordinate.latitude),
-            longitude: .value(coordinate.longitude)
-        )
+    private func moveBlueDot(to coordinate: Coordinate, floors: [Floor]?) {
+        let floorLevel = floors?.first.map { Int($0.elevation) }
 
-        mapView.blueDot.update(position: position, options: BlueDotUpdateOptions(animate: true)) { [weak self] _ in
+        lastLatitude = coordinate.latitude
+        lastLongitude = coordinate.longitude
+        lastFloorLevel = floorLevel
+
+        mapView.blueDot.reportPosition(
+            options: ManualPositionOptions(
+                latitude: coordinate.latitude,
+                longitude: coordinate.longitude,
+                accuracy: currentAccuracy,
+                heading: currentHeading,
+                floorLevel: floorLevel,
+                confidence: 1.0
+            )
+        ) { [weak self] _ in
             DispatchQueue.main.async {
                 self?.statusLabel.text = "BlueDot placed"
             }
@@ -366,9 +380,22 @@ final class BlueDotDemoViewController: UIViewController {
         let heading = Double(sender.tag)
         currentHeading = heading
 
-        mapView.blueDot.update(
-            position: BlueDotPositionUpdate(heading: .value(heading)),
-            options: BlueDotUpdateOptions(animate: true)
+        guard let lat = lastLatitude, let lng = lastLongitude else {
+            DispatchQueue.main.async { [weak self] in
+                self?.statusLabel.text = "Place a position first"
+            }
+            return
+        }
+
+        mapView.blueDot.reportPosition(
+            options: ManualPositionOptions(
+                latitude: lat,
+                longitude: lng,
+                accuracy: currentAccuracy,
+                heading: heading,
+                floorLevel: lastFloorLevel,
+                confidence: 1.0
+            )
         ) { [weak self] _ in
             DispatchQueue.main.async {
                 self?.statusLabel.text = "Heading set to \(Int(heading))°"
@@ -381,9 +408,22 @@ final class BlueDotDemoViewController: UIViewController {
         let accuracy = Double(sender.tag)
         currentAccuracy = accuracy
 
-        mapView.blueDot.update(
-            position: BlueDotPositionUpdate(accuracy: .value(accuracy)),
-            options: BlueDotUpdateOptions(animate: true)
+        guard let lat = lastLatitude, let lng = lastLongitude else {
+            DispatchQueue.main.async { [weak self] in
+                self?.statusLabel.text = "Place a position first"
+            }
+            return
+        }
+
+        mapView.blueDot.reportPosition(
+            options: ManualPositionOptions(
+                latitude: lat,
+                longitude: lng,
+                accuracy: accuracy,
+                heading: currentHeading,
+                floorLevel: lastFloorLevel,
+                confidence: 1.0
+            )
         ) { [weak self] _ in
             DispatchQueue.main.async {
                 self?.statusLabel.text = "Accuracy set to \(Int(accuracy))m"

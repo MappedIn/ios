@@ -90,10 +90,27 @@ final class Image3DDemoViewController: UIViewController {
                         height: 448 * self.pixelsToMeters,
                         width: 1014 * self.pixelsToMeters,
                         flipImageToFaceCamera: false,
+                        interactive: true,
                         rotation: 239.0,
                         verticalOffset: 1.0
                     )
                     self.mapView.image3D.add(target: floor, url: imageName, options: opts) { _ in }
+                }
+
+                self.mapView.on(Events.click) { [weak self] payload in
+                    guard let self = self, let payload = payload else { return }
+                    if let image = payload.images?.first {
+                        print("Clicked Image3DView id=\(image.id) url=\(image.url)")
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(
+                                title: "Image3DView",
+                                message: "Clicked \(image.id)",
+                                preferredStyle: .alert
+                            )
+                            alert.addAction(UIAlertAction(title: "OK", style: .default))
+                            self.present(alert, animated: true)
+                        }
+                    }
                 }
             }
         }
@@ -109,6 +126,7 @@ final class Image3DDemoViewController: UIViewController {
             height: 448 * pixelsToMeters,
             width: 1014 * pixelsToMeters,
             flipImageToFaceCamera: false,
+            interactive: true,
             rotation: 239.0,
             verticalOffset: 1.0
         )

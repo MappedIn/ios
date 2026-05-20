@@ -116,8 +116,8 @@ final class DynamicFocusDemoViewController: UIViewController {
     // MARK: - Map Loading
 
     private func loadMap() {
-        // Demo API key - see https://developer.mappedin.com/docs/demo-keys-and-maps
-        // Using the outdoor/indoor map for Dynamic Focus demo
+        // See Demo API Key Terms and Conditions
+        // https://developer.mappedin.com/docs/demo-keys-and-maps
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
             secret: "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022",
@@ -166,10 +166,9 @@ final class DynamicFocusDemoViewController: UIViewController {
 
     @objc private func enableDynamicFocus() {
         let options = DynamicFocusOptions(
-			autoFocus: true,
-			indoorZoomThreshold: 17.0,
-			outdoorZoomThreshold: 17.0,
-            setFloorOnFocus: true,			
+            autoFocus: true,
+            autoZoomThresholds: .enabled,
+            setFloorOnFocus: true
         )
 
         mapView.dynamicFocus.enable(options: options) { [weak self] result in
