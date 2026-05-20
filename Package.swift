@@ -13,8 +13,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "Mappedin",
-            url: "https://github.com/MappedIn/ios/releases/download/6.2.0/Mappedin.xcframework.zip",
-            checksum: "c3a3768d5d15be19143845138f40f9973af921b85ff9ccf38cc23a9b34ef7d3a"
+            url: "https://github.com/MappedIn/ios/releases/download/6.3.0/Mappedin.xcframework.zip",
+            checksum: "bf548ea94e16c819df8821121afdc61b97b446d19672539e55eea194742d597e"
         )
     ]
 )
