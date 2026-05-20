@@ -52,6 +52,9 @@
 		D1A49EB22F31239000250493 /* CacheMVFDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB12F31239000250493 /* CacheMVFDemoViewController.swift */; };
 		D1A49EB52F3123A300250493 /* DynamicFocusDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB32F3123A300250493 /* DynamicFocusDemoViewController.swift */; };
 		D1A49EB62F3123A300250493 /* DynamicFocusManualDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A49EB42F3123A300250493 /* DynamicFocusManualDemoViewController.swift */; };
+		D1AA13AF2FBE409E00110C4C /* BlueDotPathTetheringDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AA13AE2FBE409E00110C4C /* BlueDotPathTetheringDemoViewController.swift */; };
+		D1AA13B22FBE427800110C4C /* tethering-demo-mall.json in Resources */ = {isa = PBXBuildFile; fileRef = D1AA13B02FBE427800110C4C /* tethering-demo-mall.json */; };
+		D1AA13B32FBE427800110C4C /* tethering-demo-mall-multi-dest.json in Resources */ = {isa = PBXBuildFile; fileRef = D1AA13B12FBE427800110C4C /* tethering-demo-mall-multi-dest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +104,9 @@
 		D1A49EB12F31239000250493 /* CacheMVFDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMVFDemoViewController.swift; sourceTree = "<group>"; };
 		D1A49EB32F3123A300250493 /* DynamicFocusDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFocusDemoViewController.swift; sourceTree = "<group>"; };
 		D1A49EB42F3123A300250493 /* DynamicFocusManualDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFocusManualDemoViewController.swift; sourceTree = "<group>"; };
+		D1AA13AE2FBE409E00110C4C /* BlueDotPathTetheringDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueDotPathTetheringDemoViewController.swift; sourceTree = "<group>"; };
+		D1AA13B02FBE427800110C4C /* tethering-demo-mall.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tethering-demo-mall.json"; sourceTree = "<group>"; };
+		D1AA13B12FBE427800110C4C /* tethering-demo-mall-multi-dest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tethering-demo-mall-multi-dest.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 				4B0000010000000000000005 /* Assets.xcassets */,
 				D12313292F7EFCDB00B3C5D6 /* BlueDotDemoViewController.swift */,
 				D123132A2F7EFCDB00B3C5D6 /* BlueDotManualPositioningDemoViewController.swift */,
+				D1AA13AE2FBE409E00110C4C /* BlueDotPathTetheringDemoViewController.swift */,
 				4B0000010000000000000009 /* BuildingFloorSelectionDemoViewController.swift */,
 				D1958B622F1A8822005609E5 /* CacheMapDataDemoViewController.swift */,
 				D1A49EB12F31239000250493 /* CacheMVFDemoViewController.swift */,
@@ -168,6 +175,8 @@
 				4B0000010000000000000013 /* SearchDemoViewController.swift */,
 				D175A3942EFB239A00F925EF /* StackedMapsDemoViewController.swift */,
 				D175A3952EFB239A00F925EF /* StackedMapsUtils.swift */,
+				D1AA13B02FBE427800110C4C /* tethering-demo-mall.json */,
+				D1AA13B12FBE427800110C4C /* tethering-demo-mall-multi-dest.json */,
 				D1958B662F1A8ECB005609E5 /* Text3DDemoViewController.swift */,
 				D18CFC822F08615E00D32BFF /* TurnByTurnDemoViewController.swift */,
 				4B0000010000000000000003 /* ViewController.swift */,
@@ -247,6 +256,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1AA13B22FBE427800110C4C /* tethering-demo-mall.json in Resources */,
+				D1AA13B32FBE427800110C4C /* tethering-demo-mall-multi-dest.json in Resources */,
 				4B0000011111111111111114 /* Base in Resources */,
 				4B0000011111111111111115 /* Assets.xcassets in Resources */,
 				4B0000011111111111111116 /* Base in Resources */,
@@ -287,6 +298,7 @@
 				4B000001111111111111111B /* Image3DDemoViewController.swift in Sources */,
 				4B000001111111111111111C /* InteractivityDemoViewController.swift in Sources */,
 				4B000001111111111111111D /* LabelsDemoViewController.swift in Sources */,
+				D1AA13AF2FBE409E00110C4C /* BlueDotPathTetheringDemoViewController.swift in Sources */,
 				D1A49EB52F3123A300250493 /* DynamicFocusDemoViewController.swift in Sources */,
 				D1A49EB62F3123A300250493 /* DynamicFocusManualDemoViewController.swift in Sources */,
 				D123132C2F7EFCDB00B3C5D6 /* EventsDemoViewController.swift in Sources */,
@@ -528,7 +540,7 @@
 			repositoryURL = "https://github.com/MappedIn/ios";
 			requirement = {
 				kind = exactVersion;
-				version = 6.2.0;
+				version = 6.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
