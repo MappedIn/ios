@@ -17,39 +17,39 @@ The sample projects in this repo provide a key and secret to access demo maps. P
 
 The following table lists the sample activities that pertain to the latest version of the Mappedin SDK for iOS.
 
-| **Sample**                     | **Description**                                                                                       | **Guide**                         |
-| ------------------------------ | ----------------------------------------------------------------------------------------------------- | --------------------------------- |
-| [DisplayMapDemo]               | The most basic example to show a map.                                                                 | [Getting Started]                 |
-| [AreaShapesDemo]               | Demonstrates using shapes to show areas and route directions around closed areas.                     | [Areas & Shapes]                  |
-| [BlueDotDemo]                  | Demonstrates using Blue Dot to show the user's position on the map.                                   | [Blue Dot]                        |
-| [BlueDotManualPositioningDemo] | Demonstrates how to report a position to the Mappedin location fusion engine with a confidence score. | [Blue Dot]                        |
-| [BlueDotPathTetheringDemo]     | Demonstrates how to tether a navigation path to a user's location (Blue Dot) as they move.            | coming soon                       |
-| [BuildingFloorSelectionDemo]   | Demonstrates switching between maps for venues with multiple floors and or multiple buildings.        | [Building & Floor Selection]      |
-| [CacheMapDataDemo]             | Demonstrates how to use cached map data to modify data between reloads.                               | [Cache Map Data]                  |
-| [CacheMVFDemo]                 | Demonstrates how to use cached Mappedin Venue Format ([MVFv3]) files for quicker reloads.             | [Cache MVF File]                  |
-| [CameraDemo]                   | Demonstrates how to move the camera.                                                                  | [Camera]                          |
-| [ColorsAndTexturesDemo]        | Demonstrates how to apply custom colors and textures to the map.                                      | [Images, Textures & Colors]       |
-| [DynamicFocusDemo]             | Demonstrates how to use Dynamic Focus.                                                                | [Dynamic Focus]                   |
-| [DynamicFocusManualDemo]       | Demonstrates how to create a custom Dynamic Focus effect.                                             | [Custom Dynamic Focus]            |
-| [EventsDemo]                   | Demonstrates how to use events created in Mappedin CMS.                                               |                                   |
-| [Icons]                        | Demonstrates how use Mappedin icons.                                                                  | Coming Soon                       |
-| [Image3DDemo]                  | Demonstrates how to add images on a map.                                                              | [Images, Textures & Colors]       |
-| [InteractivityDemo]            | Demonstrates how to capture and act on touch events.                                                  | [Interactivity]                   |
-| [LabelsDemo]                   | Demonstrates adding rich labels to the map.                                                           | [Labels]                          |
-| [LocationsDemo]                | Demonstrates using location profiles and categories.                                                  | [Location Profiles & Categories]  |
-| [MarkersDemo]                  | Demonstrates adding HTML Markers to the map.                                                          | [Markers]                         |
-| [ModelsDemo]                   | Demonstrates adding 3D models to the map.                                                             | [3D Models]                       |
-| [MultiFloorViewDemo]           | Demonstrates using multi floor view.                                                                  | [Multi Floor View & Stacked Maps] |
-| [NavigationDemo]               | Demonstrates wayfinding and navigation across multiple floors.                                        | [Wayfinding]                      |
-| [OfflineModeDemo]              | Demonstrates loading a map from a local Mappedin Venue Format ([MVFv3]) file.                         | [Offline Mode]                    |
-| [PathsDemo]                    | Demonstrates how to draw a path between two rooms.                                                    | [Wayfinding]                      |
-| [QueryDemo]                    | Demonstrates how to find the nearest room based on a coordinate and click event.                      |                                   |
-| [RenderMVFv3MapKit]            | Demonstrates how to render a Mappedin Venue Format v3 (MVFv3) file using MapKit.                      | [Render MVF v3 with MapKit]       |
-| [ReusableMap]                  | Demonstrates how to reuse the same MapView instance on multiple screens for faster loading.           | Coming Soon                       |
-| [SearchDemo]                   | Demonstrates how to use the suggest and search feature.                                               | [Search]                          |
-| [StackedMapsDemo]              | Demonstrates how to use the stacked maps.                                                             | [Multi Floor View & Stacked Maps] |
-| [Text3DDemo]                   | Demonstrates how to use Text3D labels.                                                                | [Flat Text]                       |
-| [TurnByTurnDemo]               | Demonstrates how to use turn by turn directions.                                                      | [Turn-by-Turn Directions]         |
+| **Sample**                     | **Description**                                                                                       | **Guide**                          |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| [DisplayMapDemo]               | The most basic example to show a map.                                                                 | [Getting Started]                  |
+| [AreaShapesDemo]               | Demonstrates using shapes to show areas and route directions around closed areas.                     | [Areas & Shapes]                   |
+| [BlueDotDemo]                  | Demonstrates using Blue Dot to show the user's position on the map.                                   | [Blue Dot]                         |
+| [BlueDotManualPositioningDemo] | Demonstrates how to report a position to the Mappedin location fusion engine with a confidence score. | [Blue Dot]                         |
+| [BlueDotPathTetheringDemo]     | Demonstrates how to tether a navigation path to a user's location (Blue Dot) as they move.            | Coming Soon                        |
+| [BuildingFloorSelectionDemo]   | Demonstrates switching between maps for venues with multiple floors and or multiple buildings.        | [Building & Floor Selection]       |
+| [CacheMapDataDemo]             | Demonstrates how to use cached map data to modify data between reloads.                               | [Cache Map Data]                   |
+| [CacheMVFDemo]                 | Demonstrates how to use cached Mappedin Venue Format ([MVFv3]) files for quicker reloads.             | [Cache MVF File]                   |
+| [CameraDemo]                   | Demonstrates how to move the camera.                                                                  | [Camera]                           |
+| [ColorsAndTexturesDemo]        | Demonstrates how to apply custom colors and textures to the map.                                      | [Images, Textures & Colors]        |
+| [DynamicFocusDemo]             | Demonstrates how to use Dynamic Focus.                                                                | [Dynamic Focus]                    |
+| [DynamicFocusManualDemo]       | Demonstrates how to create a custom Dynamic Focus effect.                                             | [Custom Dynamic Focus]             |
+| [EventsDemo]                   | Demonstrates how to use events created in Mappedin CMS.                                               |                                    |
+| [IconsDemo]                    | Demonstrates how use Mappedin icons.                                                                  | [Icons]                            |
+| [Image3DDemo]                  | Demonstrates how to add images on a map.                                                              | [Images, Textures & Colors]        |
+| [InteractivityDemo]            | Demonstrates how to capture and act on touch events.                                                  | [Interactivity]                    |
+| [LabelsDemo]                   | Demonstrates adding rich labels to the map.                                                           | [Labels]                           |
+| [LocationsDemo]                | Demonstrates using location profiles and categories.                                                  | [Location Profiles & Categories]   |
+| [MarkersDemo]                  | Demonstrates adding HTML Markers to the map.                                                          | [Markers]                          |
+| [ModelsDemo]                   | Demonstrates adding 3D models to the map.                                                             | [3D Models]                        |
+| [MultiFloorViewDemo]           | Demonstrates using multi floor view.                                                                  | [Multi Floor View & Stacked Maps]  |
+| [NavigationDemo]               | Demonstrates wayfinding and navigation across multiple floors.                                        | [Wayfinding]                       |
+| [OfflineModeDemo]              | Demonstrates loading a map from a local Mappedin Venue Format ([MVFv3]) file.                         | [Offline Mode]                     |
+| [PathsDemo]                    | Demonstrates how to draw a path between two rooms.                                                    | [Wayfinding]                       |
+| [QueryDemo]                    | Demonstrates how to find the nearest room based on a coordinate and click event.                      |                                    |
+| [RenderMVFv3MapKit]            | Demonstrates how to render a Mappedin Venue Format v3 (MVFv3) file using MapKit.                      | [Render MVF v3 with MapKit]        |
+| [ReusableMapDemo]              | Demonstrates how to reuse the same MapView instance on multiple screens for faster loading.           | [Reusing a MapView Across Screens] |
+| [SearchDemo]                   | Demonstrates how to use the suggest and search feature.                                               | [Search]                           |
+| [StackedMapsDemo]              | Demonstrates how to use the stacked maps.                                                             | [Multi Floor View & Stacked Maps]  |
+| [Text3DDemo]                   | Demonstrates how to use Text3D labels.                                                                | [Flat Text]                        |
+| [TurnByTurnDemo]               | Demonstrates how to use turn by turn directions.                                                      | [Turn-by-Turn Directions]          |
 
 [DisplayMapDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/DisplayMapDemoViewController.swift
 [AreaShapesDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/AreaShapesDemoViewController.swift
@@ -64,7 +64,7 @@ The following table lists the sample activities that pertain to the latest versi
 [DynamicFocusDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/DynamicFocusDemoViewController.swift
 [DynamicFocusManualDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/DynamicFocusManualDemoViewController.swift
 [EventsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/EventsDemoViewController.swift
-[Icons]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/IconsDemoViewController.swift
+[IconsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/IconsDemoViewController.swift
 [Image3DDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/Image3DDemoViewController.swift
 [InteractivityDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/InteractivityDemoViewController.swift
 [LabelsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/LabelsDemoViewController.swift
@@ -76,7 +76,7 @@ The following table lists the sample activities that pertain to the latest versi
 [OfflineModeDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/OfflineModeDemoViewController.swift
 [PathsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/PathsDemoViewController.swift
 [QueryDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/QueryDemoViewController.swift
-[ReusableMap]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/ReusableMapScreenViewController.swift
+[ReusableMapDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/ReusableMapScreenViewController.swift
 [RenderMVFv3MapKit]: ./SDK%20v6%20Examples/RenderMFVv3MapKit/RenderMFVv3MapKit/MapViewModel.swift
 [SearchDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/SearchDemoViewController.swift
 [StackedMapsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/StackedMapsDemoViewController.swift
@@ -90,6 +90,7 @@ The following table lists the sample activities that pertain to the latest versi
 [Cache Map Data]: https://developer.mappedin.com/ios-sdk/getting-started#caching-and-loading-map-data-as-json
 [Cache MVF File]: https://developer.mappedin.com/ios-sdk/getting-started#caching-and-loading-map-data-as-a-mvf-file
 [Camera]: https://developer.mappedin.com/ios-sdk/camera
+[Icons]: https://developer.mappedin.com/ios-sdk/icons
 [Images, Textures & Colors]: https://developer.mappedin.com/ios-sdk/images-textures
 [Dynamic Focus]: https://developer.mappedin.com/ios-sdk/dynamic-focus
 [Custom Dynamic Focus]: https://developer.mappedin.com/ios-sdk/dynamic-focus#implementing-dynamic-focus-using-mapview
@@ -102,6 +103,7 @@ The following table lists the sample activities that pertain to the latest versi
 [Wayfinding]: https://developer.mappedin.com/ios-sdk/wayfinding
 [Offline Mode]: https://developer.mappedin.com/ios-sdk/getting-started#offline-loading-mode
 [Render MVF v3 with MapKit]: https://developer.mappedin.com/docs/mvf/v3/examples/render-with-mapkit
+[Reusing a MapView Across Screens]: https://developer.mappedin.com/ios-sdk/getting-started#reusing-a-mapview-across-screens
 [Search]: https://developer.mappedin.com/ios-sdk/enterprise-data#search
 [Flat Text]: https://developer.mappedin.com/ios-sdk/labels#flat-labels-with-text3d
 [Turn-by-Turn Directions]: https://developer.mappedin.com/ios-sdk/wayfinding#turn-by-turn-directions
