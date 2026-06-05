@@ -28,21 +28,7 @@ https://github.com/MappedIn/ios
 
 ## Sample Demos
 
-The app includes the following sample demonstrations:
-
-1. **Areas & Shapes** - Demonstrates drawing shapes from areas, labeling them, and routing with zone avoidance
-2. **Building & Floor Selection** - Shows how to navigate between buildings and floors
-3. **Camera** - Demonstrates camera controls including pitch, zoom, animate, and reset
-4. **Display a Map** - Basic map display example
-5. **Image3D** - Shows how to add 3D images to spaces (arena floor examples)
-6. **Interactivity** - Demonstrates click events on labels, spaces, and paths
-7. **Labels** - Shows custom label styling and interactive label removal
-8. **Markers** - Demonstrates adding annotation markers to the map
-9. **Models** - Shows how to add 3D models from GLB files
-10. **Navigation** - Demonstrates navigation path drawing with custom markers
-11. **Paths** - Interactive path creation between spaces
-12. **Query** - Shows spatial queries to find nearest spaces
-13. **Search** - Demonstrates search functionality with autocomplete
+Refer to the [Mappedin SDK for iOS v6 Samples table](https://github.com/MappedIn/ios#mappedin-sdk-for-ios-v6-samples) for a complete list of samples and descriptions.
 
 ## Trial API Keys
 
@@ -64,5 +50,6 @@ PlaygroundSamples/
 │   ├── arena_*.png                  # Arena floor images
 │   ├── model_positions.json         # 3D model placement data
 │   └── Info.plist                   # App configuration
+│   └── *.swift                      # Additional sample files
 └── README.md
 ```
