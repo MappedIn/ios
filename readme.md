@@ -32,6 +32,7 @@ The following table lists the sample activities that pertain to the latest versi
 | [DynamicFocusDemo]             | Demonstrates how to use Dynamic Focus.                                                                | [Dynamic Focus]                   |
 | [DynamicFocusManualDemo]       | Demonstrates how to create a custom Dynamic Focus effect.                                             | [Custom Dynamic Focus]            |
 | [EventsDemo]                   | Demonstrates how to use events created in Mappedin CMS.                                               |                                   |
+| [Icons]                        | Demonstrates how use Mappedin icons.                                                                  | Coming Soon                       |
 | [Image3DDemo]                  | Demonstrates how to add images on a map.                                                              | [Images, Textures & Colors]       |
 | [InteractivityDemo]            | Demonstrates how to capture and act on touch events.                                                  | [Interactivity]                   |
 | [LabelsDemo]                   | Demonstrates adding rich labels to the map.                                                           | [Labels]                          |
@@ -44,6 +45,7 @@ The following table lists the sample activities that pertain to the latest versi
 | [PathsDemo]                    | Demonstrates how to draw a path between two rooms.                                                    | [Wayfinding]                      |
 | [QueryDemo]                    | Demonstrates how to find the nearest room based on a coordinate and click event.                      |                                   |
 | [RenderMVFv3MapKit]            | Demonstrates how to render a Mappedin Venue Format v3 (MVFv3) file using MapKit.                      | [Render MVF v3 with MapKit]       |
+| [ReusableMap]                  | Demonstrates how to reuse the same MapView instance on multiple screens for faster loading.           | Coming Soon                       |
 | [SearchDemo]                   | Demonstrates how to use the suggest and search feature.                                               | [Search]                          |
 | [StackedMapsDemo]              | Demonstrates how to use the stacked maps.                                                             | [Multi Floor View & Stacked Maps] |
 | [Text3DDemo]                   | Demonstrates how to use Text3D labels.                                                                | [Flat Text]                       |
@@ -62,6 +64,7 @@ The following table lists the sample activities that pertain to the latest versi
 [DynamicFocusDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/DynamicFocusDemoViewController.swift
 [DynamicFocusManualDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/DynamicFocusManualDemoViewController.swift
 [EventsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/EventsDemoViewController.swift
+[Icons]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/IconsDemoViewController.swift
 [Image3DDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/Image3DDemoViewController.swift
 [InteractivityDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/InteractivityDemoViewController.swift
 [LabelsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/LabelsDemoViewController.swift
@@ -73,6 +76,7 @@ The following table lists the sample activities that pertain to the latest versi
 [OfflineModeDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/OfflineModeDemoViewController.swift
 [PathsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/PathsDemoViewController.swift
 [QueryDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/QueryDemoViewController.swift
+[ReusableMap]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/ReusableMapScreenViewController.swift
 [RenderMVFv3MapKit]: ./SDK%20v6%20Examples/RenderMFVv3MapKit/RenderMFVv3MapKit/MapViewModel.swift
 [SearchDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/SearchDemoViewController.swift
 [StackedMapsDemo]: ./SDK%20v6%20Examples/PlaygroundSamples/PlaygroundSamples/StackedMapsDemoViewController.swift
