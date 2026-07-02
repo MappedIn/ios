@@ -95,7 +95,7 @@ final class InteractivityDemoViewController: UIViewController {
             guard let self = self else { return }
             if case .success(let spaces) = result {
                 spaces.forEach { space in
-                    self.mapView.updateState(space: space, state: GeometryUpdateState(interactive: true))
+                    self.mapView.updateState(space: space, state: GeometryUpdateState(interactivity: .boolean(true)))
                 }
             }
         }

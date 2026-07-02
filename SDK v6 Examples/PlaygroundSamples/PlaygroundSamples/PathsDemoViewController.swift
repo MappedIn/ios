@@ -78,7 +78,7 @@ final class PathsDemoViewController: UIViewController {
                 print("PathsDemo: Found \(spaces.count) spaces")
 
                 for space in spaces {
-                    self.mapView.updateState(space: space, state: GeometryUpdateState(interactive: true))
+                    self.mapView.updateState(space: space, state: GeometryUpdateState(interactivity: .boolean(true)))
                 }
 
                 // Handle click events
@@ -139,7 +139,7 @@ final class PathsDemoViewController: UIViewController {
         mapView.mapData.getByType(.space) { (result: Result<[Space], Error>) in
             if case .success(let spaces) = result {
                 for space in spaces {
-                    self.mapView.updateState(space: space, state: GeometryUpdateState(interactive: interactive))
+                    self.mapView.updateState(space: space, state: GeometryUpdateState(interactivity: .boolean(interactive)))
                 }
             }
         }
