@@ -21,7 +21,7 @@ final class InteractivityDemoViewController: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
 
         let descriptionLabel = UILabel()
-        descriptionLabel.text = "Click on labels, spaces, and paths to see interactive features in action."
+        descriptionLabel.text = "Click or long-press on labels, spaces, and paths to see interactive features in action."
         descriptionLabel.font = UIFont.systemFont(ofSize: 14)
         descriptionLabel.textColor = UIColor.systemGray
         descriptionLabel.numberOfLines = 0
@@ -103,7 +103,13 @@ final class InteractivityDemoViewController: UIViewController {
         // Set up click listener
         mapView.on(Events.click) { [weak self] clickPayload in
             guard let self = self, let click = clickPayload else { return }
-            self.handleClick(click)
+            self.handleClick(click, longPress: false)
+        }
+
+        // Set up long-press listener (same payload shape as click)
+        mapView.on(Events.longPress) { [weak self] clickPayload in
+            guard let self = self, let click = clickPayload else { return }
+            self.handleClick(click, longPress: true)
         }
 
 		// Add interactive labels to all spaces with names.
@@ -164,11 +170,15 @@ final class InteractivityDemoViewController: UIViewController {
         }
     }
 
-    private func handleClick(_ clickPayload: ClickPayload) {
+    private func handleClick(_ clickPayload: ClickPayload, longPress: Bool = false) {
         var message = ""
 
         // Use the map name as the title (from floors)
-        let title = clickPayload.floors?.first?.name ?? "Map Click"
+        let title = clickPayload.floors?.first?.name ?? (longPress ? "Map Long Press" : "Map Click")
+
+        if longPress {
+            message.append("Long press\n")
+        }
 
         // If a label was clicked, add its text to the message
         if let labels = clickPayload.labels, !labels.isEmpty {
