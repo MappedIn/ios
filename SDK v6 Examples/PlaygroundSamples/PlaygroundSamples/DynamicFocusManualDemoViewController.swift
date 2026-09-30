@@ -143,8 +143,8 @@ final class DynamicFocusManualDemoViewController: UIViewController {
     // MARK: - Map Loading
 
     private func loadMap() {
-        // See Demo API Key Terms and Conditions
-        // https://developer.mappedin.com/docs/demo-keys-and-maps
+		// See Demo API Key Terms and Conditions
+		// https://developer.mappedin.com/docs/demo-keys-and-maps
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
             secret: "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022",
@@ -178,16 +178,7 @@ final class DynamicFocusManualDemoViewController: UIViewController {
         }
 
         // Label all spaces with names
-        mapView.mapData.getByType(.space) { [weak self] (result: Result<[Space], Error>) in
-            guard let self = self else { return }
-            if case .success(let spaces) = result {
-                spaces.forEach { space in
-                    if !space.name.isEmpty {
-                        self.mapView.labels.add(target: space, text: space.name)
-                    }
-                }
-            }
-        }
+        mapView.auto()
 
         // Fetch all floor stacks
         mapView.mapData.getByType(.floorStack) { [weak self] (result: Result<[FloorStack], Error>) in

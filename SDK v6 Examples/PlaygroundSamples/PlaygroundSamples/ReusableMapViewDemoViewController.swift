@@ -58,9 +58,9 @@ final class ReusableMapViewDemoViewController: UITabBarController {
                     self.handleLoadFailure()
                     return
                 }
-                // Automatically add default labels and markers so the map
-                // looks complete on its first and only load.
-                self.mapView.__EXPERIMENTAL__auto()
+                // Automatically add default labels so the map looks complete
+                // on its first and only load.
+                self.mapView.auto()
                 // The map is rendered now, so mark it ready and hide the loading
                 // indicator. Focusing depends on the spaces query below, which is
                 // loaded separately so a failure there never leaves the screen
