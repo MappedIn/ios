@@ -116,8 +116,8 @@ final class DynamicFocusDemoViewController: UIViewController {
     // MARK: - Map Loading
 
     private func loadMap() {
-        // See Demo API Key Terms and Conditions
-        // https://developer.mappedin.com/docs/demo-keys-and-maps
+        // Demo API key - see https://developer.mappedin.com/docs/demo-keys-and-maps
+        // Using the outdoor/indoor map for Dynamic Focus demo
         let options = GetMapDataWithCredentialsOptions(
             key: "mik_yeBk0Vf0nNJtpesfu560e07e5",
             secret: "mis_2g9ST8ZcSFb5R9fPnsvYhrX3RyRwPtDGbMGweCYKEq385431022",
@@ -151,7 +151,7 @@ final class DynamicFocusDemoViewController: UIViewController {
         }
 
         // Label all spaces with names
-        mapView.__EXPERIMENTAL__auto()
+        mapView.auto()
     }
 
     private func logEvent(_ message: String) {
